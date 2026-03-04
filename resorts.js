@@ -124,6 +124,22 @@ export const RESORTS = [
     provider: 'YouTube',
   },
   {
+    id: 'jackson-hole-corbets',
+    name: "Jackson Hole — Corbet's Couloir",
+    url: 'https://www.youtube.com/embed/36-DawfIb5s?autoplay=1&mute=1&rel=0',
+    type: 'iframe',
+    region: 'Wyoming',
+    provider: 'YouTube',
+  },
+  {
+    id: 'jackson-hole-tram-station',
+    name: 'Jackson Hole — Tram Station',
+    url: 'https://cams.jacksonhole.com/webcam/trambase.jpg',
+    type: 'image',
+    region: 'Wyoming',
+    provider: 'Jackson Hole',
+  },
+  {
     id: 'jaypeak',
     name: 'Jay Peak — Tramside',
     url: 'https://imgproxy.windy.com/_/preview/plain/current/1793868258/original.jpg',
@@ -138,6 +154,14 @@ export const RESORTS = [
     type: 'image',
     region: 'New York',
     provider: 'Windy',
+  },
+  {
+    id: 'whiteface-legacy-lodge',
+    name: 'Whiteface — Legacy Lodge',
+    url: 'https://manage.hdrelay.com/snapshot/56ce853a-23fc-48cc-af9b-13907ef75b9a?size=1082x614&f=60000',
+    type: 'image',
+    region: 'New York',
+    provider: 'HDRelay',
   },
   {
     id: 'okemo',
