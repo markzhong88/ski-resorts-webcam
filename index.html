@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ski Resort Webcams</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛷️</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">Ski Resort Webcams</h1>
+      <p class="subtitle">Your favorite mountain cams in one view</p>
+      <div class="header-actions">
+        <label class="refresh-label">
+          <span>Refresh images every</span>
+          <select id="refreshInterval" aria-label="Refresh interval">
+            <option value="60000">1 min</option>
+            <option value="120000">2 min</option>
+            <option value="300000" selected>5 min</option>
+            <option value="600000">10 min</option>
+          </select>
+        </label>
+        <button type="button" id="refreshNow" class="btn-refresh" title="Refresh all image cams now">
+          Refresh now
+        </button>
+      </div>
+    </header>
+
+    <main class="grid" id="webcamGrid"></main>
+
+    <footer class="footer">
+      <p>Image cams refresh automatically. Add or edit resorts in <code>resorts.js</code>.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

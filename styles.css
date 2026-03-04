@@ -1,0 +1,230 @@
+/* Ski resort webcam aggregator — clean, readable, mountain vibe */
+
+:root {
+  --bg: #0f1419;
+  --bg-card: #1a222c;
+  --bg-card-hover: #232d3a;
+  --border: #2d3a47;
+  --text: #e6edf3;
+  --text-muted: #8b9cad;
+  --accent: #58a6ff;
+  --accent-soft: rgba(88, 166, 255, 0.15);
+  --snow: #f0f6fc;
+  --success: #3fb950;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.header {
+  padding: 1.5rem 1.5rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--snow);
+}
+
+.subtitle {
+  margin: 0.35rem 0 1rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.refresh-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.refresh-label select {
+  font: inherit;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0.35rem 0.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.refresh-label select:hover,
+.refresh-label select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.btn-refresh {
+  font: inherit;
+  padding: 0.4rem 0.9rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-refresh:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+  gap: 1.25rem;
+  padding: 1.25rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(88, 166, 255, 0.35);
+  background: var(--bg-card-hover);
+}
+
+.card-header {
+  padding: 0.65rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--snow);
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-region {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-provider {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  padding: 0.15rem 0.45rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.card-feed {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #0d1117;
+}
+
+.card-feed img,
+.card-feed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+.card-feed img {
+  background: #111;
+}
+
+.card-feed .placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.card-feed .placeholder.error {
+  color: #f85149;
+}
+
+.card-updated {
+  padding: 0.35rem 1rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.footer {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer code {
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0.15rem 0.4rem;
+  background: var(--bg-card);
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    padding: 0.75rem;
+    gap: 1rem;
+  }
+
+  .header-actions {
+    flex-direction: column;
+  }
+}
