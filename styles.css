@@ -218,6 +218,16 @@ body {
   border-radius: 4px;
 }
 
+.footer-stats {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+}
+
+#visitCount {
+  font-weight: 600;
+  color: var(--text);
+}
+
 @media (max-width: 640px) {
   .grid {
     padding: 0.75rem;

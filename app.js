@@ -118,3 +118,14 @@ refreshBtn.addEventListener('click', () => {
 // Initial render and interval
 render();
 startRefreshInterval();
+
+// Total visits counter (CountAPI — free, no backend)
+const visitEl = document.getElementById('visitCount');
+if (visitEl) {
+  fetch('https://api.countapi.xyz/hit/ski-resorts-webcam/visits')
+    .then((r) => r.json())
+    .then((data) => {
+      if (data.value != null) visitEl.textContent = data.value.toLocaleString();
+    })
+    .catch(() => {});
+}
