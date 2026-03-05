@@ -108,6 +108,14 @@ export const RESORTS = [
     provider: 'Brownrice',
   },
   {
+    id: 'whistler-village',
+    name: 'Whistler — Village (Fitzsimmons)',
+    url: 'https://live5.brownrice.com/cam-images/whistlervillagefitz.jpg',
+    type: 'image',
+    region: 'British Columbia',
+    provider: 'Brownrice',
+  },
+  {
     id: 'brevent',
     name: 'Brévent (Chamonix)',
     url: 'https://en.chamonix.com/sites/default/files/styles/webcam_small/public/webcams/live/75.jpg',
