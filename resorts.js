@@ -150,10 +150,10 @@ export const RESORTS = [
   {
     id: 'jaypeak',
     name: 'Jay Peak — Tramside',
-    url: 'https://imgproxy.windy.com/_/preview/plain/current/1793868258/original.jpg',
+    url: 'https://b15.hdrelay.com/camera/6526fd5a071b19b5189bb07b/snapshot',
     type: 'image',
     region: 'Vermont',
-    provider: 'Windy',
+    provider: 'HDRelay',
   },
   {
     id: 'whiteface',
