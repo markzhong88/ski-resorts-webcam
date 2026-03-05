@@ -28,7 +28,6 @@ function createCard(resort) {
     <h2 class="card-title">${escapeHtml(resort.name)}</h2>
     <div class="card-meta">
       ${resort.region ? `<span class="card-region">${escapeHtml(resort.region)}</span>` : ''}
-      ${resort.provider ? `<span class="card-provider" title="Feed source">${escapeHtml(resort.provider)}</span>` : ''}
     </div>
   `;
   card.appendChild(header);

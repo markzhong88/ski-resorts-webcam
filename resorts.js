@@ -28,12 +28,12 @@ export const RESORTS = [
     provider: 'Brownrice',
   },
   {
-    id: 'vail-stake',
-    name: 'Vail — Snow Stake',
-    url: 'https://common.snow.com/Mtncams/VailSnowStake.jpg',
+    id: 'vail-blue-sky',
+    name: 'Vail — Blue Sky Basin',
+    url: 'https://live6.brownrice.com/cam-images/vailbluesky.jpg',
     type: 'image',
     region: 'Colorado',
-    provider: 'Epic (Vail Resorts)',
+    provider: 'Brownrice',
   },
   {
     id: 'lake-louise-1',
@@ -94,10 +94,10 @@ export const RESORTS = [
   {
     id: 'kicking-horse',
     name: 'Kicking Horse — Eagles Eye',
-    url: 'https://secure.skircr.com/cams2/khcam3/final.jpg',
-    type: 'image',
+    url: 'https://www.youtube.com/embed/wbXWHhVljiw?autoplay=1&mute=1&rel=0',
+    type: 'iframe',
     region: 'British Columbia',
-    provider: 'Kicking Horse (skircr)',
+    provider: 'YouTube (Kicking Horse)',
   },
   {
     id: 'whistler',
