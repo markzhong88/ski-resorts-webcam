@@ -7,6 +7,42 @@ const refreshBtn = document.getElementById('refreshNow');
 let refreshIntervalId = null;
 let refreshMs = parseInt(refreshSelect.value, 10) || IMAGE_REFRESH_MS;
 
+const OPEN_METEO_BASE = 'https://api.open-meteo.com/v1/forecast';
+
+/** WMO weather code → short label (snow-focused). */
+function weatherLabel(code) {
+  if (code == null) return '—';
+  const map = {
+    0: 'Clear',
+    1: 'Clear',
+    2: 'Partly cloudy',
+    3: 'Overcast',
+    45: 'Fog',
+    48: 'Fog',
+    51: 'Drizzle',
+    53: 'Drizzle',
+    55: 'Drizzle',
+    61: 'Rain',
+    63: 'Rain',
+    65: 'Rain',
+    66: 'Freezing rain',
+    67: 'Freezing rain',
+    71: 'Snow',
+    73: 'Snow',
+    75: 'Snow',
+    77: 'Snow grains',
+    80: 'Showers',
+    81: 'Showers',
+    82: 'Showers',
+    85: 'Snow showers',
+    86: 'Snow showers',
+    95: 'Thunderstorm',
+    96: 'Thunderstorm',
+    99: 'Thunderstorm',
+  };
+  return map[code] ?? '—';
+}
+
 function getImageUrl(url) {
   const sep = url.includes('?') ? '&' : '?';
   return `${url}${sep}_=${Date.now()}`;
@@ -15,6 +51,33 @@ function getImageUrl(url) {
 function formatTime(ms) {
   const d = new Date(ms);
   return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+function formatForecastDate(isoDate) {
+  const d = new Date(isoDate + 'T12:00:00');
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  d.setHours(0, 0, 0, 0);
+  if (d.getTime() === today.getTime()) return 'Today';
+  if (d.getTime() === tomorrow.getTime()) return 'Tomorrow';
+  return d.toLocaleDateString([], { weekday: 'short' });
+}
+
+/** Fetch 7-day forecast from Open-Meteo (free, no API key). */
+async function fetchForecast(latitude, longitude) {
+  const params = new URLSearchParams({
+    latitude: String(latitude),
+    longitude: String(longitude),
+    daily: 'temperature_2m_max,temperature_2m_min,snowfall_sum,precipitation_sum,weather_code',
+    temperature_unit: 'fahrenheit',
+    timezone: 'auto',
+    forecast_days: '7',
+  });
+  const res = await fetch(`${OPEN_METEO_BASE}?${params}`);
+  if (!res.ok) throw new Error(res.statusText);
+  return res.json();
 }
 
 function createCard(resort) {
@@ -69,10 +132,55 @@ function createCard(resort) {
     updated.textContent = 'Loading…';
     card.appendChild(feed);
     card.appendChild(updated);
-    return card;
   }
 
   card.appendChild(feed);
+
+  // Weather forecast (if resort has coordinates)
+  if (resort.latitude != null && resort.longitude != null) {
+    const forecastEl = document.createElement('div');
+    forecastEl.className = 'card-forecast';
+    forecastEl.setAttribute('aria-label', '7-day weather forecast');
+    forecastEl.innerHTML = '<div class="forecast-loading">Loading forecast…</div>';
+    card.appendChild(forecastEl);
+
+    fetchForecast(resort.latitude, resort.longitude)
+      .then((data) => {
+        const daily = data.daily;
+        if (!daily || !daily.time || !daily.time.length) {
+          forecastEl.innerHTML = '<div class="forecast-error">No forecast data</div>';
+          return;
+        }
+        forecastEl.innerHTML = '';
+        const heading = document.createElement('div');
+        heading.className = 'forecast-heading';
+        heading.textContent = '7-day forecast';
+        forecastEl.appendChild(heading);
+        const list = document.createElement('div');
+        list.className = 'forecast-days';
+        for (let i = 0; i < daily.time.length; i++) {
+          const snow = daily.snowfall_sum?.[i] ?? 0;
+          const high = daily.temperature_2m_max?.[i];
+          const low = daily.temperature_2m_min?.[i];
+          const code = daily.weather_code?.[i];
+          const row = document.createElement('div');
+          row.className = 'forecast-day';
+          if (snow > 0) row.classList.add('has-snow');
+          row.innerHTML = `
+            <span class="forecast-date">${escapeHtml(formatForecastDate(daily.time[i]))}</span>
+            <span class="forecast-temps">${high != null ? Math.round(high) + '°' : '—'} / ${low != null ? Math.round(low) + '°' : '—'}</span>
+            <span class="forecast-snow" title="Snowfall">${snow > 0 ? snow.toFixed(1) + ' cm' : '—'}</span>
+            <span class="forecast-condition">${escapeHtml(weatherLabel(code))}</span>
+          `;
+          list.appendChild(row);
+        }
+        forecastEl.appendChild(list);
+      })
+      .catch(() => {
+        forecastEl.innerHTML = '<div class="forecast-error">Forecast unavailable</div>';
+      });
+  }
+
   return card;
 }
 

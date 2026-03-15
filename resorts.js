@@ -17,6 +17,8 @@
  *
  * • Other providers: Epic (common.snow.com), resort-owned (skilouise, chamonix, skircr),
  *   YouTube embeds, Windy (imgproxy.windy.com).
+ *
+ * WEATHER: Optional latitude/longitude enable a 7-day forecast (snow, temps) via Open-Meteo (free, no key).
  */
 export const RESORTS = [
   {
@@ -26,6 +28,8 @@ export const RESORTS = [
     type: 'image',
     region: 'Colorado',
     provider: 'Brownrice',
+    latitude: 39.6403,
+    longitude: -106.3742,
   },
   {
     id: 'vail-blue-sky',
@@ -34,6 +38,8 @@ export const RESORTS = [
     type: 'image',
     region: 'Colorado',
     provider: 'Brownrice',
+    latitude: 39.6403,
+    longitude: -106.3742,
   },
   {
     id: 'lake-louise-1',
@@ -42,6 +48,8 @@ export const RESORTS = [
     type: 'image',
     region: 'Alberta',
     provider: 'Lake Louise',
+    latitude: 51.4254,
+    longitude: -116.1773,
   },
   {
     id: 'lake-louise-2',
@@ -50,6 +58,8 @@ export const RESORTS = [
     type: 'image',
     region: 'Alberta',
     provider: 'Lake Louise',
+    latitude: 51.4254,
+    longitude: -116.1773,
   },
   {
     id: 'lake-louise-3',
@@ -58,6 +68,8 @@ export const RESORTS = [
     type: 'image',
     region: 'Alberta',
     provider: 'Lake Louise',
+    latitude: 51.4254,
+    longitude: -116.1773,
   },
   {
     id: 'vail-backbowls',
@@ -66,6 +78,8 @@ export const RESORTS = [
     type: 'image',
     region: 'Colorado',
     provider: 'Brownrice',
+    latitude: 39.6403,
+    longitude: -106.3742,
   },
   {
     id: 'beaver-creek-spruce',
@@ -74,6 +88,8 @@ export const RESORTS = [
     type: 'image',
     region: 'Colorado',
     provider: 'Brownrice',
+    latitude: 39.6042,
+    longitude: -106.5165,
   },
   {
     id: 'hunter-main',
@@ -82,6 +98,8 @@ export const RESORTS = [
     type: 'image',
     region: 'New York',
     provider: 'Brownrice',
+    latitude: 42.2026,
+    longitude: -74.2332,
   },
   {
     id: 'sugarbush',
@@ -90,6 +108,8 @@ export const RESORTS = [
     type: 'iframe',
     region: 'Vermont',
     provider: 'YouTube',
+    latitude: 44.1353,
+    longitude: -72.9084,
   },
   {
     id: 'kicking-horse',
@@ -98,6 +118,8 @@ export const RESORTS = [
     type: 'iframe',
     region: 'British Columbia',
     provider: 'YouTube (Kicking Horse)',
+    latitude: 51.2992,
+    longitude: -117.0536,
   },
   {
     id: 'kicking-horse-base-plaza',
@@ -106,6 +128,8 @@ export const RESORTS = [
     type: 'iframe',
     region: 'British Columbia',
     provider: 'YouTube (Kicking Horse)',
+    latitude: 51.2992,
+    longitude: -117.0536,
   },
   {
     id: 'whistler',
@@ -114,6 +138,8 @@ export const RESORTS = [
     type: 'image',
     region: 'British Columbia',
     provider: 'Brownrice',
+    latitude: 50.1163,
+    longitude: -122.9574,
   },
   {
     id: 'whistler-village',
@@ -122,6 +148,8 @@ export const RESORTS = [
     type: 'image',
     region: 'British Columbia',
     provider: 'Brownrice',
+    latitude: 50.1163,
+    longitude: -122.9574,
   },
   {
     id: 'brevent',
@@ -130,6 +158,8 @@ export const RESORTS = [
     type: 'image',
     region: 'France',
     provider: 'Chamonix',
+    latitude: 45.9237,
+    longitude: 6.8694,
   },
   {
     id: 'sugarloaf',
@@ -138,6 +168,8 @@ export const RESORTS = [
     type: 'iframe',
     region: 'Maine',
     provider: 'YouTube',
+    latitude: 45.0317,
+    longitude: -70.3131,
   },
   {
     id: 'jackson-hole-corbets',
@@ -146,6 +178,8 @@ export const RESORTS = [
     type: 'iframe',
     region: 'Wyoming',
     provider: 'YouTube',
+    latitude: 43.5875,
+    longitude: -110.8278,
   },
   {
     id: 'jackson-hole-tram-station',
@@ -154,6 +188,8 @@ export const RESORTS = [
     type: 'image',
     region: 'Wyoming',
     provider: 'Jackson Hole',
+    latitude: 43.5875,
+    longitude: -110.8278,
   },
   {
     id: 'jaypeak',
@@ -162,6 +198,8 @@ export const RESORTS = [
     type: 'image',
     region: 'Vermont',
     provider: 'HDRelay',
+    latitude: 44.937,
+    longitude: -72.5079,
   },
   {
     id: 'whiteface',
@@ -170,6 +208,8 @@ export const RESORTS = [
     type: 'image',
     region: 'New York',
     provider: 'Windy',
+    latitude: 44.3653,
+    longitude: -73.9021,
   },
   {
     id: 'whiteface-legacy-lodge',
@@ -178,6 +218,8 @@ export const RESORTS = [
     type: 'image',
     region: 'New York',
     provider: 'HDRelay',
+    latitude: 44.3653,
+    longitude: -73.9021,
   },
   {
     id: 'okemo',
@@ -186,6 +228,8 @@ export const RESORTS = [
     type: 'image',
     region: 'Vermont',
     provider: 'Brownrice',
+    latitude: 43.4012,
+    longitude: -72.7184,
   },
   {
     id: 'killington',
@@ -194,6 +238,8 @@ export const RESORTS = [
     type: 'image',
     region: 'Vermont',
     provider: 'HDRelay',
+    latitude: 43.6026,
+    longitude: -72.8179,
   },
   {
     id: 'snowbird-hidden-peak',
@@ -202,6 +248,8 @@ export const RESORTS = [
     type: 'iframe',
     region: 'Utah',
     provider: 'Roundshot',
+    latitude: 40.583,
+    longitude: -111.657,
   },
 ];
 

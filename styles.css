@@ -203,6 +203,80 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* 7-day weather forecast (Open-Meteo) */
+.card-forecast {
+  padding: 0.6rem 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.forecast-heading {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.forecast-loading,
+.forecast-error {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.forecast-days {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.forecast-day {
+  display: grid;
+  grid-template-columns: minmax(5.25em, auto) minmax(4.5em, auto) minmax(3em, auto) 1fr;
+  align-items: center;
+  gap: 0.6rem 0.75rem;
+  padding: 0.25rem 0;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.forecast-day.has-snow {
+  color: var(--accent);
+}
+
+.forecast-date {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.forecast-temps {
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.forecast-snow {
+  color: var(--text-muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.forecast-day.has-snow .forecast-snow {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.forecast-condition {
+  color: var(--text-muted);
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.75rem;
+  text-align: right;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .footer {
   padding: 1rem 1.5rem;
   text-align: center;
