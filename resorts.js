@@ -134,7 +134,7 @@ export const RESORTS = [
   {
     id: 'jackson-hole-corbets',
     name: "Jackson Hole — Corbet's Couloir",
-    url: 'https://www.youtube.com/embed/36-DawfIb5s?autoplay=1&mute=1&rel=0',
+    url: 'https://www.youtube.com/embed/9_YBc3YT1Cs?autoplay=1&mute=1&rel=0',
     type: 'iframe',
     region: 'Wyoming',
     provider: 'YouTube',
