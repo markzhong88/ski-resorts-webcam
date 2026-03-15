@@ -93,8 +93,16 @@ export const RESORTS = [
   },
   {
     id: 'kicking-horse',
-    name: 'Kicking Horse — Eagles Eye',
-    url: 'https://www.youtube.com/embed/wbXWHhVljiw?autoplay=1&mute=1&rel=0',
+    name: 'Kicking Horse — Stairway to Heaven',
+    url: 'https://www.youtube.com/embed/lrojpWCz4MA?autoplay=1&mute=1&rel=0',
+    type: 'iframe',
+    region: 'British Columbia',
+    provider: 'YouTube (Kicking Horse)',
+  },
+  {
+    id: 'kicking-horse-base-plaza',
+    name: 'Kicking Horse — Base Plaza',
+    url: 'https://www.youtube.com/embed/GfMZN5C80vA?autoplay=1&mute=1&rel=0',
     type: 'iframe',
     region: 'British Columbia',
     provider: 'YouTube (Kicking Horse)',
