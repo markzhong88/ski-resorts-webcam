@@ -1,13 +1,75 @@
 import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js';
 
 const grid = document.getElementById('webcamGrid');
+const powderBoard = document.getElementById('powderBoard');
+const powderList = document.getElementById('powderList');
 const refreshSelect = document.getElementById('refreshInterval');
 const refreshBtn = document.getElementById('refreshNow');
+const regionFilter = document.getElementById('regionFilter');
+const sortSelect = document.getElementById('sortBy');
+const favoritesOnly = document.getElementById('favoritesOnly');
+const resultCount = document.getElementById('resultCount');
+
+const FAV_KEY = 'ski-webcam-favorites';
+const PREFS_KEY = 'ski-webcam-prefs';
+const OPEN_METEO_BASE = 'https://api.open-meteo.com/v1/forecast';
+const PAST_DAYS = 2;
+const FORECAST_DAYS = 7;
 
 let refreshIntervalId = null;
-let refreshMs = parseInt(refreshSelect.value, 10) || IMAGE_REFRESH_MS;
+let refreshMs = parseInt(refreshSelect?.value, 10) || IMAGE_REFRESH_MS;
 
-const OPEN_METEO_BASE = 'https://api.open-meteo.com/v1/forecast';
+/** @type {Map<string, object>} snow metrics keyed by mountain */
+const snowByMountain = new Map();
+/** @type {Set<string>} */
+let favorites = loadFavorites();
+/** Card elements keyed by resort id — rebuilt on full re-render */
+const cardEls = new Map();
+
+function loadFavorites() {
+  try {
+    const raw = localStorage.getItem(FAV_KEY);
+    const list = raw ? JSON.parse(raw) : [];
+    return new Set(Array.isArray(list) ? list : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function saveFavorites() {
+  localStorage.setItem(FAV_KEY, JSON.stringify([...favorites]));
+}
+
+function loadPrefs() {
+  try {
+    return JSON.parse(localStorage.getItem(PREFS_KEY) || '{}') || {};
+  } catch {
+    return {};
+  }
+}
+
+function savePrefs() {
+  localStorage.setItem(
+    PREFS_KEY,
+    JSON.stringify({
+      region: regionFilter?.value || 'all',
+      sort: sortSelect?.value || 'incoming',
+      favoritesOnly: !!favoritesOnly?.checked,
+      refreshMs,
+    })
+  );
+}
+
+function applyPrefs() {
+  const prefs = loadPrefs();
+  if (regionFilter && prefs.region) regionFilter.value = prefs.region;
+  if (sortSelect && prefs.sort) sortSelect.value = prefs.sort;
+  if (favoritesOnly && prefs.favoritesOnly != null) favoritesOnly.checked = !!prefs.favoritesOnly;
+  if (refreshSelect && prefs.refreshMs) {
+    refreshSelect.value = String(prefs.refreshMs);
+    refreshMs = prefs.refreshMs;
+  }
+}
 
 /** WMO weather code → short label (snow-focused). */
 function weatherLabel(code) {
@@ -49,8 +111,7 @@ function getImageUrl(url) {
 }
 
 function formatTime(ms) {
-  const d = new Date(ms);
-  return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  return new Date(ms).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }
 
 function formatForecastDate(isoDate) {
@@ -65,35 +126,302 @@ function formatForecastDate(isoDate) {
   return d.toLocaleDateString([], { weekday: 'short' });
 }
 
-/** Fetch 7-day forecast from Open-Meteo (free, no API key). */
-async function fetchForecast(latitude, longitude) {
+function escapeHtml(s) {
+  const div = document.createElement('div');
+  div.textContent = s;
+  return div.innerHTML;
+}
+
+function cmToIn(cm) {
+  return cm / 2.54;
+}
+
+function formatSnow(cm) {
+  if (cm == null || cm <= 0) return '0″';
+  const inches = cmToIn(cm);
+  if (inches < 0.5) return '<0.5″';
+  return `${inches.toFixed(inches >= 10 ? 0 : 1)}″`;
+}
+
+function snowBadge(metrics) {
+  if (!metrics) return null;
+  const { snowNext48h = 0, snowLast48h = 0 } = metrics;
+  if (snowNext48h >= 10) return { label: 'Storm incoming', className: 'badge-storm' };
+  if (snowNext48h >= 3) return { label: 'Snow soon', className: 'badge-incoming' };
+  if (snowLast48h >= 10) return { label: 'Fresh dump', className: 'badge-fresh' };
+  if (snowLast48h >= 3) return { label: 'Recent snow', className: 'badge-recent' };
+  return null;
+}
+
+/**
+ * Parse Open-Meteo daily series with past_days into snow metrics.
+ * With past_days=N, indices 0..N-1 are past; index N is today (API local timezone).
+ */
+function parseSnowMetrics(daily) {
+  if (!daily?.time?.length) return null;
+  const todayIdx = Math.min(PAST_DAYS, daily.time.length - 1);
+  const snow = (i) => Number(daily.snowfall_sum?.[i] ?? 0);
+
+  let snowLast48h = 0;
+  for (let i = 0; i < todayIdx; i++) snowLast48h += snow(i);
+
+  // Today + tomorrow (next ~48h including today)
+  let snowNext48h = 0;
+  for (let i = todayIdx; i < Math.min(todayIdx + 2, daily.time.length); i++) {
+    snowNext48h += snow(i);
+  }
+
+  let snowNext7d = 0;
+  for (let i = todayIdx; i < daily.time.length; i++) snowNext7d += snow(i);
+
+  return {
+    daily,
+    todayIdx,
+    snowLast48h,
+    snowNext48h,
+    snowNext7d,
+  };
+}
+
+/** Unique mountain locations for weather batching. */
+function uniqueMountainLocations() {
+  const map = new Map();
+  for (const r of RESORTS) {
+    if (r.latitude == null || r.longitude == null) continue;
+    const key = r.mountain || r.id;
+    if (!map.has(key)) {
+      map.set(key, {
+        mountain: key,
+        region: r.region,
+        latitude: r.latitude,
+        longitude: r.longitude,
+        sampleId: r.id,
+      });
+    }
+  }
+  return [...map.values()];
+}
+
+async function fetchForecastBatch(locations) {
+  if (!locations.length) return [];
+  // Open-Meteo accepts comma-separated coords
   const params = new URLSearchParams({
-    latitude: String(latitude),
-    longitude: String(longitude),
+    latitude: locations.map((l) => l.latitude).join(','),
+    longitude: locations.map((l) => l.longitude).join(','),
     daily: 'temperature_2m_max,temperature_2m_min,snowfall_sum,precipitation_sum,weather_code',
     temperature_unit: 'fahrenheit',
     timezone: 'auto',
-    forecast_days: '7',
+    past_days: String(PAST_DAYS),
+    forecast_days: String(FORECAST_DAYS),
   });
   const res = await fetch(`${OPEN_METEO_BASE}?${params}`);
   if (!res.ok) throw new Error(res.statusText);
-  return res.json();
+  const data = await res.json();
+  // Single location returns object; multi returns array-like fields or array of results
+  if (Array.isArray(data)) return data;
+  if (data.daily) return [data];
+  // Multi-location: open-meteo returns parallel arrays at top level when >1? 
+  // Actually for multiple locations it returns an array of result objects.
+  // Some versions nest under no key — handle both.
+  return Array.isArray(data) ? data : [data];
+}
+
+async function loadAllSnow() {
+  const locations = uniqueMountainLocations();
+  snowByMountain.clear();
+
+  // Batch in chunks of 8 to stay within URL limits
+  const chunkSize = 8;
+  for (let i = 0; i < locations.length; i += chunkSize) {
+    const chunk = locations.slice(i, i + chunkSize);
+    try {
+      const results = await fetchForecastBatch(chunk);
+      chunk.forEach((loc, idx) => {
+        const result = results[idx] ?? results[0];
+        const metrics = parseSnowMetrics(result?.daily);
+        if (metrics) {
+          snowByMountain.set(loc.mountain, {
+            ...metrics,
+            region: loc.region,
+            sampleId: loc.sampleId,
+          });
+        }
+      });
+    } catch (err) {
+      console.warn('Powder radar batch failed', err);
+      // Fallback: fetch one-by-one for this chunk
+      await Promise.all(
+        chunk.map(async (loc) => {
+          try {
+            const params = new URLSearchParams({
+              latitude: String(loc.latitude),
+              longitude: String(loc.longitude),
+              daily:
+                'temperature_2m_max,temperature_2m_min,snowfall_sum,precipitation_sum,weather_code',
+              temperature_unit: 'fahrenheit',
+              timezone: 'auto',
+              past_days: String(PAST_DAYS),
+              forecast_days: String(FORECAST_DAYS),
+            });
+            const res = await fetch(`${OPEN_METEO_BASE}?${params}`);
+            if (!res.ok) return;
+            const data = await res.json();
+            const metrics = parseSnowMetrics(data.daily);
+            if (metrics) {
+              snowByMountain.set(loc.mountain, {
+                ...metrics,
+                region: loc.region,
+                sampleId: loc.sampleId,
+              });
+            }
+          } catch {
+            /* ignore single failure */
+          }
+        })
+      );
+    }
+  }
+}
+
+function getMetrics(resort) {
+  return snowByMountain.get(resort.mountain || resort.id) || null;
+}
+
+function renderPowderBoard() {
+  if (!powderList || !powderBoard) return;
+
+  const ranked = [...snowByMountain.entries()]
+    .map(([mountain, m]) => ({ mountain, ...m }))
+    .sort((a, b) => b.snowNext48h - a.snowNext48h || b.snowLast48h - a.snowLast48h)
+    .slice(0, 6);
+
+  powderList.innerHTML = '';
+
+  if (!ranked.length) {
+    powderList.innerHTML =
+      '<p class="powder-empty">Snow data unavailable right now. Cams still work below.</p>';
+    powderBoard.hidden = false;
+    return;
+  }
+
+  const anySnow = ranked.some((m) => m.snowNext48h > 0 || m.snowLast48h > 0);
+  if (!anySnow) {
+    const note = document.createElement('p');
+    note.className = 'powder-empty';
+    note.textContent =
+      'Quiet across the board in the model right now — ranking still updates when storms fire up.';
+    powderList.appendChild(note);
+  }
+
+  ranked.forEach((item, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'powder-card';
+    btn.dataset.mountain = item.mountain;
+    btn.innerHTML = `
+      <span class="powder-rank">#${i + 1}</span>
+      <span class="powder-name">${escapeHtml(item.mountain)}</span>
+      <span class="powder-region">${escapeHtml(item.region || '')}</span>
+      <span class="powder-stats">
+        <span class="powder-stat" title="Modeled snow next 48 hours">
+          <strong>${formatSnow(item.snowNext48h)}</strong> next 48h
+        </span>
+        <span class="powder-stat muted" title="Modeled snow last 48 hours">
+          ${formatSnow(item.snowLast48h)} last 48h
+        </span>
+      </span>
+    `;
+    btn.addEventListener('click', () => {
+      if (favoritesOnly) favoritesOnly.checked = false;
+      if (sortSelect) sortSelect.value = 'incoming';
+      const first = RESORTS.find((r) => (r.mountain || r.id) === item.mountain);
+      applyFiltersAndSort();
+      if (first) {
+        const el = cardEls.get(first.id);
+        el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el?.classList.add('card-highlight');
+        setTimeout(() => el?.classList.remove('card-highlight'), 1600);
+      }
+      savePrefs();
+    });
+    powderList.appendChild(btn);
+  });
+
+  powderBoard.hidden = false;
+}
+
+function fillForecast(forecastEl, metrics) {
+  const daily = metrics?.daily;
+  if (!daily?.time?.length) {
+    forecastEl.innerHTML = '<div class="forecast-error">No forecast data</div>';
+    return;
+  }
+  const start = metrics.todayIdx ?? PAST_DAYS;
+  forecastEl.innerHTML = '';
+  const heading = document.createElement('div');
+  heading.className = 'forecast-heading';
+  heading.textContent = '7-day forecast';
+  forecastEl.appendChild(heading);
+
+  const summary = document.createElement('div');
+  summary.className = 'forecast-summary';
+  summary.innerHTML = `
+    <span title="Modeled snowfall next 48h">Next 48h: <strong>${formatSnow(metrics.snowNext48h)}</strong></span>
+    <span title="Modeled snowfall last 48h">Last 48h: <strong>${formatSnow(metrics.snowLast48h)}</strong></span>
+  `;
+  forecastEl.appendChild(summary);
+
+  const list = document.createElement('div');
+  list.className = 'forecast-days';
+  for (let i = start; i < daily.time.length; i++) {
+    const snow = daily.snowfall_sum?.[i] ?? 0;
+    const high = daily.temperature_2m_max?.[i];
+    const low = daily.temperature_2m_min?.[i];
+    const code = daily.weather_code?.[i];
+    const row = document.createElement('div');
+    row.className = 'forecast-day';
+    if (snow > 0) row.classList.add('has-snow');
+    row.innerHTML = `
+      <span class="forecast-date">${escapeHtml(formatForecastDate(daily.time[i]))}</span>
+      <span class="forecast-temps">${high != null ? Math.round(high) + '°' : '—'} / ${low != null ? Math.round(low) + '°' : '—'}</span>
+      <span class="forecast-snow" title="Snowfall">${snow > 0 ? formatSnow(snow) : '—'}</span>
+      <span class="forecast-condition">${escapeHtml(weatherLabel(code))}</span>
+    `;
+    list.appendChild(row);
+  }
+  forecastEl.appendChild(list);
 }
 
 function createCard(resort) {
   const card = document.createElement('article');
   card.className = 'card';
   card.dataset.id = resort.id;
+  card.dataset.mountain = resort.mountain || resort.id;
+  card.dataset.region = resort.region || '';
+
+  const isFav = favorites.has(resort.id);
+  const metrics = getMetrics(resort);
+  const badge = snowBadge(metrics);
 
   const header = document.createElement('header');
   header.className = 'card-header';
   header.innerHTML = `
-    <h2 class="card-title">${escapeHtml(resort.name)}</h2>
+    <div class="card-title-row">
+      <h2 class="card-title">${escapeHtml(resort.name)}</h2>
+      <button type="button" class="btn-fav ${isFav ? 'is-fav' : ''}" aria-label="${isFav ? 'Remove from favorites' : 'Add to favorites'}" title="Favorite">★</button>
+    </div>
     <div class="card-meta">
       ${resort.region ? `<span class="card-region">${escapeHtml(resort.region)}</span>` : ''}
+      ${badge ? `<span class="snow-badge ${badge.className}">${escapeHtml(badge.label)}</span>` : ''}
+      ${metrics ? `<span class="snow-chip" title="Modeled snow next 48 hours">${formatSnow(metrics.snowNext48h)} / 48h</span>` : ''}
     </div>
   `;
   card.appendChild(header);
+
+  header.querySelector('.btn-fav')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleFavorite(resort.id);
+  });
 
   const feed = document.createElement('div');
   feed.className = 'card-feed';
@@ -102,9 +430,14 @@ function createCard(resort) {
     const iframe = document.createElement('iframe');
     iframe.src = resort.url;
     iframe.title = resort.name;
-    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    iframe.loading = 'lazy';
+    iframe.setAttribute(
+      'allow',
+      'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+    );
     iframe.allowFullscreen = true;
     feed.appendChild(iframe);
+    card.appendChild(feed);
   } else {
     const img = document.createElement('img');
     img.alt = resort.name;
@@ -120,81 +453,107 @@ function createCard(resort) {
       img.remove();
     };
 
-    img.onload = () => {
-      const updated = card.querySelector('.card-updated');
-      if (updated) updated.textContent = `Updated ${formatTime(Date.now())}`;
-    };
-
-    feed.appendChild(img);
-
     const updated = document.createElement('div');
     updated.className = 'card-updated';
     updated.textContent = 'Loading…';
+
+    img.onload = () => {
+      updated.textContent = `Updated ${formatTime(Date.now())}`;
+    };
+
+    feed.appendChild(img);
     card.appendChild(feed);
     card.appendChild(updated);
   }
 
-  card.appendChild(feed);
-
-  // Weather forecast (if resort has coordinates)
   if (resort.latitude != null && resort.longitude != null) {
     const forecastEl = document.createElement('div');
     forecastEl.className = 'card-forecast';
     forecastEl.setAttribute('aria-label', '7-day weather forecast');
-    forecastEl.innerHTML = '<div class="forecast-loading">Loading forecast…</div>';
+    if (metrics) {
+      fillForecast(forecastEl, metrics);
+    } else {
+      forecastEl.innerHTML = '<div class="forecast-loading">Loading forecast…</div>';
+    }
     card.appendChild(forecastEl);
-
-    fetchForecast(resort.latitude, resort.longitude)
-      .then((data) => {
-        const daily = data.daily;
-        if (!daily || !daily.time || !daily.time.length) {
-          forecastEl.innerHTML = '<div class="forecast-error">No forecast data</div>';
-          return;
-        }
-        forecastEl.innerHTML = '';
-        const heading = document.createElement('div');
-        heading.className = 'forecast-heading';
-        heading.textContent = '7-day forecast';
-        forecastEl.appendChild(heading);
-        const list = document.createElement('div');
-        list.className = 'forecast-days';
-        for (let i = 0; i < daily.time.length; i++) {
-          const snow = daily.snowfall_sum?.[i] ?? 0;
-          const high = daily.temperature_2m_max?.[i];
-          const low = daily.temperature_2m_min?.[i];
-          const code = daily.weather_code?.[i];
-          const row = document.createElement('div');
-          row.className = 'forecast-day';
-          if (snow > 0) row.classList.add('has-snow');
-          row.innerHTML = `
-            <span class="forecast-date">${escapeHtml(formatForecastDate(daily.time[i]))}</span>
-            <span class="forecast-temps">${high != null ? Math.round(high) + '°' : '—'} / ${low != null ? Math.round(low) + '°' : '—'}</span>
-            <span class="forecast-snow" title="Snowfall">${snow > 0 ? snow.toFixed(1) + ' cm' : '—'}</span>
-            <span class="forecast-condition">${escapeHtml(weatherLabel(code))}</span>
-          `;
-          list.appendChild(row);
-        }
-        forecastEl.appendChild(list);
-      })
-      .catch(() => {
-        forecastEl.innerHTML = '<div class="forecast-error">Forecast unavailable</div>';
-      });
   }
 
   return card;
 }
 
-function escapeHtml(s) {
-  const div = document.createElement('div');
-  div.textContent = s;
-  return div.innerHTML;
+function toggleFavorite(id) {
+  if (favorites.has(id)) favorites.delete(id);
+  else favorites.add(id);
+  saveFavorites();
+  applyFiltersAndSort();
 }
 
-function render() {
-  grid.innerHTML = '';
-  RESORTS.forEach((resort) => {
-    grid.appendChild(createCard(resort));
+function filteredSortedResorts() {
+  const region = regionFilter?.value || 'all';
+  const sort = sortSelect?.value || 'incoming';
+  const onlyFav = !!favoritesOnly?.checked;
+
+  let list = RESORTS.filter((r) => {
+    if (region !== 'all' && r.region !== region) return false;
+    if (onlyFav && !favorites.has(r.id)) return false;
+    return true;
   });
+
+  const scoreIncoming = (r) => getMetrics(r)?.snowNext48h ?? -1;
+  const scoreRecent = (r) => getMetrics(r)?.snowLast48h ?? -1;
+
+  list = [...list].sort((a, b) => {
+    // Favorites float to top when not filtering favorites-only
+    const af = favorites.has(a.id) ? 1 : 0;
+    const bf = favorites.has(b.id) ? 1 : 0;
+    if (!onlyFav && af !== bf) return bf - af;
+
+    if (sort === 'incoming') return scoreIncoming(b) - scoreIncoming(a) || a.name.localeCompare(b.name);
+    if (sort === 'recent') return scoreRecent(b) - scoreRecent(a) || a.name.localeCompare(b.name);
+    if (sort === 'name') return a.name.localeCompare(b.name);
+    if (sort === 'region') {
+      return (a.region || '').localeCompare(b.region || '') || a.name.localeCompare(b.name);
+    }
+    return 0; // default order
+  });
+
+  return list;
+}
+
+function applyFiltersAndSort() {
+  const list = filteredSortedResorts();
+  grid.innerHTML = '';
+  cardEls.clear();
+
+  if (!list.length) {
+    grid.innerHTML =
+      '<p class="grid-empty">No cams match these filters. Star a few favorites or pick another region.</p>';
+  } else {
+    list.forEach((resort) => {
+      const card = createCard(resort);
+      cardEls.set(resort.id, card);
+      grid.appendChild(card);
+    });
+  }
+
+  if (resultCount) {
+    const n = list.length;
+    resultCount.textContent = `${n} cam${n === 1 ? '' : 's'}`;
+  }
+}
+
+function populateRegionFilter() {
+  if (!regionFilter) return;
+  const regions = [...new Set(RESORTS.map((r) => r.region).filter(Boolean))].sort();
+  const current = regionFilter.value || 'all';
+  regionFilter.innerHTML = '<option value="all">All regions</option>';
+  regions.forEach((region) => {
+    const opt = document.createElement('option');
+    opt.value = region;
+    opt.textContent = region;
+    regionFilter.appendChild(opt);
+  });
+  regionFilter.value = regions.includes(current) || current === 'all' ? current : 'all';
 }
 
 function refreshAllImages() {
@@ -213,18 +572,57 @@ function startRefreshInterval() {
   refreshIntervalId = setInterval(refreshAllImages, refreshMs);
 }
 
-refreshSelect.addEventListener('change', () => {
-  refreshMs = parseInt(refreshSelect.value, 10);
+function bindControls() {
+  refreshSelect?.addEventListener('change', () => {
+    refreshMs = parseInt(refreshSelect.value, 10);
+    startRefreshInterval();
+    savePrefs();
+  });
+
+  refreshBtn?.addEventListener('click', () => {
+    refreshAllImages();
+  });
+
+  regionFilter?.addEventListener('change', () => {
+    savePrefs();
+    applyFiltersAndSort();
+  });
+
+  sortSelect?.addEventListener('change', () => {
+    savePrefs();
+    applyFiltersAndSort();
+  });
+
+  favoritesOnly?.addEventListener('change', () => {
+    savePrefs();
+    applyFiltersAndSort();
+  });
+}
+
+async function init() {
+  populateRegionFilter();
+  applyPrefs();
+  bindControls();
+
+  // First paint with cams (forecasts fill after snow load)
+  applyFiltersAndSort();
   startRefreshInterval();
-});
 
-refreshBtn.addEventListener('click', () => {
-  refreshAllImages();
-});
+  if (powderList) {
+    powderList.innerHTML = '<p class="powder-loading">Scanning mountains for snow…</p>';
+  }
 
-// Initial render and interval
-render();
-startRefreshInterval();
+  try {
+    await loadAllSnow();
+  } catch (err) {
+    console.warn(err);
+  }
+
+  renderPowderBoard();
+  applyFiltersAndSort(); // re-render with snow badges + forecasts
+}
+
+init();
 
 // Total visits counter (CountAPI — free, no backend)
 const visitEl = document.getElementById('visitCount');

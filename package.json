@@ -1,8 +1,9 @@
 {
   "name": "ski-resorts-webcam",
   "version": "1.0.0",
-  "description": "Aggregate ski resort webcam feeds in one view",
+  "description": "Live ski resort webcams with powder radar snowfall ranking",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "npx --yes serve . -l 3000",
     "dev": "npx --yes serve . -l 3000"

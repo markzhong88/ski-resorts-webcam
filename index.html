@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ski Resort Webcams</title>
+    <meta
+      name="description"
+      content="Live ski resort webcams ranked by who’s getting snow. Powder radar, favorites, and mountain cams in one view."
+    />
+    <title>Ski Resort Webcams — Powder Radar</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛷️</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,10 +28,39 @@
   <body>
     <header class="header">
       <h1 class="title">Ski Resort Webcams</h1>
-      <p class="subtitle">Your favorite mountain cams in one view</p>
-      <div class="header-actions">
-        <label class="refresh-label">
-          <span>Refresh images every</span>
+      <p class="subtitle">North American mountain cams, ranked by who’s getting snow</p>
+
+      <section class="powder-board" id="powderBoard" aria-label="Powder radar">
+        <div class="powder-board-head">
+          <h2 class="powder-title">Powder radar</h2>
+          <p class="powder-note">Modeled snowfall (Open-Meteo) — not official resort reports</p>
+        </div>
+        <div class="powder-list" id="powderList"></div>
+      </section>
+
+      <div class="toolbar">
+        <label class="toolbar-field">
+          <span>Region</span>
+          <select id="regionFilter" aria-label="Filter by region">
+            <option value="all">All regions</option>
+          </select>
+        </label>
+        <label class="toolbar-field">
+          <span>Sort</span>
+          <select id="sortBy" aria-label="Sort cams">
+            <option value="incoming" selected>Most snow next 48h</option>
+            <option value="recent">Most snow last 48h</option>
+            <option value="name">Name</option>
+            <option value="region">Region</option>
+            <option value="default">Default order</option>
+          </select>
+        </label>
+        <label class="toolbar-check">
+          <input type="checkbox" id="favoritesOnly" />
+          <span>Favorites only</span>
+        </label>
+        <label class="toolbar-field refresh-label">
+          <span>Refresh images</span>
           <select id="refreshInterval" aria-label="Refresh interval">
             <option value="60000">1 min</option>
             <option value="120000">2 min</option>
@@ -38,13 +71,17 @@
         <button type="button" id="refreshNow" class="btn-refresh" title="Refresh all image cams now">
           Refresh now
         </button>
+        <span class="result-count" id="resultCount" aria-live="polite"></span>
       </div>
     </header>
 
     <main class="grid" id="webcamGrid"></main>
 
     <footer class="footer">
-      <p>Image cams refresh automatically. Add or edit resorts in <code>resorts.js</code>.</p>
+      <p>
+        Star cams to build your morning checklist. Snow totals are weather-model estimates via
+        <a href="https://open-meteo.com/" rel="noopener noreferrer" target="_blank">Open-Meteo</a>.
+      </p>
       <p class="footer-stats">Total visits: <span id="visitCount" aria-live="polite">—</span></p>
     </footer>
 

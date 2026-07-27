@@ -1,6 +1,13 @@
 # Ski Resort Webcams
 
-A single-page app that shows your favorite ski resort webcam feeds in one grid. No backend required.
+A single-page app that shows ski resort webcam feeds in one grid, with a **powder radar** that ranks mountains by modeled snowfall. No backend required.
+
+**Product features**
+- Live / still cams across North America (Rockies, Tahoe, Utah, PNW, East Coast, Canada)
+- Powder radar: top mountains by next-48h and last-48h snow (Open-Meteo model)
+- Sort by incoming snow, recent snow, name, or region
+- Region filter + starred favorites (saved in your browser)
+- Per-cam 7-day forecast with snow totals
 
 ## Run locally
 
@@ -28,9 +35,11 @@ Edit **`resorts.js`**. Each resort has:
 
 - **`id`** — unique string (e.g. `'vail-bluesky'`)
 - **`name`** — label shown on the card
+- **`mountain`** — mountain name for powder ranking (cams on the same mountain share one snow score)
 - **`url`** — webcam image URL (e.g. `https://.../cam.jpg`) or, for embeds, the iframe page URL
 - **`type`** — `'image'` (refreshed automatically) or `'iframe'` (embedded page)
 - **`region`** — optional (e.g. `'Colorado'`)
+- **`latitude` / `longitude`** — optional; enables forecast + powder radar via Open-Meteo
 
 **Image feeds:** Use a direct image URL (`.jpg`, `.png`, etc.). The page will refresh these on a timer (default 5 minutes; change it in the header dropdown or in `IMAGE_REFRESH_MS` in `resorts.js`).
 
