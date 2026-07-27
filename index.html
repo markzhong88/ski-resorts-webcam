@@ -3,16 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhoGotSnow — Live mountain cams ranked by snow</title>
     <meta
       name="description"
-      content="Live ski resort webcams ranked by who’s getting snow. Powder radar, favorites, and mountain cams in one view."
+      content="WhoGotSnow: live North American ski resort webcams ranked by who’s getting snow. Powder radar, favorites, and mountain cams in one view."
     />
-    <title>Ski Resort Webcams — Powder Radar</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛷️</text></svg>" />
+    <link rel="canonical" href="https://whogotsnow.com/" />
+
+    <!-- Open Graph / social share -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WhoGotSnow" />
+    <meta property="og:url" content="https://whogotsnow.com/" />
+    <meta property="og:title" content="WhoGotSnow — Live mountain cams ranked by snow" />
+    <meta
+      property="og:description"
+      content="Live North American ski cams + powder radar. See who’s getting snow before you leave."
+    />
+    <meta property="og:image" content="https://whogotsnow.com/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="WhoGotSnow — Live mountain cams ranked by snow" />
+    <meta
+      name="twitter:description"
+      content="Live North American ski cams + powder radar. See who’s getting snow before you leave."
+    />
+    <meta name="twitter:image" content="https://whogotsnow.com/og.jpg" />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -27,8 +55,11 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="title">Ski Resort Webcams</h1>
-      <p class="subtitle">North American mountain cams, ranked by who’s getting snow</p>
+      <div class="brand-block">
+        <p class="brand-kicker">North America</p>
+        <h1 class="title">WhoGotSnow</h1>
+        <p class="subtitle">Live mountain cams — ranked by who’s getting snow</p>
+      </div>
 
       <section class="powder-board" id="powderBoard" aria-label="Powder radar">
         <div class="powder-board-head">
@@ -38,49 +69,61 @@
         <div class="powder-list" id="powderList"></div>
       </section>
 
-      <div class="toolbar">
-        <label class="toolbar-field">
-          <span>Region</span>
-          <select id="regionFilter" aria-label="Filter by region">
-            <option value="all">All regions</option>
-          </select>
-        </label>
-        <label class="toolbar-field">
-          <span>Sort</span>
-          <select id="sortBy" aria-label="Sort cams">
-            <option value="incoming" selected>Most snow next 48h</option>
-            <option value="recent">Most snow last 48h</option>
-            <option value="name">Name</option>
-            <option value="region">Region</option>
-            <option value="default">Default order</option>
-          </select>
-        </label>
-        <label class="toolbar-check">
-          <input type="checkbox" id="favoritesOnly" />
-          <span>Favorites only</span>
-        </label>
-        <label class="toolbar-field refresh-label">
-          <span>Refresh images</span>
-          <select id="refreshInterval" aria-label="Refresh interval">
-            <option value="60000">1 min</option>
-            <option value="120000">2 min</option>
-            <option value="300000" selected>5 min</option>
-            <option value="600000">10 min</option>
-          </select>
-        </label>
-        <button type="button" id="refreshNow" class="btn-refresh" title="Refresh all image cams now">
-          Refresh now
-        </button>
-        <span class="result-count" id="resultCount" aria-live="polite"></span>
-      </div>
+      <details class="controls">
+        <summary>Filters &amp; refresh</summary>
+        <div class="toolbar">
+          <label class="toolbar-field">
+            <span>Region</span>
+            <select id="regionFilter" aria-label="Filter by region">
+              <option value="all">All regions</option>
+            </select>
+          </label>
+          <label class="toolbar-field">
+            <span>Sort</span>
+            <select id="sortBy" aria-label="Sort cams">
+              <option value="incoming" selected>Most snow next 48h</option>
+              <option value="recent">Most snow last 48h</option>
+              <option value="name">Name</option>
+              <option value="region">Region</option>
+              <option value="default">Default order</option>
+            </select>
+          </label>
+          <label class="toolbar-check">
+            <input type="checkbox" id="favoritesOnly" />
+            <span>Favorites only</span>
+          </label>
+          <label class="toolbar-field refresh-label">
+            <span>Refresh images</span>
+            <select id="refreshInterval" aria-label="Refresh interval">
+              <option value="60000">1 min</option>
+              <option value="120000">2 min</option>
+              <option value="300000" selected>5 min</option>
+              <option value="600000">10 min</option>
+            </select>
+          </label>
+          <button type="button" id="refreshNow" class="btn-refresh" title="Refresh all image cams now">
+            Refresh now
+          </button>
+          <span class="result-count" id="resultCount" aria-live="polite"></span>
+        </div>
+      </details>
     </header>
 
     <main class="grid" id="webcamGrid"></main>
 
-    <footer class="footer">
+    <footer class="footer" id="about">
+      <p class="footer-brand">WhoGotSnow</p>
       <p>
-        Star cams to build your morning checklist. Snow totals are weather-model estimates via
-        <a href="https://open-meteo.com/" rel="noopener noreferrer" target="_blank">Open-Meteo</a>.
+        A morning checklist for skiers: live North American mountain cams, ranked by modeled
+        snowfall. Star your home mountains and check who’s getting snow before you leave.
+      </p>
+      <p>
+        Snow totals are weather-model estimates via
+        <a href="https://open-meteo.com/" rel="noopener noreferrer" target="_blank">Open-Meteo</a>,
+        not official resort reports. Cams come from public resort feeds.
+      </p>
+      <p class="footer-contact">
+        <button type="button" id="contactEmail" class="btn-contact">Contact</button>
       </p>
       <p class="footer-stats">Total visits: <span id="visitCount" aria-live="polite">—</span></p>
     </footer>

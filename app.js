@@ -296,6 +296,7 @@ function renderPowderBoard() {
     .slice(0, 6);
 
   powderList.innerHTML = '';
+  powderBoard.classList.remove('is-quiet');
 
   if (!ranked.length) {
     powderList.innerHTML =
@@ -306,10 +307,11 @@ function renderPowderBoard() {
 
   const anySnow = ranked.some((m) => m.snowNext48h > 0 || m.snowLast48h > 0);
   if (!anySnow) {
+    powderBoard.classList.add('is-quiet');
     const note = document.createElement('p');
-    note.className = 'powder-empty';
+    note.className = 'powder-season';
     note.textContent =
-      'Quiet across the board in the model right now — ranking still updates when storms fire up.';
+      'Quiet mid-season — the model shows no snow right now. Cams below are still live; ranking lights up when storms return.';
     powderList.appendChild(note);
   }
 
@@ -458,6 +460,7 @@ function createCard(resort) {
     updated.textContent = 'Loading…';
 
     img.onload = () => {
+      img.classList.add('is-loaded');
       updated.textContent = `Updated ${formatTime(Date.now())}`;
     };
 
@@ -597,6 +600,7 @@ function bindControls() {
     savePrefs();
     applyFiltersAndSort();
   });
+
 }
 
 async function init() {
@@ -623,6 +627,16 @@ async function init() {
 }
 
 init();
+
+// Obfuscated contact — assembled only on click (keeps plain email out of HTML)
+const contactBtn = document.getElementById('contactEmail');
+contactBtn?.addEventListener('click', () => {
+  const user = ['mark', 'zhong'].join('.');
+  const host = ['greenlake', 'co'].join('.');
+  const addr = `${user}@${host}`;
+  const subject = encodeURIComponent('WhoGotSnow');
+  window.location.href = `mailto:${addr}?subject=${subject}`;
+});
 
 // Public visit counter (CountAPI.xyz is dead — using CounterAPI.dev)
 const visitEl = document.getElementById('visitCount');

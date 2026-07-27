@@ -1,21 +1,24 @@
-/* Ski resort webcam aggregator — clean, readable, mountain vibe */
+/* WhoGotSnow — live mountain cams + powder radar */
 
 :root {
-  --bg: #0f1419;
-  --bg-elevated: #141b22;
-  --bg-card: #1a222c;
-  --bg-card-hover: #232d3a;
-  --border: #2d3a47;
-  --text: #e6edf3;
+  --bg: #0b1016;
+  --bg-elevated: #121925;
+  --bg-card: #161e2a;
+  --bg-card-hover: #1c2634;
+  --border: #2a3646;
+  --text: #e8eef5;
   --text-muted: #8b9cad;
-  --accent: #58a6ff;
-  --accent-soft: rgba(88, 166, 255, 0.15);
-  --snow: #f0f6fc;
-  --powder: #7dd3fc;
-  --storm: #38bdf8;
+  --accent: #6eb6ff;
+  --accent-soft: rgba(110, 182, 255, 0.14);
+  --snow: #f4f8fc;
+  --powder: #9fd6ff;
+  --storm: #4db8ff;
   --fresh: #86efac;
-  --radius: 12px;
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --radius: 14px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-ui: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 *,
@@ -24,13 +27,18 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-ui);
   background:
-    radial-gradient(ellipse 120% 60% at 50% -10%, rgba(56, 189, 248, 0.12), transparent 55%),
-    var(--bg);
+    radial-gradient(ellipse 90% 50% at 50% -8%, rgba(77, 184, 255, 0.16), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(255, 255, 255, 0.04), transparent 45%),
+    linear-gradient(180deg, #0e1520 0%, var(--bg) 40%, #090d12 100%);
   color: var(--text);
   line-height: 1.5;
 }
@@ -40,34 +48,88 @@ a {
 }
 
 .header {
-  padding: 1.5rem 1.5rem 1rem;
+  padding: 2rem 1.5rem 1.25rem;
   text-align: center;
   border-bottom: 1px solid var(--border);
 }
 
+.brand-block {
+  max-width: 720px;
+  margin: 0 auto 1.75rem;
+  animation: rise-in 0.7s ease both;
+}
+
+.brand-kicker {
+  margin: 0 0 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--powder);
+}
+
 .title {
   margin: 0;
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 8vw, 4.2rem);
+  font-weight: 400;
   letter-spacing: -0.02em;
+  line-height: 1.05;
   color: var(--snow);
 }
 
 .subtitle {
-  margin: 0.35rem 0 1.25rem;
-  font-size: 0.95rem;
+  margin: 0.7rem auto 1.15rem;
+  max-width: 28rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
+}
+
+.btn-refresh {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.btn-contact {
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.btn-contact:hover {
+  color: var(--powder);
+}
+
+.footer-contact {
+  margin: 1rem 0 0;
 }
 
 /* —— Powder radar —— */
 .powder-board {
   max-width: 1100px;
   margin: 0 auto 1.25rem;
-  padding: 1rem;
-  background: var(--bg-elevated);
+  padding: 1.1rem;
+  background: rgba(18, 25, 37, 0.85);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   text-align: left;
+  backdrop-filter: blur(8px);
+  animation: rise-in 0.8s ease 0.08s both;
+}
+
+.powder-board.is-quiet {
+  border-color: rgba(159, 214, 255, 0.2);
 }
 
 .powder-board-head {
@@ -104,8 +166,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
-  padding: 0.7rem 0.75rem;
-  background: rgba(88, 166, 255, 0.06);
+  padding: 0.75rem 0.8rem;
+  background: rgba(110, 182, 255, 0.05);
   border: 1px solid var(--border);
   border-radius: 10px;
   color: inherit;
@@ -113,16 +175,24 @@ a {
   text-align: left;
   cursor: pointer;
   transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  animation: rise-in 0.55s ease both;
 }
 
+.powder-card:nth-child(1) { animation-delay: 0.05s; }
+.powder-card:nth-child(2) { animation-delay: 0.1s; }
+.powder-card:nth-child(3) { animation-delay: 0.15s; }
+.powder-card:nth-child(4) { animation-delay: 0.2s; }
+.powder-card:nth-child(5) { animation-delay: 0.25s; }
+.powder-card:nth-child(6) { animation-delay: 0.3s; }
+
 .powder-card:hover {
-  border-color: rgba(125, 211, 252, 0.45);
-  background: rgba(88, 166, 255, 0.12);
-  transform: translateY(-1px);
+  border-color: rgba(159, 214, 255, 0.45);
+  background: rgba(110, 182, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 .powder-rank {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--powder);
 }
@@ -150,7 +220,7 @@ a {
 
 .powder-stat strong {
   color: var(--storm);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
 }
 
 .powder-stat.muted {
@@ -161,18 +231,73 @@ a {
 .powder-empty {
   margin: 0;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
 }
 
-/* —— Toolbar —— */
+.powder-season {
+  grid-column: 1 / -1;
+  margin: 0 0 0.35rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background: rgba(159, 214, 255, 0.08);
+  border: 1px solid rgba(159, 214, 255, 0.2);
+  color: var(--powder);
+  font-size: 0.9rem;
+}
+
+/* —— Controls (collapsed by default) —— */
+.controls {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+  animation: rise-in 0.75s ease 0.12s both;
+}
+
+.controls summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.35rem 0.15rem;
+  user-select: none;
+}
+
+.controls summary::-webkit-details-marker {
+  display: none;
+}
+
+.controls summary::before {
+  content: '+';
+  font-family: var(--font-mono);
+  color: var(--powder);
+}
+
+.controls[open] summary::before {
+  content: '–';
+}
+
+.controls summary:hover {
+  color: var(--text);
+}
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: center;
   gap: 0.75rem 1rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  margin-top: 0.85rem;
+  padding: 1rem;
+  background: rgba(18, 25, 37, 0.7);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 .toolbar-field {
@@ -189,7 +314,7 @@ a {
 .toolbar-field select,
 .refresh-label select {
   font: inherit;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.8rem;
   text-transform: none;
   letter-spacing: 0;
@@ -228,16 +353,10 @@ a {
 }
 
 .btn-refresh {
-  font: inherit;
-  padding: 0.45rem 0.9rem;
-  margin-bottom: 0.05rem;
   background: var(--accent-soft);
   border: 1px solid var(--accent);
-  border-radius: 8px;
   color: var(--accent);
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.15s, color 0.15s;
+  margin-bottom: 0.05rem;
 }
 
 .btn-refresh:hover {
@@ -246,7 +365,7 @@ a {
 }
 
 .result-count {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-muted);
   padding-bottom: 0.4rem;
@@ -274,17 +393,18 @@ a {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s;
+  animation: rise-in 0.55s ease both;
 }
 
 .card:hover {
-  border-color: rgba(88, 166, 255, 0.35);
+  border-color: rgba(110, 182, 255, 0.35);
   background: var(--bg-card-hover);
 }
 
 .card-highlight {
   border-color: var(--powder) !important;
-  box-shadow: 0 0 0 2px rgba(125, 211, 252, 0.35);
+  box-shadow: 0 0 0 2px rgba(159, 214, 255, 0.35);
 }
 
 .card-header {
@@ -321,12 +441,13 @@ a {
   cursor: pointer;
   font-size: 0.95rem;
   line-height: 1;
-  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  transition: color 0.15s, border-color 0.15s, background 0.15s, transform 0.15s;
 }
 
 .btn-fav:hover {
   color: #fbbf24;
   border-color: rgba(251, 191, 36, 0.45);
+  transform: scale(1.06);
 }
 
 .btn-fav.is-fav {
@@ -367,8 +488,8 @@ a {
 
 .badge-incoming {
   color: var(--powder);
-  background: rgba(125, 211, 252, 0.12);
-  border-color: rgba(125, 211, 252, 0.35);
+  background: rgba(159, 214, 255, 0.12);
+  border-color: rgba(159, 214, 255, 0.35);
 }
 
 .badge-fresh {
@@ -384,7 +505,7 @@ a {
 }
 
 .snow-chip {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--accent);
   padding: 0.1rem 0.4rem;
@@ -409,6 +530,12 @@ a {
 
 .card-feed img {
   background: #111;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.card-feed img.is-loaded {
+  opacity: 1;
 }
 
 .card-feed .placeholder {
@@ -431,10 +558,9 @@ a {
   padding: 0.35rem 1rem;
   font-size: 0.7rem;
   color: var(--text-muted);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
 }
 
-/* 7-day weather forecast (Open-Meteo) */
 .card-forecast {
   padding: 0.6rem 1rem;
   border-top: 1px solid var(--border);
@@ -462,7 +588,7 @@ a {
 
 .forecast-summary strong {
   color: var(--accent);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
 }
 
 .forecast-loading,
@@ -483,7 +609,7 @@ a {
   align-items: center;
   gap: 0.6rem 0.75rem;
   padding: 0.25rem 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
 }
 
 .forecast-day.has-snow {
@@ -513,7 +639,7 @@ a {
 
 .forecast-condition {
   color: var(--text-muted);
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 0.75rem;
   text-align: right;
   min-width: 0;
@@ -523,15 +649,24 @@ a {
 }
 
 .footer {
-  padding: 1rem 1.5rem 1.5rem;
+  padding: 2rem 1.5rem 2.5rem;
   text-align: center;
   border-top: 1px solid var(--border);
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--snow);
 }
 
 .footer-stats {
-  margin: 0.5rem 0 0;
+  margin: 1rem 0 0;
   font-size: 0.85rem;
 }
 
@@ -540,7 +675,35 @@ a {
   color: var(--text);
 }
 
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .card-feed img {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 640px) {
+  .header {
+    padding: 1.5rem 1rem 1rem;
+  }
+
   .grid {
     padding: 0.75rem;
     gap: 1rem;
@@ -561,7 +724,7 @@ a {
   }
 
   .powder-board {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
   }
 }
