@@ -624,13 +624,15 @@ async function init() {
 
 init();
 
-// Total visits counter (CountAPI — free, no backend)
+// Public visit counter (CountAPI.xyz is dead — using CounterAPI.dev)
 const visitEl = document.getElementById('visitCount');
 if (visitEl) {
-  fetch('https://api.countapi.xyz/hit/ski-resorts-webcam/visits')
+  fetch('https://api.counterapi.dev/v1/ski-resorts-webcam/visits/up')
     .then((r) => r.json())
     .then((data) => {
-      if (data.value != null) visitEl.textContent = data.value.toLocaleString();
+      if (data.count != null) visitEl.textContent = Number(data.count).toLocaleString();
     })
-    .catch(() => {});
+    .catch(() => {
+      visitEl.textContent = '—';
+    });
 }
