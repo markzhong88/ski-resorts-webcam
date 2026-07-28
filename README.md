@@ -37,7 +37,7 @@ After adding or renaming mountains in `resorts.js`, regenerate crawlable SEO fil
 npm run generate-seo
 ```
 
-This updates `robots.txt`, `sitemap.xml`, `llms.txt`, `site.webmanifest`, per-mountain pages under `mountains/`, and the homepage directory + JSON-LD blocks.
+This updates `robots.txt`, `sitemap.xml`, `llms.txt`, `site.webmanifest`, per-mountain pages under `mountains/`, `directory.html`, `faq.html`, and the homepage JSON-LD block.
 
 ## Adding or editing resorts
 

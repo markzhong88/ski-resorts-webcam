@@ -7,8 +7,10 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 ## Site
 
 - Homepage: https://whogotsnow.com/
+- Mountain directory: https://whogotsnow.com/directory.html
+- FAQ: https://whogotsnow.com/faq.html
 - Sitemap: https://whogotsnow.com/sitemap.xml
-- Contact: use the Contact button on the site (email obfuscated in the UI)
+- Contact: use the Contact button on the homepage (email obfuscated in the UI)
 
 ## What it does
 

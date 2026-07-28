@@ -1,7 +1,7 @@
 /**
  * Generates SEO artifacts from resorts.js:
  * robots.txt, sitemap.xml, llms.txt, site.webmanifest, mountain pages,
- * and injects crawlable directory + JSON-LD into index.html.
+ * directory.html, faq.html, and injects JSON-LD into index.html.
  *
  * Run: npm run generate-seo
  */
@@ -81,6 +81,8 @@ Sitemap: ${SITE}/sitemap.xml
 async function writeSitemap() {
   const urls = [
     { loc: `${SITE}/`, priority: '1.0', changefreq: 'hourly' },
+    { loc: `${SITE}/directory.html`, priority: '0.9', changefreq: 'daily' },
+    { loc: `${SITE}/faq.html`, priority: '0.6', changefreq: 'monthly' },
     ...mountains.map((m) => ({
       loc: `${SITE}/mountains/${m.slug}.html`,
       priority: '0.8',
@@ -122,8 +124,10 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 ## Site
 
 - Homepage: ${SITE}/
+- Mountain directory: ${SITE}/directory.html
+- FAQ: ${SITE}/faq.html
 - Sitemap: ${SITE}/sitemap.xml
-- Contact: use the Contact button on the site (email obfuscated in the UI)
+- Contact: use the Contact button on the homepage (email obfuscated in the UI)
 
 ## What it does
 
@@ -282,11 +286,15 @@ ${camBlocks}
         Snow rankings on the homepage use Open-Meteo model estimates, not official
         ${escapeHtml(m.mountain)} snow reports. Cam feeds are public resort or provider streams.
       </p>
-      <p><a href="/#directory">Browse all mountains</a> · <a href="/">Back to WhoGotSnow</a></p>
+      <p><a href="/directory.html">Browse all mountains</a> · <a href="/">Back to WhoGotSnow</a></p>
     </section>
     <footer class="footer">
-      <p class="footer-brand">WhoGotSnow</p>
-      <p>Live North American mountain cams, ranked by modeled snowfall.</p>
+      <p class="footer-brand"><a href="/">WhoGotSnow</a></p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="/directory.html">Mountains</a>
+        <a href="/faq.html">FAQ</a>
+      </nav>
     </footer>
   </body>
 </html>
@@ -302,7 +310,62 @@ async function writeMountainPages() {
   }
 }
 
-function buildDirectoryHtml() {
+function pageChrome({ title, description, canonicalPath, jsonLd, bodyClass, bodyHtml }) {
+  const jsonLdBlock = jsonLd
+    ? `    <script type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n    </script>`
+    : '';
+  return `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${escapeHtml(title)}</title>
+    <meta name="description" content="${escapeHtml(description)}" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="${SITE}${canonicalPath}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WhoGotSnow" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="${SITE}${canonicalPath}" />
+    <meta property="og:title" content="${escapeHtml(title)}" />
+    <meta property="og:description" content="${escapeHtml(description)}" />
+    <meta property="og:image" content="${SITE}/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="WhoGotSnow — live mountain cams ranked by snow" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${escapeHtml(title)}" />
+    <meta name="twitter:description" content="${escapeHtml(description)}" />
+    <meta name="twitter:image" content="${SITE}/og.jpg" />
+    <meta name="twitter:image:alt" content="WhoGotSnow — live mountain cams ranked by snow" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0b1016" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+${jsonLdBlock}
+  </head>
+  <body class="${bodyClass}">
+${bodyHtml}
+    <footer class="footer">
+      <p class="footer-brand"><a href="/">WhoGotSnow</a></p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="/directory.html">Mountains</a>
+        <a href="/faq.html">FAQ</a>
+      </nav>
+    </footer>
+  </body>
+</html>
+`;
+}
+
+function buildDirectoryInnerHtml() {
   const regionBlocks = regions
     .map(([region, list]) => {
       const items = list
@@ -320,52 +383,23 @@ ${items}
     })
     .join('\n');
 
-  return `    <section class="seo-directory" id="directory" aria-labelledby="directory-heading">
-      <h2 id="directory-heading">Mountain webcam directory</h2>
-      <p class="seo-directory-lead">
+  return `    <header class="header static-header">
+      <p class="brand-kicker"><a href="/">WhoGotSnow</a></p>
+      <h1 class="title">Mountain webcam directory</h1>
+      <p class="subtitle">
         ${mountains.length} mountains · ${RESORTS.length} cams across ${regionNames.length} regions —
-        open a mountain for dedicated live feeds, or stay on the homepage for powder-ranked cams.
+        open a mountain for dedicated feeds, or return to the <a href="/">powder radar</a>.
       </p>
+    </header>
+    <main class="seo-directory static-main" id="directory">
       <div class="dir-grid">
 ${regionBlocks}
       </div>
-    </section>`;
+    </main>`;
 }
 
-function buildHomeJsonLd() {
-  const website = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'WhoGotSnow',
-    url: `${SITE}/`,
-    description:
-      'Live North American ski resort webcams ranked by modeled snowfall. Powder radar for major mountains.',
-    inLanguage: 'en-US',
-    publisher: {
-      '@type': 'Organization',
-      name: 'WhoGotSnow',
-      url: `${SITE}/`,
-      logo: `${SITE}/icon.png`,
-    },
-  };
-
-  const app = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'WhoGotSnow',
-    url: `${SITE}/`,
-    applicationCategory: 'SportsApplication',
-    operatingSystem: 'Any',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
-    description:
-      'Free web app showing live ski resort webcams ranked by Open-Meteo modeled snowfall across North America.',
-  };
-
-  const itemList = {
+function directoryJsonLd() {
+  return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'WhoGotSnow mountain webcams',
@@ -384,8 +418,52 @@ function buildHomeJsonLd() {
       },
     })),
   };
+}
 
-  const faq = {
+function faqInnerHtml() {
+  return `    <header class="header static-header">
+      <p class="brand-kicker"><a href="/">WhoGotSnow</a></p>
+      <h1 class="title">FAQ</h1>
+      <p class="subtitle">Quick answers about cams, snow totals, and coverage.</p>
+    </header>
+    <main class="faq static-main" id="faq">
+      <details>
+        <summary>What is WhoGotSnow?</summary>
+        <p>
+          WhoGotSnow is a free morning checklist for skiers: live North American mountain webcams in
+          one grid, ranked by modeled snowfall so you can see who’s getting snow before you leave.
+        </p>
+      </details>
+      <details>
+        <summary>Are the snow totals official resort reports?</summary>
+        <p>
+          No. Totals come from the
+          <a href="https://open-meteo.com/" rel="noopener noreferrer" target="_blank">Open-Meteo</a>
+          weather model — useful for comparing mountains, not a substitute for official resort reports
+          or avalanche advisories.
+        </p>
+      </details>
+      <details>
+        <summary>Which resorts are covered?</summary>
+        <p>
+          Cams span Colorado, California, Utah, Wyoming, Montana, Washington, Vermont, New York,
+          Maine, Alberta, British Columbia, and more — including Vail, Whistler Blackcomb, Banff,
+          Killington, Jackson Hole, and others. See the
+          <a href="/directory.html">mountain directory</a> for the full list.
+        </p>
+      </details>
+      <details>
+        <summary>How often do cams refresh?</summary>
+        <p>
+          Still-image cams refresh on a timer (default 5 minutes; change it under Filters &amp;
+          refresh). Embedded live cams update according to the resort provider.
+        </p>
+      </details>
+    </main>`;
+}
+
+function faqJsonLd() {
+  return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
@@ -423,8 +501,67 @@ function buildHomeJsonLd() {
       },
     ],
   };
+}
 
-  return [website, app, itemList, faq]
+async function writeDirectoryPage() {
+  const html = pageChrome({
+    title: 'Mountain Webcam Directory | WhoGotSnow',
+    description: `Browse ${mountains.length} North American ski resort webcam pages on WhoGotSnow — live cams ranked with modeled snowfall.`,
+    canonicalPath: '/directory.html',
+    jsonLd: directoryJsonLd(),
+    bodyClass: 'static-page',
+    bodyHtml: buildDirectoryInnerHtml(),
+  });
+  await writeFile(path.join(ROOT, 'directory.html'), html);
+}
+
+async function writeFaqPage() {
+  const html = pageChrome({
+    title: 'FAQ | WhoGotSnow',
+    description:
+      'FAQ for WhoGotSnow: live ski cams, Open-Meteo snow totals, resort coverage, and how often webcams refresh.',
+    canonicalPath: '/faq.html',
+    jsonLd: faqJsonLd(),
+    bodyClass: 'static-page',
+    bodyHtml: faqInnerHtml(),
+  });
+  await writeFile(path.join(ROOT, 'faq.html'), html);
+}
+
+function buildHomeJsonLd() {
+  const website = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'WhoGotSnow',
+    url: `${SITE}/`,
+    description:
+      'Live North American ski resort webcams ranked by modeled snowfall. Powder radar for major mountains.',
+    inLanguage: 'en-US',
+    publisher: {
+      '@type': 'Organization',
+      name: 'WhoGotSnow',
+      url: `${SITE}/`,
+      logo: `${SITE}/icon.png`,
+    },
+  };
+
+  const app = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'WhoGotSnow',
+    url: `${SITE}/`,
+    applicationCategory: 'SportsApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    description:
+      'Free web app showing live ski resort webcams ranked by Open-Meteo modeled snowfall across North America.',
+  };
+
+  return [website, app]
     .map((obj) => `    <script type="application/ld+json">\n${JSON.stringify(obj, null, 6)}\n    </script>`)
     .join('\n');
 }
@@ -433,23 +570,20 @@ async function injectIndexHtml() {
   const indexPath = path.join(ROOT, 'index.html');
   let html = await readFile(indexPath, 'utf8');
 
-  const replacements = [
-    [
-      /<!-- SEO_JSONLD_START -->[\s\S]*?<!-- SEO_JSONLD_END -->/,
-      `<!-- SEO_JSONLD_START -->\n${buildHomeJsonLd()}\n    <!-- SEO_JSONLD_END -->`,
-    ],
-    [
-      /<!-- SEO_DIRECTORY_START -->[\s\S]*?<!-- SEO_DIRECTORY_END -->/,
-      `<!-- SEO_DIRECTORY_START -->\n${buildDirectoryHtml()}\n    <!-- SEO_DIRECTORY_END -->`,
-    ],
-  ];
-
-  for (const [re, replacement] of replacements) {
-    if (!re.test(html)) {
-      throw new Error(`Missing marker in index.html for ${re}`);
-    }
-    html = html.replace(re, replacement);
+  const jsonLdRe = /<!-- SEO_JSONLD_START -->[\s\S]*?<!-- SEO_JSONLD_END -->/;
+  if (!jsonLdRe.test(html)) {
+    throw new Error('Missing SEO_JSONLD markers in index.html');
   }
+  html = html.replace(
+    jsonLdRe,
+    `<!-- SEO_JSONLD_START -->\n${buildHomeJsonLd()}\n    <!-- SEO_JSONLD_END -->`
+  );
+
+  // Remove legacy homepage directory block if still present
+  html = html.replace(
+    /\s*<!-- SEO_DIRECTORY_START -->[\s\S]*?<!-- SEO_DIRECTORY_END -->\s*/,
+    '\n\n    '
+  );
 
   await writeFile(indexPath, html);
 }
@@ -460,9 +594,11 @@ async function main() {
   await writeLlmsTxt();
   await writeManifest();
   await writeMountainPages();
+  await writeDirectoryPage();
+  await writeFaqPage();
   await injectIndexHtml();
   console.log(
-    `SEO generated: ${mountains.length} mountain pages, sitemap, robots.txt, llms.txt, manifest, index injections.`
+    `SEO generated: ${mountains.length} mountain pages, directory, FAQ, sitemap, robots.txt, llms.txt, manifest, index JSON-LD.`
   );
 }
 
