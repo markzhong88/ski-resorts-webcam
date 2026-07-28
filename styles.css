@@ -516,7 +516,22 @@ a {
 .card-feed {
   position: relative;
   aspect-ratio: 16 / 10;
-  background: #0d1117;
+  background:
+    linear-gradient(120deg, #121925 25%, #1a2433 40%, #121925 55%);
+  background-size: 200% 100%;
+}
+
+.card-feed.is-loading {
+  animation: feed-shimmer 1.2s ease-in-out infinite;
+}
+
+.card-feed .feed-loading {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card-feed:not(.is-loading) .feed-loading {
+  display: none;
 }
 
 .card-feed.has-iframe {
@@ -731,6 +746,15 @@ a {
   }
 }
 
+@keyframes feed-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -741,6 +765,10 @@ a {
 
   .card-feed img {
     opacity: 1;
+  }
+
+  .card-feed.is-loading {
+    animation: none !important;
   }
 }
 

@@ -26,6 +26,47 @@ let favorites = loadFavorites();
 /** Card elements keyed by resort id — rebuilt on full re-render */
 const cardEls = new Map();
 
+/** Only load iframe cams near the viewport (don't start all 20 Roundshots at once). */
+let iframeObserver = null;
+
+function ensureIframeObserver() {
+  if (iframeObserver) return iframeObserver;
+  iframeObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const feed = entry.target;
+        const iframe = feed.querySelector('iframe');
+        const src = feed.dataset.iframeSrc;
+        if (!iframe || !src) continue;
+        if (iframe.src && iframe.src !== 'about:blank') continue;
+
+        feed.classList.add('is-loading');
+        iframe.src = src;
+        iframe.addEventListener(
+          'load',
+          () => {
+            feed.classList.remove('is-loading');
+            iframeObserver?.unobserve(feed);
+          },
+          { once: true }
+        );
+      }
+    },
+    { rootMargin: '320px 0px', threshold: 0 }
+  );
+  return iframeObserver;
+}
+
+function observeIframeFeed(feed) {
+  ensureIframeObserver().observe(feed);
+}
+
+function disconnectIframeObserver() {
+  iframeObserver?.disconnect();
+  iframeObserver = null;
+}
+
 function loadFavorites() {
   try {
     const raw = localStorage.getItem(FAV_KEY);
@@ -430,9 +471,8 @@ function createCard(resort) {
 
   if (resort.type === 'iframe') {
     const iframe = document.createElement('iframe');
-    iframe.src = resort.url;
+    // src set by IntersectionObserver when near viewport
     iframe.title = resort.name;
-    iframe.loading = 'lazy';
     iframe.tabIndex = -1;
     iframe.setAttribute(
       'allow',
@@ -440,12 +480,16 @@ function createCard(resort) {
     );
     iframe.allowFullscreen = true;
 
-    // Click-to-interact: wheel over embeds (Roundshot zoom) won't steal page scroll
-    feed.classList.add('has-iframe');
+    feed.classList.add('has-iframe', 'is-loading');
+    feed.dataset.iframeSrc = resort.url;
     const hint = document.createElement('div');
     hint.className = 'iframe-hint';
     hint.textContent = 'Click to interact';
+    const loading = document.createElement('div');
+    loading.className = 'placeholder feed-loading';
+    loading.textContent = 'Cam loads when scrolled into view';
     feed.appendChild(iframe);
+    feed.appendChild(loading);
     feed.appendChild(hint);
     feed.addEventListener('click', () => {
       document.querySelectorAll('.card-feed.is-interactive').forEach((el) => {
@@ -454,14 +498,19 @@ function createCard(resort) {
       feed.classList.add('is-interactive');
     });
     card.appendChild(feed);
+    observeIframeFeed(feed);
   } else {
     const img = document.createElement('img');
     img.alt = resort.name;
     img.loading = 'lazy';
+    img.decoding = 'async';
     img.src = getImageUrl(resort.url);
     img.dataset.originalUrl = resort.url;
 
+    feed.classList.add('is-loading');
+
     img.onerror = () => {
+      feed.classList.remove('is-loading');
       const placeholder = document.createElement('div');
       placeholder.className = 'placeholder error';
       placeholder.textContent = 'Webcam unavailable';
@@ -475,6 +524,7 @@ function createCard(resort) {
 
     img.onload = () => {
       img.classList.add('is-loaded');
+      feed.classList.remove('is-loading');
       updated.textContent = `Updated ${formatTime(Date.now())}`;
     };
 
@@ -538,6 +588,7 @@ function filteredSortedResorts() {
 }
 
 function applyFiltersAndSort() {
+  disconnectIframeObserver();
   const list = filteredSortedResorts();
   grid.innerHTML = '';
   cardEls.clear();
@@ -559,6 +610,37 @@ function applyFiltersAndSort() {
   }
 }
 
+/** Update badges + forecasts without remounting cams (avoids blackout on snow load). */
+function updateCardsSnowInPlace() {
+  for (const resort of RESORTS) {
+    const card = cardEls.get(resort.id);
+    if (!card) continue;
+
+    const metrics = getMetrics(resort);
+    const badge = snowBadge(metrics);
+    const meta = card.querySelector('.card-meta');
+    if (meta) {
+      meta.innerHTML = `
+        ${resort.region ? `<span class="card-region">${escapeHtml(resort.region)}</span>` : ''}
+        ${badge ? `<span class="snow-badge ${badge.className}">${escapeHtml(badge.label)}</span>` : ''}
+        ${metrics ? `<span class="snow-chip" title="Modeled snow next 48 hours">${formatSnow(metrics.snowNext48h)} / 48h</span>` : ''}
+      `;
+    }
+
+    let forecastEl = card.querySelector('.card-forecast');
+    if (resort.latitude != null && resort.longitude != null) {
+      if (!forecastEl) {
+        forecastEl = document.createElement('div');
+        forecastEl.className = 'card-forecast';
+        forecastEl.setAttribute('aria-label', '7-day weather forecast');
+        card.appendChild(forecastEl);
+      }
+      if (metrics) fillForecast(forecastEl, metrics);
+      else forecastEl.innerHTML = '<div class="forecast-loading">Loading forecast…</div>';
+    }
+  }
+}
+
 function populateRegionFilter() {
   if (!regionFilter) return;
   const regions = [...new Set(RESORTS.map((r) => r.region).filter(Boolean))].sort();
@@ -574,13 +656,19 @@ function populateRegionFilter() {
 }
 
 function refreshAllImages() {
+  // Soft swap: keep current frame visible until the new snapshot loads
   grid.querySelectorAll('.card-feed img').forEach((img) => {
-    if (img.dataset.originalUrl) {
-      img.src = getImageUrl(img.dataset.originalUrl);
-    }
-  });
-  grid.querySelectorAll('.card-updated').forEach((el) => {
-    el.textContent = `Refreshed ${formatTime(Date.now())}`;
+    if (!img.dataset.originalUrl) return;
+    const nextUrl = getImageUrl(img.dataset.originalUrl);
+    const pre = new Image();
+    pre.decoding = 'async';
+    pre.onload = () => {
+      img.src = nextUrl;
+      img.classList.add('is-loaded');
+      const updated = img.closest('.card')?.querySelector('.card-updated');
+      if (updated) updated.textContent = `Updated ${formatTime(Date.now())}`;
+    };
+    pre.src = nextUrl;
   });
 }
 
@@ -645,7 +733,7 @@ async function init() {
   }
 
   renderPowderBoard();
-  applyFiltersAndSort(); // re-render with snow badges + forecasts
+  updateCardsSnowInPlace();
 }
 
 init();
