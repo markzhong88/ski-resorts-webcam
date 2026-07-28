@@ -29,6 +29,16 @@ python3 -m http.server 3000
 
 (ES modules are used, so opening `index.html` directly via `file://` may not work; use a local server.)
 
+## SEO pages
+
+After adding or renaming mountains in `resorts.js`, regenerate crawlable SEO files:
+
+```bash
+npm run generate-seo
+```
+
+This updates `robots.txt`, `sitemap.xml`, `llms.txt`, `site.webmanifest`, per-mountain pages under `mountains/`, and the homepage directory + JSON-LD blocks.
+
 ## Adding or editing resorts
 
 Edit **`resorts.js`**. Each resort has:

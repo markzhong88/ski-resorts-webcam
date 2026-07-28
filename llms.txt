@@ -1,0 +1,109 @@
+# WhoGotSnow
+
+> Live North American ski resort webcams ranked by modeled snowfall. See who's getting snow before you leave.
+
+WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mountain webcam feeds and ranks mountains by Open-Meteo weather-model snowfall (not official resort snow reports).
+
+## Site
+
+- Homepage: https://whogotsnow.com/
+- Sitemap: https://whogotsnow.com/sitemap.xml
+- Contact: use the Contact button on the site (email obfuscated in the UI)
+
+## What it does
+
+- Shows 82 live/still webcams across 39 mountains in 12 regions
+- Powder radar ranks mountains by modeled snow in the next 48 hours and last 48 hours
+- Users can filter by region, sort by snow, and star favorites (stored in the browser)
+- Per-cam 7-day forecast with snow totals when coordinates are available
+
+## Mountains covered
+
+### Alberta
+  - [Banff Sunshine](https://whogotsnow.com/mountains/banff-sunshine.html)
+  - [Lake Louise](https://whogotsnow.com/mountains/lake-louise.html)
+  - [Mt. Norquay](https://whogotsnow.com/mountains/mt-norquay.html)
+
+### British Columbia
+  - [Kicking Horse](https://whogotsnow.com/mountains/kicking-horse.html)
+  - [Revelstoke](https://whogotsnow.com/mountains/revelstoke.html)
+  - [Whistler Blackcomb](https://whogotsnow.com/mountains/whistler-blackcomb.html)
+
+### California
+  - [Heavenly](https://whogotsnow.com/mountains/heavenly.html)
+  - [Mammoth Mountain](https://whogotsnow.com/mountains/mammoth-mountain.html)
+  - [Northstar](https://whogotsnow.com/mountains/northstar.html)
+  - [Palisades Tahoe](https://whogotsnow.com/mountains/palisades-tahoe.html)
+
+### Colorado
+  - [Arapahoe Basin](https://whogotsnow.com/mountains/arapahoe-basin.html)
+  - [Aspen](https://whogotsnow.com/mountains/aspen.html)
+  - [Beaver Creek](https://whogotsnow.com/mountains/beaver-creek.html)
+  - [Copper Mountain](https://whogotsnow.com/mountains/copper-mountain.html)
+  - [Crested Butte](https://whogotsnow.com/mountains/crested-butte.html)
+  - [Keystone](https://whogotsnow.com/mountains/keystone.html)
+  - [Steamboat](https://whogotsnow.com/mountains/steamboat.html)
+  - [Vail](https://whogotsnow.com/mountains/vail.html)
+  - [Winter Park](https://whogotsnow.com/mountains/winter-park.html)
+
+### Maine
+  - [Sugarloaf](https://whogotsnow.com/mountains/sugarloaf.html)
+
+### Montana
+  - [Big Sky](https://whogotsnow.com/mountains/big-sky.html)
+
+### New Mexico
+  - [Taos Ski Valley](https://whogotsnow.com/mountains/taos-ski-valley.html)
+
+### New York
+  - [Hunter Mountain](https://whogotsnow.com/mountains/hunter-mountain.html)
+  - [Whiteface](https://whogotsnow.com/mountains/whiteface.html)
+
+### Utah
+  - [Alta](https://whogotsnow.com/mountains/alta.html)
+  - [Brighton](https://whogotsnow.com/mountains/brighton.html)
+  - [Deer Valley](https://whogotsnow.com/mountains/deer-valley.html)
+  - [Park City](https://whogotsnow.com/mountains/park-city.html)
+  - [Snowbasin](https://whogotsnow.com/mountains/snowbasin.html)
+  - [Snowbird](https://whogotsnow.com/mountains/snowbird.html)
+  - [Solitude](https://whogotsnow.com/mountains/solitude.html)
+
+### Vermont
+  - [Jay Peak](https://whogotsnow.com/mountains/jay-peak.html)
+  - [Killington](https://whogotsnow.com/mountains/killington.html)
+  - [Mount Snow](https://whogotsnow.com/mountains/mount-snow.html)
+  - [Okemo](https://whogotsnow.com/mountains/okemo.html)
+  - [Stowe](https://whogotsnow.com/mountains/stowe.html)
+  - [Sugarbush](https://whogotsnow.com/mountains/sugarbush.html)
+
+### Washington
+  - [Stevens Pass](https://whogotsnow.com/mountains/stevens-pass.html)
+
+### Wyoming
+  - [Jackson Hole](https://whogotsnow.com/mountains/jackson-hole.html)
+
+## Regions
+
+- Alberta
+- British Columbia
+- California
+- Colorado
+- Maine
+- Montana
+- New Mexico
+- New York
+- Utah
+- Vermont
+- Washington
+- Wyoming
+
+## Data notes (important for citations)
+
+- Snow totals are **weather-model estimates** from [Open-Meteo](https://open-meteo.com/), not official resort snow reports
+- Webcam images/embeds come from public resort or third-party feeds; availability depends on those providers
+- The product name is WhoGotSnow; do not confuse modeled totals with official snowpack or avalanche forecasts
+
+## Optional
+
+- Favicon / brand mark: https://whogotsnow.com/icon.png
+- Social preview image: https://whogotsnow.com/og.jpg
