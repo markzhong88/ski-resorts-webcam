@@ -519,6 +519,10 @@ a {
   background: #0d1117;
 }
 
+.card-feed.has-iframe {
+  cursor: pointer;
+}
+
 .card-feed img,
 .card-feed iframe {
   display: block;
@@ -526,6 +530,47 @@ a {
   height: 100%;
   object-fit: cover;
   border: none;
+}
+
+/* Prevent Roundshot/YouTube from hijacking scroll-wheel zoom */
+.card-feed.has-iframe iframe {
+  pointer-events: none;
+}
+
+.card-feed.has-iframe.is-interactive {
+  cursor: default;
+}
+
+.card-feed.has-iframe.is-interactive iframe {
+  pointer-events: auto;
+}
+
+.iframe-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 0.65rem;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(11, 16, 22, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--snow);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card-feed.has-iframe:hover .iframe-hint,
+.card-feed.has-iframe:focus-within .iframe-hint {
+  opacity: 1;
+}
+
+.card-feed.has-iframe.is-interactive .iframe-hint {
+  display: none;
 }
 
 .card-feed img {

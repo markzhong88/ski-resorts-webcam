@@ -433,12 +433,26 @@ function createCard(resort) {
     iframe.src = resort.url;
     iframe.title = resort.name;
     iframe.loading = 'lazy';
+    iframe.tabIndex = -1;
     iframe.setAttribute(
       'allow',
       'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
     );
     iframe.allowFullscreen = true;
+
+    // Click-to-interact: wheel over embeds (Roundshot zoom) won't steal page scroll
+    feed.classList.add('has-iframe');
+    const hint = document.createElement('div');
+    hint.className = 'iframe-hint';
+    hint.textContent = 'Click to interact';
     feed.appendChild(iframe);
+    feed.appendChild(hint);
+    feed.addEventListener('click', () => {
+      document.querySelectorAll('.card-feed.is-interactive').forEach((el) => {
+        if (el !== feed) el.classList.remove('is-interactive');
+      });
+      feed.classList.add('is-interactive');
+    });
     card.appendChild(feed);
   } else {
     const img = document.createElement('img');
@@ -607,6 +621,14 @@ async function init() {
   populateRegionFilter();
   applyPrefs();
   bindControls();
+
+  // Deactivate interactive iframe when clicking elsewhere (restore page scroll)
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.card-feed.has-iframe')) return;
+    document.querySelectorAll('.card-feed.is-interactive').forEach((el) => {
+      el.classList.remove('is-interactive');
+    });
+  });
 
   // First paint with cams (forecasts fill after snow load)
   applyFiltersAndSort();

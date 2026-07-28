@@ -300,6 +300,41 @@ export const RESORTS = [
     longitude: -111.5933,
   },
 
+  // —— New Mexico ——
+  {
+    id: 'taos-base',
+    name: 'Taos — Base',
+    mountain: 'Taos Ski Valley',
+    url: 'https://player.brownrice.com/snapshot/tsv',
+    type: 'image',
+    region: 'New Mexico',
+    provider: 'Brownrice',
+    latitude: 36.5957,
+    longitude: -105.4505,
+  },
+  {
+    id: 'taos-highline',
+    name: 'Taos — Highline Ridge',
+    mountain: 'Taos Ski Valley',
+    url: 'https://player.brownrice.com/snapshot/tsvridge',
+    type: 'image',
+    region: 'New Mexico',
+    provider: 'Brownrice',
+    latitude: 36.5957,
+    longitude: -105.4505,
+  },
+  {
+    id: 'taos-kachina',
+    name: 'Taos — Kachina Peak',
+    mountain: 'Taos Ski Valley',
+    url: 'https://player.brownrice.com/snapshot/tsvlonestar',
+    type: 'image',
+    region: 'New Mexico',
+    provider: 'Brownrice',
+    latitude: 36.5957,
+    longitude: -105.4505,
+  },
+
   // —— Wyoming ——
   {
     id: 'jackson-hole-summit',
