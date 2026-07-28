@@ -147,6 +147,10 @@ function weatherLabel(code) {
 }
 
 function getImageUrl(url) {
+  // Ski Utah blob URLs 404 if any query string is present; bust cache via path instead.
+  if (/skiutah\.com\/files\/blob\//i.test(url)) {
+    return `${url.replace(/\/$/, '')}/${Date.now()}`;
+  }
   const sep = url.includes('?') ? '&' : '?';
   return `${url}${sep}_=${Date.now()}`;
 }
@@ -504,13 +508,17 @@ function createCard(resort) {
     img.alt = resort.name;
     img.loading = 'lazy';
     img.decoding = 'async';
-    img.src = getImageUrl(resort.url);
     img.dataset.originalUrl = resort.url;
 
     feed.classList.add('is-loading');
 
+    const updated = document.createElement('div');
+    updated.className = 'card-updated';
+    updated.textContent = 'Loading…';
+
     img.onerror = () => {
       feed.classList.remove('is-loading');
+      updated.textContent = 'Unavailable';
       const placeholder = document.createElement('div');
       placeholder.className = 'placeholder error';
       placeholder.textContent = 'Webcam unavailable';
@@ -518,16 +526,13 @@ function createCard(resort) {
       img.remove();
     };
 
-    const updated = document.createElement('div');
-    updated.className = 'card-updated';
-    updated.textContent = 'Loading…';
-
     img.onload = () => {
       img.classList.add('is-loaded');
       feed.classList.remove('is-loading');
       updated.textContent = `Updated ${formatTime(Date.now())}`;
     };
 
+    img.src = getImageUrl(resort.url);
     feed.appendChild(img);
     card.appendChild(feed);
     card.appendChild(updated);
