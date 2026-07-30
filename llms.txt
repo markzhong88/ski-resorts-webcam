@@ -14,7 +14,7 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 
 ## What it does
 
-- Shows 81 live/still webcams across 39 mountains in 12 regions
+- Shows 99 live/still webcams across 40 mountains in 12 regions
 - Powder radar ranks mountains by modeled snow in the next 48 hours and last 48 hours
 - Users can filter by region, sort by snow, and star favorites (stored in the browser)
 - Per-cam 7-day forecast with snow totals when coordinates are available
@@ -45,6 +45,7 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
   - [Crested Butte](https://whogotsnow.com/mountains/crested-butte.html)
   - [Keystone](https://whogotsnow.com/mountains/keystone.html)
   - [Steamboat](https://whogotsnow.com/mountains/steamboat.html)
+  - [Telluride](https://whogotsnow.com/mountains/telluride.html)
   - [Vail](https://whogotsnow.com/mountains/vail.html)
   - [Winter Park](https://whogotsnow.com/mountains/winter-park.html)
 

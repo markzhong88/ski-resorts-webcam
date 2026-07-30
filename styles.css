@@ -593,6 +593,11 @@ a {
   text-underline-offset: 0.15em;
 }
 
+.card-cam-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
 .card-resort-link {
   margin-left: auto;
   font-size: 0.75rem;
@@ -1053,6 +1058,31 @@ a {
   font-size: 0.78rem;
   color: var(--powder);
   letter-spacing: 0.02em;
+}
+
+.mountain-forecast {
+  max-width: 36rem;
+  margin: 1.5rem auto 0;
+  padding: 1rem 1.15rem 1.1rem;
+  text-align: left;
+  background:
+    linear-gradient(180deg, rgba(126, 196, 255, 0.08), transparent 45%),
+    rgba(12, 20, 30, 0.75);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+.mountain-forecast-note {
+  margin: 0.85rem 0 0;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.mountain-forecast-note a {
+  color: var(--accent);
 }
 
 .mountain-grid .card-feed iframe,

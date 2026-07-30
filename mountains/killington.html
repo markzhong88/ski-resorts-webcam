@@ -65,10 +65,17 @@
     <header class="header mountain-header">
       <p class="brand-kicker"><a href="/">WhoGotSnow</a> · Vermont</p>
       <h1 class="title">Killington</h1>
-      <p class="subtitle">Live webcam at Killington — compare snow on the <a href="/">powder radar</a></p>
-      <p class="mountain-cam-count">1 cam on this mountain</p>
+      <p class="subtitle">Live webcams at Killington — compare snow on the <a href="/">powder radar</a></p>
+      <p class="mountain-cam-count">5 cams on this mountain</p>
     </header>
     <main class="grid mountain-grid">
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Killington — Superstar</h2>
+          <p class="card-meta"><span class="card-region">Vermont</span> <span>HDRelay</span></p>
+        </header>
+        <div class="card-feed"><img class="is-loaded" src="https://manage.hdrelay.com/snapshot/a0de9878-d7b7-4906-9e83-536fde35c8a9?size=1082x614&amp;f=60000" alt="Killington — Superstar webcam" loading="lazy" width="640" height="360" /></div>
+      </article>
       <article class="card mountain-cam">
         <header class="card-header">
           <h2 class="card-title">Killington — North Ridge</h2>
@@ -76,7 +83,39 @@
         </header>
         <div class="card-feed"><img class="is-loaded" src="https://manage.hdrelay.com/snapshot/61e3ce02-faaa-4499-a547-6574ef6fa4f6?size=1082x614&amp;f=60000" alt="Killington — North Ridge webcam" loading="lazy" width="640" height="360" /></div>
       </article>
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Killington — Snowshed</h2>
+          <p class="card-meta"><span class="card-region">Vermont</span> <span>HDRelay</span></p>
+        </header>
+        <div class="card-feed"><img class="is-loaded" src="https://manage.hdrelay.com/snapshot/705fdfca-9ee5-4adf-a6e5-2dbe95708c1a?size=1082x614&amp;f=60000" alt="Killington — Snowshed webcam" loading="lazy" width="640" height="360" /></div>
+      </article>
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Killington — Bear Mountain</h2>
+          <p class="card-meta"><span class="card-region">Vermont</span> <span>HDRelay</span></p>
+        </header>
+        <div class="card-feed"><img class="is-loaded" src="https://manage.hdrelay.com/snapshot/48933086-3e4f-4093-818f-603f6d084c81?size=1082x614&amp;f=60000" alt="Killington — Bear Mountain webcam" loading="lazy" width="640" height="360" /></div>
+      </article>
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Killington — Mountain View</h2>
+          <p class="card-meta"><span class="card-region">Vermont</span> <span>HDRelay</span></p>
+        </header>
+        <div class="card-feed"><img class="is-loaded" src="https://manage.hdrelay.com/snapshot/5f4fb731-c591-464f-a60d-dccc968e8fa0?size=1082x614&amp;f=60000" alt="Killington — Mountain View webcam" loading="lazy" width="640" height="360" /></div>
+      </article>
     </main>
+    <section
+      class="mountain-forecast card-forecast"
+      id="mountainForecast"
+      data-lat="43.6026"
+      data-lon="-72.8179"
+      data-name="Killington"
+      aria-label="7-day weather forecast for Killington"
+    >
+      <p class="forecast-loading">Loading forecast…</p>
+    </section>
+    <script src="/mountain-forecast.js" defer></script>
     <section class="seo-note">
       <p>
         Snow rankings on the homepage use Open-Meteo model estimates, not official

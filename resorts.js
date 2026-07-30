@@ -3,6 +3,8 @@
  * - type: 'image' — direct snapshot URL (auto-refreshed)
  * - type: 'iframe' — embedded live page (Roundshot, YouTube, etc.)
  * - mountain — groups cams for powder ranking (one snow score per mountain)
+ * - home: true — optional; force this cam as the homepage hero for that mountain
+ *   (otherwise homepage picks the first non–snow-stake cam per mountain)
  *
  * Brownrice snapshots: https://player.brownrice.com/snapshot/{streamName}
  * WEATHER: lat/long → Open-Meteo powder radar + 7-day forecast.
@@ -11,6 +13,7 @@ export const RESORTS = [
   // —— Colorado ——
   {
     id: 'vail-back-bowls',
+    home: true,
     name: 'Vail — The Back Bowls',
     mountain: 'Vail',
     url: 'https://player.brownrice.com/snapshot/vailch21',
@@ -55,6 +58,7 @@ export const RESORTS = [
   },
   {
     id: 'beaver-creek-spruce',
+    home: true,
     name: 'Beaver Creek — Spruce Saddle',
     mountain: 'Beaver Creek',
     url: 'https://player.brownrice.com/snapshot/bcspruce',
@@ -77,6 +81,7 @@ export const RESORTS = [
   },
   {
     id: 'keystone-north-peak',
+    home: true,
     name: 'Keystone — North Peak',
     mountain: 'Keystone',
     url: 'https://player.brownrice.com/snapshot/keystonenorthpeak',
@@ -88,6 +93,7 @@ export const RESORTS = [
   },
   {
     id: 'crested-butte-base',
+    home: true,
     name: 'Crested Butte — Base',
     mountain: 'Crested Butte',
     url: 'https://player.brownrice.com/snapshot/crestedbuttebase',
@@ -98,15 +104,71 @@ export const RESORTS = [
     longitude: -106.9658,
   },
   {
+    id: 'aspen-highland-bowl',
+    home: true,
+    name: 'Aspen — Highland Bowl',
+    mountain: 'Aspen',
+    url: 'https://backend.roundshot.com/cams/3d9af2719f79f6c4447593172a4f5c6a/medium',
+    type: 'image',
+    region: 'Colorado',
+    provider: 'Roundshot',
+    latitude: 39.1867,
+    longitude: -106.8175,
+  },
+  {
+    id: 'aspen-maroon-bells',
+    name: 'Aspen — Maroon Bells',
+    mountain: 'Aspen',
+    url: 'https://backend.roundshot.com/cams/19a0db224d24e8f0b9f874eeb6b18a9a/medium',
+    type: 'image',
+    region: 'Colorado',
+    provider: 'Roundshot',
+    latitude: 39.1867,
+    longitude: -106.8175,
+  },
+  {
     id: 'aspen-roundshot',
     name: 'Aspen Mountain — Roundshot',
     mountain: 'Aspen',
-    url: 'https://aspen.roundshot.com/',
+    url: 'https://aspen.roundshot.com/aspen/',
     type: 'iframe',
     region: 'Colorado',
     provider: 'Roundshot',
     latitude: 39.1867,
     longitude: -106.8175,
+  },
+  {
+    id: 'aspen-highlands-roundshot',
+    name: 'Aspen Highlands — Roundshot',
+    mountain: 'Aspen',
+    url: 'https://aspen.roundshot.com/highlands/',
+    type: 'iframe',
+    region: 'Colorado',
+    provider: 'Roundshot',
+    latitude: 39.182,
+    longitude: -106.855,
+  },
+  {
+    id: 'aspen-buttermilk-roundshot',
+    name: 'Buttermilk — Roundshot',
+    mountain: 'Aspen',
+    url: 'https://aspen.roundshot.com/buttermilk/',
+    type: 'iframe',
+    region: 'Colorado',
+    provider: 'Roundshot',
+    latitude: 39.208,
+    longitude: -106.86,
+  },
+  {
+    id: 'aspen-snowmass-sams-knob',
+    name: 'Snowmass — Sam’s Knob',
+    mountain: 'Aspen',
+    url: 'https://aspen.roundshot.com/snowmass-samsknob',
+    type: 'iframe',
+    region: 'Colorado',
+    provider: 'Roundshot',
+    latitude: 39.209,
+    longitude: -106.949,
   },
   {
     id: 'arapaho-basin-base',
@@ -121,6 +183,7 @@ export const RESORTS = [
   },
   {
     id: 'arapaho-basin-zuma',
+    home: true,
     name: 'Arapahoe Basin — Zuma',
     mountain: 'Arapahoe Basin',
     url: 'https://ftp.purchus.io/wwwroot/abasin/webcam/abasincam5.jpg',
@@ -132,6 +195,7 @@ export const RESORTS = [
   },
   {
     id: 'copper-cam-1',
+    home: true,
     name: 'Copper Mountain — Cam 1',
     mountain: 'Copper Mountain',
     url: 'https://manage.hdrelay.com/snapshot/fb469125-f1f3-459f-aeb4-98cb674e395f?size=1082x614&f=60000',
@@ -165,6 +229,7 @@ export const RESORTS = [
   },
   {
     id: 'steamboat-thunderhead',
+    home: true,
     name: 'Steamboat — Thunderhead',
     mountain: 'Steamboat',
     url: 'https://www.youtube.com/embed/nfTQNv3jdSQ?autoplay=1&mute=1&rel=0',
@@ -176,6 +241,7 @@ export const RESORTS = [
   },
   {
     id: 'winter-park-base',
+    home: true,
     name: 'Winter Park — Base Cam',
     mountain: 'Winter Park',
     url: 'https://www.youtube.com/embed/vyWAzJAWv4w?autoplay=1&mute=1&rel=0',
@@ -196,10 +262,56 @@ export const RESORTS = [
     latitude: 39.8868,
     longitude: -105.7625,
   },
+  {
+    id: 'telluride-revelation',
+    name: 'Telluride — Revelation Bowl 360',
+    mountain: 'Telluride',
+    url: 'https://tellurideskiresort.roundshot.com/',
+    type: 'iframe',
+    region: 'Colorado',
+    provider: 'Roundshot',
+    latitude: 37.9375,
+    longitude: -107.8123,
+  },
+  {
+    id: 'telluride-see-forever',
+    home: true,
+    name: 'Telluride — See Forever',
+    mountain: 'Telluride',
+    url: 'https://g1.ipcamlive.com/player/snapshot.php?alias=jointpoint',
+    type: 'image',
+    region: 'Colorado',
+    provider: 'IPCamLive',
+    latitude: 37.9375,
+    longitude: -107.8123,
+  },
+  {
+    id: 'telluride-black-iron',
+    name: 'Telluride — Black Iron Bowl',
+    mountain: 'Telluride',
+    url: 'https://g1.ipcamlive.com/player/snapshot.php?alias=bonvivant',
+    type: 'image',
+    region: 'Colorado',
+    provider: 'IPCamLive',
+    latitude: 37.9375,
+    longitude: -107.8123,
+  },
+  {
+    id: 'telluride-village',
+    name: 'Telluride — Mountain Village',
+    mountain: 'Telluride',
+    url: 'https://g1.ipcamlive.com/player/snapshot.php?alias=plazacam',
+    type: 'image',
+    region: 'Colorado',
+    provider: 'IPCamLive',
+    latitude: 37.9375,
+    longitude: -107.8123,
+  },
 
   // —— California / Nevada (Tahoe) ——
   {
     id: 'heavenly-tram',
+    home: true,
     name: 'Heavenly — Tram',
     mountain: 'Heavenly',
     url: 'https://player.brownrice.com/snapshot/heavenlytram',
@@ -233,6 +345,7 @@ export const RESORTS = [
   },
   {
     id: 'northstar-village',
+    home: true,
     name: 'Northstar — Village',
     mountain: 'Northstar',
     url: 'https://player.brownrice.com/snapshot/northstarvillage',
@@ -244,6 +357,7 @@ export const RESORTS = [
   },
   {
     id: 'palisades-alpine',
+    home: true,
     name: 'Palisades Tahoe — Alpine',
     mountain: 'Palisades Tahoe',
     url: 'https://palisadestahoe.roundshot.com/alpine/',
@@ -277,6 +391,7 @@ export const RESORTS = [
   },
   {
     id: 'mammoth-top-sierra',
+    home: true,
     name: 'Mammoth — Top of Sierra',
     mountain: 'Mammoth Mountain',
     url: 'https://media.mammothresorts.com/mmsa/mammoth/cams/Top_Of_Sierra_1_1280x720.jpg',
@@ -290,6 +405,7 @@ export const RESORTS = [
   // —— Utah ——
   {
     id: 'alta-collins',
+    home: true,
     name: 'Alta — Top of Collins / Ballroom',
     mountain: 'Alta',
     url: 'https://www.skiutah.com/files/blob/webcam/1229833423',
@@ -301,6 +417,7 @@ export const RESORTS = [
   },
   {
     id: 'snowbird-hidden-peak',
+    home: true,
     name: 'Snowbird — Hidden Peak 360',
     mountain: 'Snowbird',
     url: 'https://snowbird.roundshot.com/tv',
@@ -323,6 +440,7 @@ export const RESORTS = [
   },
   {
     id: 'solitude-honeycomb',
+    home: true,
     name: 'Solitude — Honeycomb / Summit',
     mountain: 'Solitude',
     url: 'https://www.youtube.com/embed/gfHReYIuydU?autoplay=1&mute=1&rel=0',
@@ -345,6 +463,7 @@ export const RESORTS = [
   },
   {
     id: 'brighton-majestic',
+    home: true,
     name: 'Brighton — Majestic Lift',
     mountain: 'Brighton',
     url: 'https://www.youtube.com/embed/4a-3iEM7bHk?autoplay=1&mute=1&rel=0',
@@ -367,6 +486,7 @@ export const RESORTS = [
   },
   {
     id: 'park-city-lookout',
+    home: true,
     name: 'Park City — Lookout Cabin',
     mountain: 'Park City',
     url: 'https://www.skiutah.com/files/blob/webcam/1011920804',
@@ -389,6 +509,7 @@ export const RESORTS = [
   },
   {
     id: 'deer-valley-jordanelle',
+    home: true,
     name: 'Deer Valley — Jordanelle View',
     mountain: 'Deer Valley',
     url: 'https://www.skiutah.com/files/blob/webcam/1473199274',
@@ -433,6 +554,7 @@ export const RESORTS = [
   },
   {
     id: 'snowbasin-john-paul',
+    home: true,
     name: 'Snowbasin — John Paul',
     mountain: 'Snowbasin',
     url: 'https://www.skiutah.com/files/blob/webcam/140020919',
@@ -479,6 +601,7 @@ export const RESORTS = [
   },
   {
     id: 'taos-kachina',
+    home: true,
     name: 'Taos — Kachina Peak',
     mountain: 'Taos Ski Valley',
     url: 'https://player.brownrice.com/snapshot/tsvlonestar',
@@ -491,13 +614,14 @@ export const RESORTS = [
 
   // —— Wyoming ——
   {
-    id: 'jackson-hole-summit',
-    name: 'Jackson Hole — Summit',
+    id: 'jackson-hole-teewinot',
+    home: true,
+    name: 'Jackson Hole — Teewinot',
     mountain: 'Jackson Hole',
-    url: 'https://jacksonhole.roundshot.com/summit/',
-    type: 'iframe',
+    url: 'https://cams.jacksonhole.com/webcam/teewinot.jpg',
+    type: 'image',
     region: 'Wyoming',
-    provider: 'Roundshot',
+    provider: 'Jackson Hole',
     latitude: 43.5875,
     longitude: -110.8278,
   },
@@ -512,10 +636,66 @@ export const RESORTS = [
     latitude: 43.5875,
     longitude: -110.8278,
   },
+  {
+    id: 'jackson-hole-summit-still',
+    name: 'Jackson Hole — Summit',
+    mountain: 'Jackson Hole',
+    url: 'https://backend.roundshot.com/cams/12a4b2c24cd515e0a115d4a0f59ef7f8/medium',
+    type: 'image',
+    region: 'Wyoming',
+    provider: 'Roundshot',
+    latitude: 43.5875,
+    longitude: -110.8278,
+  },
+  {
+    id: 'jackson-hole-rendezvous-still',
+    name: 'Jackson Hole — Rendezvous',
+    mountain: 'Jackson Hole',
+    url: 'https://backend.roundshot.com/cams/6f7dc91857e22fe329e8bdeef5ee5750/medium',
+    type: 'image',
+    region: 'Wyoming',
+    provider: 'Roundshot',
+    latitude: 43.5875,
+    longitude: -110.8278,
+  },
+  {
+    id: 'jackson-hole-summit',
+    name: 'Jackson Hole — Summit 360',
+    mountain: 'Jackson Hole',
+    url: 'https://jacksonhole.roundshot.com/summit/',
+    type: 'iframe',
+    region: 'Wyoming',
+    provider: 'Roundshot',
+    latitude: 43.5875,
+    longitude: -110.8278,
+  },
+  {
+    id: 'jackson-hole-casper',
+    name: 'Jackson Hole — Casper 360',
+    mountain: 'Jackson Hole',
+    url: 'https://jacksonhole.roundshot.com/casper/',
+    type: 'iframe',
+    region: 'Wyoming',
+    provider: 'Roundshot',
+    latitude: 43.5875,
+    longitude: -110.8278,
+  },
+  {
+    id: 'jackson-hole-bridger',
+    name: 'Jackson Hole — Bridger 360',
+    mountain: 'Jackson Hole',
+    url: 'https://jacksonhole.roundshot.com/bridger/',
+    type: 'iframe',
+    region: 'Wyoming',
+    provider: 'Roundshot',
+    latitude: 43.5875,
+    longitude: -110.8278,
+  },
 
   // —— Montana ——
   {
     id: 'big-sky-lone-peak-tram',
+    home: true,
     name: 'Big Sky — Lone Peak Tram',
     mountain: 'Big Sky',
     url: 'https://camstreamer.com/embed/hcsmYlCWjirEU86zfXwaFGyX7w6GL3xJ3M3TkbZf?enablejsapi=1&rel=0&modestbranding=1&playsinline=1',
@@ -551,6 +731,7 @@ export const RESORTS = [
   // —— Washington ——
   {
     id: 'stevens-pass-jupiter',
+    home: true,
     name: 'Stevens Pass — Jupiter',
     mountain: 'Stevens Pass',
     url: 'https://player.brownrice.com/snapshot/stevenspassjupiter',
@@ -575,6 +756,7 @@ export const RESORTS = [
   // —— Alberta (SkiBig3: Lake Louise, Banff Sunshine, Mt. Norquay) ——
   {
     id: 'lake-louise-1',
+    home: true,
     name: 'Lake Louise — Gondola Top',
     mountain: 'Lake Louise',
     url: 'https://cams.skilouise.com/cam1.jpg',
@@ -663,6 +845,7 @@ export const RESORTS = [
   },
   {
     id: 'banff-sunshine-assiniboine',
+    home: true,
     name: 'Banff Sunshine — Mount Assiniboine',
     mountain: 'Banff Sunshine',
     url: 'https://cameras.skibanff.com/dynamic/17m',
@@ -674,6 +857,7 @@ export const RESORTS = [
   },
   {
     id: 'mt-norquay-cascade',
+    home: true,
     name: 'Mt. Norquay — Cascade',
     mountain: 'Mt. Norquay',
     url: 'https://banffnorquay.com/webcam-images/winter/CascadeCam/cascade.jpg',
@@ -709,6 +893,7 @@ export const RESORTS = [
   },
   {
     id: 'whistler-peak',
+    home: true,
     name: 'Whistler — Peak',
     mountain: 'Whistler Blackcomb',
     url: 'https://player.brownrice.com/snapshot/whistlerpeak',
@@ -753,6 +938,7 @@ export const RESORTS = [
   },
   {
     id: 'kicking-horse-top',
+    home: true,
     name: 'Kicking Horse — Top (Stairway)',
     mountain: 'Kicking Horse',
     url: 'https://www.youtube.com/embed/DA5VYgThjvM?autoplay=1&mute=1&rel=0',
@@ -808,6 +994,7 @@ export const RESORTS = [
   },
   {
     id: 'revelstoke-upper-gondola',
+    home: true,
     name: 'Revelstoke — Top of Upper Gondola',
     mountain: 'Revelstoke',
     url: 'https://relay.ozolio.com/pub.api?cmd=embed&oid=EMB_NDZZ000010B5',
@@ -821,6 +1008,7 @@ export const RESORTS = [
   // —— Vermont ——
   {
     id: 'stowe-village',
+    home: true,
     name: 'Stowe — Village',
     mountain: 'Stowe',
     url: 'https://player.brownrice.com/snapshot/stowevillage',
@@ -832,6 +1020,7 @@ export const RESORTS = [
   },
   {
     id: 'mount-snow-base',
+    home: true,
     name: 'Mount Snow — Base',
     mountain: 'Mount Snow',
     url: 'https://player.brownrice.com/snapshot/mountsnowbase',
@@ -843,6 +1032,7 @@ export const RESORTS = [
   },
   {
     id: 'sugarbush',
+    home: true,
     name: 'Sugarbush — Gate House',
     mountain: 'Sugarbush',
     url: 'https://www.youtube.com/embed/jhCh3dsEv-M?autoplay=1&mute=1&rel=0',
@@ -854,6 +1044,7 @@ export const RESORTS = [
   },
   {
     id: 'jaypeak',
+    home: true,
     name: 'Jay Peak — Tramside',
     mountain: 'Jay Peak',
     url: 'https://b15.hdrelay.com/camera/6526fd5a071b19b5189bb07b/snapshot',
@@ -865,6 +1056,7 @@ export const RESORTS = [
   },
   {
     id: 'okemo',
+    home: true,
     name: 'Okemo — Sugar House Cam',
     mountain: 'Okemo',
     url: 'https://player.brownrice.com/snapshot/okemosugarhouse',
@@ -875,10 +1067,55 @@ export const RESORTS = [
     longitude: -72.7184,
   },
   {
-    id: 'killington',
+    id: 'killington-superstar',
+    home: true,
+    name: 'Killington — Superstar',
+    mountain: 'Killington',
+    url: 'https://manage.hdrelay.com/snapshot/a0de9878-d7b7-4906-9e83-536fde35c8a9?size=1082x614&f=60000',
+    type: 'image',
+    region: 'Vermont',
+    provider: 'HDRelay',
+    latitude: 43.6026,
+    longitude: -72.8179,
+  },
+  {
+    id: 'killington-north-ridge',
     name: 'Killington — North Ridge',
     mountain: 'Killington',
     url: 'https://manage.hdrelay.com/snapshot/61e3ce02-faaa-4499-a547-6574ef6fa4f6?size=1082x614&f=60000',
+    type: 'image',
+    region: 'Vermont',
+    provider: 'HDRelay',
+    latitude: 43.6026,
+    longitude: -72.8179,
+  },
+  {
+    id: 'killington-snowshed',
+    name: 'Killington — Snowshed',
+    mountain: 'Killington',
+    url: 'https://manage.hdrelay.com/snapshot/705fdfca-9ee5-4adf-a6e5-2dbe95708c1a?size=1082x614&f=60000',
+    type: 'image',
+    region: 'Vermont',
+    provider: 'HDRelay',
+    latitude: 43.6026,
+    longitude: -72.8179,
+  },
+  {
+    id: 'killington-bear-mountain',
+    name: 'Killington — Bear Mountain',
+    mountain: 'Killington',
+    url: 'https://manage.hdrelay.com/snapshot/48933086-3e4f-4093-818f-603f6d084c81?size=1082x614&f=60000',
+    type: 'image',
+    region: 'Vermont',
+    provider: 'HDRelay',
+    latitude: 43.6026,
+    longitude: -72.8179,
+  },
+  {
+    id: 'killington-mountain-view',
+    name: 'Killington — Mountain View',
+    mountain: 'Killington',
+    url: 'https://manage.hdrelay.com/snapshot/5f4fb731-c591-464f-a60d-dccc968e8fa0?size=1082x614&f=60000',
     type: 'image',
     region: 'Vermont',
     provider: 'HDRelay',
@@ -889,6 +1126,7 @@ export const RESORTS = [
   // —— New York ——
   {
     id: 'hunter-main',
+    home: true,
     name: 'Hunter Mountain — Base Area',
     mountain: 'Hunter Mountain',
     url: 'https://player.brownrice.com/snapshot/hunter1',
@@ -900,6 +1138,7 @@ export const RESORTS = [
   },
   {
     id: 'whiteface-legacy-lodge',
+    home: true,
     name: 'Whiteface — Legacy Lodge',
     mountain: 'Whiteface',
     url: 'https://manage.hdrelay.com/snapshot/56ce853a-23fc-48cc-af9b-13907ef75b9a?size=1082x614&f=60000',
@@ -913,6 +1152,7 @@ export const RESORTS = [
   // —— Maine ——
   {
     id: 'sugarloaf',
+    home: true,
     name: 'Sugarloaf — The Beach',
     mountain: 'Sugarloaf',
     url: 'https://www.youtube.com/embed/j8VVBhJdyqY?autoplay=1&mute=1&rel=0',

@@ -45,6 +45,35 @@ function camsOnMountain(mountain) {
   return RESORTS.filter((r) => (r.mountain || r.id) === mountain).length;
 }
 
+function isSnowStakeCam(resort) {
+  return /snow\s*stake|snowstake/i.test(`${resort.name} ${resort.id}`);
+}
+
+/** One representative cam per mountain for the homepage grid. */
+function homepageResorts() {
+  const groups = new Map();
+  for (const r of RESORTS) {
+    const key = r.mountain || r.id;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(r);
+  }
+  const picks = [];
+  for (const cams of groups.values()) {
+    picks.push(
+      cams.find((c) => c.home) ||
+        cams.find((c) => !isSnowStakeCam(c)) ||
+        cams[0]
+    );
+  }
+  return picks;
+}
+
+function mountainHasFavorite(mountain) {
+  return RESORTS.some(
+    (r) => (r.mountain || r.id) === mountain && favorites.has(r.id)
+  );
+}
+
 /** Only load iframe cams near the viewport (don't start all 20 Roundshots at once). */
 let iframeObserver = null;
 
@@ -458,21 +487,26 @@ function createCard(resort) {
   const mountain = resort.mountain || resort.id;
   const pageHref = mountainPageHref(mountain);
   const camCount = camsOnMountain(mountain);
-  const isFav = favorites.has(resort.id);
+  const isFav = mountainHasFavorite(mountain);
   const metrics = getMetrics(resort);
   const badge = snowBadge(metrics);
+  const camLabel = resort.name.replace(
+    new RegExp(`^${mountain.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*[—–-]\\s*`),
+    ''
+  );
 
   const header = document.createElement('header');
   header.className = 'card-header';
   header.innerHTML = `
     <div class="card-title-row">
       <h2 class="card-title">
-        <a class="card-title-link" href="${escapeHtml(pageHref)}">${escapeHtml(resort.name)}</a>
+        <a class="card-title-link" href="${escapeHtml(pageHref)}">${escapeHtml(mountain)}</a>
       </h2>
       <button type="button" class="btn-fav ${isFav ? 'is-fav' : ''}" aria-label="${isFav ? 'Remove from favorites' : 'Add to favorites'}" title="Favorite">★</button>
     </div>
     <div class="card-meta">
       ${resort.region ? `<span class="card-region">${escapeHtml(resort.region)}</span>` : ''}
+      <span class="card-cam-label">${escapeHtml(camLabel || resort.name)}</span>
       ${badge ? `<span class="snow-badge ${badge.className}">${escapeHtml(badge.label)}</span>` : ''}
       ${metrics ? `<span class="snow-chip" title="Modeled snow next 48 hours">${formatSnow(metrics.snowNext48h)} / 48h</span>` : ''}
       <a class="card-resort-link" href="${escapeHtml(pageHref)}">${camCount > 1 ? `All ${camCount} cams` : 'Resort page'} →</a>
@@ -593,28 +627,36 @@ function filteredSortedResorts() {
   const sort = sortSelect?.value || 'name';
   const onlyFav = !!favoritesOnly?.checked;
 
-  let list = RESORTS.filter((r) => {
+  let list = homepageResorts().filter((r) => {
     if (region !== 'all' && r.region !== region) return false;
-    if (onlyFav && !favorites.has(r.id)) return false;
+    if (onlyFav && !mountainHasFavorite(r.mountain || r.id)) return false;
     return true;
   });
 
   const scoreIncoming = (r) => getMetrics(r)?.snowNext48h ?? -1;
   const scoreRecent = (r) => getMetrics(r)?.snowLast48h ?? -1;
+  const mountainName = (r) => r.mountain || r.name;
 
   list = [...list].sort((a, b) => {
     // Favorites float to top when not filtering favorites-only
-    const af = favorites.has(a.id) ? 1 : 0;
-    const bf = favorites.has(b.id) ? 1 : 0;
+    const af = mountainHasFavorite(a.mountain || a.id) ? 1 : 0;
+    const bf = mountainHasFavorite(b.mountain || b.id) ? 1 : 0;
     if (!onlyFav && af !== bf) return bf - af;
 
-    if (sort === 'incoming') return scoreIncoming(b) - scoreIncoming(a) || a.name.localeCompare(b.name);
-    if (sort === 'recent') return scoreRecent(b) - scoreRecent(a) || a.name.localeCompare(b.name);
-    if (sort === 'name') return a.name.localeCompare(b.name);
-    if (sort === 'region') {
-      return (a.region || '').localeCompare(b.region || '') || a.name.localeCompare(b.name);
+    if (sort === 'incoming') {
+      return scoreIncoming(b) - scoreIncoming(a) || mountainName(a).localeCompare(mountainName(b));
     }
-    return 0; // default order
+    if (sort === 'recent') {
+      return scoreRecent(b) - scoreRecent(a) || mountainName(a).localeCompare(mountainName(b));
+    }
+    if (sort === 'name') return mountainName(a).localeCompare(mountainName(b));
+    if (sort === 'region') {
+      return (
+        (a.region || '').localeCompare(b.region || '') ||
+        mountainName(a).localeCompare(mountainName(b))
+      );
+    }
+    return 0; // default order (RESORTS order of each mountain's home cam)
   });
 
   return list;
@@ -639,7 +681,7 @@ function applyFiltersAndSort() {
 
   if (resultCount) {
     const n = list.length;
-    resultCount.textContent = `${n} cam${n === 1 ? '' : 's'}`;
+    resultCount.textContent = `${n} mountain${n === 1 ? '' : 's'}`;
   }
 }
 
@@ -654,10 +696,15 @@ function updateCardsSnowInPlace() {
     const camCount = camsOnMountain(mountain);
     const metrics = getMetrics(resort);
     const badge = snowBadge(metrics);
+    const camLabel = resort.name.replace(
+      new RegExp(`^${mountain.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*[—–-]\\s*`),
+      ''
+    );
     const meta = card.querySelector('.card-meta');
     if (meta) {
       meta.innerHTML = `
         ${resort.region ? `<span class="card-region">${escapeHtml(resort.region)}</span>` : ''}
+        <span class="card-cam-label">${escapeHtml(camLabel || resort.name)}</span>
         ${badge ? `<span class="snow-badge ${badge.className}">${escapeHtml(badge.label)}</span>` : ''}
         ${metrics ? `<span class="snow-chip" title="Modeled snow next 48 hours">${formatSnow(metrics.snowNext48h)} / 48h</span>` : ''}
         <a class="card-resort-link" href="${escapeHtml(pageHref)}">${camCount > 1 ? `All ${camCount} cams` : 'Resort page'} →</a>

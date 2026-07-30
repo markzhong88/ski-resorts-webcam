@@ -46,8 +46,8 @@
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 39.1867,
-    "longitude": -106.8175
+    "latitude": 39.209,
+    "longitude": -106.949
   },
   "isPartOf": {
     "@type": "WebSite",
@@ -65,18 +65,64 @@
     <header class="header mountain-header">
       <p class="brand-kicker"><a href="/">WhoGotSnow</a> · Colorado</p>
       <h1 class="title">Aspen</h1>
-      <p class="subtitle">Live webcam at Aspen — compare snow on the <a href="/">powder radar</a></p>
-      <p class="mountain-cam-count">1 cam on this mountain</p>
+      <p class="subtitle">Live webcams at Aspen — compare snow on the <a href="/">powder radar</a></p>
+      <p class="mountain-cam-count">6 cams on this mountain</p>
     </header>
     <main class="grid mountain-grid">
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Aspen — Highland Bowl</h2>
+          <p class="card-meta"><span class="card-region">Colorado</span> <span>Roundshot</span></p>
+        </header>
+        <div class="card-feed"><img class="is-loaded" src="https://backend.roundshot.com/cams/3d9af2719f79f6c4447593172a4f5c6a/medium" alt="Aspen — Highland Bowl webcam" loading="lazy" width="640" height="360" /></div>
+      </article>
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Aspen — Maroon Bells</h2>
+          <p class="card-meta"><span class="card-region">Colorado</span> <span>Roundshot</span></p>
+        </header>
+        <div class="card-feed"><img class="is-loaded" src="https://backend.roundshot.com/cams/19a0db224d24e8f0b9f874eeb6b18a9a/medium" alt="Aspen — Maroon Bells webcam" loading="lazy" width="640" height="360" /></div>
+      </article>
       <article class="card mountain-cam">
         <header class="card-header">
           <h2 class="card-title">Aspen Mountain — Roundshot</h2>
           <p class="card-meta"><span class="card-region">Colorado</span> <span>Roundshot</span></p>
         </header>
-        <div class="card-feed"><iframe src="https://aspen.roundshot.com/" title="Aspen Mountain — Roundshot" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+        <div class="card-feed"><iframe src="https://aspen.roundshot.com/aspen/" title="Aspen Mountain — Roundshot" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      </article>
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Aspen Highlands — Roundshot</h2>
+          <p class="card-meta"><span class="card-region">Colorado</span> <span>Roundshot</span></p>
+        </header>
+        <div class="card-feed"><iframe src="https://aspen.roundshot.com/highlands/" title="Aspen Highlands — Roundshot" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      </article>
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Buttermilk — Roundshot</h2>
+          <p class="card-meta"><span class="card-region">Colorado</span> <span>Roundshot</span></p>
+        </header>
+        <div class="card-feed"><iframe src="https://aspen.roundshot.com/buttermilk/" title="Buttermilk — Roundshot" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      </article>
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Snowmass — Sam’s Knob</h2>
+          <p class="card-meta"><span class="card-region">Colorado</span> <span>Roundshot</span></p>
+        </header>
+        <div class="card-feed"><iframe src="https://aspen.roundshot.com/snowmass-samsknob" title="Snowmass — Sam’s Knob" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
       </article>
     </main>
+    <section
+      class="mountain-forecast card-forecast"
+      id="mountainForecast"
+      data-lat="39.209"
+      data-lon="-106.949"
+      data-name="Aspen"
+      aria-label="7-day weather forecast for Aspen"
+    >
+      <p class="forecast-loading">Loading forecast…</p>
+    </section>
+    <script src="/mountain-forecast.js" defer></script>
     <section class="seo-note">
       <p>
         Snow rankings on the homepage use Open-Meteo model estimates, not official

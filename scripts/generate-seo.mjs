@@ -289,6 +289,21 @@ ${ATMOSPHERE_SNOW}
     <main class="grid mountain-grid">
 ${camBlocks}
     </main>
+    ${
+      m.latitude != null && m.longitude != null
+        ? `<section
+      class="mountain-forecast card-forecast"
+      id="mountainForecast"
+      data-lat="${m.latitude}"
+      data-lon="${m.longitude}"
+      data-name="${escapeHtml(m.mountain)}"
+      aria-label="7-day weather forecast for ${escapeHtml(m.mountain)}"
+    >
+      <p class="forecast-loading">Loading forecast…</p>
+    </section>
+    <script src="/mountain-forecast.js" defer></script>`
+        : ''
+    }
     <section class="seo-note">
       <p>
         Snow rankings on the homepage use Open-Meteo model estimates, not official

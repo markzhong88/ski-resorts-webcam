@@ -66,15 +66,15 @@
       <p class="brand-kicker"><a href="/">WhoGotSnow</a> · Wyoming</p>
       <h1 class="title">Jackson Hole</h1>
       <p class="subtitle">Live webcams at Jackson Hole — compare snow on the <a href="/">powder radar</a></p>
-      <p class="mountain-cam-count">2 cams on this mountain</p>
+      <p class="mountain-cam-count">7 cams on this mountain</p>
     </header>
     <main class="grid mountain-grid">
       <article class="card mountain-cam">
         <header class="card-header">
-          <h2 class="card-title">Jackson Hole — Summit</h2>
-          <p class="card-meta"><span class="card-region">Wyoming</span> <span>Roundshot</span></p>
+          <h2 class="card-title">Jackson Hole — Teewinot</h2>
+          <p class="card-meta"><span class="card-region">Wyoming</span> <span>Jackson Hole</span></p>
         </header>
-        <div class="card-feed"><iframe src="https://jacksonhole.roundshot.com/summit/" title="Jackson Hole — Summit" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+        <div class="card-feed"><img class="is-loaded" src="https://cams.jacksonhole.com/webcam/teewinot.jpg" alt="Jackson Hole — Teewinot webcam" loading="lazy" width="640" height="360" /></div>
       </article>
       <article class="card mountain-cam">
         <header class="card-header">
@@ -83,7 +83,53 @@
         </header>
         <div class="card-feed"><img class="is-loaded" src="https://cams.jacksonhole.com/webcam/trambase.jpg" alt="Jackson Hole — Tram Station webcam" loading="lazy" width="640" height="360" /></div>
       </article>
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Jackson Hole — Summit</h2>
+          <p class="card-meta"><span class="card-region">Wyoming</span> <span>Roundshot</span></p>
+        </header>
+        <div class="card-feed"><img class="is-loaded" src="https://backend.roundshot.com/cams/12a4b2c24cd515e0a115d4a0f59ef7f8/medium" alt="Jackson Hole — Summit webcam" loading="lazy" width="640" height="360" /></div>
+      </article>
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Jackson Hole — Rendezvous</h2>
+          <p class="card-meta"><span class="card-region">Wyoming</span> <span>Roundshot</span></p>
+        </header>
+        <div class="card-feed"><img class="is-loaded" src="https://backend.roundshot.com/cams/6f7dc91857e22fe329e8bdeef5ee5750/medium" alt="Jackson Hole — Rendezvous webcam" loading="lazy" width="640" height="360" /></div>
+      </article>
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Jackson Hole — Summit 360</h2>
+          <p class="card-meta"><span class="card-region">Wyoming</span> <span>Roundshot</span></p>
+        </header>
+        <div class="card-feed"><iframe src="https://jacksonhole.roundshot.com/summit/" title="Jackson Hole — Summit 360" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      </article>
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Jackson Hole — Casper 360</h2>
+          <p class="card-meta"><span class="card-region">Wyoming</span> <span>Roundshot</span></p>
+        </header>
+        <div class="card-feed"><iframe src="https://jacksonhole.roundshot.com/casper/" title="Jackson Hole — Casper 360" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      </article>
+      <article class="card mountain-cam">
+        <header class="card-header">
+          <h2 class="card-title">Jackson Hole — Bridger 360</h2>
+          <p class="card-meta"><span class="card-region">Wyoming</span> <span>Roundshot</span></p>
+        </header>
+        <div class="card-feed"><iframe src="https://jacksonhole.roundshot.com/bridger/" title="Jackson Hole — Bridger 360" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      </article>
     </main>
+    <section
+      class="mountain-forecast card-forecast"
+      id="mountainForecast"
+      data-lat="43.5875"
+      data-lon="-110.8278"
+      data-name="Jackson Hole"
+      aria-label="7-day weather forecast for Jackson Hole"
+    >
+      <p class="forecast-loading">Loading forecast…</p>
+    </section>
+    <script src="/mountain-forecast.js" defer></script>
     <section class="seo-note">
       <p>
         Snow rankings on the homepage use Open-Meteo model estimates, not official
