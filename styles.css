@@ -1,21 +1,24 @@
 /* WhoGotSnow — live mountain cams + powder radar */
 
 :root {
-  --bg: #0b1016;
-  --bg-elevated: #121925;
-  --bg-card: #161e2a;
-  --bg-card-hover: #1c2634;
-  --border: #2a3646;
+  --bg: #070b12;
+  --bg-elevated: #101820;
+  --bg-card: rgba(18, 28, 40, 0.78);
+  --bg-card-hover: rgba(24, 36, 52, 0.92);
+  --border: rgba(140, 180, 220, 0.16);
+  --border-strong: rgba(159, 214, 255, 0.32);
   --text: #e8eef5;
-  --text-muted: #8b9cad;
-  --accent: #6eb6ff;
-  --accent-soft: rgba(110, 182, 255, 0.14);
-  --snow: #f4f8fc;
-  --powder: #9fd6ff;
-  --storm: #4db8ff;
+  --text-muted: #8fa3b8;
+  --accent: #7ec4ff;
+  --accent-soft: rgba(126, 196, 255, 0.14);
+  --snow: #f7fbff;
+  --powder: #b6e3ff;
+  --storm: #5bc2ff;
   --fresh: #86efac;
+  --ice: #d8f0ff;
+  --dawn: rgba(255, 196, 140, 0.12);
   --radius: 14px;
-  --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
   --font-display: 'Instrument Serif', Georgia, serif;
   --font-ui: 'Outfit', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -29,18 +32,93 @@
 
 html {
   scroll-behavior: smooth;
+  background: #05080d;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
   font-family: var(--font-ui);
-  background:
-    radial-gradient(ellipse 90% 50% at 50% -8%, rgba(77, 184, 255, 0.16), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(255, 255, 255, 0.04), transparent 45%),
-    linear-gradient(180deg, #0e1520 0%, var(--bg) 40%, #090d12 100%);
   color: var(--text);
   line-height: 1.5;
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse 100% 70% at 50% -15%, rgba(90, 170, 230, 0.22), transparent 58%),
+    radial-gradient(ellipse 55% 45% at 0% 20%, rgba(70, 140, 200, 0.1), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 100% 10%, var(--dawn), transparent 48%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(20, 50, 80, 0.35), transparent 55%),
+    linear-gradient(180deg, #0c1520 0%, var(--bg) 42%, #04070c 100%);
+}
+
+/* Soft sky drift — alpine dawn wash */
+body::before {
+  content: '';
+  position: fixed;
+  inset: -20% -10% auto;
+  height: 70vh;
+  pointer-events: none;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse 45% 55% at 30% 40%, rgba(100, 190, 255, 0.14), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 72% 35%, rgba(255, 210, 160, 0.08), transparent 68%);
+  animation: sky-drift 28s ease-in-out infinite alternate;
+}
+
+/* Film grain + mountain ridgeline */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 1;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath fill='%2303060a' fill-opacity='0.55' d='M0 220V118l80-28 70 40 95-55 110 48 85-38 120 52 90-42 130 58 100-35 95 40 85-30 100 45 90-38 100 50V220z'/%3E%3Cpath fill='%2305080e' fill-opacity='0.85' d='M0 220V150l95-22 75 30 110-48 95 38 125-42 90 35 140-50 105 40 90-28 115 48 80-22 100 40 120-35V220z'/%3E%3C/svg%3E")
+      bottom center / 100% min(28vw, 220px) no-repeat,
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-blend-mode: normal, overlay;
+  opacity: 0.55;
+}
+
+/* Falling snow — lightweight CSS particles */
+.atmosphere-snow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.atmosphere-snow span {
+  position: absolute;
+  top: -12px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 6px rgba(200, 230, 255, 0.45);
+  animation: snow-fall linear infinite;
+  opacity: 0.55;
+}
+
+.atmosphere-snow span:nth-child(1) { left: 8%; animation-duration: 14s; animation-delay: 0s; }
+.atmosphere-snow span:nth-child(2) { left: 18%; width: 2px; height: 2px; animation-duration: 18s; animation-delay: -4s; opacity: 0.35; }
+.atmosphere-snow span:nth-child(3) { left: 28%; animation-duration: 12s; animation-delay: -2s; }
+.atmosphere-snow span:nth-child(4) { left: 40%; width: 2px; height: 2px; animation-duration: 20s; animation-delay: -8s; opacity: 0.3; }
+.atmosphere-snow span:nth-child(5) { left: 52%; animation-duration: 15s; animation-delay: -1s; }
+.atmosphere-snow span:nth-child(6) { left: 63%; width: 4px; height: 4px; animation-duration: 11s; animation-delay: -6s; opacity: 0.45; }
+.atmosphere-snow span:nth-child(7) { left: 74%; animation-duration: 17s; animation-delay: -3s; }
+.atmosphere-snow span:nth-child(8) { left: 84%; width: 2px; height: 2px; animation-duration: 22s; animation-delay: -9s; opacity: 0.28; }
+.atmosphere-snow span:nth-child(9) { left: 92%; animation-duration: 13s; animation-delay: -5s; }
+.atmosphere-snow span:nth-child(10) { left: 46%; width: 2px; height: 2px; animation-duration: 16s; animation-delay: -7s; opacity: 0.4; }
+.atmosphere-snow span:nth-child(11) { left: 12%; animation-duration: 19s; animation-delay: -11s; opacity: 0.32; }
+.atmosphere-snow span:nth-child(12) { left: 68%; width: 2px; height: 2px; animation-duration: 21s; animation-delay: -14s; opacity: 0.25; }
+
+body > *:not(.atmosphere-snow) {
+  position: relative;
+  z-index: 1;
 }
 
 a {
@@ -50,7 +128,8 @@ a {
 .header {
   padding: 2rem 1.5rem 1.25rem;
   text-align: center;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, rgba(159, 214, 255, 0.28), transparent) 1;
 }
 
 .brand-block {
@@ -66,6 +145,7 @@ a {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--powder);
+  text-shadow: 0 0 24px rgba(126, 196, 255, 0.35);
 }
 
 .title {
@@ -76,6 +156,13 @@ a {
   letter-spacing: -0.02em;
   line-height: 1.05;
   color: var(--snow);
+  text-shadow:
+    0 0 40px rgba(180, 220, 255, 0.28),
+    0 2px 24px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(180deg, #ffffff 18%, var(--ice) 55%, #9fd0f0 120%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
@@ -142,16 +229,21 @@ a {
   max-width: 1100px;
   margin: 0 auto 1.25rem;
   padding: 1.1rem;
-  background: rgba(18, 25, 37, 0.85);
-  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(126, 196, 255, 0.08), transparent 40%),
+    rgba(12, 20, 30, 0.72);
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius);
   text-align: left;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(14px) saturate(1.2);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+    0 16px 48px rgba(0, 0, 0, 0.35);
   animation: rise-in 0.8s ease 0.08s both;
 }
 
 .powder-board.is-quiet {
-  border-color: rgba(159, 214, 255, 0.2);
+  border-color: rgba(159, 214, 255, 0.18);
 }
 
 .powder-board-head {
@@ -189,15 +281,21 @@ a {
   flex-direction: column;
   gap: 0.15rem;
   padding: 0.75rem 0.8rem;
-  background: rgba(110, 182, 255, 0.05);
+  background: rgba(110, 182, 255, 0.06);
   border: 1px solid var(--border);
   border-radius: 10px;
   color: inherit;
   font: inherit;
   text-align: left;
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
   animation: rise-in 0.55s ease both;
+}
+
+.powder-card:nth-child(1),
+.powder-card:nth-child(2),
+.powder-card:nth-child(3) {
+  box-shadow: 0 0 20px rgba(91, 194, 255, 0.08);
 }
 
 .powder-card:nth-child(1) { animation-delay: 0.05s; }
@@ -208,9 +306,10 @@ a {
 .powder-card:nth-child(6) { animation-delay: 0.3s; }
 
 .powder-card:hover {
-  border-color: rgba(159, 214, 255, 0.45);
-  background: rgba(110, 182, 255, 0.1);
-  transform: translateY(-2px);
+  border-color: rgba(159, 214, 255, 0.5);
+  background: rgba(110, 182, 255, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 40, 80, 0.35);
 }
 
 .powder-rank {
@@ -317,9 +416,11 @@ a {
   gap: 0.75rem 1rem;
   margin-top: 0.85rem;
   padding: 1rem;
-  background: rgba(18, 25, 37, 0.7);
+  background: rgba(12, 20, 30, 0.7);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
 }
 
 .toolbar-field {
@@ -415,18 +516,25 @@ a {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.25s, background 0.25s, box-shadow 0.25s, transform 0.25s;
   animation: rise-in 0.55s ease both;
 }
 
 .card:hover {
-  border-color: rgba(110, 182, 255, 0.35);
+  border-color: rgba(126, 196, 255, 0.42);
   background: var(--bg-card-hover);
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(159, 214, 255, 0.12);
 }
 
 .card-highlight {
   border-color: var(--powder) !important;
-  box-shadow: 0 0 0 2px rgba(159, 214, 255, 0.35);
+  box-shadow:
+    0 0 0 2px rgba(159, 214, 255, 0.35),
+    0 0 28px rgba(91, 194, 255, 0.2);
 }
 
 .card-header {
@@ -897,9 +1005,10 @@ a {
 }
 
 .footer {
-  padding: 2rem 1.5rem 2.5rem;
+  padding: 2.5rem 1.5rem 3rem;
   text-align: center;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, rgba(159, 214, 255, 0.22), transparent) 1;
   font-size: 0.88rem;
   color: var(--text-muted);
   max-width: 40rem;
@@ -911,6 +1020,7 @@ a {
   font-family: var(--font-display);
   font-size: 1.6rem;
   color: var(--snow);
+  text-shadow: 0 0 28px rgba(180, 220, 255, 0.25);
 }
 
 .footer-brand a {
@@ -953,12 +1063,44 @@ a {
   }
 }
 
+@keyframes sky-drift {
+  from {
+    transform: translate3d(-2%, 0, 0) scale(1);
+    opacity: 0.85;
+  }
+  to {
+    transform: translate3d(3%, 2%, 0) scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate3d(12vw, 105vh, 0);
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+
+  .atmosphere-snow {
+    display: none;
   }
 
   .card-feed img {

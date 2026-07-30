@@ -4,8 +4,8 @@
   "description": "Live North American ski resort webcams ranked by modeled snowfall. Powder radar for Vail, Whistler, Banff, Killington, and more.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0b1016",
-  "theme_color": "#0b1016",
+  "background_color": "#070b12",
+  "theme_color": "#070b12",
   "lang": "en-US",
   "icons": [
     {

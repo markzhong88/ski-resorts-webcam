@@ -14,6 +14,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const SITE = 'https://whogotsnow.com';
 const TODAY = new Date().toISOString().slice(0, 10);
+const ATMOSPHERE_SNOW = `    <div class="atmosphere-snow" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>`;
 
 function slugify(name) {
   return name
@@ -166,8 +170,8 @@ async function writeManifest() {
       'Live North American ski resort webcams ranked by modeled snowfall. Powder radar for Vail, Whistler, Banff, Killington, and more.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#0b1016',
-    theme_color: '#0b1016',
+    background_color: '#070b12',
+    theme_color: '#070b12',
     lang: 'en-US',
     icons: [
       {
@@ -263,7 +267,7 @@ function mountainPageHtml(m) {
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#0b1016" />
+    <meta name="theme-color" content="#070b12" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -273,6 +277,7 @@ ${JSON.stringify(mountainJsonLd(m), null, 2)}
     </script>
   </head>
   <body class="mountain-page">
+${ATMOSPHERE_SNOW}
     <header class="header mountain-header">
       <p class="brand-kicker"><a href="/">WhoGotSnow</a> · ${escapeHtml(m.region)}</p>
       <h1 class="title">${escapeHtml(m.mountain)}</h1>
@@ -343,7 +348,7 @@ function pageChrome({ title, description, canonicalPath, jsonLd, bodyClass, body
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#0b1016" />
+    <meta name="theme-color" content="#070b12" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -351,6 +356,7 @@ function pageChrome({ title, description, canonicalPath, jsonLd, bodyClass, body
 ${jsonLdBlock}
   </head>
   <body class="${bodyClass}">
+${ATMOSPHERE_SNOW}
 ${bodyHtml}
     <footer class="footer">
       <p class="footer-brand"><a href="/">WhoGotSnow</a></p>
