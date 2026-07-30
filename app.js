@@ -94,7 +94,7 @@ function savePrefs() {
     PREFS_KEY,
     JSON.stringify({
       region: regionFilter?.value || 'all',
-      sort: sortSelect?.value || 'incoming',
+      sort: sortSelect?.value || 'name',
       favoritesOnly: !!favoritesOnly?.checked,
       refreshMs,
     })
@@ -380,7 +380,7 @@ function renderPowderBoard() {
     `;
     btn.addEventListener('click', () => {
       if (favoritesOnly) favoritesOnly.checked = false;
-      if (sortSelect) sortSelect.value = 'incoming';
+      // Keep cam grid order (default A–Z); only scroll/highlight the mountain's cams
       const first = RESORTS.find((r) => (r.mountain || r.id) === item.mountain);
       applyFiltersAndSort();
       if (first) {
@@ -562,7 +562,7 @@ function toggleFavorite(id) {
 
 function filteredSortedResorts() {
   const region = regionFilter?.value || 'all';
-  const sort = sortSelect?.value || 'incoming';
+  const sort = sortSelect?.value || 'name';
   const onlyFav = !!favoritesOnly?.checked;
 
   let list = RESORTS.filter((r) => {
