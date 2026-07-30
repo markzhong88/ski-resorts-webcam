@@ -26,6 +26,25 @@ let favorites = loadFavorites();
 /** Card elements keyed by resort id — rebuilt on full re-render */
 const cardEls = new Map();
 
+function mountainSlug(name) {
+  return String(name || '')
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/['']/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function mountainPageHref(mountain) {
+  const slug = mountainSlug(mountain);
+  return slug ? `/mountains/${slug}.html` : '/directory.html';
+}
+
+function camsOnMountain(mountain) {
+  return RESORTS.filter((r) => (r.mountain || r.id) === mountain).length;
+}
+
 /** Only load iframe cams near the viewport (don't start all 20 Roundshots at once). */
 let iframeObserver = null;
 
@@ -379,17 +398,7 @@ function renderPowderBoard() {
       </span>
     `;
     btn.addEventListener('click', () => {
-      if (favoritesOnly) favoritesOnly.checked = false;
-      // Keep cam grid order (default A–Z); only scroll/highlight the mountain's cams
-      const first = RESORTS.find((r) => (r.mountain || r.id) === item.mountain);
-      applyFiltersAndSort();
-      if (first) {
-        const el = cardEls.get(first.id);
-        el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        el?.classList.add('card-highlight');
-        setTimeout(() => el?.classList.remove('card-highlight'), 1600);
-      }
-      savePrefs();
+      window.location.href = mountainPageHref(item.mountain);
     });
     powderList.appendChild(btn);
   });
@@ -441,11 +450,14 @@ function fillForecast(forecastEl, metrics) {
 
 function createCard(resort) {
   const card = document.createElement('article');
-  card.className = 'card';
+  card.className = 'card card-openable';
   card.dataset.id = resort.id;
   card.dataset.mountain = resort.mountain || resort.id;
   card.dataset.region = resort.region || '';
 
+  const mountain = resort.mountain || resort.id;
+  const pageHref = mountainPageHref(mountain);
+  const camCount = camsOnMountain(mountain);
   const isFav = favorites.has(resort.id);
   const metrics = getMetrics(resort);
   const badge = snowBadge(metrics);
@@ -454,21 +466,35 @@ function createCard(resort) {
   header.className = 'card-header';
   header.innerHTML = `
     <div class="card-title-row">
-      <h2 class="card-title">${escapeHtml(resort.name)}</h2>
+      <h2 class="card-title">
+        <a class="card-title-link" href="${escapeHtml(pageHref)}">${escapeHtml(resort.name)}</a>
+      </h2>
       <button type="button" class="btn-fav ${isFav ? 'is-fav' : ''}" aria-label="${isFav ? 'Remove from favorites' : 'Add to favorites'}" title="Favorite">★</button>
     </div>
     <div class="card-meta">
       ${resort.region ? `<span class="card-region">${escapeHtml(resort.region)}</span>` : ''}
       ${badge ? `<span class="snow-badge ${badge.className}">${escapeHtml(badge.label)}</span>` : ''}
       ${metrics ? `<span class="snow-chip" title="Modeled snow next 48 hours">${formatSnow(metrics.snowNext48h)} / 48h</span>` : ''}
+      <a class="card-resort-link" href="${escapeHtml(pageHref)}">${camCount > 1 ? `All ${camCount} cams` : 'Resort page'} →</a>
     </div>
   `;
   card.appendChild(header);
 
   header.querySelector('.btn-fav')?.addEventListener('click', (e) => {
+    e.preventDefault();
     e.stopPropagation();
     toggleFavorite(resort.id);
   });
+
+  const openResortPage = (e) => {
+    // Don't hijack fav / iframe interaction / real middle-clicks
+    if (e?.target?.closest?.('.btn-fav, .card-feed.has-iframe, a')) return;
+    window.location.assign(pageHref);
+  };
+
+  card.addEventListener('click', openResortPage);
+  card.style.cursor = 'pointer';
+  card.title = `Open ${mountain} resort cams`;
 
   const feed = document.createElement('div');
   feed.className = 'card-feed';
@@ -488,14 +514,15 @@ function createCard(resort) {
     feed.dataset.iframeSrc = resort.url;
     const hint = document.createElement('div');
     hint.className = 'iframe-hint';
-    hint.textContent = 'Click to interact';
+    hint.textContent = 'Click cam to interact · title opens resort';
     const loading = document.createElement('div');
     loading.className = 'placeholder feed-loading';
     loading.textContent = 'Cam loads when scrolled into view';
     feed.appendChild(iframe);
     feed.appendChild(loading);
     feed.appendChild(hint);
-    feed.addEventListener('click', () => {
+    feed.addEventListener('click', (e) => {
+      e.stopPropagation();
       document.querySelectorAll('.card-feed.is-interactive').forEach((el) => {
         if (el !== feed) el.classList.remove('is-interactive');
       });
@@ -510,7 +537,8 @@ function createCard(resort) {
     img.decoding = 'async';
     img.dataset.originalUrl = resort.url;
 
-    feed.classList.add('is-loading');
+    feed.classList.add('is-loading', 'is-clickable');
+    feed.title = `Open ${mountain} cams`;
 
     const updated = document.createElement('div');
     updated.className = 'card-updated';
@@ -621,6 +649,9 @@ function updateCardsSnowInPlace() {
     const card = cardEls.get(resort.id);
     if (!card) continue;
 
+    const mountain = resort.mountain || resort.id;
+    const pageHref = mountainPageHref(mountain);
+    const camCount = camsOnMountain(mountain);
     const metrics = getMetrics(resort);
     const badge = snowBadge(metrics);
     const meta = card.querySelector('.card-meta');
@@ -629,6 +660,7 @@ function updateCardsSnowInPlace() {
         ${resort.region ? `<span class="card-region">${escapeHtml(resort.region)}</span>` : ''}
         ${badge ? `<span class="snow-badge ${badge.className}">${escapeHtml(badge.label)}</span>` : ''}
         ${metrics ? `<span class="snow-chip" title="Modeled snow next 48 hours">${formatSnow(metrics.snowNext48h)} / 48h</span>` : ''}
+        <a class="card-resort-link" href="${escapeHtml(pageHref)}">${camCount > 1 ? `All ${camCount} cams` : 'Resort page'} →</a>
       `;
     }
 

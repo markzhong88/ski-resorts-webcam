@@ -227,7 +227,7 @@ function mountainPageHtml(m) {
     .map((cam) => {
       const media =
         cam.type === 'image'
-          ? `<img src="${escapeHtml(cam.url)}" alt="${escapeHtml(cam.name)} webcam" loading="lazy" width="640" height="360" />`
+          ? `<img class="is-loaded" src="${escapeHtml(cam.url)}" alt="${escapeHtml(cam.name)} webcam" loading="lazy" width="640" height="360" />`
           : `<iframe src="${escapeHtml(cam.url)}" title="${escapeHtml(cam.name)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
       return `      <article class="card mountain-cam">
         <header class="card-header">
@@ -281,7 +281,8 @@ ${ATMOSPHERE_SNOW}
     <header class="header mountain-header">
       <p class="brand-kicker"><a href="/">WhoGotSnow</a> · ${escapeHtml(m.region)}</p>
       <h1 class="title">${escapeHtml(m.mountain)}</h1>
-      <p class="subtitle">Live webcam${m.cams.length > 1 ? 's' : ''} — check conditions, then compare snow on the <a href="/">powder radar</a></p>
+      <p class="subtitle">Live webcam${m.cams.length > 1 ? 's' : ''} at ${escapeHtml(m.mountain)} — compare snow on the <a href="/">powder radar</a></p>
+      <p class="mountain-cam-count">${m.cams.length} cam${m.cams.length === 1 ? '' : 's'} on this mountain</p>
     </header>
     <main class="grid mountain-grid">
 ${camBlocks}
