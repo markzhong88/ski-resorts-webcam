@@ -289,17 +289,6 @@ export const RESORTS = [
 
   // —— Utah ——
   {
-    id: 'alta-high-rustler',
-    name: 'Alta — High Rustler',
-    mountain: 'Alta',
-    url: 'https://www.skiutah.com/files/blob/webcam/1072144422',
-    type: 'image',
-    region: 'Utah',
-    provider: 'Ski Utah',
-    latitude: 40.5883,
-    longitude: -111.6378,
-  },
-  {
     id: 'alta-collins',
     name: 'Alta — Top of Collins / Ballroom',
     mountain: 'Alta',
