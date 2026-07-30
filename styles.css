@@ -212,6 +212,27 @@ a {
   font-size: 0.9rem;
 }
 
+.footer-nav {
+  margin: 0.85rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+}
+
+.footer-nav a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
+  color: var(--powder);
+}
+
 .footer-links a {
   color: var(--text-muted);
   text-decoration: none;
@@ -880,10 +901,11 @@ a {
 .faq,
 .seo-note,
 .noscript-note {
-  max-width: 72rem;
+  max-width: 40rem;
   margin: 0 auto;
   padding: 2rem 1.5rem;
   color: var(--text-muted);
+  text-align: center;
 }
 
 .static-page .static-header {
@@ -910,9 +932,15 @@ a {
 .seo-directory-lead,
 .seo-note p,
 .noscript-note {
-  margin: 0 0 1.25rem;
+  margin: 0 auto 1.25rem;
   font-size: 0.95rem;
   max-width: 40rem;
+  text-align: center;
+}
+
+.seo-note {
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, rgba(159, 214, 255, 0.22), transparent) 1;
 }
 
 .dir-grid {
@@ -999,11 +1027,6 @@ a {
 .faq details p {
   margin: 0.65rem 0 0.25rem 1.25rem;
   font-size: 0.92rem;
-}
-
-.seo-note {
-  text-align: center;
-  border-top: 1px solid var(--border);
 }
 
 .mountain-page .mountain-header {
