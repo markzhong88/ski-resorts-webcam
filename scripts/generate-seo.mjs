@@ -14,6 +14,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const SITE = 'https://whogotsnow.com';
 const TODAY = new Date().toISOString().slice(0, 10);
+const GA_LOADER = `    <script src="/analytics.js" defer></script>`;
 const ATMOSPHERE_SNOW = `    <div class="atmosphere-snow" aria-hidden="true">
       <span></span><span></span><span></span><span></span><span></span><span></span>
       <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -272,6 +273,7 @@ function mountainPageHtml(m) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
+${GA_LOADER}
     <script type="application/ld+json">
 ${JSON.stringify(mountainJsonLd(m), null, 2)}
     </script>
@@ -354,6 +356,7 @@ function pageChrome({ title, description, canonicalPath, jsonLd, bodyClass, body
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
+${GA_LOADER}
 ${jsonLdBlock}
   </head>
   <body class="${bodyClass}">
