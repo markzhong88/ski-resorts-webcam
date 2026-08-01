@@ -14,7 +14,7 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 
 ## What it does
 
-- Shows 108 live/still webcams across 40 mountains in 12 regions
+- Shows 137 live/still webcams across 47 mountains in 15 regions
 - Powder radar ranks mountains by modeled snow in the next 48 hours and last 48 hours
 - Users can filter by region, sort by snow, and star favorites (stored in the browser)
 - Per-cam 7-day forecast with snow totals when coordinates are available
@@ -41,6 +41,7 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
   - [Arapahoe Basin](https://whogotsnow.com/mountains/arapahoe-basin.html)
   - [Aspen](https://whogotsnow.com/mountains/aspen.html)
   - [Beaver Creek](https://whogotsnow.com/mountains/beaver-creek.html)
+  - [Breckenridge](https://whogotsnow.com/mountains/breckenridge.html)
   - [Copper Mountain](https://whogotsnow.com/mountains/copper-mountain.html)
   - [Crested Butte](https://whogotsnow.com/mountains/crested-butte.html)
   - [Keystone](https://whogotsnow.com/mountains/keystone.html)
@@ -49,8 +50,12 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
   - [Vail](https://whogotsnow.com/mountains/vail.html)
   - [Winter Park](https://whogotsnow.com/mountains/winter-park.html)
 
+### Idaho
+  - [Sun Valley](https://whogotsnow.com/mountains/sun-valley.html)
+
 ### Maine
   - [Sugarloaf](https://whogotsnow.com/mountains/sugarloaf.html)
+  - [Sunday River](https://whogotsnow.com/mountains/sunday-river.html)
 
 ### Montana
   - [Big Sky](https://whogotsnow.com/mountains/big-sky.html)
@@ -61,6 +66,12 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 ### New York
   - [Hunter Mountain](https://whogotsnow.com/mountains/hunter-mountain.html)
   - [Whiteface](https://whogotsnow.com/mountains/whiteface.html)
+
+### Oregon
+  - [Mt. Bachelor](https://whogotsnow.com/mountains/mt-bachelor.html)
+
+### Quebec
+  - [Tremblant](https://whogotsnow.com/mountains/tremblant.html)
 
 ### Utah
   - [Alta](https://whogotsnow.com/mountains/alta.html)
@@ -77,9 +88,11 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
   - [Mount Snow](https://whogotsnow.com/mountains/mount-snow.html)
   - [Okemo](https://whogotsnow.com/mountains/okemo.html)
   - [Stowe](https://whogotsnow.com/mountains/stowe.html)
+  - [Stratton](https://whogotsnow.com/mountains/stratton.html)
   - [Sugarbush](https://whogotsnow.com/mountains/sugarbush.html)
 
 ### Washington
+  - [Crystal Mountain](https://whogotsnow.com/mountains/crystal-mountain.html)
   - [Stevens Pass](https://whogotsnow.com/mountains/stevens-pass.html)
 
 ### Wyoming
@@ -91,10 +104,13 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 - British Columbia
 - California
 - Colorado
+- Idaho
 - Maine
 - Montana
 - New Mexico
 - New York
+- Oregon
+- Quebec
 - Utah
 - Vermont
 - Washington
