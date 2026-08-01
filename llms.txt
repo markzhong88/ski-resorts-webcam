@@ -14,7 +14,7 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 
 ## What it does
 
-- Shows 137 live/still webcams across 47 mountains in 15 regions
+- Shows 139 live/still webcams across 47 mountains in 15 regions
 - Powder radar ranks mountains by modeled snow in the next 48 hours and last 48 hours
 - Users can filter by region, sort by snow, and star favorites (stored in the browser)
 - Per-cam 7-day forecast with snow totals when coordinates are available
