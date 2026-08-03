@@ -102,3 +102,9 @@ To see how many people visit and whether the site is growing, add a free analyti
 - **`styles.css`** — Layout and theme
 - **`app.js`** — Renders the grid and handles refresh
 - **`resorts.js`** — List of resorts and refresh interval
+
+---
+
+## Remote control smoke test
+
+Updated from Cursor Cloud (iPhone remote control) on **2026-08-03 15:10 UTC** to confirm this Mac repo can be edited remotely.
