@@ -32,7 +32,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: #05080d;
+  background: #071018;
 }
 
 body {
@@ -45,14 +45,13 @@ body {
   isolation: isolate;
   overflow-x: hidden;
   background:
-    radial-gradient(ellipse 100% 70% at 50% -15%, rgba(90, 170, 230, 0.22), transparent 58%),
-    radial-gradient(ellipse 55% 45% at 0% 20%, rgba(70, 140, 200, 0.1), transparent 50%),
-    radial-gradient(ellipse 50% 40% at 100% 10%, var(--dawn), transparent 48%),
-    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(20, 50, 80, 0.35), transparent 55%),
-    linear-gradient(180deg, #0c1520 0%, var(--bg) 42%, #04070c 100%);
+    radial-gradient(ellipse 80% 50% at 50% -8%, rgba(110, 185, 255, 0.2), transparent 52%),
+    radial-gradient(ellipse 45% 38% at 88% 6%, rgba(255, 176, 120, 0.09), transparent 55%),
+    radial-gradient(ellipse 40% 32% at 8% 12%, rgba(70, 130, 210, 0.1), transparent 58%),
+    linear-gradient(180deg, #0c1a2a 0%, #08141e 38%, #071018 72%, #050c14 100%);
 }
 
-/* Soft sky drift — alpine dawn wash */
+/* Soft aurora drift — no grain */
 body::before {
   content: '';
   position: fixed;
@@ -61,25 +60,29 @@ body::before {
   pointer-events: none;
   z-index: -2;
   background:
-    radial-gradient(ellipse 45% 55% at 30% 40%, rgba(100, 190, 255, 0.14), transparent 70%),
-    radial-gradient(ellipse 40% 50% at 72% 35%, rgba(255, 210, 160, 0.08), transparent 68%);
+    radial-gradient(1.5px 1.5px at 12% 22%, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1px 1px at 23% 9%, rgba(210, 235, 255, 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 41% 16%, rgba(255, 255, 255, 0.28), transparent),
+    radial-gradient(1px 1px at 58% 7%, rgba(200, 230, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 71% 19%, rgba(255, 255, 255, 0.32), transparent),
+    radial-gradient(1.5px 1.5px at 84% 11%, rgba(220, 240, 255, 0.38), transparent),
+    radial-gradient(1px 1px at 93% 24%, rgba(255, 255, 255, 0.22), transparent),
+    radial-gradient(1px 1px at 6% 38%, rgba(200, 230, 255, 0.25), transparent),
+    radial-gradient(ellipse 42% 50% at 28% 38%, rgba(90, 180, 255, 0.12), transparent 70%),
+    radial-gradient(ellipse 38% 46% at 74% 32%, rgba(255, 200, 150, 0.07), transparent 68%);
   animation: sky-drift 28s ease-in-out infinite alternate;
 }
 
-/* Film grain + mountain ridgeline */
+/* Quiet mountain silhouette at the bottom */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: -1;
-  opacity: 1;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath fill='%2303060a' fill-opacity='0.55' d='M0 220V118l80-28 70 40 95-55 110 48 85-38 120 52 90-42 130 58 100-35 95 40 85-30 100 45 90-38 100 50V220z'/%3E%3Cpath fill='%2305080e' fill-opacity='0.85' d='M0 220V150l95-22 75 30 110-48 95 38 125-42 90 35 140-50 105 40 90-28 115 48 80-22 100 40 120-35V220z'/%3E%3C/svg%3E")
-      bottom center / 100% min(28vw, 220px) no-repeat,
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-  background-blend-mode: normal, overlay;
-  opacity: 0.55;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath fill='%23040a12' fill-opacity='0.45' d='M0 220V118l80-28 70 40 95-55 110 48 85-38 120 52 90-42 130 58 100-35 95 40 85-30 100 45 90-38 100 50V220z'/%3E%3Cpath fill='%23050c14' fill-opacity='0.92' d='M0 220V150l95-22 75 30 110-48 95 38 125-42 90 35 140-50 105 40 90-28 115 48 80-22 100 40 120-35V220z'/%3E%3C/svg%3E")
+      bottom center / 100% min(26vw, 200px) no-repeat;
 }
 
 /* Falling snow — lightweight CSS particles */
@@ -362,7 +365,12 @@ a {
 
 .powder-stat strong {
   color: var(--storm);
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-synthesis: none;
+  letter-spacing: 0.02em;
 }
 
 .powder-stat.muted {
@@ -699,8 +707,11 @@ a {
 }
 
 .snow-chip {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
+  font-weight: 600;
   font-size: 0.7rem;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-synthesis: none;
   color: var(--accent);
   padding: 0.1rem 0.4rem;
   background: var(--accent-soft);
@@ -842,7 +853,12 @@ a {
 
 .forecast-summary strong {
   color: var(--accent);
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-synthesis: none;
+  letter-spacing: 0.02em;
 }
 
 .forecast-loading,
@@ -882,6 +898,9 @@ a {
 
 .forecast-snow {
   color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-synthesis: none;
   text-align: right;
   white-space: nowrap;
 }
