@@ -362,7 +362,12 @@ a {
 
 .powder-stat strong {
   color: var(--storm);
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-synthesis: none;
+  letter-spacing: 0.02em;
 }
 
 .powder-stat.muted {
@@ -699,8 +704,11 @@ a {
 }
 
 .snow-chip {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
+  font-weight: 600;
   font-size: 0.7rem;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-synthesis: none;
   color: var(--accent);
   padding: 0.1rem 0.4rem;
   background: var(--accent-soft);
@@ -842,7 +850,12 @@ a {
 
 .forecast-summary strong {
   color: var(--accent);
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-synthesis: none;
+  letter-spacing: 0.02em;
 }
 
 .forecast-loading,
@@ -882,6 +895,9 @@ a {
 
 .forecast-snow {
   color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-synthesis: none;
   text-align: right;
   white-space: nowrap;
 }
