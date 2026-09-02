@@ -1,4 +1,4 @@
-import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js';
+import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js?v=20260902-dv2';
 
 const grid = document.getElementById('webcamGrid');
 const powderBoard = document.getElementById('powderBoard');
