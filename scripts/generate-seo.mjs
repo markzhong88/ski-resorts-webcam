@@ -115,7 +115,7 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 
 ## What it does
 
-- Catalogs ${stats.mountains} mountains (${stats.withCams} with live cams, ${stats.cams} feeds) across ${stats.regionCount} regions
+- Catalogs ${stats.mountains} mountains with ${stats.cams} live webcam feeds across ${stats.regionCount} regions
 - Homepage shows starred mountains; powder radar ranks modeled snow among live cams plus saved hills
 
 ## Mountains covered
@@ -418,8 +418,8 @@ ${items}
       <p class="brand-kicker">Coverage</p>
       <h1 class="title">Directory</h1>
       <p class="subtitle">
-        ${stats.mountains} mountains · ${stats.withCams} with live cams · ${stats.cams} feeds.
-        Save hills to your homepage; open a mountain for snow and cams.
+        ${stats.mountains} mountains with live cams · ${stats.cams} feeds.
+        Save hills to your homepage.
       </p>
     </header>
     <div class="dir-search">
@@ -484,9 +484,8 @@ function faqInnerHtml() {
       <details>
         <summary>Which resorts are covered?</summary>
         <p>
-          The directory lists ${stats.mountains} mountains across the US and Canada.
-          ${stats.withCams} currently have live cams; the rest have a snow-model page you can save
-          to your homepage while we source a feed. See the
+          The directory lists ${stats.mountains} mountains with live cams across the US and Canada.
+          See the
           <a href="/directory.html">mountain directory</a>.
         </p>
       </details>
@@ -526,7 +525,7 @@ function faqJsonLd() {
         name: 'Which ski resorts have webcams on WhoGotSnow?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `WhoGotSnow lists ${stats.mountains} mountains, including ${mountainNames.slice(0, 12).join(', ')}, with live cams on ${stats.withCams} of them so far.`,
+          text: `WhoGotSnow lists ${stats.mountains} mountains with live cams, including ${mountainNames.slice(0, 12).join(', ')}.`,
         },
       },
       {
@@ -554,7 +553,7 @@ function regionPageHtml(region, list) {
     .join('\n');
   return pageChrome({
     title: `${region} Ski Resorts & Snow Cams | WhoGotSnow`,
-    description: `${list.length} ski mountains in ${region} on WhoGotSnow — ${withCams} with live cams, plus modeled snowfall pages you can save to your homepage.`,
+    description: `${list.length} ski mountains in ${region} on WhoGotSnow with live cams and modeled snowfall.`,
     canonicalPath: `/regions/${slug}.html`,
     jsonLd: {
       '@context': 'https://schema.org',
@@ -599,7 +598,7 @@ async function writeRegionPages() {
 async function writeDirectoryPage() {
   const html = pageChrome({
     title: 'Ski Resort Directory | WhoGotSnow',
-    description: `Browse ${stats.mountains} North American ski mountains on WhoGotSnow — ${stats.withCams} with live cams, plus snow-model pages you can save to your homepage.`,
+    description: `Browse ${stats.mountains} North American ski mountains with live cams on WhoGotSnow.`,
     canonicalPath: '/directory.html',
     jsonLd: directoryJsonLd(),
     bodyClass: 'static-page',

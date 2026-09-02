@@ -8,32 +8,22 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 
 - Homepage: https://whogotsnow.com/
 - Mountain directory: https://whogotsnow.com/directory.html
-- Region hubs: [Alabama](https://whogotsnow.com/regions/alabama.html), [Alaska](https://whogotsnow.com/regions/alaska.html), [Alberta](https://whogotsnow.com/regions/alberta.html), [Arizona](https://whogotsnow.com/regions/arizona.html), [British Columbia](https://whogotsnow.com/regions/british-columbia.html), [California](https://whogotsnow.com/regions/california.html), [Colorado](https://whogotsnow.com/regions/colorado.html), [Connecticut](https://whogotsnow.com/regions/connecticut.html), [Idaho](https://whogotsnow.com/regions/idaho.html), [Illinois](https://whogotsnow.com/regions/illinois.html), [Indiana](https://whogotsnow.com/regions/indiana.html), [Iowa](https://whogotsnow.com/regions/iowa.html), [Maine](https://whogotsnow.com/regions/maine.html), [Maryland](https://whogotsnow.com/regions/maryland.html), [Massachusetts](https://whogotsnow.com/regions/massachusetts.html), [Michigan](https://whogotsnow.com/regions/michigan.html), [Minnesota](https://whogotsnow.com/regions/minnesota.html), [Missouri](https://whogotsnow.com/regions/missouri.html), [Montana](https://whogotsnow.com/regions/montana.html), [Nevada](https://whogotsnow.com/regions/nevada.html), [New Hampshire](https://whogotsnow.com/regions/new-hampshire.html), [New Jersey](https://whogotsnow.com/regions/new-jersey.html), [New Mexico](https://whogotsnow.com/regions/new-mexico.html), [New York](https://whogotsnow.com/regions/new-york.html), [North Carolina](https://whogotsnow.com/regions/north-carolina.html), [North Dakota](https://whogotsnow.com/regions/north-dakota.html), [Ohio](https://whogotsnow.com/regions/ohio.html), [Oregon](https://whogotsnow.com/regions/oregon.html), [Pennsylvania](https://whogotsnow.com/regions/pennsylvania.html), [Quebec](https://whogotsnow.com/regions/quebec.html), [Rhode Island](https://whogotsnow.com/regions/rhode-island.html), [South Dakota](https://whogotsnow.com/regions/south-dakota.html), [Tennessee](https://whogotsnow.com/regions/tennessee.html), [Utah](https://whogotsnow.com/regions/utah.html), [Vermont](https://whogotsnow.com/regions/vermont.html), [Virginia](https://whogotsnow.com/regions/virginia.html), [Washington](https://whogotsnow.com/regions/washington.html), [West Virginia](https://whogotsnow.com/regions/west-virginia.html), [Wisconsin](https://whogotsnow.com/regions/wisconsin.html), [Wyoming](https://whogotsnow.com/regions/wyoming.html)
+- Region hubs: [Alaska](https://whogotsnow.com/regions/alaska.html), [Alberta](https://whogotsnow.com/regions/alberta.html), [Arizona](https://whogotsnow.com/regions/arizona.html), [British Columbia](https://whogotsnow.com/regions/british-columbia.html), [California](https://whogotsnow.com/regions/california.html), [Colorado](https://whogotsnow.com/regions/colorado.html), [Connecticut](https://whogotsnow.com/regions/connecticut.html), [Idaho](https://whogotsnow.com/regions/idaho.html), [Iowa](https://whogotsnow.com/regions/iowa.html), [Maine](https://whogotsnow.com/regions/maine.html), [Massachusetts](https://whogotsnow.com/regions/massachusetts.html), [Michigan](https://whogotsnow.com/regions/michigan.html), [Minnesota](https://whogotsnow.com/regions/minnesota.html), [Missouri](https://whogotsnow.com/regions/missouri.html), [Montana](https://whogotsnow.com/regions/montana.html), [Nevada](https://whogotsnow.com/regions/nevada.html), [New Hampshire](https://whogotsnow.com/regions/new-hampshire.html), [New Mexico](https://whogotsnow.com/regions/new-mexico.html), [New York](https://whogotsnow.com/regions/new-york.html), [North Carolina](https://whogotsnow.com/regions/north-carolina.html), [Ohio](https://whogotsnow.com/regions/ohio.html), [Oregon](https://whogotsnow.com/regions/oregon.html), [Pennsylvania](https://whogotsnow.com/regions/pennsylvania.html), [Quebec](https://whogotsnow.com/regions/quebec.html), [South Dakota](https://whogotsnow.com/regions/south-dakota.html), [Tennessee](https://whogotsnow.com/regions/tennessee.html), [Utah](https://whogotsnow.com/regions/utah.html), [Vermont](https://whogotsnow.com/regions/vermont.html), [Virginia](https://whogotsnow.com/regions/virginia.html), [Washington](https://whogotsnow.com/regions/washington.html), [West Virginia](https://whogotsnow.com/regions/west-virginia.html), [Wisconsin](https://whogotsnow.com/regions/wisconsin.html), [Wyoming](https://whogotsnow.com/regions/wyoming.html)
 - FAQ: https://whogotsnow.com/faq.html
 - Sitemap: https://whogotsnow.com/sitemap.xml
 - Contact: use the Contact button on the homepage (email obfuscated in the UI)
 
 ## What it does
 
-- Catalogs 526 mountains (145 with live cams, 334 feeds) across 40 regions
+- Catalogs 164 mountains with 371 live webcam feeds across 33 regions
 - Homepage shows starred mountains; powder radar ranks modeled snow among live cams plus saved hills
 
 ## Mountains covered
 
-### Alabama
-  - [Cloudmont Ski Hill](https://whogotsnow.com/mountains/cloudmont-ski-hill.html)
-
 ### Alaska
-  - [Alyeska](https://whogotsnow.com/mountains/alyeska.html)
   - [Arctic Valley](https://whogotsnow.com/mountains/arctic-valley.html)
-  - [Birch Hill Ski and Snowboard Area](https://whogotsnow.com/mountains/birch-hill-ski-and-snowboard-area.html)
   - [Eaglecrest](https://whogotsnow.com/mountains/eaglecrest.html)
-  - [Hillberg](https://whogotsnow.com/mountains/hillberg.html)
   - [Hilltop](https://whogotsnow.com/mountains/hilltop.html)
-  - [Iceman Falls](https://whogotsnow.com/mountains/iceman-falls.html)
-  - [Mount Eyak](https://whogotsnow.com/mountains/mount-eyak.html)
-  - [Mt Aurora Skiland](https://whogotsnow.com/mountains/mt-aurora-skiland.html)
-  - [Skeetawk](https://whogotsnow.com/mountains/skeetawk.html)
 
 ### Alberta
   - [Banff Sunshine](https://whogotsnow.com/mountains/banff-sunshine.html)
@@ -42,8 +32,6 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 
 ### Arizona
   - [Arizona Snowbowl](https://whogotsnow.com/mountains/arizona-snowbowl.html)
-  - [Mount Lemmon Ski Valley](https://whogotsnow.com/mountains/mount-lemmon-ski-valley.html)
-  - [Sunrise Park](https://whogotsnow.com/mountains/sunrise-park.html)
 
 ### British Columbia
   - [Kicking Horse](https://whogotsnow.com/mountains/kicking-horse.html)
@@ -51,33 +39,18 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
   - [Whistler Blackcomb](https://whogotsnow.com/mountains/whistler-blackcomb.html)
 
 ### California
-  - [Alta Sierra](https://whogotsnow.com/mountains/alta-sierra.html)
-  - [Badger Pass](https://whogotsnow.com/mountains/badger-pass.html)
-  - [Bear Mountain](https://whogotsnow.com/mountains/bear-mountain.html)
-  - [Bear Valley](https://whogotsnow.com/mountains/bear-valley.html)
-  - [Boreal](https://whogotsnow.com/mountains/boreal.html)
-  - [Cedar Pass](https://whogotsnow.com/mountains/cedar-pass.html)
   - [China Peak](https://whogotsnow.com/mountains/china-peak.html)
-  - [Coppervale](https://whogotsnow.com/mountains/coppervale.html)
   - [Dodge Ridge](https://whogotsnow.com/mountains/dodge-ridge.html)
   - [Donner Ski Ranch](https://whogotsnow.com/mountains/donner-ski-ranch.html)
-  - [Granlibakken](https://whogotsnow.com/mountains/granlibakken.html)
   - [Heavenly](https://whogotsnow.com/mountains/heavenly.html)
-  - [Homewood](https://whogotsnow.com/mountains/homewood.html)
   - [June Mountain](https://whogotsnow.com/mountains/june-mountain.html)
   - [Kirkwood](https://whogotsnow.com/mountains/kirkwood.html)
   - [Mammoth Mountain](https://whogotsnow.com/mountains/mammoth-mountain.html)
-  - [Mount Waterman](https://whogotsnow.com/mountains/mount-waterman.html)
   - [Mountain High](https://whogotsnow.com/mountains/mountain-high.html)
-  - [Mt. Baldy](https://whogotsnow.com/mountains/mt-baldy.html)
   - [Mt. Shasta Ski Park](https://whogotsnow.com/mountains/mt-shasta-ski-park.html)
   - [Northstar](https://whogotsnow.com/mountains/northstar.html)
   - [Palisades Tahoe](https://whogotsnow.com/mountains/palisades-tahoe.html)
   - [Sierra-at-Tahoe](https://whogotsnow.com/mountains/sierra-at-tahoe.html)
-  - [Snow Summit](https://whogotsnow.com/mountains/snow-summit.html)
-  - [Snow Valley](https://whogotsnow.com/mountains/snow-valley.html)
-  - [Soda Springs](https://whogotsnow.com/mountains/soda-springs.html)
-  - [Sugar Bowl](https://whogotsnow.com/mountains/sugar-bowl.html)
   - [Tahoe Donner Downhill](https://whogotsnow.com/mountains/tahoe-donner-downhill.html)
 
 ### Colorado
@@ -86,30 +59,13 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
   - [Beaver Creek](https://whogotsnow.com/mountains/beaver-creek.html)
   - [Breckenridge](https://whogotsnow.com/mountains/breckenridge.html)
   - [Buttermilk](https://whogotsnow.com/mountains/buttermilk.html)
-  - [Chapman Hill Recreation Area](https://whogotsnow.com/mountains/chapman-hill-recreation-area.html)
-  - [Colorado Adventure Park](https://whogotsnow.com/mountains/colorado-adventure-park.html)
   - [Copper Mountain](https://whogotsnow.com/mountains/copper-mountain.html)
-  - [Cranor Hill Municipal Ski Hill](https://whogotsnow.com/mountains/cranor-hill-municipal-ski-hill.html)
   - [Crested Butte](https://whogotsnow.com/mountains/crested-butte.html)
-  - [Cuchara](https://whogotsnow.com/mountains/cuchara.html)
-  - [Dutch Henry Ski Hill](https://whogotsnow.com/mountains/dutch-henry-ski-hill.html)
-  - [Echo Mountain](https://whogotsnow.com/mountains/echo-mountain.html)
-  - [Eldora](https://whogotsnow.com/mountains/eldora.html)
   - [Granby Ranch](https://whogotsnow.com/mountains/granby-ranch.html)
-  - [Hesperus](https://whogotsnow.com/mountains/hesperus.html)
   - [Hoedown Hill](https://whogotsnow.com/mountains/hoedown-hill.html)
-  - [Howelson Hill](https://whogotsnow.com/mountains/howelson-hill.html)
-  - [Kendall Mountain Recreation Area](https://whogotsnow.com/mountains/kendall-mountain-recreation-area.html)
   - [Keystone](https://whogotsnow.com/mountains/keystone.html)
-  - [Lake City Ski Hill](https://whogotsnow.com/mountains/lake-city-ski-hill.html)
-  - [Lee's Ski Hill](https://whogotsnow.com/mountains/lees-ski-hill.html)
-  - [Loveland Basin](https://whogotsnow.com/mountains/loveland-basin.html)
-  - [Loveland Valley](https://whogotsnow.com/mountains/loveland-valley.html)
   - [Monarch Mountain](https://whogotsnow.com/mountains/monarch-mountain.html)
-  - [Powderhorn](https://whogotsnow.com/mountains/powderhorn.html)
   - [Purgatory](https://whogotsnow.com/mountains/purgatory.html)
-  - [Silverton Mountain](https://whogotsnow.com/mountains/silverton-mountain.html)
-  - [Ski Cooper](https://whogotsnow.com/mountains/ski-cooper.html)
   - [Steamboat](https://whogotsnow.com/mountains/steamboat.html)
   - [Sunlight](https://whogotsnow.com/mountains/sunlight.html)
   - [Telluride](https://whogotsnow.com/mountains/telluride.html)
@@ -118,371 +74,118 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
   - [Wolf Creek](https://whogotsnow.com/mountains/wolf-creek.html)
 
 ### Connecticut
-  - [Lakeridge](https://whogotsnow.com/mountains/lakeridge.html)
-  - [Mohawk Mountain](https://whogotsnow.com/mountains/mohawk-mountain.html)
   - [Mount Southington](https://whogotsnow.com/mountains/mount-southington.html)
-  - [Powder Ridge](https://whogotsnow.com/mountains/powder-ridge-connecticut.html)
   - [Ski Sundown](https://whogotsnow.com/mountains/ski-sundown.html)
 
 ### Idaho
-  - [Bald Mountain](https://whogotsnow.com/mountains/bald-mountain.html)
-  - [Blizzard Mountain](https://whogotsnow.com/mountains/blizzard-mountain.html)
   - [Bogus Basin Mountain Recreation Area](https://whogotsnow.com/mountains/bogus-basin-mountain-recreation-area.html)
   - [Brundage Mountain](https://whogotsnow.com/mountains/brundage-mountain.html)
-  - [Chipmunk Ski Hill](https://whogotsnow.com/mountains/chipmunk-ski-hill.html)
-  - [Cottonwood Butte Ski Hill](https://whogotsnow.com/mountains/cottonwood-butte-ski-hill.html)
-  - [Kelly Canyon](https://whogotsnow.com/mountains/kelly-canyon.html)
-  - [Little Ski Hill](https://whogotsnow.com/mountains/little-ski-hill.html)
   - [Lookout Pass](https://whogotsnow.com/mountains/lookout-pass.html)
-  - [Lost Trail](https://whogotsnow.com/mountains/lost-trail.html)
-  - [Magic](https://whogotsnow.com/mountains/magic.html)
-  - [McCall Activity Barn](https://whogotsnow.com/mountains/mccall-activity-barn.html)
-  - [Palouse Divide Nordic](https://whogotsnow.com/mountains/palouse-divide-nordic.html)
-  - [Pebble Creek](https://whogotsnow.com/mountains/pebble-creek.html)
-  - [Pomerelle](https://whogotsnow.com/mountains/pomerelle.html)
-  - [Rotarun](https://whogotsnow.com/mountains/rotarun.html)
   - [Schweitzer](https://whogotsnow.com/mountains/schweitzer.html)
   - [Silver](https://whogotsnow.com/mountains/silver.html)
-  - [Snowhaven](https://whogotsnow.com/mountains/snowhaven.html)
-  - [Soldier Mountain](https://whogotsnow.com/mountains/soldier-mountain.html)
   - [Sun Valley](https://whogotsnow.com/mountains/sun-valley.html)
-  - [Tamarack](https://whogotsnow.com/mountains/tamarack.html)
-
-### Illinois
-  - [Chestnut](https://whogotsnow.com/mountains/chestnut.html)
-  - [Four Lakes Village](https://whogotsnow.com/mountains/four-lakes-village.html)
-  - [Plumtree](https://whogotsnow.com/mountains/plumtree.html)
-  - [Ski Snowstar](https://whogotsnow.com/mountains/ski-snowstar.html)
-  - [Snow Park at Alpine Hills](https://whogotsnow.com/mountains/snow-park-at-alpine-hills.html)
-  - [Villa Olivia](https://whogotsnow.com/mountains/villa-olivia.html)
-
-### Indiana
-  - [Paoli Peaks](https://whogotsnow.com/mountains/paoli-peaks.html)
-  - [Perfect North Slopes](https://whogotsnow.com/mountains/perfect-north-slopes.html)
 
 ### Iowa
-  - [Crescent Hill](https://whogotsnow.com/mountains/crescent-hill.html)
-  - [Seven Oaks](https://whogotsnow.com/mountains/seven-oaks.html)
-  - [Sleepy Hollow Sports Park](https://whogotsnow.com/mountains/sleepy-hollow-sports-park.html)
   - [Sundown](https://whogotsnow.com/mountains/sundown.html)
 
 ### Maine
-  - [Baker Mountain](https://whogotsnow.com/mountains/baker-mountain.html)
   - [Big Moose Mountain](https://whogotsnow.com/mountains/big-moose-mountain.html)
-  - [Big Rock Mountain](https://whogotsnow.com/mountains/big-rock-mountain.html)
-  - [Black Mountain of Maine](https://whogotsnow.com/mountains/black-mountain-of-maine.html)
   - [Camden Snow Bowl](https://whogotsnow.com/mountains/camden-snow-bowl.html)
-  - [Hermon Mountain](https://whogotsnow.com/mountains/hermon-mountain.html)
-  - [Lonesome Pine Trails](https://whogotsnow.com/mountains/lonesome-pine-trails.html)
-  - [Lost Valley](https://whogotsnow.com/mountains/lost-valley.html)
-  - [Mount Abram](https://whogotsnow.com/mountains/mount-abram.html)
-  - [Mount Jefferson](https://whogotsnow.com/mountains/mount-jefferson.html)
-  - [Pinnacle Ski Club](https://whogotsnow.com/mountains/pinnacle-ski-club.html)
   - [Pleasant Mountain](https://whogotsnow.com/mountains/pleasant-mountain.html)
-  - [Powderhouse Hill](https://whogotsnow.com/mountains/powderhouse-hill.html)
-  - [Quarry Road Trails](https://whogotsnow.com/mountains/quarry-road-trails.html)
-  - [Quoggy Jo Ski Center](https://whogotsnow.com/mountains/quoggy-jo-ski-center.html)
-  - [Saddleback Mountain](https://whogotsnow.com/mountains/saddleback-mountain.html)
-  - [Seacoast Snowpark](https://whogotsnow.com/mountains/seacoast-snowpark.html)
-  - [Spruce Mountain Ski Slope](https://whogotsnow.com/mountains/spruce-mountain-ski-slope.html)
   - [Sugarloaf](https://whogotsnow.com/mountains/sugarloaf.html)
   - [Sunday River](https://whogotsnow.com/mountains/sunday-river.html)
-  - [Titcomb Mountain](https://whogotsnow.com/mountains/titcomb-mountain.html)
-
-### Maryland
-  - [Wisp](https://whogotsnow.com/mountains/wisp.html)
 
 ### Massachusetts
-  - [Berkshire East](https://whogotsnow.com/mountains/berkshire-east.html)
-  - [Blue Hills](https://whogotsnow.com/mountains/blue-hills.html)
-  - [Bousquet Mountain](https://whogotsnow.com/mountains/bousquet-mountain.html)
-  - [Easton](https://whogotsnow.com/mountains/easton.html)
-  - [Jiminy Peak](https://whogotsnow.com/mountains/jiminy-peak.html)
-  - [Mount Greylock Ski Club](https://whogotsnow.com/mountains/mount-greylock-ski-club.html)
   - [Nashoba Valley](https://whogotsnow.com/mountains/nashoba-valley.html)
-  - [Otis Ridge](https://whogotsnow.com/mountains/otis-ridge.html)
-  - [Ski Bradford](https://whogotsnow.com/mountains/ski-bradford.html)
-  - [Ski Butternut](https://whogotsnow.com/mountains/ski-butternut.html)
-  - [Ski Ward](https://whogotsnow.com/mountains/ski-ward.html)
-  - [Wachusett Mountain](https://whogotsnow.com/mountains/wachusett-mountain.html)
 
 ### Michigan
-  - [Adventure Mountain](https://whogotsnow.com/mountains/adventure-mountain.html)
-  - [Alpine Valley](https://whogotsnow.com/mountains/alpine-valley.html)
-  - [Big Powderhorn](https://whogotsnow.com/mountains/big-powderhorn.html)
-  - [Big Valley](https://whogotsnow.com/mountains/big-valley.html)
-  - [Bittersweet](https://whogotsnow.com/mountains/bittersweet.html)
-  - [Black River Basin](https://whogotsnow.com/mountains/black-river-basin.html)
-  - [Boyne Highlands](https://whogotsnow.com/mountains/boyne-highlands.html)
-  - [Boyne Mountain](https://whogotsnow.com/mountains/boyne-mountain.html)
   - [Caberfae Peaks](https://whogotsnow.com/mountains/caberfae-peaks.html)
-  - [Cannonsburg](https://whogotsnow.com/mountains/cannonsburg.html)
-  - [Copper Peak Ski Jump Park](https://whogotsnow.com/mountains/copper-peak-ski-jump-park.html)
-  - [Covington Ski Hill](https://whogotsnow.com/mountains/covington-ski-hill.html)
   - [Crystal Mountain](https://whogotsnow.com/mountains/crystal-mountain-michigan.html)
-  - [Crystella Ski Hill](https://whogotsnow.com/mountains/crystella-ski-hill.html)
-  - [Gladstone Ski Hill](https://whogotsnow.com/mountains/gladstone-ski-hill.html)
-  - [Hickory Hills](https://whogotsnow.com/mountains/hickory-hills.html)
-  - [Jackson Creek Summit](https://whogotsnow.com/mountains/jackson-creek-summit.html)
   - [Marquette Mountain](https://whogotsnow.com/mountains/marquette-mountain.html)
-  - [Missaukee Mountain](https://whogotsnow.com/mountains/missaukee-mountain.html)
-  - [Mont Ripley](https://whogotsnow.com/mountains/mont-ripley.html)
-  - [Mount Bohemia](https://whogotsnow.com/mountains/mount-bohemia.html)
-  - [Mt Brighton](https://whogotsnow.com/mountains/mt-brighton.html)
-  - [Mt. Holiday](https://whogotsnow.com/mountains/mt-holiday.html)
-  - [Mt. Holly Ski & Snowboard](https://whogotsnow.com/mountains/mt-holly-ski-snowboard.html)
-  - [Mt. McSauba](https://whogotsnow.com/mountains/mt-mcsauba.html)
-  - [Mt. Zion](https://whogotsnow.com/mountains/mt-zion.html)
-  - [Mulligan's Hollow](https://whogotsnow.com/mountains/mulligans-hollow.html)
-  - [Norway Mountain](https://whogotsnow.com/mountains/norway-mountain.html)
-  - [Nub's Nob](https://whogotsnow.com/mountains/nubs-nob.html)
-  - [Otsego Club](https://whogotsnow.com/mountains/otsego-club.html)
-  - [Petoskey Winter Sports Park](https://whogotsnow.com/mountains/petoskey-winter-sports-park.html)
-  - [Pine Knob Ski & Snowboard](https://whogotsnow.com/mountains/pine-knob-ski-snowboard.html)
-  - [Pine Mountain Ski Hill](https://whogotsnow.com/mountains/pine-mountain-ski-hill.html)
-  - [Porcupine Mountains Winter Sports Complex](https://whogotsnow.com/mountains/porcupine-mountains-winter-sports-complex.html)
-  - [Sault Seal](https://whogotsnow.com/mountains/sault-seal.html)
-  - [Schuss Mountain](https://whogotsnow.com/mountains/schuss-mountain.html)
-  - [Silver Mountain](https://whogotsnow.com/mountains/silver-mountain.html)
-  - [Ski Brule](https://whogotsnow.com/mountains/ski-brule.html)
-  - [Snow Snake](https://whogotsnow.com/mountains/snow-snake.html)
-  - [Summit Mountain](https://whogotsnow.com/mountains/summit-mountain.html)
-  - [Swiss Valley Ski Lodge](https://whogotsnow.com/mountains/swiss-valley-ski-lodge.html)
-  - [The Homestead](https://whogotsnow.com/mountains/the-homestead.html)
   - [Timber Ridge](https://whogotsnow.com/mountains/timber-ridge.html)
-  - [Treetops Sylvan](https://whogotsnow.com/mountains/treetops-sylvan.html)
 
 ### Minnesota
-  - [Afton Alps](https://whogotsnow.com/mountains/afton-alps.html)
-  - [Andes Tower Hills](https://whogotsnow.com/mountains/andes-tower-hills.html)
   - [Buck Hill](https://whogotsnow.com/mountains/buck-hill.html)
-  - [Buena Vista](https://whogotsnow.com/mountains/buena-vista.html)
-  - [Chester Bowl](https://whogotsnow.com/mountains/chester-bowl.html)
-  - [Coffee Mill](https://whogotsnow.com/mountains/coffee-mill.html)
-  - [Como Park Ski Center](https://whogotsnow.com/mountains/como-park-ski-center.html)
-  - [Detroit Mountain](https://whogotsnow.com/mountains/detroit-mountain.html)
   - [Giants Ridge](https://whogotsnow.com/mountains/giants-ridge.html)
-  - [Hyland Hills](https://whogotsnow.com/mountains/hyland-hills.html)
   - [Lutsen Mountains](https://whogotsnow.com/mountains/lutsen-mountains.html)
-  - [Mount Itasca](https://whogotsnow.com/mountains/mount-itasca.html)
-  - [Mount Kato](https://whogotsnow.com/mountains/mount-kato.html)
-  - [Mount Ski Gull](https://whogotsnow.com/mountains/mount-ski-gull.html)
-  - [Powder Ridge](https://whogotsnow.com/mountains/powder-ridge.html)
-  - [Spirit Mountain](https://whogotsnow.com/mountains/spirit-mountain.html)
-  - [Steeplechase Ski & Snowboard](https://whogotsnow.com/mountains/steeplechase-ski-snowboard.html)
-  - [Welch Village](https://whogotsnow.com/mountains/welch-village.html)
-  - [Wild Chutes Snow Tubing](https://whogotsnow.com/mountains/wild-chutes-snow-tubing.html)
-  - [Wild Mountain](https://whogotsnow.com/mountains/wild-mountain.html)
 
 ### Missouri
   - [Hidden Valley](https://whogotsnow.com/mountains/hidden-valley-missouri.html)
   - [Snow Creek](https://whogotsnow.com/mountains/snow-creek.html)
 
 ### Montana
-  - [Bear Canyon](https://whogotsnow.com/mountains/bear-canyon.html)
-  - [Bear Paw Ski Bowl](https://whogotsnow.com/mountains/bear-paw-ski-bowl.html)
   - [Big Sky](https://whogotsnow.com/mountains/big-sky.html)
   - [Blacktail Mountain](https://whogotsnow.com/mountains/blacktail-mountain.html)
   - [Bridger Bowl](https://whogotsnow.com/mountains/bridger-bowl.html)
   - [Discovery](https://whogotsnow.com/mountains/discovery.html)
   - [Great Divide](https://whogotsnow.com/mountains/great-divide.html)
-  - [Maverick Mountain](https://whogotsnow.com/mountains/maverick-mountain.html)
-  - [Montana Snowbowl](https://whogotsnow.com/mountains/montana-snowbowl.html)
-  - [Red Lodge Mountain](https://whogotsnow.com/mountains/red-lodge-mountain.html)
-  - [Showdown](https://whogotsnow.com/mountains/showdown.html)
-  - [Teton Pass](https://whogotsnow.com/mountains/teton-pass.html)
-  - [Turner Mountain](https://whogotsnow.com/mountains/turner-mountain.html)
   - [Whitefish](https://whogotsnow.com/mountains/whitefish.html)
-  - [Yellowstone Club](https://whogotsnow.com/mountains/yellowstone-club.html)
 
 ### Nevada
   - [Diamond Peak](https://whogotsnow.com/mountains/diamond-peak.html)
-  - [Heavenly](https://whogotsnow.com/mountains/heavenly-nevada.html)
-  - [Lee Canyon](https://whogotsnow.com/mountains/lee-canyon.html)
   - [Mount Rose Ski Tahoe](https://whogotsnow.com/mountains/mount-rose-ski-tahoe.html)
-  - [Sky Tavern](https://whogotsnow.com/mountains/sky-tavern.html)
-  - [Snobowl Bike and](https://whogotsnow.com/mountains/snobowl-bike-and.html)
 
 ### New Hampshire
-  - [Abenaki](https://whogotsnow.com/mountains/abenaki.html)
-  - [Arrowhead Recreation Area](https://whogotsnow.com/mountains/arrowhead-recreation-area.html)
   - [Attitash](https://whogotsnow.com/mountains/attitash.html)
-  - [Black Mountain](https://whogotsnow.com/mountains/black-mountain.html)
-  - [Bretton Woods](https://whogotsnow.com/mountains/bretton-woods.html)
-  - [Campton Mountain](https://whogotsnow.com/mountains/campton-mountain.html)
   - [Cannon Mountain](https://whogotsnow.com/mountains/cannon-mountain.html)
   - [Cranmore](https://whogotsnow.com/mountains/cranmore.html)
-  - [Cranmore Tubing Park](https://whogotsnow.com/mountains/cranmore-tubing-park.html)
   - [Crotched Mountain Ski & Ride](https://whogotsnow.com/mountains/crotched-mountain-ski-ride.html)
-  - [Dartmouth Skiway](https://whogotsnow.com/mountains/dartmouth-skiway.html)
   - [Granite Gorge](https://whogotsnow.com/mountains/granite-gorge.html)
-  - [Gunstock Recreation Area](https://whogotsnow.com/mountains/gunstock-recreation-area.html)
-  - [Kanc Recreation Area](https://whogotsnow.com/mountains/kanc-recreation-area.html)
   - [King Pine](https://whogotsnow.com/mountains/king-pine.html)
   - [Loon](https://whogotsnow.com/mountains/loon.html)
-  - [McIntyre](https://whogotsnow.com/mountains/mcintyre.html)
-  - [Mount Prospect Ski Tow](https://whogotsnow.com/mountains/mount-prospect-ski-tow.html)
   - [Mount Sunapee](https://whogotsnow.com/mountains/mount-sunapee.html)
-  - [Mt. Eustis](https://whogotsnow.com/mountains/mt-eustis.html)
   - [Pats Peak](https://whogotsnow.com/mountains/pats-peak.html)
-  - [Proctor](https://whogotsnow.com/mountains/proctor.html)
-  - [Ragged](https://whogotsnow.com/mountains/ragged.html)
-  - [Red Hill Outing Club](https://whogotsnow.com/mountains/red-hill-outing-club.html)
-  - [Storrs Hill](https://whogotsnow.com/mountains/storrs-hill.html)
-  - [Tenney](https://whogotsnow.com/mountains/tenney.html)
-  - [Veterans Memorial](https://whogotsnow.com/mountains/veterans-memorial.html)
-  - [Waterville Valley](https://whogotsnow.com/mountains/waterville-valley.html)
-  - [Waterville Valley Resort Nordic](https://whogotsnow.com/mountains/waterville-valley-resort-nordic.html)
-  - [Whaleback Mountain](https://whogotsnow.com/mountains/whaleback-mountain.html)
   - [Wildcat Mountain](https://whogotsnow.com/mountains/wildcat-mountain.html)
-
-### New Jersey
-  - [Big Snow American Dream](https://whogotsnow.com/mountains/big-snow-american-dream.html)
-  - [Campgaw Mountain](https://whogotsnow.com/mountains/campgaw-mountain.html)
-  - [Mountain Creek](https://whogotsnow.com/mountains/mountain-creek.html)
-  - [National Winter Activity Center](https://whogotsnow.com/mountains/national-winter-activity-center.html)
 
 ### New Mexico
   - [Angel Fire](https://whogotsnow.com/mountains/angel-fire.html)
-  - [Pajarito Mountain](https://whogotsnow.com/mountains/pajarito-mountain.html)
   - [Red River](https://whogotsnow.com/mountains/red-river.html)
-  - [Sandia Peak](https://whogotsnow.com/mountains/sandia-peak.html)
   - [Sipapu Ski and Summer](https://whogotsnow.com/mountains/sipapu-ski-and-summer.html)
   - [Ski Apache](https://whogotsnow.com/mountains/ski-apache.html)
-  - [Ski Cloudcroft](https://whogotsnow.com/mountains/ski-cloudcroft.html)
   - [Ski Santa Fe, Santa Fe, Q38555](https://whogotsnow.com/mountains/ski-santa-fe-santa-fe-q38555.html)
   - [Taos Ski Valley](https://whogotsnow.com/mountains/taos-ski-valley.html)
 
 ### New York
-  - [Beartown](https://whogotsnow.com/mountains/beartown.html)
-  - [Belleayre Mountain Ski Center](https://whogotsnow.com/mountains/belleayre-mountain-ski-center.html)
-  - [Brantling Ski Slopes](https://whogotsnow.com/mountains/brantling-ski-slopes.html)
   - [Bristol Mountain](https://whogotsnow.com/mountains/bristol-mountain.html)
   - [Buffalo Ski Club](https://whogotsnow.com/mountains/buffalo-ski-club.html)
-  - [Camillus](https://whogotsnow.com/mountains/camillus.html)
-  - [Catamount](https://whogotsnow.com/mountains/catamount.html)
-  - [Cazenovia Ski Club](https://whogotsnow.com/mountains/cazenovia-ski-club.html)
-  - [Chestnut Ridge](https://whogotsnow.com/mountains/chestnut-ridge.html)
-  - [Cockaigne](https://whogotsnow.com/mountains/cockaigne.html)
-  - [Cortina Valley](https://whogotsnow.com/mountains/cortina-valley.html)
-  - [Double H Ranch (Hidden Valley)](https://whogotsnow.com/mountains/double-h-ranch-hidden-valley.html)
-  - [Dry Hill](https://whogotsnow.com/mountains/dry-hill.html)
-  - [Dynamite Hill](https://whogotsnow.com/mountains/dynamite-hill.html)
-  - [Emery Park](https://whogotsnow.com/mountains/emery-park.html)
-  - [Gore Mountain](https://whogotsnow.com/mountains/gore-mountain.html)
   - [Greek Peak](https://whogotsnow.com/mountains/greek-peak.html)
-  - [Hickory Ski Center](https://whogotsnow.com/mountains/hickory-ski-center.html)
   - [Holiday Mountain](https://whogotsnow.com/mountains/holiday-mountain.html)
-  - [Holiday Valley](https://whogotsnow.com/mountains/holiday-valley.html)
   - [Holimont](https://whogotsnow.com/mountains/holimont.html)
-  - [Hunt Hollow Ski Club](https://whogotsnow.com/mountains/hunt-hollow-ski-club.html)
   - [Hunter Mountain](https://whogotsnow.com/mountains/hunter-mountain.html)
   - [Kissing Bridge](https://whogotsnow.com/mountains/kissing-bridge.html)
-  - [Labrador Mountain](https://whogotsnow.com/mountains/labrador-mountain.html)
-  - [Maple Ski Ridge](https://whogotsnow.com/mountains/maple-ski-ridge.html)
-  - [McCauley Mountain](https://whogotsnow.com/mountains/mccauley-mountain.html)
   - [Mount Peter](https://whogotsnow.com/mountains/mount-peter.html)
-  - [Mount Pisgah Ski Center](https://whogotsnow.com/mountains/mount-pisgah-ski-center.html)
-  - [Newcomb Ski Slope](https://whogotsnow.com/mountains/newcomb-ski-slope.html)
-  - [Northampton Park](https://whogotsnow.com/mountains/northampton-park.html)
   - [Oak Mountain Ski Center](https://whogotsnow.com/mountains/oak-mountain-ski-center.html)
   - [Peek'n Peak](https://whogotsnow.com/mountains/peekn-peak.html)
-  - [Plattekill Mountain](https://whogotsnow.com/mountains/plattekill-mountain.html)
-  - [Ridin-Hy](https://whogotsnow.com/mountains/ridin-hy.html)
-  - [Rocking Horse Ranch](https://whogotsnow.com/mountains/rocking-horse-ranch.html)
   - [Royal Mountain](https://whogotsnow.com/mountains/royal-mountain.html)
-  - [Skaneateles Ski Club](https://whogotsnow.com/mountains/skaneateles-ski-club.html)
-  - [Snow Ridge](https://whogotsnow.com/mountains/snow-ridge.html)
-  - [Song](https://whogotsnow.com/mountains/song.html)
-  - [Swain Ski & Snowboard](https://whogotsnow.com/mountains/swain-ski-snowboard.html)
-  - [Thunder Ridge](https://whogotsnow.com/mountains/thunder-ridge.html)
-  - [Titus Mountain](https://whogotsnow.com/mountains/titus-mountain.html)
-  - [Val Bialas Ski Center](https://whogotsnow.com/mountains/val-bialas-ski-center.html)
-  - [Victor Constant](https://whogotsnow.com/mountains/victor-constant.html)
-  - [Villa Roma](https://whogotsnow.com/mountains/villa-roma.html)
-  - [West Mountain](https://whogotsnow.com/mountains/west-mountain.html)
   - [Whiteface](https://whogotsnow.com/mountains/whiteface.html)
-  - [Willard Mountain](https://whogotsnow.com/mountains/willard-mountain.html)
   - [Windham Mountain Club](https://whogotsnow.com/mountains/windham-mountain-club.html)
-  - [Woods Valley](https://whogotsnow.com/mountains/woods-valley.html)
 
 ### North Carolina
-  - [Appalachian Mountain](https://whogotsnow.com/mountains/appalachian-mountain.html)
-  - [Beech](https://whogotsnow.com/mountains/beech.html)
-  - [Cataloochee](https://whogotsnow.com/mountains/cataloochee.html)
   - [Hatley Pointe](https://whogotsnow.com/mountains/hatley-pointe.html)
-  - [Hawksnest Snow Tubing](https://whogotsnow.com/mountains/hawksnest-snow-tubing.html)
-  - [Sapphire Valley](https://whogotsnow.com/mountains/sapphire-valley.html)
-  - [Sugar](https://whogotsnow.com/mountains/sugar.html)
-
-### North Dakota
-  - [Bottineau Winter Park](https://whogotsnow.com/mountains/bottineau-winter-park.html)
-  - [Frost Fire Park](https://whogotsnow.com/mountains/frost-fire-park.html)
-  - [Huff Hills](https://whogotsnow.com/mountains/huff-hills.html)
-  - [Thrill Hills](https://whogotsnow.com/mountains/thrill-hills.html)
 
 ### Ohio
-  - [Alpine Valley](https://whogotsnow.com/mountains/alpine-valley-ohio.html)
-  - [Big Creek](https://whogotsnow.com/mountains/big-creek.html)
-  - [Boston Mills](https://whogotsnow.com/mountains/boston-mills.html)
-  - [Brandywine](https://whogotsnow.com/mountains/brandywine.html)
-  - [Mad River Mountain](https://whogotsnow.com/mountains/mad-river-mountain.html)
   - [Snow Trails](https://whogotsnow.com/mountains/snow-trails.html)
 
 ### Oregon
-  - [Anthony Lakes](https://whogotsnow.com/mountains/anthony-lakes.html)
-  - [Cooper Spur](https://whogotsnow.com/mountains/cooper-spur.html)
-  - [Dixie Summit](https://whogotsnow.com/mountains/dixie-summit.html)
-  - [Ferguson Ridge](https://whogotsnow.com/mountains/ferguson-ridge.html)
-  - [High Wallowas](https://whogotsnow.com/mountains/high-wallowas.html)
-  - [Hoodoo](https://whogotsnow.com/mountains/hoodoo.html)
   - [Mount Ashland](https://whogotsnow.com/mountains/mount-ashland.html)
   - [Mt. Bachelor](https://whogotsnow.com/mountains/mt-bachelor.html)
-  - [Mt. Hood Meadows](https://whogotsnow.com/mountains/mt-hood-meadows.html)
-  - [Mt. Hood Skibowl](https://whogotsnow.com/mountains/mt-hood-skibowl.html)
   - [Timberline Lodge](https://whogotsnow.com/mountains/timberline-lodge.html)
-  - [Warner Canyon](https://whogotsnow.com/mountains/warner-canyon.html)
   - [Willamette Pass](https://whogotsnow.com/mountains/willamette-pass.html)
 
 ### Pennsylvania
   - [Bear Creek Mountain Resort Ski Slopes](https://whogotsnow.com/mountains/bear-creek-mountain-resort-ski-slopes.html)
-  - [Big Bear](https://whogotsnow.com/mountains/big-bear.html)
-  - [Big Boulder Ski Resort Area](https://whogotsnow.com/mountains/big-boulder-ski-resort-area.html)
-  - [Blue](https://whogotsnow.com/mountains/blue.html)
   - [Blue Knob](https://whogotsnow.com/mountains/blue-knob.html)
-  - [Boyce Park](https://whogotsnow.com/mountains/boyce-park.html)
-  - [Camelback](https://whogotsnow.com/mountains/camelback.html)
-  - [Eagle Rock](https://whogotsnow.com/mountains/eagle-rock.html)
-  - [Elk Mountain](https://whogotsnow.com/mountains/elk-mountain.html)
-  - [Hidden Valley](https://whogotsnow.com/mountains/hidden-valley.html)
-  - [Jack Frost](https://whogotsnow.com/mountains/jack-frost.html)
   - [Laurel Mountain](https://whogotsnow.com/mountains/laurel-mountain.html)
   - [Liberty](https://whogotsnow.com/mountains/liberty.html)
-  - [Locust Lake Village Ski Hill](https://whogotsnow.com/mountains/locust-lake-village-ski-hill.html)
-  - [Montage Mountain](https://whogotsnow.com/mountains/montage-mountain.html)
   - [Mount Pleasant of Edinboro](https://whogotsnow.com/mountains/mount-pleasant-of-edinboro.html)
-  - [Mystic Mountain](https://whogotsnow.com/mountains/mystic-mountain.html)
-  - [Pocono Ranch Lands Ski Mountain](https://whogotsnow.com/mountains/pocono-ranch-lands-ski-mountain.html)
-  - [Roundtop](https://whogotsnow.com/mountains/roundtop.html)
-  - [Saw Creek Estates](https://whogotsnow.com/mountains/saw-creek-estates.html)
   - [Seven Springs](https://whogotsnow.com/mountains/seven-springs.html)
-  - [Shawnee Mountain](https://whogotsnow.com/mountains/shawnee-mountain.html)
   - [Ski Sawmill Family](https://whogotsnow.com/mountains/ski-sawmill-family.html)
-  - [Skytop’s Ski Hill](https://whogotsnow.com/mountains/skytop-s-ski-hill.html)
-  - [Spring Mountain](https://whogotsnow.com/mountains/spring-mountain.html)
-  - [The Hideout](https://whogotsnow.com/mountains/the-hideout.html)
-  - [Tussey Mountain](https://whogotsnow.com/mountains/tussey-mountain.html)
   - [Whitetail](https://whogotsnow.com/mountains/whitetail.html)
-  - [Wissahickon Ski Club](https://whogotsnow.com/mountains/wissahickon-ski-club.html)
 
 ### Quebec
   - [Tremblant](https://whogotsnow.com/mountains/tremblant.html)
 
-### Rhode Island
-  - [Yawgoo Valley](https://whogotsnow.com/mountains/yawgoo-valley.html)
-
 ### South Dakota
-  - [Great Bear Recreation Park](https://whogotsnow.com/mountains/great-bear-recreation-park.html)
   - [Ski Mystic Deer Mountain](https://whogotsnow.com/mountains/ski-mystic-deer-mountain.html)
   - [Terry Peak](https://whogotsnow.com/mountains/terry-peak.html)
 
@@ -492,143 +195,63 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 ### Utah
   - [Alta](https://whogotsnow.com/mountains/alta.html)
   - [Beaver Mountain](https://whogotsnow.com/mountains/beaver-mountain.html)
-  - [Brian Head](https://whogotsnow.com/mountains/brian-head.html)
   - [Brighton](https://whogotsnow.com/mountains/brighton.html)
-  - [Buckskin Hills Ski + Tubing Hill](https://whogotsnow.com/mountains/buckskin-hills-ski-tubing-hill.html)
   - [Cherry Peak](https://whogotsnow.com/mountains/cherry-peak.html)
   - [Deer Valley](https://whogotsnow.com/mountains/deer-valley.html)
   - [Eagle Point](https://whogotsnow.com/mountains/eagle-point.html)
-  - [Mountain Green](https://whogotsnow.com/mountains/mountain-green.html)
   - [Nordic Valley](https://whogotsnow.com/mountains/nordic-valley.html)
   - [Park City](https://whogotsnow.com/mountains/park-city.html)
   - [Powder Mountain](https://whogotsnow.com/mountains/powder-mountain.html)
   - [Snowbasin](https://whogotsnow.com/mountains/snowbasin.html)
   - [Snowbird](https://whogotsnow.com/mountains/snowbird.html)
   - [Solitude](https://whogotsnow.com/mountains/solitude.html)
-  - [Sundance](https://whogotsnow.com/mountains/sundance.html)
-  - [Utah Olympic Park](https://whogotsnow.com/mountains/utah-olympic-park.html)
-  - [Wasatch Peaks Ranch](https://whogotsnow.com/mountains/wasatch-peaks-ranch.html)
-  - [Woodward](https://whogotsnow.com/mountains/woodward.html)
 
 ### Vermont
-  - [Ascutney Outdoors](https://whogotsnow.com/mountains/ascutney-outdoors.html)
-  - [Bellows Falls Ski Tow](https://whogotsnow.com/mountains/bellows-falls-ski-tow.html)
   - [Bolton Valley](https://whogotsnow.com/mountains/bolton-valley.html)
-  - [Brattleboro Ski Hill](https://whogotsnow.com/mountains/brattleboro-ski-hill.html)
-  - [Bromley Mountain Ski Resort;Bromley Mountain](https://whogotsnow.com/mountains/bromley-mountain-ski-resort-bromley-mountain.html)
-  - [Burke](https://whogotsnow.com/mountains/burke.html)
-  - [Camp Ethan Allen](https://whogotsnow.com/mountains/camp-ethan-allen.html)
   - [Cochran's](https://whogotsnow.com/mountains/cochrans.html)
-  - [Cosmic Hill](https://whogotsnow.com/mountains/cosmic-hill.html)
-  - [Grill Hill](https://whogotsnow.com/mountains/grill-hill.html)
-  - [Hard'Ack](https://whogotsnow.com/mountains/hardack.html)
-  - [Harrington Hill](https://whogotsnow.com/mountains/harrington-hill.html)
   - [Jay Peak](https://whogotsnow.com/mountains/jay-peak.html)
   - [Killington](https://whogotsnow.com/mountains/killington.html)
-  - [Lyndon Outing Club](https://whogotsnow.com/mountains/lyndon-outing-club.html)
-  - [Mad River Glen](https://whogotsnow.com/mountains/mad-river-glen.html)
-  - [Magic Mountain](https://whogotsnow.com/mountains/magic-mountain.html)
   - [Middlebury College Snow Bowl](https://whogotsnow.com/mountains/middlebury-college-snow-bowl.html)
   - [Mount Snow](https://whogotsnow.com/mountains/mount-snow.html)
-  - [Northeast Slopes](https://whogotsnow.com/mountains/northeast-slopes.html)
   - [Okemo](https://whogotsnow.com/mountains/okemo.html)
-  - [Pico](https://whogotsnow.com/mountains/pico.html)
-  - [Plymouth Notch](https://whogotsnow.com/mountains/plymouth-notch.html)
-  - [Saskadena Six](https://whogotsnow.com/mountains/saskadena-six.html)
-  - [Ski Quechee](https://whogotsnow.com/mountains/ski-quechee.html)
   - [Smugglers' Notch](https://whogotsnow.com/mountains/smugglers-notch.html)
   - [Stowe](https://whogotsnow.com/mountains/stowe.html)
   - [Stratton](https://whogotsnow.com/mountains/stratton.html)
   - [Sugarbush](https://whogotsnow.com/mountains/sugarbush.html)
   - [The Hermitage Club at Haystack Mountain](https://whogotsnow.com/mountains/the-hermitage-club-at-haystack-mountain.html)
-  - [The Vermont Tech Rope Tow](https://whogotsnow.com/mountains/the-vermont-tech-rope-tow.html)
 
 ### Virginia
-  - [Bryce](https://whogotsnow.com/mountains/bryce.html)
-  - [Massanutten](https://whogotsnow.com/mountains/massanutten.html)
   - [Snowflex](https://whogotsnow.com/mountains/snowflex.html)
-  - [The Homestead](https://whogotsnow.com/mountains/the-homestead-virginia.html)
-  - [Wintergreen](https://whogotsnow.com/mountains/wintergreen.html)
 
 ### Washington
   - [49° North](https://whogotsnow.com/mountains/49-north.html)
   - [Alpental](https://whogotsnow.com/mountains/alpental.html)
   - [Badger Mountain](https://whogotsnow.com/mountains/badger-mountain.html)
   - [Bluewood](https://whogotsnow.com/mountains/bluewood.html)
-  - [Crystal Mountain](https://whogotsnow.com/mountains/crystal-mountain.html)
   - [Echo Valley](https://whogotsnow.com/mountains/echo-valley.html)
   - [Hurricane Ridge](https://whogotsnow.com/mountains/hurricane-ridge.html)
   - [Leavenworth Ski Hill](https://whogotsnow.com/mountains/leavenworth-ski-hill.html)
-  - [Loup Loup Ski Bowl](https://whogotsnow.com/mountains/loup-loup-ski-bowl.html)
-  - [Meany Lodge](https://whogotsnow.com/mountains/meany-lodge.html)
-  - [Mission Ridge](https://whogotsnow.com/mountains/mission-ridge.html)
-  - [Mt Baker](https://whogotsnow.com/mountains/mt-baker.html)
   - [Mt. Spokane](https://whogotsnow.com/mountains/mt-spokane.html)
-  - [Sahalie Ski Club](https://whogotsnow.com/mountains/sahalie-ski-club.html)
-  - [Sitzmark Ski Hill](https://whogotsnow.com/mountains/sitzmark-ski-hill.html)
   - [Stevens Pass](https://whogotsnow.com/mountains/stevens-pass.html)
-  - [Summit West](https://whogotsnow.com/mountains/summit-west.html)
   - [Three Summits](https://whogotsnow.com/mountains/three-summits.html)
   - [White Pass](https://whogotsnow.com/mountains/white-pass.html)
 
 ### West Virginia
   - [Canaan Valley](https://whogotsnow.com/mountains/canaan-valley.html)
-  - [Oglebay Ski and Snowboard Area](https://whogotsnow.com/mountains/oglebay-ski-and-snowboard-area.html)
-  - [Snow Riders](https://whogotsnow.com/mountains/snow-riders.html)
-  - [Snowshoe Mountain](https://whogotsnow.com/mountains/snowshoe-mountain.html)
-  - [Timberline Mountain](https://whogotsnow.com/mountains/timberline-mountain.html)
-  - [Winterplace](https://whogotsnow.com/mountains/winterplace.html)
 
 ### Wisconsin
-  - [Alpine Valley](https://whogotsnow.com/mountains/alpine-valley-wisconsin.html)
-  - [Ausblick Ski Hill](https://whogotsnow.com/mountains/ausblick-ski-hill.html)
-  - [Badlands Snow Park](https://whogotsnow.com/mountains/badlands-snow-park.html)
-  - [Blackhawk Ski Club](https://whogotsnow.com/mountains/blackhawk-ski-club.html)
-  - [Bruce Mound Winter Sports Area](https://whogotsnow.com/mountains/bruce-mound-winter-sports-area.html)
-  - [Camp 10](https://whogotsnow.com/mountains/camp-10.html)
-  - [Cascade Mountain](https://whogotsnow.com/mountains/cascade-mountain.html)
   - [Christie Mountain](https://whogotsnow.com/mountains/christie-mountain.html)
-  - [Christmas Mountain](https://whogotsnow.com/mountains/christmas-mountain.html)
-  - [Crystal Ridge (Rock Snowpark)](https://whogotsnow.com/mountains/crystal-ridge-rock-snowpark.html)
-  - [Devil's Head](https://whogotsnow.com/mountains/devils-head.html)
-  - [Forest Springs](https://whogotsnow.com/mountains/forest-springs.html)
-  - [Fox Hill](https://whogotsnow.com/mountains/fox-hill.html)
-  - [Granite Peak](https://whogotsnow.com/mountains/granite-peak.html)
-  - [Heiliger Huegel Ski Club](https://whogotsnow.com/mountains/heiliger-huegel-ski-club.html)
-  - [Kettlebowl](https://whogotsnow.com/mountains/kettlebowl.html)
-  - [Kewaunee County Winter Park](https://whogotsnow.com/mountains/kewaunee-county-winter-park.html)
-  - [Keyes Peak](https://whogotsnow.com/mountains/keyes-peak.html)
-  - [Little Switzerland](https://whogotsnow.com/mountains/little-switzerland.html)
-  - [Mont du Lac](https://whogotsnow.com/mountains/mont-du-lac.html)
-  - [Mt. La Crosse](https://whogotsnow.com/mountains/mt-la-crosse.html)
-  - [Nordic Mountain](https://whogotsnow.com/mountains/nordic-mountain.html)
-  - [Nutt Hill](https://whogotsnow.com/mountains/nutt-hill.html)
-  - [Paul Bunyan](https://whogotsnow.com/mountains/paul-bunyan.html)
-  - [Powers Bluff](https://whogotsnow.com/mountains/powers-bluff.html)
   - [Sunburst](https://whogotsnow.com/mountains/sunburst.html)
   - [The Mountain Top at Grand Geneva Resort & Spa](https://whogotsnow.com/mountains/the-mountain-top-at-grand-geneva-resort-spa.html)
-  - [Triangle Sports Area](https://whogotsnow.com/mountains/triangle-sports-area.html)
-  - [Trollhaugen](https://whogotsnow.com/mountains/trollhaugen.html)
-  - [Tyrol Basin Ski And Snowboard Area](https://whogotsnow.com/mountains/tyrol-basin-ski-and-snowboard-area.html)
-  - [Whitecap Mountain](https://whogotsnow.com/mountains/whitecap-mountain.html)
-  - [Wilmot Mountain](https://whogotsnow.com/mountains/wilmot-mountain.html)
 
 ### Wyoming
   - [Antelope Butte](https://whogotsnow.com/mountains/antelope-butte.html)
-  - [Beartooth Basin Summer](https://whogotsnow.com/mountains/beartooth-basin-summer.html)
-  - [Grand Targhee](https://whogotsnow.com/mountains/grand-targhee.html)
   - [Hogadon Basin](https://whogotsnow.com/mountains/hogadon-basin.html)
   - [Jackson Hole](https://whogotsnow.com/mountains/jackson-hole.html)
-  - [Meadowlark Ski Lodge (Big Horn Ski Resort)](https://whogotsnow.com/mountains/meadowlark-ski-lodge-big-horn-ski-resort.html)
-  - [Pine Creek](https://whogotsnow.com/mountains/pine-creek.html)
   - [Sleeping Giant Winter Sports Area](https://whogotsnow.com/mountains/sleeping-giant-winter-sports-area.html)
-  - [Snow King Mountain](https://whogotsnow.com/mountains/snow-king-mountain.html)
-  - [Snowy Range](https://whogotsnow.com/mountains/snowy-range.html)
-  - [White Pine](https://whogotsnow.com/mountains/white-pine.html)
 
 ## Regions
 
-- Alabama
 - Alaska
 - Alberta
 - Arizona
@@ -637,11 +260,8 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 - Colorado
 - Connecticut
 - Idaho
-- Illinois
-- Indiana
 - Iowa
 - Maine
-- Maryland
 - Massachusetts
 - Michigan
 - Minnesota
@@ -649,16 +269,13 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 - Montana
 - Nevada
 - New Hampshire
-- New Jersey
 - New Mexico
 - New York
 - North Carolina
-- North Dakota
 - Ohio
 - Oregon
 - Pennsylvania
 - Quebec
-- Rhode Island
 - South Dakota
 - Tennessee
 - Utah

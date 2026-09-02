@@ -145,6 +145,78 @@ export const DISCOVERED_CAMS = [
     "longitude": -111.69799
   },
   {
+    "id": "attitash-cam-1",
+    "home": true,
+    "name": "Attitash — Brownrice 1",
+    "mountain": "Attitash",
+    "url": "https://player.brownrice.com/snapshot/attitash3",
+    "type": "image",
+    "region": "New Hampshire",
+    "provider": "Brownrice",
+    "latitude": 44.07382,
+    "longitude": -71.23547
+  },
+  {
+    "id": "attitash-cam-2",
+    "home": false,
+    "name": "Attitash — Brownrice 2",
+    "mountain": "Attitash",
+    "url": "https://player.brownrice.com/snapshot/attitash1",
+    "type": "image",
+    "region": "New Hampshire",
+    "provider": "Brownrice",
+    "latitude": 44.07382,
+    "longitude": -71.23547
+  },
+  {
+    "id": "attitash-cam-3",
+    "home": false,
+    "name": "Attitash — Brownrice 3",
+    "mountain": "Attitash",
+    "url": "https://player.brownrice.com/snapshot/attitash4",
+    "type": "image",
+    "region": "New Hampshire",
+    "provider": "Brownrice",
+    "latitude": 44.07382,
+    "longitude": -71.23547
+  },
+  {
+    "id": "badger-mountain-cam-1",
+    "home": true,
+    "name": "Badger Mountain — Cam 1",
+    "mountain": "Badger Mountain",
+    "url": "https://www.nwwintersportsman.com/webcam/Basin.jpg",
+    "type": "image",
+    "region": "Washington",
+    "provider": "Resort",
+    "latitude": 47.61128,
+    "longitude": -120.12962
+  },
+  {
+    "id": "badger-mountain-cam-2",
+    "home": false,
+    "name": "Badger Mountain — Cam 2",
+    "mountain": "Badger Mountain",
+    "url": "https://www.nwwintersportsman.com/webcam/Tmissioncam.jpg",
+    "type": "image",
+    "region": "Washington",
+    "provider": "Resort",
+    "latitude": 47.61128,
+    "longitude": -120.12962
+  },
+  {
+    "id": "badger-mountain-cam-3",
+    "home": false,
+    "name": "Badger Mountain — Cam 3",
+    "mountain": "Badger Mountain",
+    "url": "https://www.nwwintersportsman.com/webcam/base.jpg",
+    "type": "image",
+    "region": "Washington",
+    "provider": "Resort",
+    "latitude": 47.61128,
+    "longitude": -120.12962
+  },
+  {
     "id": "bear-creek-mountain-resort-ski-slopes-cam-1",
     "home": true,
     "name": "Bear Creek Mountain Resort Ski Slopes — Brownrice 1",
@@ -541,6 +613,42 @@ export const DISCOVERED_CAMS = [
     "longitude": -71.70202
   },
   {
+    "id": "cherry-peak-cam-1",
+    "home": true,
+    "name": "Cherry Peak — Cam 1",
+    "mountain": "Cherry Peak",
+    "url": "https://www.ixnay.net/cams/cp/snowcat/current.jpg",
+    "type": "image",
+    "region": "Utah",
+    "provider": "Resort",
+    "latitude": 41.92229,
+    "longitude": -111.75335
+  },
+  {
+    "id": "cherry-peak-cam-2",
+    "home": false,
+    "name": "Cherry Peak — YouTube 2",
+    "mountain": "Cherry Peak",
+    "url": "https://www.youtube.com/embed/live_stream?channel=UCEdlqlZbczmtUSDa4HCnAXg&autoplay=1&mute=1&rel=0",
+    "type": "iframe",
+    "region": "Utah",
+    "provider": "YouTube",
+    "latitude": 41.92229,
+    "longitude": -111.75335
+  },
+  {
+    "id": "cherry-peak-cam-3",
+    "home": false,
+    "name": "Cherry Peak — YouTube 3",
+    "mountain": "Cherry Peak",
+    "url": "https://www.youtube.com/embed/vbt8-d48j-a30k-vmgq-fhsa?autoplay=1&mute=1&rel=0",
+    "type": "iframe",
+    "region": "Utah",
+    "provider": "YouTube",
+    "latitude": 41.92229,
+    "longitude": -111.75335
+  },
+  {
     "id": "china-peak-cam-1",
     "home": true,
     "name": "China Peak — IPCamLive 1",
@@ -563,6 +671,18 @@ export const DISCOVERED_CAMS = [
     "provider": "IPCamLive",
     "latitude": 37.22644,
     "longitude": -119.15805
+  },
+  {
+    "id": "christie-mountain-cam",
+    "home": true,
+    "name": "Christie Mountain — Live cam",
+    "mountain": "Christie Mountain",
+    "url": "https://g1.ipcamlive.com/player/player.php?alias=61a27d760cd67",
+    "type": "iframe",
+    "region": "Wisconsin",
+    "provider": "IPCamLive",
+    "latitude": 45.50755,
+    "longitude": -91.38342
   },
   {
     "id": "cochrans-cam",
@@ -757,6 +877,66 @@ export const DISCOVERED_CAMS = [
     "longitude": -112.37802
   },
   {
+    "id": "eaglecrest-cam-1",
+    "home": true,
+    "name": "Eaglecrest — Cam 1",
+    "mountain": "Eaglecrest",
+    "url": "https://eaglecams.ci.juneau.ak.us/eagle-ptarm-top-cam-2.jpeg",
+    "type": "image",
+    "region": "Alaska",
+    "provider": "Resort",
+    "latitude": 58.26734,
+    "longitude": -134.51097
+  },
+  {
+    "id": "eaglecrest-cam-2",
+    "home": false,
+    "name": "Eaglecrest — Cam 2",
+    "mountain": "Eaglecrest",
+    "url": "https://eaglecams.ci.juneau.ak.us/eagle-ptarm-top-cam-3.jpeg",
+    "type": "image",
+    "region": "Alaska",
+    "provider": "Resort",
+    "latitude": 58.26734,
+    "longitude": -134.51097
+  },
+  {
+    "id": "eaglecrest-cam-3",
+    "home": false,
+    "name": "Eaglecrest — Cam 3",
+    "mountain": "Eaglecrest",
+    "url": "https://eaglecams.ci.juneau.ak.us/eagle-ptarm-bot-cam-3.jpeg",
+    "type": "image",
+    "region": "Alaska",
+    "provider": "Resort",
+    "latitude": 58.26734,
+    "longitude": -134.51097
+  },
+  {
+    "id": "echo-valley-cam-1",
+    "home": true,
+    "name": "Echo Valley — Cam 1",
+    "mountain": "Echo Valley",
+    "url": "https://skiechovalley.com/webcam/Base.jpg?1788374279",
+    "type": "image",
+    "region": "Washington",
+    "provider": "Resort",
+    "latitude": 47.93768,
+    "longitude": -120.05837
+  },
+  {
+    "id": "echo-valley-cam-2",
+    "home": false,
+    "name": "Echo Valley — Cam 2",
+    "mountain": "Echo Valley",
+    "url": "https://skiechovalley.com/webcam/Poma.jpg?1788374279",
+    "type": "image",
+    "region": "Washington",
+    "provider": "Resort",
+    "latitude": 47.93768,
+    "longitude": -120.05837
+  },
+  {
     "id": "giants-ridge-cam-1",
     "home": true,
     "name": "Giants Ridge — YouTube 1",
@@ -815,6 +995,42 @@ export const DISCOVERED_CAMS = [
     "provider": "Camstreamer",
     "latitude": 46.75121,
     "longitude": -112.32608
+  },
+  {
+    "id": "greek-peak-cam-1",
+    "home": true,
+    "name": "Greek Peak — YouTube 1",
+    "mountain": "Greek Peak",
+    "url": "https://www.youtube.com/embed/JWugDNXhOoA?autoplay=1&mute=1&rel=0",
+    "type": "iframe",
+    "region": "New York",
+    "provider": "YouTube",
+    "latitude": 42.50181,
+    "longitude": -76.13855
+  },
+  {
+    "id": "greek-peak-cam-2",
+    "home": false,
+    "name": "Greek Peak — YouTube 2",
+    "mountain": "Greek Peak",
+    "url": "https://www.youtube.com/embed/Cm0NAIS5z9o?autoplay=1&mute=1&rel=0",
+    "type": "iframe",
+    "region": "New York",
+    "provider": "YouTube",
+    "latitude": 42.50181,
+    "longitude": -76.13855
+  },
+  {
+    "id": "greek-peak-cam-3",
+    "home": false,
+    "name": "Greek Peak — YouTube 3",
+    "mountain": "Greek Peak",
+    "url": "https://www.youtube.com/embed/WK5nRpqGkd8?autoplay=1&mute=1&rel=0",
+    "type": "iframe",
+    "region": "New York",
+    "provider": "YouTube",
+    "latitude": 42.50181,
+    "longitude": -76.13855
   },
   {
     "id": "hatley-pointe-cam",
@@ -1045,6 +1261,42 @@ export const DISCOVERED_CAMS = [
     "longitude": -120.06466
   },
   {
+    "id": "kissing-bridge-cam-1",
+    "home": true,
+    "name": "Kissing Bridge — Cam 1",
+    "mountain": "Kissing Bridge",
+    "url": "https://cdn.prod.website-files.com/6716e32c7e124cd50e0116ad/6751fb2c6c24f8d4ebbadabb_kb-webcam-title.png",
+    "type": "image",
+    "region": "New York",
+    "provider": "Resort",
+    "latitude": 42.59977,
+    "longitude": -78.65849
+  },
+  {
+    "id": "kissing-bridge-cam-2",
+    "home": false,
+    "name": "Kissing Bridge — IPCamLive 2",
+    "mountain": "Kissing Bridge",
+    "url": "https://g1.ipcamlive.com/player/player.php?alias=kbsaloon",
+    "type": "iframe",
+    "region": "New York",
+    "provider": "IPCamLive",
+    "latitude": 42.59977,
+    "longitude": -78.65849
+  },
+  {
+    "id": "laurel-mountain-cam",
+    "home": true,
+    "name": "Laurel Mountain — Live cam",
+    "mountain": "Laurel Mountain",
+    "url": "https://player.brownrice.com/snapshot/laurelmainlodge",
+    "type": "image",
+    "region": "Pennsylvania",
+    "provider": "Brownrice",
+    "latitude": 40.16691,
+    "longitude": -79.1694
+  },
+  {
     "id": "leavenworth-ski-hill-cam-1",
     "home": true,
     "name": "Leavenworth Ski Hill — Cam 1",
@@ -1115,6 +1367,18 @@ export const DISCOVERED_CAMS = [
     "provider": "Brownrice",
     "latitude": 39.75909,
     "longitude": -77.36847
+  },
+  {
+    "id": "lookout-pass-cam",
+    "home": true,
+    "name": "Lookout Pass — Live cam",
+    "mountain": "Lookout Pass",
+    "url": "https://g1.ipcamlive.com/player/player.php?alias=6345e54d48886&skin=white&autoplay=1&mute=1&disableautofullscreen=1&disablefullscreen=1&disablezoombutton=1&disablevideofit=1&disableframecapture=1&disableuserpause=1",
+    "type": "iframe",
+    "region": "Idaho",
+    "provider": "IPCamLive",
+    "latitude": 47.45097,
+    "longitude": -115.72035
   },
   {
     "id": "loon-cam-1",
@@ -1381,6 +1645,42 @@ export const DISCOVERED_CAMS = [
     "longitude": -72.92924
   },
   {
+    "id": "mount-sunapee-cam-1",
+    "home": true,
+    "name": "Mount Sunapee — Brownrice 1",
+    "mountain": "Mount Sunapee",
+    "url": "https://player.brownrice.com/snapshot/sunapeesummit",
+    "type": "image",
+    "region": "New Hampshire",
+    "provider": "Brownrice",
+    "latitude": 43.32393,
+    "longitude": -72.07572
+  },
+  {
+    "id": "mount-sunapee-cam-2",
+    "home": false,
+    "name": "Mount Sunapee — Brownrice 2",
+    "mountain": "Mount Sunapee",
+    "url": "https://player.brownrice.com/snapshot/sunapeesprucelodge",
+    "type": "image",
+    "region": "New Hampshire",
+    "provider": "Brownrice",
+    "latitude": 43.32393,
+    "longitude": -72.07572
+  },
+  {
+    "id": "mount-sunapee-cam-3",
+    "home": false,
+    "name": "Mount Sunapee — Brownrice 3",
+    "mountain": "Mount Sunapee",
+    "url": "https://player.brownrice.com/snapshot/sunapeeexpresslift",
+    "type": "image",
+    "region": "New Hampshire",
+    "provider": "Brownrice",
+    "latitude": 43.32393,
+    "longitude": -72.07572
+  },
+  {
     "id": "mountain-high-cam-1",
     "home": true,
     "name": "Mountain High — Camstreamer 1",
@@ -1573,12 +1873,24 @@ export const DISCOVERED_CAMS = [
     "longitude": -71.79464
   },
   {
-    "id": "peekn-peak-cam",
+    "id": "peekn-peak-cam-1",
     "home": true,
-    "name": "Peek'n Peak — Live cam",
+    "name": "Peek'n Peak — IPCamLive 1",
     "mountain": "Peek'n Peak",
     "url": "https://g1.ipcamlive.com/player/snapshot.php?alias=61bb55f8b1df6",
     "type": "image",
+    "region": "New York",
+    "provider": "IPCamLive",
+    "latitude": 42.06368,
+    "longitude": -79.7406
+  },
+  {
+    "id": "peekn-peak-cam-2",
+    "home": false,
+    "name": "Peek'n Peak — IPCamLive 2",
+    "mountain": "Peek'n Peak",
+    "url": "https://g1.ipcamlive.com/player/player.php?alias=61bb55f8b1df6&mute=1&disablezoombutton=1&disableframecapture=1&disabletimelapseplayer=1&disabledownloadbutton=1&disableplaybackspeedbutton=1&disableuserpause=1",
+    "type": "iframe",
     "region": "New York",
     "provider": "IPCamLive",
     "latitude": 42.06368,
@@ -1765,6 +2077,18 @@ export const DISCOVERED_CAMS = [
     "longitude": -79.30305
   },
   {
+    "id": "sierra-at-tahoe-cam",
+    "home": true,
+    "name": "Sierra-at-Tahoe — Live cam",
+    "mountain": "Sierra-at-Tahoe",
+    "url": "https://links.imagerelay.com/cdn/981/ql/4c35d7da3eeb4484a74a2282f3767534/Summit-Cam.jpg?t=1788370615",
+    "type": "image",
+    "region": "California",
+    "provider": "Resort",
+    "latitude": 38.79615,
+    "longitude": -120.07897
+  },
+  {
     "id": "silver-cam-1",
     "home": true,
     "name": "Silver — Cam 1",
@@ -1837,6 +2161,18 @@ export const DISCOVERED_CAMS = [
     "longitude": -105.80119
   },
   {
+    "id": "ski-mystic-deer-mountain-cam",
+    "home": true,
+    "name": "Ski Mystic Deer Mountain — Live cam",
+    "mountain": "Ski Mystic Deer Mountain",
+    "url": "https://www.youtube.com/embed/fzPtKWW4mOc?autoplay=1&mute=1&rel=0",
+    "type": "iframe",
+    "region": "South Dakota",
+    "provider": "YouTube",
+    "latitude": 44.30843,
+    "longitude": -103.81844
+  },
+  {
     "id": "ski-santa-fe-santa-fe-q38555-cam-1",
     "home": true,
     "name": "Ski Santa Fe, Santa Fe, Q38555 — Brownrice 1",
@@ -1897,6 +2233,18 @@ export const DISCOVERED_CAMS = [
     "longitude": -72.94164
   },
   {
+    "id": "sleeping-giant-winter-sports-area-cam",
+    "home": true,
+    "name": "Sleeping Giant Winter Sports Area — Live cam",
+    "mountain": "Sleeping Giant Winter Sports Area",
+    "url": "https://webcams.skisg.com/SGwebcam1.jpg",
+    "type": "image",
+    "region": "Wyoming",
+    "provider": "Resort",
+    "latitude": 44.49034,
+    "longitude": -109.94391
+  },
+  {
     "id": "smugglers-notch-cam",
     "home": true,
     "name": "Smugglers' Notch — Live cam",
@@ -1909,6 +2257,18 @@ export const DISCOVERED_CAMS = [
     "longitude": -72.77006
   },
   {
+    "id": "snow-creek-cam",
+    "home": true,
+    "name": "Snow Creek — Live cam",
+    "mountain": "Snow Creek",
+    "url": "https://player.brownrice.com/snapshot/snowcreek1",
+    "type": "image",
+    "region": "Missouri",
+    "provider": "Brownrice",
+    "latitude": 39.46547,
+    "longitude": -94.96932
+  },
+  {
     "id": "snow-trails-cam",
     "home": true,
     "name": "Snow Trails — Live cam",
@@ -1919,6 +2279,30 @@ export const DISCOVERED_CAMS = [
     "provider": "IPCamLive",
     "latitude": 40.67107,
     "longitude": -82.50187
+  },
+  {
+    "id": "snowflex-cam-1",
+    "home": true,
+    "name": "Snowflex — YouTube 1",
+    "mountain": "Snowflex",
+    "url": "https://www.youtube.com/embed/fv9MdRnIVLg?autoplay=1&mute=1&rel=0",
+    "type": "iframe",
+    "region": "Virginia",
+    "provider": "YouTube",
+    "latitude": 37.35287,
+    "longitude": -79.16607
+  },
+  {
+    "id": "snowflex-cam-2",
+    "home": false,
+    "name": "Snowflex — YouTube 2",
+    "mountain": "Snowflex",
+    "url": "https://www.youtube.com/embed/GIU5T10SzzQ?autoplay=1&mute=1&rel=0",
+    "type": "iframe",
+    "region": "Virginia",
+    "provider": "YouTube",
+    "latitude": 37.35287,
+    "longitude": -79.16607
   },
   {
     "id": "sunburst-cam-1",
@@ -2101,6 +2485,18 @@ export const DISCOVERED_CAMS = [
     "longitude": -121.3307
   },
   {
+    "id": "timber-ridge-cam",
+    "home": true,
+    "name": "Timber Ridge — Live cam",
+    "mountain": "Timber Ridge",
+    "url": "https://www.youtube.com/embed/58bn_6WAnAI?autoplay=1&mute=1&rel=0",
+    "type": "iframe",
+    "region": "Michigan",
+    "provider": "YouTube",
+    "latitude": 42.39139,
+    "longitude": -85.78159
+  },
+  {
     "id": "timberline-lodge-cam-1",
     "home": true,
     "name": "Timberline Lodge — Cam 1",
@@ -2233,6 +2629,42 @@ export const DISCOVERED_CAMS = [
     "longitude": -77.93768
   },
   {
+    "id": "wildcat-mountain-cam-1",
+    "home": true,
+    "name": "Wildcat Mountain — Brownrice 1",
+    "mountain": "Wildcat Mountain",
+    "url": "https://player.brownrice.com/snapshot/wildcat2",
+    "type": "image",
+    "region": "New Hampshire",
+    "provider": "Brownrice",
+    "latitude": 44.25715,
+    "longitude": -71.2323
+  },
+  {
+    "id": "wildcat-mountain-cam-2",
+    "home": false,
+    "name": "Wildcat Mountain — Brownrice 2",
+    "mountain": "Wildcat Mountain",
+    "url": "https://player.brownrice.com/snapshot/wildcat3",
+    "type": "image",
+    "region": "New Hampshire",
+    "provider": "Brownrice",
+    "latitude": 44.25715,
+    "longitude": -71.2323
+  },
+  {
+    "id": "wildcat-mountain-cam-3",
+    "home": false,
+    "name": "Wildcat Mountain — Brownrice 3",
+    "mountain": "Wildcat Mountain",
+    "url": "https://player.brownrice.com/snapshot/wildcat1",
+    "type": "image",
+    "region": "New Hampshire",
+    "provider": "Brownrice",
+    "latitude": 44.25715,
+    "longitude": -71.2323
+  },
+  {
     "id": "willamette-pass-cam-1",
     "home": true,
     "name": "Willamette Pass — YouTube 1",
@@ -2255,6 +2687,18 @@ export const DISCOVERED_CAMS = [
     "provider": "YouTube",
     "latitude": 43.61249,
     "longitude": -122.02949
+  },
+  {
+    "id": "windham-mountain-club-cam",
+    "home": true,
+    "name": "Windham Mountain Club — Live cam",
+    "mountain": "Windham Mountain Club",
+    "url": "https://player.brownrice.com/snapshot/windhammountainclub",
+    "type": "image",
+    "region": "New York",
+    "provider": "Brownrice",
+    "latitude": 42.29301,
+    "longitude": -74.2566
   },
   {
     "id": "wolf-creek-cam-1",

@@ -10,7 +10,7 @@ import { slugifyMountain } from '../catalog.js';
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 const JUNK_URL =
-  /logo|favicon|sprite|icon[-_.]|placeholder|og[-_]?image|banner|overlay|thumbnail|webbutt|webicons|button|webcam-offline|webcam-preview|live-webcam-bg|safelinks\.protection|\.js(\?|$)|\/js\/hdrelay|untitled-design|b-roll|nav_images|header_1920|headerimage|header\.image|tripcheck\.com/i;
+  /logo|favicon|sprite|icon[-_.]|placeholder|og[-_]?image|banner|overlay|thumbnail|webbutt|webicons|webcam-offline|webcam-preview|live-webcam-bg|safelinks\.protection|\.js(\?|$)|\/js\/hdrelay|untitled-design|b-roll|nav_images|header_1920|headerimage|header\.image|tripcheck\.com/i;
 
 function isJunk(url) {
   const u = String(url || '');

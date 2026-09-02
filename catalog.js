@@ -73,9 +73,11 @@ function buildCatalog() {
     }
   }
 
-  return [...bySlug.values()].sort(
-    (a, b) => a.region.localeCompare(b.region) || a.name.localeCompare(b.name)
-  );
+  return [...bySlug.values()]
+    .filter((row) => row.cams.length > 0)
+    .sort(
+      (a, b) => a.region.localeCompare(b.region) || a.name.localeCompare(b.name)
+    );
 }
 
 export function allMountains() {

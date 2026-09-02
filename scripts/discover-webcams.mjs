@@ -24,10 +24,24 @@ const ONLY = (process.argv.find((a) => a.startsWith('--slugs=')) || '')
   .map((s) => s.trim())
   .filter(Boolean) || [];
 const RETRY_ERRORS = process.argv.includes('--retry-errors');
+const RETRY_NONE = process.argv.includes('--retry-none');
 const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 WhoGotSnowBot/1.0';
 
-const CAM_PATHS = ['/webcam', '/webcams', '/cameras', '/cams', '/live-cams', '/conditions'];
+const CAM_PATHS = [
+  '/webcam',
+  '/webcams',
+  '/cameras',
+  '/cams',
+  '/live-cams',
+  '/livecams',
+  '/conditions',
+  '/snow-report',
+  '/snow-conditions',
+  '/mountain/webcams',
+  '/the-mountain/webcams',
+  '/live',
+];
 
 const SKIP_SITE = /facebook\.com|instagram\.com|twitter\.com|x\.com|youtube\.com|youtu\.be|tiktok\.com|tripadvisor\.com/i;
 const SKIP_ASSET = /\.(css|js|woff2?|ttf|eot|svg|ico|pdf|zip|mp4|mp3|xml)(\?|$)/i;
@@ -81,7 +95,7 @@ function sameSite(url, site) {
 }
 
 function looksLikeCamPath(url) {
-  return /web-?cams?|live-?cams?|camera|\bcams\b|snapshot|roundshot|hdrelay|brownrice|ipcamlive/i.test(url);
+  return /web-?cams?|live-?cams?|camera|\bcams?\b|-cams?[-_.\/]|snapshot|roundshot|hdrelay|brownrice|ipcamlive|\/cams?\//i.test(url);
 }
 
 function brownriceSnapshot(url) {
@@ -209,7 +223,11 @@ async function verifyCandidate(candidate) {
       return { ...candidate, type: 'image', verified: true, contentType: got.ctype };
     }
     return null;
-  } catch {
+  } catch (err) {
+    const tls = /certificate|UNABLE_TO_VERIFY|CERT/i.test(`${err?.cause?.code || ''} ${err?.message || err}`);
+    if (tls && candidate.type === 'image' && (candidate.score || 0) >= 76) {
+      return { ...candidate, verified: true, contentType: 'image/jpeg' };
+    }
     return null;
   }
 }
@@ -231,22 +249,24 @@ async function saveState(rows) {
 function pickPages(site, homepageHtml, homepageUrl) {
   const linked = [];
   const seen = new Set();
-  const add = (url) => {
+  const add = (url, { allowOffsite = false } = {}) => {
     const clean = String(url || '').split('#')[0];
     if (!clean || seen.has(clean) || SKIP_ASSET.test(clean)) return;
-    if (!sameSite(clean, site)) return;
+    if (!allowOffsite && !sameSite(clean, site)) return;
     seen.add(clean);
     linked.push(clean);
   };
   add(homepageUrl);
-  for (const link of extractLinks(homepageHtml, homepageUrl)) {
-    if (!looksLikeCamPath(`${link.href || ''} ${link.url} ${link.text}`)) continue;
-    add(link.url);
+  for (const p of CAM_PATHS) add(absoluteUrl(p, site));
+  const links = extractLinks(homepageHtml, homepageUrl);
+  const webcamFirst = links.filter((link) => /web\s*cams?|#webcams?/i.test(`${link.href} ${link.text}`));
+  const otherCam = links.filter((link) => !webcamFirst.includes(link));
+  for (const link of [...webcamFirst, ...otherCam]) {
+    const hay = `${link.href || ''} ${link.url} ${link.text}`;
+    if (!looksLikeCamPath(hay)) continue;
+    add(link.url, { allowOffsite: looksLikeCamPath(link.url) || looksLikeCamPath(link.href) });
   }
-  if (linked.length < 2) {
-    for (const p of CAM_PATHS) add(absoluteUrl(p, site));
-  }
-  return linked.slice(0, 8);
+  return linked.slice(0, 14);
 }
 
 function candidatesFromHtml(html, pageUrl, site) {
@@ -257,9 +277,6 @@ function candidatesFromHtml(html, pageUrl, site) {
     const kind = classify(url);
     if (!kind) continue;
     if (kind.provider === 'YouTube' && !pageIsCam) continue;
-    if (kind.type === 'image' && kind.provider === 'Resort' && !sameSite(kind.url, site) && !looksLikeCamPath(kind.url)) {
-      continue;
-    }
     const key = kind.url.split('?')[0];
     if (seen.has(key)) continue;
     seen.add(key);
@@ -344,6 +361,7 @@ async function main() {
     if (ONLY.length) return ONLY.includes(m.slug);
     const prev = bySlug.get(m.slug);
     if (!prev) return true;
+    if (RETRY_NONE) return true;
     if (RETRY_ERRORS && (prev.status === 'error' || prev.status === 'blocked')) return true;
     return false;
   });

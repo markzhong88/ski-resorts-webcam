@@ -50,7 +50,7 @@
       "homepage HTTP 404 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:06:55.069Z"
+    "checkedAt": "2026-09-02T18:06:34.220Z"
   },
   {
     "slug": "adventure-mountain",
@@ -61,10 +61,10 @@
     "longitude": -89.09017,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:01:19.148Z"
+    "checkedAt": "2026-09-02T17:52:31.405Z"
   },
   {
     "slug": "afton-alps",
@@ -75,10 +75,10 @@
     "longitude": -92.78591,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:04:09.143Z"
+    "checkedAt": "2026-09-02T18:00:09.490Z"
   },
   {
     "slug": "alpental",
@@ -128,10 +128,10 @@
     "longitude": -83.52367,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:01:25.090Z"
+    "checkedAt": "2026-09-02T17:52:42.450Z"
   },
   {
     "slug": "alpine-valley-ohio",
@@ -140,12 +140,12 @@
     "website": "https://www.alpinevalleyohio.com/",
     "latitude": 41.52853,
     "longitude": -81.26234,
-    "status": "error",
+    "status": "none",
     "notes": [
-      "homepage HTTP 500 text/html"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:14:08.400Z"
+    "checkedAt": "2026-09-02T18:22:39.739Z"
   },
   {
     "slug": "alpine-valley-wisconsin",
@@ -156,10 +156,10 @@
     "longitude": -88.42803,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:22:47.650Z"
+    "checkedAt": "2026-09-02T18:40:39.505Z"
   },
   {
     "slug": "alyeska",
@@ -173,7 +173,7 @@
       "homepage HTTP 307 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:50:52.674Z"
+    "checkedAt": "2026-09-02T17:33:41.573Z"
   },
   {
     "slug": "andes-tower-hills",
@@ -184,10 +184,10 @@
     "longitude": -95.61962,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:04:21.391Z"
+    "checkedAt": "2026-09-02T18:00:37.007Z"
   },
   {
     "slug": "angel-fire",
@@ -268,10 +268,10 @@
     "longitude": -118.23954,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:14:28.211Z"
+    "checkedAt": "2026-09-02T18:25:43.225Z"
   },
   {
     "slug": "arctic-valley",
@@ -344,10 +344,10 @@
     "longitude": -72.3319,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:07:05.924Z"
+    "checkedAt": "2026-09-02T18:06:52.263Z"
   },
   {
     "slug": "ascutney-outdoors",
@@ -358,10 +358,10 @@
     "longitude": -72.46358,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:18:23.954Z"
+    "checkedAt": "2026-09-02T18:34:54.589Z"
   },
   {
     "slug": "attitash",
@@ -370,12 +370,37 @@
     "website": "https://www.attitash.com/",
     "latitude": 44.07382,
     "longitude": -71.23547,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, verified 3"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:07:08.451Z"
+    "cams": [
+      {
+        "url": "https://player.brownrice.com/snapshot/attitash3",
+        "type": "image",
+        "provider": "Brownrice",
+        "score": 95,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://player.brownrice.com/snapshot/attitash1",
+        "type": "image",
+        "provider": "Brownrice",
+        "score": 95,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://player.brownrice.com/snapshot/attitash4",
+        "type": "image",
+        "provider": "Brownrice",
+        "score": 95,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:07:47.928Z"
   },
   {
     "slug": "ausblick-ski-hill",
@@ -386,10 +411,10 @@
     "longitude": -88.26601,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:22:56.178Z"
+    "checkedAt": "2026-09-02T18:40:54.724Z"
   },
   {
     "slug": "badger-mountain",
@@ -398,12 +423,37 @@
     "website": "http://www.nwwintersportsman.com/BadgerMt/index2.htm",
     "latitude": 47.61128,
     "longitude": -120.12962,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, verified 3"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:20:54.806Z"
+    "cams": [
+      {
+        "url": "http://www.nwwintersportsman.com/webcam/Basin.jpg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "http://www.nwwintersportsman.com/webcam/Tmissioncam.jpg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "http://www.nwwintersportsman.com/webcam/base.jpg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:37:57.332Z"
   },
   {
     "slug": "badger-pass",
@@ -417,7 +467,7 @@
       "homepage HTTP 404 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:52:21.515Z"
+    "checkedAt": "2026-09-02T17:35:37.207Z"
   },
   {
     "slug": "badlands-snow-park",
@@ -428,10 +478,10 @@
     "longitude": -92.64127,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:22:59.148Z"
+    "checkedAt": "2026-09-02T18:40:59.829Z"
   },
   {
     "slug": "bald-mountain",
@@ -442,10 +492,10 @@
     "longitude": -115.87068,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:56:39.514Z"
+    "checkedAt": "2026-09-02T17:41:37.624Z"
   },
   {
     "slug": "bear-canyon",
@@ -456,10 +506,10 @@
     "longitude": -110.92375,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:05:56.733Z"
+    "checkedAt": "2026-09-02T18:05:20.013Z"
   },
   {
     "slug": "bear-creek-mountain-resort-ski-slopes",
@@ -509,10 +559,10 @@
     "longitude": -116.8605,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:52:22.967Z"
+    "checkedAt": "2026-09-02T17:35:44.779Z"
   },
   {
     "slug": "bear-paw-ski-bowl",
@@ -523,10 +573,10 @@
     "longitude": -109.67016,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:06:00.008Z"
+    "checkedAt": "2026-09-02T18:05:25.973Z"
   },
   {
     "slug": "bear-valley",
@@ -537,10 +587,10 @@
     "longitude": -120.05146,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:52:24.337Z"
+    "checkedAt": "2026-09-02T17:35:50.353Z"
   },
   {
     "slug": "beartooth-basin-summer",
@@ -551,10 +601,10 @@
     "longitude": -109.43524,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:26:10.417Z"
+    "checkedAt": "2026-09-02T18:47:44.008Z"
   },
   {
     "slug": "beartown",
@@ -565,10 +615,10 @@
     "longitude": -73.5837,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:09:57.138Z"
+    "checkedAt": "2026-09-02T18:13:48.077Z"
   },
   {
     "slug": "beaver-mountain",
@@ -602,10 +652,10 @@
     "longitude": -81.87949,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:13:11.740Z"
+    "checkedAt": "2026-09-02T18:19:13.377Z"
   },
   {
     "slug": "belleayre-mountain-ski-center",
@@ -619,7 +669,7 @@
       "homepage HTTP 403 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:09:57.760Z"
+    "checkedAt": "2026-09-02T18:13:48.685Z"
   },
   {
     "slug": "berkshire-east",
@@ -630,10 +680,10 @@
     "longitude": -72.8733,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:00:15.340Z"
+    "checkedAt": "2026-09-02T17:50:03.833Z"
   },
   {
     "slug": "big-bear",
@@ -644,10 +694,10 @@
     "longitude": -75.01916,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:15:47.886Z"
+    "checkedAt": "2026-09-02T18:27:09.827Z"
   },
   {
     "slug": "big-boulder-ski-resort-area",
@@ -656,12 +706,12 @@
     "website": "https://jfbb.com/",
     "latitude": 41.04729,
     "longitude": -75.60153,
-    "status": "error",
+    "status": "none",
     "notes": [
-      "homepage HTTP 500 text/html"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:15:48.837Z"
+    "checkedAt": "2026-09-02T18:28:06.676Z"
   },
   {
     "slug": "big-creek",
@@ -672,10 +722,10 @@
     "longitude": -81.18388,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:14:12.500Z"
+    "checkedAt": "2026-09-02T18:22:47.609Z"
   },
   {
     "slug": "big-moose-mountain",
@@ -715,12 +765,37 @@
     "website": "https://bigpowderhorn.net/",
     "latitude": 46.50609,
     "longitude": -90.09305,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, verified 3"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:01:26.222Z"
+    "cams": [
+      {
+        "url": "https://bigpowderhorn.net/wp-content/uploads/2018/11/webcams.jpg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://bigpowderhorn.net/wp-content/uploads/2018/11/webcams-400x107.jpg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://bigpowderhorn.net/wp-content/uploads/2018/11/webcams-600x160.jpg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T17:52:55.850Z"
   },
   {
     "slug": "big-rock-mountain",
@@ -731,10 +806,10 @@
     "longitude": -67.82231,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:59:02.014Z"
+    "checkedAt": "2026-09-02T17:47:34.834Z"
   },
   {
     "slug": "big-snow-american-dream",
@@ -745,10 +820,10 @@
     "longitude": -74.07035,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:08:47.610Z"
+    "checkedAt": "2026-09-02T18:12:17.109Z"
   },
   {
     "slug": "birch-hill-ski-and-snowboard-area",
@@ -759,10 +834,10 @@
     "longitude": -147.62668,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:51:10.820Z"
+    "checkedAt": "2026-09-02T17:33:51.879Z"
   },
   {
     "slug": "bittersweet",
@@ -773,10 +848,10 @@
     "longitude": -85.76069,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:01:27.438Z"
+    "checkedAt": "2026-09-02T17:53:05.468Z"
   },
   {
     "slug": "black-mountain",
@@ -787,10 +862,10 @@
     "longitude": -71.16494,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:07:11.485Z"
+    "checkedAt": "2026-09-02T18:07:55.039Z"
   },
   {
     "slug": "black-mountain-of-maine",
@@ -801,10 +876,10 @@
     "longitude": -70.62236,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:59:05.974Z"
+    "checkedAt": "2026-09-02T17:47:41.706Z"
   },
   {
     "slug": "black-river-basin",
@@ -815,10 +890,10 @@
     "longitude": -90.00458,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:01:29.105Z"
+    "checkedAt": "2026-09-02T17:53:15.851Z"
   },
   {
     "slug": "blackhawk-ski-club",
@@ -829,10 +904,10 @@
     "longitude": -89.56875,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:23:07.513Z"
+    "checkedAt": "2026-09-02T18:41:12.713Z"
   },
   {
     "slug": "blacktail-mountain",
@@ -866,10 +941,10 @@
     "longitude": -75.51317,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:15:50.108Z"
+    "checkedAt": "2026-09-02T18:28:14.155Z"
   },
   {
     "slug": "blue-hills",
@@ -880,10 +955,10 @@
     "longitude": -71.11917,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:00:38.015Z"
+    "checkedAt": "2026-09-02T17:50:48.732Z"
   },
   {
     "slug": "blue-knob",
@@ -1013,7 +1088,7 @@
       "homepage HTTP 404 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:52:25.212Z"
+    "checkedAt": "2026-09-02T17:35:51.202Z"
   },
   {
     "slug": "boston-mills",
@@ -1024,10 +1099,10 @@
     "longitude": -81.56586,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:14:14.745Z"
+    "checkedAt": "2026-09-02T18:23:42.185Z"
   },
   {
     "slug": "bottineau-winter-park",
@@ -1038,10 +1113,10 @@
     "longitude": -100.47194,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:13:57.927Z"
+    "checkedAt": "2026-09-02T18:21:17.014Z"
   },
   {
     "slug": "bousquet-mountain",
@@ -1052,10 +1127,10 @@
     "longitude": -73.27989,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:00:39.297Z"
+    "checkedAt": "2026-09-02T17:50:58.842Z"
   },
   {
     "slug": "boyne-highlands",
@@ -1066,10 +1141,10 @@
     "longitude": -84.94196,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:01:35.481Z"
+    "checkedAt": "2026-09-02T17:53:23.288Z"
   },
   {
     "slug": "boyne-mountain",
@@ -1080,10 +1155,10 @@
     "longitude": -84.94425,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:01:38.609Z"
+    "checkedAt": "2026-09-02T17:53:29.285Z"
   },
   {
     "slug": "brandywine",
@@ -1094,10 +1169,10 @@
     "longitude": -81.55344,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:14:16.890Z"
+    "checkedAt": "2026-09-02T18:24:35.083Z"
   },
   {
     "slug": "brantling-ski-slopes",
@@ -1108,10 +1183,10 @@
     "longitude": -77.06727,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:10:02.059Z"
+    "checkedAt": "2026-09-02T18:13:55.260Z"
   },
   {
     "slug": "brattleboro-ski-hill",
@@ -1122,10 +1197,10 @@
     "longitude": -72.5859,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:18:31.335Z"
+    "checkedAt": "2026-09-02T18:34:59.591Z"
   },
   {
     "slug": "bretton-woods",
@@ -1139,7 +1214,7 @@
       "homepage HTTP 404 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:07:12.589Z"
+    "checkedAt": "2026-09-02T18:07:56.013Z"
   },
   {
     "slug": "brian-head",
@@ -1150,10 +1225,10 @@
     "longitude": -112.84699,
     "status": "none",
     "notes": [
-      "checked 3 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:17:47.551Z"
+    "checkedAt": "2026-09-02T18:33:52.037Z"
   },
   {
     "slug": "bridger-bowl",
@@ -1226,7 +1301,7 @@
     "longitude": -72.93824,
     "status": "found",
     "notes": [
-      "checked 2 pages, verified 1"
+      "checked 14 pages, verified 1"
     ],
     "cams": [
       {
@@ -1238,7 +1313,7 @@
         "contentType": "image/png"
       }
     ],
-    "checkedAt": "2026-09-02T16:18:33.159Z"
+    "checkedAt": "2026-09-02T18:35:24.870Z"
   },
   {
     "slug": "bruce-mound-winter-sports-area",
@@ -1249,10 +1324,10 @@
     "longitude": -90.78771,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:23:23.046Z"
+    "checkedAt": "2026-09-02T18:41:41.908Z"
   },
   {
     "slug": "brundage-mountain",
@@ -1302,10 +1377,10 @@
     "longitude": -78.76671,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:20:12.785Z"
+    "checkedAt": "2026-09-02T18:37:18.164Z"
   },
   {
     "slug": "buck-hill",
@@ -1339,10 +1414,10 @@
     "longitude": -109.43155,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:17:50.465Z"
+    "checkedAt": "2026-09-02T18:33:56.980Z"
   },
   {
     "slug": "buena-vista",
@@ -1353,10 +1428,10 @@
     "longitude": -94.87683,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:04:31.027Z"
+    "checkedAt": "2026-09-02T18:00:41.944Z"
   },
   {
     "slug": "buffalo-ski-club",
@@ -1398,10 +1473,10 @@
     "longitude": -71.90029,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:18:35.390Z"
+    "checkedAt": "2026-09-02T18:35:32.246Z"
   },
   {
     "slug": "buttermilk",
@@ -1513,10 +1588,10 @@
     "longitude": -75.3527,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:15:59.231Z"
+    "checkedAt": "2026-09-02T18:28:20.258Z"
   },
   {
     "slug": "camillus",
@@ -1527,10 +1602,10 @@
     "longitude": -76.28538,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:10:18.742Z"
+    "checkedAt": "2026-09-02T18:14:06.588Z"
   },
   {
     "slug": "campgaw-mountain",
@@ -1541,10 +1616,10 @@
     "longitude": -74.19815,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:08:50.381Z"
+    "checkedAt": "2026-09-02T18:12:23.518Z"
   },
   {
     "slug": "campton-mountain",
@@ -1555,10 +1630,10 @@
     "longitude": -71.60994,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:07:17.971Z"
+    "checkedAt": "2026-09-02T18:08:05.953Z"
   },
   {
     "slug": "canaan-valley",
@@ -1615,10 +1690,10 @@
     "longitude": -85.50419,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:01:52.569Z"
+    "checkedAt": "2026-09-02T17:53:52.914Z"
   },
   {
     "slug": "cascade-mountain",
@@ -1629,10 +1704,10 @@
     "longitude": -89.51579,
     "status": "none",
     "notes": [
-      "checked 3 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:23:41.672Z"
+    "checkedAt": "2026-09-02T18:42:44.498Z"
   },
   {
     "slug": "cataloochee",
@@ -1643,10 +1718,10 @@
     "longitude": -83.08958,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:13:12.926Z"
+    "checkedAt": "2026-09-02T18:19:26.402Z"
   },
   {
     "slug": "catamount",
@@ -1657,10 +1732,10 @@
     "longitude": -73.47733,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:10:23.661Z"
+    "checkedAt": "2026-09-02T18:14:16.207Z"
   },
   {
     "slug": "cazenovia-ski-club",
@@ -1671,10 +1746,10 @@
     "longitude": -75.8527,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:10:29.150Z"
+    "checkedAt": "2026-09-02T18:14:25.248Z"
   },
   {
     "slug": "cedar-pass",
@@ -1685,10 +1760,10 @@
     "longitude": -120.26591,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:52:28.686Z"
+    "checkedAt": "2026-09-02T17:35:58.101Z"
   },
   {
     "slug": "chapman-hill-recreation-area",
@@ -1702,7 +1777,7 @@
       "homepage fetch failed: TypeError"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:54:05.695Z"
+    "checkedAt": "2026-09-02T17:37:48.295Z"
   },
   {
     "slug": "cherry-peak",
@@ -1711,12 +1786,37 @@
     "website": "https://www.skicpr.com/",
     "latitude": 41.92229,
     "longitude": -111.75335,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 14 pages, verified 3"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:17:53.519Z"
+    "cams": [
+      {
+        "url": "http://www.ixnay.net/cams/cp/snowcat/current.jpg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://www.youtube.com/embed/live_stream?channel=UCEdlqlZbczmtUSDa4HCnAXg&autoplay=1&rel=0",
+        "type": "iframe",
+        "provider": "YouTube",
+        "score": 58,
+        "verified": true,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.youtube.com/embed/vbt8-d48j-a30k-vmgq-fhsa?autoplay=1&rel=0&mute=1&vq=hd720",
+        "type": "iframe",
+        "provider": "YouTube",
+        "score": 58,
+        "verified": true,
+        "contentType": "text/html"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:34:03.991Z"
   },
   {
     "slug": "chester-bowl",
@@ -1727,10 +1827,10 @@
     "longitude": -92.09666,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:04:34.964Z"
+    "checkedAt": "2026-09-02T18:00:48.456Z"
   },
   {
     "slug": "chestnut",
@@ -1741,10 +1841,10 @@
     "longitude": -90.39777,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:58:03.920Z"
+    "checkedAt": "2026-09-02T17:44:41.681Z"
   },
   {
     "slug": "chestnut-ridge",
@@ -1755,10 +1855,10 @@
     "longitude": -78.74579,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:10:33.407Z"
+    "checkedAt": "2026-09-02T18:14:31.791Z"
   },
   {
     "slug": "china-peak",
@@ -1798,12 +1898,21 @@
     "website": "https://www.christiemountain.com/",
     "latitude": 45.50755,
     "longitude": -91.38342,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 14 pages, verified 1"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:23:44.747Z"
+    "cams": [
+      {
+        "url": "https://g1.ipcamlive.com/player/player.php?alias=61a27d760cd67",
+        "type": "iframe",
+        "provider": "IPCamLive",
+        "score": 80,
+        "verified": true,
+        "contentType": "text/html"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:42:50.444Z"
   },
   {
     "slug": "christmas-mountain",
@@ -1817,7 +1926,7 @@
       "homepage fetch failed: TypeError"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:23:45.179Z"
+    "checkedAt": "2026-09-02T18:42:50.887Z"
   },
   {
     "slug": "cochrans",
@@ -1851,10 +1960,10 @@
     "longitude": -79.16645,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:10:36.516Z"
+    "checkedAt": "2026-09-02T18:14:37.057Z"
   },
   {
     "slug": "coffee-mill",
@@ -1865,10 +1974,10 @@
     "longitude": -92.0426,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:04:48.500Z"
+    "checkedAt": "2026-09-02T18:01:13.049Z"
   },
   {
     "slug": "colorado-adventure-park",
@@ -1879,10 +1988,10 @@
     "longitude": -105.818,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:54:16.926Z"
+    "checkedAt": "2026-09-02T17:38:04.548Z"
   },
   {
     "slug": "como-park-ski-center",
@@ -1893,10 +2002,10 @@
     "longitude": -93.14859,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:04:58.361Z"
+    "checkedAt": "2026-09-02T18:01:28.150Z"
   },
   {
     "slug": "cooper-spur",
@@ -1907,10 +2016,10 @@
     "longitude": -121.6054,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:14:46.430Z"
+    "checkedAt": "2026-09-02T18:26:10.419Z"
   },
   {
     "slug": "copper-peak-ski-jump-park",
@@ -1921,10 +2030,10 @@
     "longitude": -90.08899,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:02:04.073Z"
+    "checkedAt": "2026-09-02T17:54:22.723Z"
   },
   {
     "slug": "coppervale",
@@ -1935,10 +2044,10 @@
     "longitude": -120.90423,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:52:40.334Z"
+    "checkedAt": "2026-09-02T17:36:13.976Z"
   },
   {
     "slug": "covington-ski-hill",
@@ -1949,10 +2058,10 @@
     "longitude": -88.55783,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:02:08.791Z"
+    "checkedAt": "2026-09-02T17:54:30.925Z"
   },
   {
     "slug": "cranmore",
@@ -1986,10 +2095,10 @@
     "longitude": -95.86208,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:58:46.976Z"
+    "checkedAt": "2026-09-02T17:47:07.389Z"
   },
   {
     "slug": "crotched-mountain-ski-ride",
@@ -2029,12 +2138,21 @@
     "website": "https://crystalridge.com/",
     "latitude": 42.92042,
     "longitude": -88.01628,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, verified 1"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:23:46.252Z"
+    "cams": [
+      {
+        "url": "https://wms.apt9stream.com/ridge/tower-cam_output/dvr_thumbnail.jpg?timestamp=1788220377",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:43:00.039Z"
   },
   {
     "slug": "cuchara",
@@ -2045,10 +2163,10 @@
     "longitude": -105.13078,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:54:18.697Z"
+    "checkedAt": "2026-09-02T17:38:12.374Z"
   },
   {
     "slug": "dartmouth-skiway",
@@ -2059,10 +2177,10 @@
     "longitude": -72.09655,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:07:30.388Z"
+    "checkedAt": "2026-09-02T18:08:13.368Z"
   },
   {
     "slug": "detroit-mountain",
@@ -2073,10 +2191,10 @@
     "longitude": -95.78406,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:05:04.703Z"
+    "checkedAt": "2026-09-02T18:01:38.466Z"
   },
   {
     "slug": "devils-head",
@@ -2087,10 +2205,10 @@
     "longitude": -89.62874,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:23:47.631Z"
+    "checkedAt": "2026-09-02T18:43:07.073Z"
   },
   {
     "slug": "diamond-peak",
@@ -2249,10 +2367,10 @@
     "longitude": -73.78972,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:10:40.815Z"
+    "checkedAt": "2026-09-02T18:14:44.165Z"
   },
   {
     "slug": "dry-hill",
@@ -2263,10 +2381,10 @@
     "longitude": -75.90231,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:10:43.015Z"
+    "checkedAt": "2026-09-02T18:14:50.754Z"
   },
   {
     "slug": "dutch-henry-ski-hill",
@@ -2277,10 +2395,10 @@
     "longitude": -106.30405,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:54:21.352Z"
+    "checkedAt": "2026-09-02T17:38:16.479Z"
   },
   {
     "slug": "eagle-point",
@@ -2317,7 +2435,7 @@
       "homepage HTTP 404 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:16:02.178Z"
+    "checkedAt": "2026-09-02T18:28:22.286Z"
   },
   {
     "slug": "eaglecrest",
@@ -2326,12 +2444,37 @@
     "website": "https://skieaglecrest.com/",
     "latitude": 58.26734,
     "longitude": -134.51097,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, verified 3"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T15:51:12.056Z"
+    "cams": [
+      {
+        "url": "https://eaglecams.ci.juneau.ak.us/eagle-ptarm-top-cam-2.jpeg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://eaglecams.ci.juneau.ak.us/eagle-ptarm-top-cam-3.jpeg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://eaglecams.ci.juneau.ak.us/eagle-ptarm-bot-cam-3.jpeg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T17:33:58.987Z"
   },
   {
     "slug": "easton",
@@ -2342,10 +2485,10 @@
     "longitude": -72.59555,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:00:41.916Z"
+    "checkedAt": "2026-09-02T17:51:03.110Z"
   },
   {
     "slug": "echo-mountain",
@@ -2356,10 +2499,10 @@
     "longitude": -105.52114,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:54:24.050Z"
+    "checkedAt": "2026-09-02T17:38:20.640Z"
   },
   {
     "slug": "echo-valley",
@@ -2368,12 +2511,29 @@
     "website": "https://skiechovalley.com/",
     "latitude": 47.93768,
     "longitude": -120.05837,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 13 pages, verified 2"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:21:09.473Z"
+    "cams": [
+      {
+        "url": "https://skiechovalley.com/webcam/Base.jpg?1788374279",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://skiechovalley.com/webcam/Poma.jpg?1788374279",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:38:05.516Z"
   },
   {
     "slug": "eldora",
@@ -2384,10 +2544,10 @@
     "longitude": -105.5864,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:54:26.361Z"
+    "checkedAt": "2026-09-02T17:38:28.173Z"
   },
   {
     "slug": "elk-mountain",
@@ -2398,7 +2558,7 @@
     "longitude": -75.55878,
     "status": "found",
     "notes": [
-      "checked 3 pages, verified 3"
+      "checked 14 pages, verified 3"
     ],
     "cams": [
       {
@@ -2426,7 +2586,7 @@
         "contentType": "image/png"
       }
     ],
-    "checkedAt": "2026-09-02T16:16:04.998Z"
+    "checkedAt": "2026-09-02T18:28:34.483Z"
   },
   {
     "slug": "emery-park",
@@ -2440,7 +2600,7 @@
       "homepage HTTP 404 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:10:43.584Z"
+    "checkedAt": "2026-09-02T18:14:51.330Z"
   },
   {
     "slug": "ferguson-ridge",
@@ -2451,10 +2611,10 @@
     "longitude": -117.11352,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:14:49.387Z"
+    "checkedAt": "2026-09-02T18:26:15.661Z"
   },
   {
     "slug": "forest-springs",
@@ -2465,10 +2625,10 @@
     "longitude": -90.22093,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:23:58.220Z"
+    "checkedAt": "2026-09-02T18:43:23.231Z"
   },
   {
     "slug": "four-lakes-village",
@@ -2479,10 +2639,10 @@
     "longitude": -88.08381,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:58:06.868Z"
+    "checkedAt": "2026-09-02T17:44:47.124Z"
   },
   {
     "slug": "fox-hill",
@@ -2493,10 +2653,10 @@
     "longitude": -88.25175,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:23:59.485Z"
+    "checkedAt": "2026-09-02T18:43:28.398Z"
   },
   {
     "slug": "frost-fire-park",
@@ -2507,10 +2667,10 @@
     "longitude": -98.06713,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:14:04.409Z"
+    "checkedAt": "2026-09-02T18:21:37.839Z"
   },
   {
     "slug": "giants-ridge",
@@ -2563,7 +2723,7 @@
       "homepage HTTP 403 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:02:09.335Z"
+    "checkedAt": "2026-09-02T17:54:31.506Z"
   },
   {
     "slug": "gore-mountain",
@@ -2577,7 +2737,7 @@
       "homepage HTTP 403 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:10:44.110Z"
+    "checkedAt": "2026-09-02T18:14:51.873Z"
   },
   {
     "slug": "granby-ranch",
@@ -2619,10 +2779,10 @@
     "longitude": -110.94718,
     "status": "none",
     "notes": [
-      "checked 5 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:26:13.053Z"
+    "checkedAt": "2026-09-02T18:47:56.058Z"
   },
   {
     "slug": "granite-gorge",
@@ -2656,10 +2816,10 @@
     "longitude": -89.68559,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:24:01.072Z"
+    "checkedAt": "2026-09-02T18:43:39.069Z"
   },
   {
     "slug": "granlibakken",
@@ -2670,10 +2830,10 @@
     "longitude": -120.15378,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:52:49.424Z"
+    "checkedAt": "2026-09-02T17:36:25.902Z"
   },
   {
     "slug": "great-divide",
@@ -2705,12 +2865,37 @@
     "website": "https://greekpeakmtnresort.com/",
     "latitude": 42.50181,
     "longitude": -76.13855,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 13 pages, verified 3"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:10:50.190Z"
+    "cams": [
+      {
+        "url": "https://www.youtube.com/embed/JWugDNXhOoA?feature=oembed",
+        "type": "iframe",
+        "provider": "YouTube",
+        "score": 58,
+        "verified": true,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.youtube.com/embed/Cm0NAIS5z9o?feature=oembed",
+        "type": "iframe",
+        "provider": "YouTube",
+        "score": 58,
+        "verified": true,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.youtube.com/embed/WK5nRpqGkd8?feature=oembed",
+        "type": "iframe",
+        "provider": "YouTube",
+        "score": 58,
+        "verified": true,
+        "contentType": "text/html"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:14:59.347Z"
   },
   {
     "slug": "grill-hill",
@@ -2721,10 +2906,10 @@
     "longitude": -72.28066,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:18:41.824Z"
+    "checkedAt": "2026-09-02T18:35:36.434Z"
   },
   {
     "slug": "gunstock-recreation-area",
@@ -2735,10 +2920,10 @@
     "longitude": -71.36536,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:07:34.267Z"
+    "checkedAt": "2026-09-02T18:08:22.118Z"
   },
   {
     "slug": "hardack",
@@ -2749,10 +2934,10 @@
     "longitude": -73.0685,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:18:44.371Z"
+    "checkedAt": "2026-09-02T18:35:40.686Z"
   },
   {
     "slug": "hatley-pointe",
@@ -2786,10 +2971,10 @@
     "longitude": -81.82509,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:13:15.509Z"
+    "checkedAt": "2026-09-02T18:19:45.497Z"
   },
   {
     "slug": "heiliger-huegel-ski-club",
@@ -2800,10 +2985,10 @@
     "longitude": -88.31314,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:24:04.060Z"
+    "checkedAt": "2026-09-02T18:43:44.315Z"
   },
   {
     "slug": "hermon-mountain",
@@ -2814,10 +2999,10 @@
     "longitude": -68.96014,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:59:12.147Z"
+    "checkedAt": "2026-09-02T17:47:46.532Z"
   },
   {
     "slug": "hesperus",
@@ -2828,10 +3013,10 @@
     "longitude": -108.05736,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:54:31.815Z"
+    "checkedAt": "2026-09-02T17:38:32.898Z"
   },
   {
     "slug": "hickory-hills",
@@ -2842,10 +3027,10 @@
     "longitude": -85.66583,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:02:12.173Z"
+    "checkedAt": "2026-09-02T17:54:36.511Z"
   },
   {
     "slug": "hickory-ski-center",
@@ -2859,7 +3044,7 @@
       "homepage fetch failed: TypeError"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:10:50.678Z"
+    "checkedAt": "2026-09-02T18:14:59.901Z"
   },
   {
     "slug": "hidden-valley-missouri",
@@ -2884,7 +3069,7 @@
     "longitude": -79.25297,
     "status": "found",
     "notes": [
-      "checked 2 pages, verified 3"
+      "checked 14 pages, verified 3"
     ],
     "cams": [
       {
@@ -2912,7 +3097,7 @@
         "contentType": "image/jpeg"
       }
     ],
-    "checkedAt": "2026-09-02T16:16:09.333Z"
+    "checkedAt": "2026-09-02T18:29:34.253Z"
   },
   {
     "slug": "high-wallowas",
@@ -2923,10 +3108,10 @@
     "longitude": -117.20719,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:14:57.986Z"
+    "checkedAt": "2026-09-02T18:26:28.293Z"
   },
   {
     "slug": "hillberg",
@@ -2937,10 +3122,10 @@
     "longitude": -149.81702,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:51:22.768Z"
+    "checkedAt": "2026-09-02T17:34:18.375Z"
   },
   {
     "slug": "hilltop",
@@ -3067,10 +3252,10 @@
     "longitude": -78.67703,
     "status": "none",
     "notes": [
-      "checked 3 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:10:56.640Z"
+    "checkedAt": "2026-09-02T18:15:08.604Z"
   },
   {
     "slug": "holimont",
@@ -3104,10 +3289,10 @@
     "longitude": -120.17337,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:52:50.951Z"
+    "checkedAt": "2026-09-02T17:36:38.462Z"
   },
   {
     "slug": "hoodoo",
@@ -3118,10 +3303,10 @@
     "longitude": -121.88061,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:15:02.544Z"
+    "checkedAt": "2026-09-02T18:26:37.016Z"
   },
   {
     "slug": "howelson-hill",
@@ -3132,10 +3317,10 @@
     "longitude": -106.83747,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:54:46.249Z"
+    "checkedAt": "2026-09-02T17:38:38.119Z"
   },
   {
     "slug": "huff-hills",
@@ -3146,10 +3331,10 @@
     "longitude": -100.72601,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:14:07.031Z"
+    "checkedAt": "2026-09-02T18:21:42.581Z"
   },
   {
     "slug": "hunt-hollow-ski-club",
@@ -3160,10 +3345,10 @@
     "longitude": -77.48385,
     "status": "none",
     "notes": [
-      "checked 3 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:11:01.099Z"
+    "checkedAt": "2026-09-02T18:15:15.431Z"
   },
   {
     "slug": "hurricane-ridge",
@@ -3205,10 +3390,10 @@
     "longitude": -93.36535,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:05:10.177Z"
+    "checkedAt": "2026-09-02T18:01:45.033Z"
   },
   {
     "slug": "iceman-falls",
@@ -3219,10 +3404,10 @@
     "longitude": -146.97857,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:51:49.448Z"
+    "checkedAt": "2026-09-02T17:34:43.467Z"
   },
   {
     "slug": "jack-frost",
@@ -3233,10 +3418,10 @@
     "longitude": -75.65163,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:16:12.039Z"
+    "checkedAt": "2026-09-02T18:30:24.916Z"
   },
   {
     "slug": "jackson-creek-summit",
@@ -3247,10 +3432,10 @@
     "longitude": -89.97272,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:02:14.194Z"
+    "checkedAt": "2026-09-02T17:54:40.961Z"
   },
   {
     "slug": "jiminy-peak",
@@ -3261,10 +3446,10 @@
     "longitude": -73.28473,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:00:45.229Z"
+    "checkedAt": "2026-09-02T17:51:20.629Z"
   },
   {
     "slug": "june-mountain",
@@ -3317,7 +3502,7 @@
       "homepage fetch failed: TypeError"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:07:34.728Z"
+    "checkedAt": "2026-09-02T18:08:22.575Z"
   },
   {
     "slug": "kelly-canyon",
@@ -3328,10 +3513,10 @@
     "longitude": -111.61289,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:56:54.625Z"
+    "checkedAt": "2026-09-02T17:41:43.052Z"
   },
   {
     "slug": "kendall-mountain-recreation-area",
@@ -3342,10 +3527,10 @@
     "longitude": -107.66233,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:54:49.323Z"
+    "checkedAt": "2026-09-02T17:38:43.923Z"
   },
   {
     "slug": "kettlebowl",
@@ -3356,10 +3541,10 @@
     "longitude": -88.90008,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:25:10.934Z"
+    "checkedAt": "2026-09-02T18:45:19.243Z"
   },
   {
     "slug": "king-pine",
@@ -3446,12 +3631,29 @@
     "website": "https://www.kbski.com/",
     "latitude": 42.59977,
     "longitude": -78.65849,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 13 pages, verified 2"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:11:05.817Z"
+    "cams": [
+      {
+        "url": "https://g1.ipcamlive.com/player/player.php?alias=kbsaloon",
+        "type": "iframe",
+        "provider": "IPCamLive",
+        "score": 80,
+        "verified": true,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6716e32c7e124cd50e0116ad/6751fb2c6c24f8d4ebbadabb_kb-webcam-title.png",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/png"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:15:23.561Z"
   },
   {
     "slug": "labrador-mountain",
@@ -3465,7 +3667,7 @@
       "homepage fetch failed: TypeError"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:11:06.340Z"
+    "checkedAt": "2026-09-02T18:15:24.053Z"
   },
   {
     "slug": "lake-city-ski-hill",
@@ -3476,10 +3678,10 @@
     "longitude": -107.31375,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:54:52.439Z"
+    "checkedAt": "2026-09-02T17:38:49.532Z"
   },
   {
     "slug": "lakeridge",
@@ -3490,10 +3692,10 @@
     "longitude": -73.10077,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:55:57.899Z"
+    "checkedAt": "2026-09-02T17:40:30.547Z"
   },
   {
     "slug": "laurel-mountain",
@@ -3502,12 +3704,29 @@
     "website": "https://www.laurelmountainski.com/",
     "latitude": 40.16691,
     "longitude": -79.1694,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, verified 2"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:16:14.499Z"
+    "cams": [
+      {
+        "url": "https://player.brownrice.com/snapshot/laurelmainlodge",
+        "type": "image",
+        "provider": "Brownrice",
+        "score": 95,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://www.laurelmountainski.com/Assets/images/components/webcam/webcam-offline.jpg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:31:19.808Z"
   },
   {
     "slug": "leavenworth-ski-hill",
@@ -3557,10 +3776,10 @@
     "longitude": -115.68007,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:06:47.506Z"
+    "checkedAt": "2026-09-02T18:06:27.392Z"
   },
   {
     "slug": "lees-ski-hill",
@@ -3574,7 +3793,7 @@
       "homepage HTTP 404 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:54:53.062Z"
+    "checkedAt": "2026-09-02T17:38:50.154Z"
   },
   {
     "slug": "liberty",
@@ -3624,10 +3843,10 @@
     "longitude": -116.16108,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:56:57.963Z"
+    "checkedAt": "2026-09-02T17:41:51.286Z"
   },
   {
     "slug": "little-switzerland",
@@ -3636,12 +3855,37 @@
     "website": "https://www.littleswitz.com/",
     "latitude": 43.3383,
     "longitude": -88.2807,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, verified 3"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:25:12.015Z"
+    "cams": [
+      {
+        "url": "https://wms.apt9stream.com/littleswitz/beginner-cam_output/dvr_thumbnail.jpg?timestamp=1788219062",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://wms.apt9stream.com/littleswitz/tower-cam_output/dvr_thumbnail.jpg?timestamp=1788219062",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://wms.apt9stream.com/littleswitz/41-park-cam_outpu/dvr_thumbnail.jpg?timestamp=1788219062",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:45:29.196Z"
   },
   {
     "slug": "locust-lake-village-ski-hill",
@@ -3652,10 +3896,10 @@
     "longitude": -75.55985,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:16:21.756Z"
+    "checkedAt": "2026-09-02T18:31:44.726Z"
   },
   {
     "slug": "lonesome-pine-trails",
@@ -3666,10 +3910,10 @@
     "longitude": -68.59487,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:59:15.218Z"
+    "checkedAt": "2026-09-02T17:47:52.123Z"
   },
   {
     "slug": "lookout-pass",
@@ -3680,7 +3924,7 @@
     "longitude": -115.72035,
     "status": "found",
     "notes": [
-      "checked 2 pages, verified 3"
+      "checked 14 pages, verified 3"
     ],
     "cams": [
       {
@@ -3708,7 +3952,7 @@
         "contentType": "image/webp"
       }
     ],
-    "checkedAt": "2026-09-02T15:57:00.029Z"
+    "checkedAt": "2026-09-02T17:42:09.320Z"
   },
   {
     "slug": "loon",
@@ -3758,10 +4002,10 @@
     "longitude": -113.95749,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:57:06.609Z"
+    "checkedAt": "2026-09-02T17:42:21.136Z"
   },
   {
     "slug": "lost-valley",
@@ -3772,10 +4016,10 @@
     "longitude": -70.28443,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:59:22.227Z"
+    "checkedAt": "2026-09-02T17:48:04.733Z"
   },
   {
     "slug": "loup-loup-ski-bowl",
@@ -3786,10 +4030,10 @@
     "longitude": -119.91832,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:21:31.785Z"
+    "checkedAt": "2026-09-02T18:38:16.965Z"
   },
   {
     "slug": "loveland-basin",
@@ -3800,10 +4044,10 @@
     "longitude": -105.91071,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:54:56.051Z"
+    "checkedAt": "2026-09-02T17:39:05.137Z"
   },
   {
     "slug": "lutsen-mountains",
@@ -3845,10 +4089,10 @@
     "longitude": -71.98363,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:19:35.382Z"
+    "checkedAt": "2026-09-02T18:36:34.914Z"
   },
   {
     "slug": "mad-river-glen",
@@ -3862,7 +4106,7 @@
       "homepage HTTP 403 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:19:35.925Z"
+    "checkedAt": "2026-09-02T18:36:35.505Z"
   },
   {
     "slug": "mad-river-mountain",
@@ -3873,10 +4117,10 @@
     "longitude": -83.67505,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:14:19.065Z"
+    "checkedAt": "2026-09-02T18:25:30.770Z"
   },
   {
     "slug": "magic",
@@ -3887,10 +4131,10 @@
     "longitude": -114.28903,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:57:12.745Z"
+    "checkedAt": "2026-09-02T17:42:31.386Z"
   },
   {
     "slug": "magic-mountain",
@@ -3901,10 +4145,10 @@
     "longitude": -72.76466,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:19:37.259Z"
+    "checkedAt": "2026-09-02T18:36:40.530Z"
   },
   {
     "slug": "maple-ski-ridge",
@@ -3915,10 +4159,10 @@
     "longitude": -74.03298,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:11:09.489Z"
+    "checkedAt": "2026-09-02T18:15:29.306Z"
   },
   {
     "slug": "marquette-mountain",
@@ -3952,7 +4196,7 @@
     "longitude": -78.76048,
     "status": "found",
     "notes": [
-      "checked 2 pages, verified 2"
+      "checked 14 pages, verified 2"
     ],
     "cams": [
       {
@@ -3972,7 +4216,7 @@
         "contentType": "image/webp"
       }
     ],
-    "checkedAt": "2026-09-02T16:20:14.689Z"
+    "checkedAt": "2026-09-02T18:37:27.273Z"
   },
   {
     "slug": "maverick-mountain",
@@ -3983,10 +4227,10 @@
     "longitude": -113.12768,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:06:16.046Z"
+    "checkedAt": "2026-09-02T18:05:33.002Z"
   },
   {
     "slug": "mccauley-mountain",
@@ -3997,10 +4241,10 @@
     "longitude": -74.96149,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:11:13.057Z"
+    "checkedAt": "2026-09-02T18:15:35.293Z"
   },
   {
     "slug": "mcintyre",
@@ -4011,10 +4255,10 @@
     "longitude": -71.43991,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:07:46.810Z"
+    "checkedAt": "2026-09-02T18:08:48.873Z"
   },
   {
     "slug": "meadowlark-ski-lodge-big-horn-ski-resort",
@@ -4028,7 +4272,7 @@
       "homepage fetch failed: TypeError"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:26:18.583Z"
+    "checkedAt": "2026-09-02T18:47:56.534Z"
   },
   {
     "slug": "meany-lodge",
@@ -4039,10 +4283,10 @@
     "longitude": -121.31958,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:21:38.526Z"
+    "checkedAt": "2026-09-02T18:38:27.402Z"
   },
   {
     "slug": "middlebury-college-snow-bowl",
@@ -4084,10 +4328,10 @@
     "longitude": -120.41171,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:21:42.145Z"
+    "checkedAt": "2026-09-02T18:38:51.829Z"
   },
   {
     "slug": "mohawk-mountain",
@@ -4098,10 +4342,10 @@
     "longitude": -73.31025,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:56:03.844Z"
+    "checkedAt": "2026-09-02T17:40:55.183Z"
   },
   {
     "slug": "monarch-mountain",
@@ -4151,10 +4395,10 @@
     "longitude": -92.28459,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:25:15.206Z"
+    "checkedAt": "2026-09-02T18:45:34.457Z"
   },
   {
     "slug": "montage-mountain",
@@ -4168,7 +4412,7 @@
       "homepage fetch failed: TypeError"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:16:22.162Z"
+    "checkedAt": "2026-09-02T18:31:45.133Z"
   },
   {
     "slug": "montana-snowbowl",
@@ -4179,10 +4423,10 @@
     "longitude": -114.00613,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:06:22.900Z"
+    "checkedAt": "2026-09-02T18:05:45.537Z"
   },
   {
     "slug": "mount-abram",
@@ -4193,10 +4437,10 @@
     "longitude": -70.71199,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:59:28.841Z"
+    "checkedAt": "2026-09-02T17:48:37.672Z"
   },
   {
     "slug": "mount-ashland",
@@ -4246,10 +4490,10 @@
     "longitude": -88.00923,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:02:31.721Z"
+    "checkedAt": "2026-09-02T17:54:52.497Z"
   },
   {
     "slug": "mount-eyak",
@@ -4260,10 +4504,10 @@
     "longitude": -145.74059,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:51:53.547Z"
+    "checkedAt": "2026-09-02T17:34:48.680Z"
   },
   {
     "slug": "mount-greylock-ski-club",
@@ -4274,10 +4518,10 @@
     "longitude": -73.21585,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:00:48.044Z"
+    "checkedAt": "2026-09-02T17:51:25.447Z"
   },
   {
     "slug": "mount-itasca",
@@ -4288,10 +4532,10 @@
     "longitude": -93.44891,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:05:17.885Z"
+    "checkedAt": "2026-09-02T18:01:51.718Z"
   },
   {
     "slug": "mount-kato",
@@ -4302,10 +4546,10 @@
     "longitude": -94.03643,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:05:21.171Z"
+    "checkedAt": "2026-09-02T18:01:57.086Z"
   },
   {
     "slug": "mount-lemmon-ski-valley",
@@ -4316,10 +4560,10 @@
     "longitude": -110.78049,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:52:20.409Z"
+    "checkedAt": "2026-09-02T17:35:35.704Z"
   },
   {
     "slug": "mount-peter",
@@ -4364,7 +4608,7 @@
       "homepage HTTP 404 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:11:17.638Z"
+    "checkedAt": "2026-09-02T18:15:35.850Z"
   },
   {
     "slug": "mount-pleasant-of-edinboro",
@@ -4414,10 +4658,10 @@
     "longitude": -71.57378,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:07:50.618Z"
+    "checkedAt": "2026-09-02T18:08:54.060Z"
   },
   {
     "slug": "mount-rose-ski-tahoe",
@@ -4467,10 +4711,10 @@
     "longitude": -94.37822,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:05:24.508Z"
+    "checkedAt": "2026-09-02T18:02:02.881Z"
   },
   {
     "slug": "mount-southington",
@@ -4502,12 +4746,37 @@
     "website": "https://www.mountsunapee.com/",
     "latitude": 43.32393,
     "longitude": -72.07572,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, verified 3"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:07:52.740Z"
+    "cams": [
+      {
+        "url": "https://player.brownrice.com/snapshot/sunapeesummit",
+        "type": "image",
+        "provider": "Brownrice",
+        "score": 95,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://player.brownrice.com/snapshot/sunapeesprucelodge",
+        "type": "image",
+        "provider": "Brownrice",
+        "score": 95,
+        "verified": true,
+        "contentType": "image/png"
+      },
+      {
+        "url": "https://player.brownrice.com/snapshot/sunapeeexpresslift",
+        "type": "image",
+        "provider": "Brownrice",
+        "score": 95,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:09:50.158Z"
   },
   {
     "slug": "mount-waterman",
@@ -4518,10 +4787,10 @@
     "longitude": -117.93184,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:53:00.636Z"
+    "checkedAt": "2026-09-02T17:36:43.725Z"
   },
   {
     "slug": "mountain-creek",
@@ -4532,10 +4801,10 @@
     "longitude": -74.51678,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:09:09.428Z"
+    "checkedAt": "2026-09-02T18:13:14.033Z"
   },
   {
     "slug": "mountain-high",
@@ -4585,10 +4854,10 @@
     "longitude": -147.40992,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:52:07.808Z"
+    "checkedAt": "2026-09-02T17:35:15.768Z"
   },
   {
     "slug": "mt-baker",
@@ -4599,10 +4868,10 @@
     "longitude": -121.66648,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:21:47.874Z"
+    "checkedAt": "2026-09-02T18:39:00.299Z"
   },
   {
     "slug": "mt-brighton",
@@ -4613,10 +4882,10 @@
     "longitude": -83.80915,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:02:33.810Z"
+    "checkedAt": "2026-09-02T17:55:52.946Z"
   },
   {
     "slug": "mt-baldy",
@@ -4627,10 +4896,10 @@
     "longitude": -117.61025,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:53:09.561Z"
+    "checkedAt": "2026-09-02T17:36:50.624Z"
   },
   {
     "slug": "mt-eustis",
@@ -4641,10 +4910,10 @@
     "longitude": -71.77577,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:07:56.029Z"
+    "checkedAt": "2026-09-02T18:09:56.006Z"
   },
   {
     "slug": "mt-holiday",
@@ -4655,10 +4924,10 @@
     "longitude": -85.51487,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:02:43.582Z"
+    "checkedAt": "2026-09-02T17:56:16.976Z"
   },
   {
     "slug": "mt-holly-ski-snowboard",
@@ -4669,10 +4938,10 @@
     "longitude": -83.56478,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:02:45.561Z"
+    "checkedAt": "2026-09-02T17:56:30.577Z"
   },
   {
     "slug": "mt-hood-meadows",
@@ -4683,10 +4952,10 @@
     "longitude": -121.65936,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:15:16.620Z"
+    "checkedAt": "2026-09-02T18:26:41.968Z"
   },
   {
     "slug": "mt-hood-skibowl",
@@ -4697,10 +4966,10 @@
     "longitude": -121.77234,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:15:21.096Z"
+    "checkedAt": "2026-09-02T18:26:58.368Z"
   },
   {
     "slug": "mt-la-crosse",
@@ -4711,10 +4980,10 @@
     "longitude": -91.18225,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:25:20.736Z"
+    "checkedAt": "2026-09-02T18:45:46.330Z"
   },
   {
     "slug": "mt-mcsauba",
@@ -4725,10 +4994,10 @@
     "longitude": -85.24603,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:02:48.970Z"
+    "checkedAt": "2026-09-02T17:56:35.763Z"
   },
   {
     "slug": "mt-shasta-ski-park",
@@ -4801,10 +5070,10 @@
     "longitude": -86.23915,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:02:52.140Z"
+    "checkedAt": "2026-09-02T17:56:41.031Z"
   },
   {
     "slug": "nashoba-valley",
@@ -4838,10 +5107,10 @@
     "longitude": -74.47961,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:09:14.395Z"
+    "checkedAt": "2026-09-02T18:13:22.079Z"
   },
   {
     "slug": "newcomb-ski-slope",
@@ -4855,7 +5124,7 @@
       "homepage HTTP 404 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:11:18.419Z"
+    "checkedAt": "2026-09-02T18:15:36.735Z"
   },
   {
     "slug": "nordic-mountain",
@@ -4864,12 +5133,37 @@
     "website": "https://www.nordicmountain.com/",
     "latitude": 44.12011,
     "longitude": -89.18258,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 3 pages, no verified feed"
+      "checked 14 pages, verified 3"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:25:22.148Z"
+    "cams": [
+      {
+        "url": "https://wms.apt9stream.com/nordicmountain/base-cam_output/dvr_thumbnail.jpg?timestamp=1788219062",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://wms.apt9stream.com/nordicmountain/summit-cam_output/dvr_thumbnail.jpg?timestamp=1788219062",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://wms.apt9stream.com/nordicmountain/beginner-cam_output/dvr_thumbnail.jpg?timestamp=1788219062",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:45:55.549Z"
   },
   {
     "slug": "nordic-valley",
@@ -4903,10 +5197,10 @@
     "longitude": -77.87542,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:11:21.341Z"
+    "checkedAt": "2026-09-02T18:15:41.664Z"
   },
   {
     "slug": "northeast-slopes",
@@ -4917,10 +5211,10 @@
     "longitude": -72.25266,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:19:45.269Z"
+    "checkedAt": "2026-09-02T18:36:50.873Z"
   },
   {
     "slug": "norway-mountain",
@@ -4931,10 +5225,10 @@
     "longitude": -87.86747,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:02:58.755Z"
+    "checkedAt": "2026-09-02T17:56:52.501Z"
   },
   {
     "slug": "nubs-nob",
@@ -4945,10 +5239,10 @@
     "longitude": -84.90364,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:03:02.652Z"
+    "checkedAt": "2026-09-02T17:57:14.402Z"
   },
   {
     "slug": "nutt-hill",
@@ -4959,10 +5253,10 @@
     "longitude": -87.9904,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:25:26.111Z"
+    "checkedAt": "2026-09-02T18:46:01.591Z"
   },
   {
     "slug": "oak-mountain-ski-center",
@@ -5035,10 +5329,10 @@
     "longitude": -80.65194,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:22:08.128Z"
+    "checkedAt": "2026-09-02T18:39:17.325Z"
   },
   {
     "slug": "otis-ridge",
@@ -5049,10 +5343,10 @@
     "longitude": -73.10131,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:00:57.556Z"
+    "checkedAt": "2026-09-02T17:51:37.450Z"
   },
   {
     "slug": "otsego-club",
@@ -5063,10 +5357,10 @@
     "longitude": -84.65095,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:03:17.107Z"
+    "checkedAt": "2026-09-02T17:57:39.516Z"
   },
   {
     "slug": "pajarito-mountain",
@@ -5077,10 +5371,10 @@
     "longitude": -106.39257,
     "status": "none",
     "notes": [
-      "checked 4 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:09:22.962Z"
+    "checkedAt": "2026-09-02T18:13:32.384Z"
   },
   {
     "slug": "palouse-divide-nordic",
@@ -5091,10 +5385,10 @@
     "longitude": -116.65745,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:57:33.324Z"
+    "checkedAt": "2026-09-02T17:43:02.342Z"
   },
   {
     "slug": "paoli-peaks",
@@ -5105,10 +5399,10 @@
     "longitude": -86.51028,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:58:35.308Z"
+    "checkedAt": "2026-09-02T17:46:25.345Z"
   },
   {
     "slug": "pats-peak",
@@ -5161,7 +5455,7 @@
       "homepage fetch failed: TypeError"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:25:26.743Z"
+    "checkedAt": "2026-09-02T18:46:02.211Z"
   },
   {
     "slug": "pebble-creek",
@@ -5172,10 +5466,10 @@
     "longitude": -112.15168,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:57:36.749Z"
+    "checkedAt": "2026-09-02T17:43:14.251Z"
   },
   {
     "slug": "peekn-peak",
@@ -5217,10 +5511,10 @@
     "longitude": -84.88676,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:58:39.897Z"
+    "checkedAt": "2026-09-02T17:46:54.563Z"
   },
   {
     "slug": "pico",
@@ -5231,10 +5525,10 @@
     "longitude": -72.84107,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:19:47.102Z"
+    "checkedAt": "2026-09-02T18:36:59.047Z"
   },
   {
     "slug": "pine-creek",
@@ -5245,10 +5539,10 @@
     "longitude": -110.82883,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:26:20.140Z"
+    "checkedAt": "2026-09-02T18:48:03.371Z"
   },
   {
     "slug": "pine-knob-ski-snowboard",
@@ -5259,10 +5553,10 @@
     "longitude": -83.36697,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:03:19.330Z"
+    "checkedAt": "2026-09-02T17:57:51.060Z"
   },
   {
     "slug": "pine-mountain-ski-hill",
@@ -5273,10 +5567,10 @@
     "longitude": -88.08492,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:03:24.540Z"
+    "checkedAt": "2026-09-02T17:58:02.205Z"
   },
   {
     "slug": "pinnacle-ski-club",
@@ -5287,10 +5581,10 @@
     "longitude": -69.38883,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:59:31.467Z"
+    "checkedAt": "2026-09-02T17:48:42.318Z"
   },
   {
     "slug": "plattekill-mountain",
@@ -5301,10 +5595,10 @@
     "longitude": -74.65627,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:11:59.905Z"
+    "checkedAt": "2026-09-02T18:16:19.791Z"
   },
   {
     "slug": "pleasant-mountain",
@@ -5338,10 +5632,10 @@
     "longitude": -89.89081,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:58:09.873Z"
+    "checkedAt": "2026-09-02T17:44:52.364Z"
   },
   {
     "slug": "plymouth-notch",
@@ -5352,10 +5646,10 @@
     "longitude": -72.7505,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:19:49.521Z"
+    "checkedAt": "2026-09-02T18:37:03.109Z"
   },
   {
     "slug": "pomerelle",
@@ -5366,10 +5660,10 @@
     "longitude": -113.61368,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:57:43.395Z"
+    "checkedAt": "2026-09-02T17:43:22.720Z"
   },
   {
     "slug": "porcupine-mountains-winter-sports-complex",
@@ -5383,7 +5677,7 @@
       "homepage HTTP 403 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:03:25.063Z"
+    "checkedAt": "2026-09-02T17:58:02.784Z"
   },
   {
     "slug": "powder-mountain",
@@ -5420,7 +5714,7 @@
       "homepage HTTP 403 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:56:08.614Z"
+    "checkedAt": "2026-09-02T17:40:56.017Z"
   },
   {
     "slug": "powder-ridge",
@@ -5431,10 +5725,10 @@
     "longitude": -94.30815,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:05:29.995Z"
+    "checkedAt": "2026-09-02T18:02:12.296Z"
   },
   {
     "slug": "powderhorn",
@@ -5445,7 +5739,7 @@
     "longitude": -108.15219,
     "status": "found",
     "notes": [
-      "checked 3 pages, verified 1"
+      "checked 14 pages, verified 1"
     ],
     "cams": [
       {
@@ -5457,7 +5751,7 @@
         "contentType": "image/png"
       }
     ],
-    "checkedAt": "2026-09-02T15:55:04.644Z"
+    "checkedAt": "2026-09-02T17:39:17.404Z"
   },
   {
     "slug": "powers-bluff",
@@ -5468,10 +5762,10 @@
     "longitude": -90.07175,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:25:29.829Z"
+    "checkedAt": "2026-09-02T18:46:07.149Z"
   },
   {
     "slug": "proctor",
@@ -5482,10 +5776,10 @@
     "longitude": -71.83045,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:08:09.423Z"
+    "checkedAt": "2026-09-02T18:10:13.588Z"
   },
   {
     "slug": "purgatory",
@@ -5535,10 +5829,10 @@
     "longitude": -69.6575,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:59:39.602Z"
+    "checkedAt": "2026-09-02T17:48:47.716Z"
   },
   {
     "slug": "quoggy-jo-ski-center",
@@ -5549,10 +5843,10 @@
     "longitude": -67.92905,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:59:42.670Z"
+    "checkedAt": "2026-09-02T17:48:53.467Z"
   },
   {
     "slug": "ragged",
@@ -5563,10 +5857,10 @@
     "longitude": -71.84487,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:08:10.739Z"
+    "checkedAt": "2026-09-02T18:10:22.024Z"
   },
   {
     "slug": "red-hill-outing-club",
@@ -5580,7 +5874,7 @@
       "homepage HTTP 404 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:08:11.393Z"
+    "checkedAt": "2026-09-02T18:10:22.668Z"
   },
   {
     "slug": "red-lodge-mountain",
@@ -5591,10 +5885,10 @@
     "longitude": -109.35333,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:06:24.430Z"
+    "checkedAt": "2026-09-02T18:05:55.912Z"
   },
   {
     "slug": "red-river",
@@ -5644,10 +5938,10 @@
     "longitude": -73.74002,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:12:04.762Z"
+    "checkedAt": "2026-09-02T18:16:26.979Z"
   },
   {
     "slug": "rocking-horse-ranch",
@@ -5658,10 +5952,10 @@
     "longitude": -74.01654,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:12:09.664Z"
+    "checkedAt": "2026-09-02T18:16:36.180Z"
   },
   {
     "slug": "rotarun",
@@ -5672,10 +5966,10 @@
     "longitude": -114.36535,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:57:48.035Z"
+    "checkedAt": "2026-09-02T17:43:31.024Z"
   },
   {
     "slug": "roundtop",
@@ -5689,7 +5983,7 @@
       "homepage fetch failed: TypeError"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:16:24.392Z"
+    "checkedAt": "2026-09-02T18:31:45.539Z"
   },
   {
     "slug": "royal-mountain",
@@ -5731,7 +6025,7 @@
     "longitude": -70.52157,
     "status": "found",
     "notes": [
-      "checked 2 pages, verified 3"
+      "checked 14 pages, verified 3"
     ],
     "cams": [
       {
@@ -5759,7 +6053,7 @@
         "contentType": "image/jpeg"
       }
     ],
-    "checkedAt": "2026-09-02T15:59:45.039Z"
+    "checkedAt": "2026-09-02T17:49:01.882Z"
   },
   {
     "slug": "sahalie-ski-club",
@@ -5770,10 +6064,10 @@
     "longitude": -121.41582,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:21:53.156Z"
+    "checkedAt": "2026-09-02T18:39:05.308Z"
   },
   {
     "slug": "sandia-peak",
@@ -5784,10 +6078,10 @@
     "longitude": -106.42335,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:09:31.120Z"
+    "checkedAt": "2026-09-02T18:13:37.638Z"
   },
   {
     "slug": "sapphire-valley",
@@ -5798,10 +6092,10 @@
     "longitude": -83.05923,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:13:18.638Z"
+    "checkedAt": "2026-09-02T18:19:50.864Z"
   },
   {
     "slug": "sault-seal",
@@ -5815,7 +6109,7 @@
       "homepage HTTP 403 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:03:25.612Z"
+    "checkedAt": "2026-09-02T17:58:03.371Z"
   },
   {
     "slug": "saw-creek-estates",
@@ -5826,10 +6120,10 @@
     "longitude": -75.05129,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:16:36.137Z"
+    "checkedAt": "2026-09-02T18:32:06.321Z"
   },
   {
     "slug": "schweitzer",
@@ -5879,10 +6173,10 @@
     "longitude": -70.45527,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:00:05.840Z"
+    "checkedAt": "2026-09-02T17:49:37.206Z"
   },
   {
     "slug": "seven-oaks",
@@ -5893,10 +6187,10 @@
     "longitude": -93.95473,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:58:49.197Z"
+    "checkedAt": "2026-09-02T17:47:16.994Z"
   },
   {
     "slug": "seven-springs",
@@ -5946,10 +6240,10 @@
     "longitude": -75.07823,
     "status": "none",
     "notes": [
-      "checked 3 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:16:46.066Z"
+    "checkedAt": "2026-09-02T18:32:25.317Z"
   },
   {
     "slug": "showdown",
@@ -5960,10 +6254,10 @@
     "longitude": -110.70837,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:06:25.496Z"
+    "checkedAt": "2026-09-02T18:06:01.830Z"
   },
   {
     "slug": "sierra-at-tahoe",
@@ -5972,12 +6266,21 @@
     "website": "https://www.sierraattahoe.com/",
     "latitude": 38.79615,
     "longitude": -120.07897,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, verified 1"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T15:53:13.715Z"
+    "cams": [
+      {
+        "url": "https://links.imagerelay.com/cdn/981/ql/4c35d7da3eeb4484a74a2282f3767534/Summit-Cam.jpg?t=1788370615",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T17:37:03.282Z"
   },
   {
     "slug": "silver",
@@ -6030,7 +6333,7 @@
       "homepage HTTP 403 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:03:26.116Z"
+    "checkedAt": "2026-09-02T17:58:03.882Z"
   },
   {
     "slug": "silverton-mountain",
@@ -6041,10 +6344,10 @@
     "longitude": -107.66188,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:55:18.003Z"
+    "checkedAt": "2026-09-02T17:39:36.648Z"
   },
   {
     "slug": "sipapu-ski-and-summer",
@@ -6086,10 +6389,10 @@
     "longitude": -119.16104,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:21:57.310Z"
+    "checkedAt": "2026-09-02T18:39:12.075Z"
   },
   {
     "slug": "skaneateles-ski-club",
@@ -6100,10 +6403,10 @@
     "longitude": -76.33189,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:12:18.422Z"
+    "checkedAt": "2026-09-02T18:16:42.825Z"
   },
   {
     "slug": "skeetawk",
@@ -6114,10 +6417,10 @@
     "longitude": -149.23781,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:52:09.340Z"
+    "checkedAt": "2026-09-02T17:35:30.165Z"
   },
   {
     "slug": "ski-apache",
@@ -6167,10 +6470,10 @@
     "longitude": -71.05717,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:01:03.112Z"
+    "checkedAt": "2026-09-02T17:51:49.045Z"
   },
   {
     "slug": "ski-brule",
@@ -6181,10 +6484,10 @@
     "longitude": -88.70551,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:03:34.133Z"
+    "checkedAt": "2026-09-02T17:58:18.272Z"
   },
   {
     "slug": "ski-butternut",
@@ -6195,10 +6498,10 @@
     "longitude": -73.31917,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:01:04.462Z"
+    "checkedAt": "2026-09-02T17:51:58.078Z"
   },
   {
     "slug": "ski-cloudcroft",
@@ -6209,10 +6512,10 @@
     "longitude": -105.7087,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:09:50.080Z"
+    "checkedAt": "2026-09-02T18:13:43.556Z"
   },
   {
     "slug": "ski-cooper",
@@ -6223,10 +6526,10 @@
     "longitude": -106.28879,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:55:23.889Z"
+    "checkedAt": "2026-09-02T17:40:15.146Z"
   },
   {
     "slug": "ski-mystic-deer-mountain",
@@ -6235,12 +6538,21 @@
     "website": "https://deermountainvillage.com/the-mountain/",
     "latitude": 44.30843,
     "longitude": -103.81844,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, verified 1"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:17:30.220Z"
+    "cams": [
+      {
+        "url": "https://www.youtube.com/embed/fzPtKWW4mOc?si=hBvotSM2v2ElWiP5",
+        "type": "iframe",
+        "provider": "YouTube",
+        "score": 58,
+        "verified": true,
+        "contentType": "text/html"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:33:41.923Z"
   },
   {
     "slug": "ski-quechee",
@@ -6251,10 +6563,10 @@
     "longitude": -72.44563,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:19:53.308Z"
+    "checkedAt": "2026-09-02T18:37:08.948Z"
   },
   {
     "slug": "ski-santa-fe-santa-fe-q38555",
@@ -6327,10 +6639,10 @@
     "longitude": -90.7475,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:58:13.402Z"
+    "checkedAt": "2026-09-02T17:44:58.133Z"
   },
   {
     "slug": "ski-sundown",
@@ -6364,10 +6676,10 @@
     "longitude": -71.68111,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:01:13.105Z"
+    "checkedAt": "2026-09-02T17:52:13.340Z"
   },
   {
     "slug": "sky-tavern",
@@ -6378,10 +6690,10 @@
     "longitude": -119.87273,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:06:54.218Z"
+    "checkedAt": "2026-09-02T18:06:33.452Z"
   },
   {
     "slug": "skytop-s-ski-hill",
@@ -6392,10 +6704,10 @@
     "longitude": -75.23541,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:16:53.316Z"
+    "checkedAt": "2026-09-02T18:32:33.566Z"
   },
   {
     "slug": "sleeping-giant-winter-sports-area",
@@ -6404,12 +6716,29 @@
     "website": "https://www.skisg.com/",
     "latitude": 44.49034,
     "longitude": -109.94391,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, verified 2"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:26:24.193Z"
+    "cams": [
+      {
+        "url": "https://webcams.skisg.com/SGwebcam1.jpg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/64e3d48ecd39ac1a4b9d2598/ef12473d-1ec7-4bf3-86b9-3c3608db4211/NS_EDIT.00_00_20_04.Still002+%281%29.png",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/webp"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:48:12.699Z"
   },
   {
     "slug": "sleepy-hollow-sports-park",
@@ -6420,10 +6749,10 @@
     "longitude": -93.53424,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:58:55.061Z"
+    "checkedAt": "2026-09-02T17:47:27.499Z"
   },
   {
     "slug": "smugglers-notch",
@@ -6455,12 +6784,29 @@
     "website": "https://skisnowcreek.com/",
     "latitude": 39.46547,
     "longitude": -94.96932,
-    "status": "error",
+    "status": "found",
     "notes": [
-      "homepage HTTP 500 text/html"
+      "checked 14 pages, verified 2"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:05:48.736Z"
+    "cams": [
+      {
+        "url": "https://player.brownrice.com/snapshot/snowcreek1",
+        "type": "image",
+        "provider": "Brownrice",
+        "score": 95,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://www.skisnowcreek.com/Assets/images/components/webcam/webcam-offline.jpg",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:05:05.335Z"
   },
   {
     "slug": "snow-king-mountain",
@@ -6471,7 +6817,7 @@
     "longitude": -110.75867,
     "status": "found",
     "notes": [
-      "checked 2 pages, verified 1"
+      "checked 14 pages, verified 1"
     ],
     "cams": [
       {
@@ -6483,7 +6829,7 @@
         "contentType": "image/webp"
       }
     ],
-    "checkedAt": "2026-09-02T16:26:25.482Z"
+    "checkedAt": "2026-09-02T18:48:22.574Z"
   },
   {
     "slug": "snow-park-at-alpine-hills",
@@ -6494,10 +6840,10 @@
     "longitude": -89.03149,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:58:16.523Z"
+    "checkedAt": "2026-09-02T17:45:03.661Z"
   },
   {
     "slug": "snow-riders",
@@ -6508,10 +6854,10 @@
     "longitude": -77.77017,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:22:13.587Z"
+    "checkedAt": "2026-09-02T18:39:29.907Z"
   },
   {
     "slug": "snow-ridge",
@@ -6522,10 +6868,10 @@
     "longitude": -75.42063,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:12:26.033Z"
+    "checkedAt": "2026-09-02T18:17:09.723Z"
   },
   {
     "slug": "snow-summit",
@@ -6536,10 +6882,10 @@
     "longitude": -116.8905,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:53:15.563Z"
+    "checkedAt": "2026-09-02T17:37:10.494Z"
   },
   {
     "slug": "snow-trails",
@@ -6576,7 +6922,7 @@
       "homepage fetch failed: TypeError"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:53:26.073Z"
+    "checkedAt": "2026-09-02T17:37:21.009Z"
   },
   {
     "slug": "snowflex",
@@ -6585,12 +6931,29 @@
     "website": "https://www.liberty.edu/snowflex/",
     "latitude": 37.35287,
     "longitude": -79.16607,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, verified 2"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:20:23.257Z"
+    "cams": [
+      {
+        "url": "https://www.youtube.com/embed/fv9MdRnIVLg",
+        "type": "iframe",
+        "provider": "YouTube",
+        "score": 58,
+        "verified": true,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.youtube.com/embed/GIU5T10SzzQ",
+        "type": "iframe",
+        "provider": "YouTube",
+        "score": 58,
+        "verified": true,
+        "contentType": "text/html"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:37:38.596Z"
   },
   {
     "slug": "snowhaven",
@@ -6601,10 +6964,10 @@
     "longitude": -116.09342,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:57:59.246Z"
+    "checkedAt": "2026-09-02T17:43:40.142Z"
   },
   {
     "slug": "snowy-range",
@@ -6613,12 +6976,21 @@
     "website": "https://snowyrangeski.com/",
     "latitude": 41.3377,
     "longitude": -106.18016,
-    "status": "error",
+    "status": "found",
     "notes": [
-      "homepage fetch failed: TimeoutError"
+      "checked 14 pages, verified 1"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:26:39.888Z"
+    "cams": [
+      {
+        "url": "https://snowyrangeski.com/wp-content/uploads/2022/06/web-cams.png",
+        "type": "image",
+        "provider": "Resort",
+        "score": 76,
+        "verified": true,
+        "contentType": "image/png"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:48:36.134Z"
   },
   {
     "slug": "soda-springs",
@@ -6629,10 +7001,10 @@
     "longitude": -120.38249,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:53:31.699Z"
+    "checkedAt": "2026-09-02T17:37:27.543Z"
   },
   {
     "slug": "soldier-mountain",
@@ -6643,10 +7015,10 @@
     "longitude": -114.84106,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:58:00.962Z"
+    "checkedAt": "2026-09-02T17:43:57.074Z"
   },
   {
     "slug": "song",
@@ -6657,10 +7029,10 @@
     "longitude": -76.16279,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:12:30.627Z"
+    "checkedAt": "2026-09-02T18:17:20.360Z"
   },
   {
     "slug": "spirit-mountain",
@@ -6671,10 +7043,10 @@
     "longitude": -92.2201,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:05:31.854Z"
+    "checkedAt": "2026-09-02T18:02:30.161Z"
   },
   {
     "slug": "spring-mountain",
@@ -6685,10 +7057,10 @@
     "longitude": -75.45303,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:16:56.790Z"
+    "checkedAt": "2026-09-02T18:32:45.708Z"
   },
   {
     "slug": "spruce-mountain-ski-slope",
@@ -6699,10 +7071,10 @@
     "longitude": -70.20535,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:00:08.767Z"
+    "checkedAt": "2026-09-02T17:49:42.288Z"
   },
   {
     "slug": "steeplechase-ski-snowboard",
@@ -6713,10 +7085,10 @@
     "longitude": -92.51437,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:05:35.093Z"
+    "checkedAt": "2026-09-02T18:02:35.715Z"
   },
   {
     "slug": "storrs-hill",
@@ -6727,10 +7099,10 @@
     "longitude": -72.25232,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:08:14.002Z"
+    "checkedAt": "2026-09-02T18:10:27.251Z"
   },
   {
     "slug": "sugar",
@@ -6741,10 +7113,10 @@
     "longitude": -81.86722,
     "status": "none",
     "notes": [
-      "checked 3 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:13:23.837Z"
+    "checkedAt": "2026-09-02T18:20:23.162Z"
   },
   {
     "slug": "sugar-bowl",
@@ -6755,11 +7127,11 @@
     "longitude": -120.33581,
     "status": "found",
     "notes": [
-      "checked 2 pages, verified 3"
+      "checked 14 pages, verified 3"
     ],
     "cams": [
       {
-        "url": "https://sugar3.sugarbowl.com/graphics/webcams/village/image260902_092152_16.jpg",
+        "url": "https://sugar3.sugarbowl.com/graphics/webcams/village/image260902_110652_16.jpg",
         "type": "image",
         "provider": "Resort",
         "score": 76,
@@ -6767,7 +7139,7 @@
         "contentType": "image/jpeg"
       },
       {
-        "url": "https://sugar3.sugarbowl.com/graphics/webcams/nobhill/XMasTreeTop26-09-02_08-34-57-74_04302.jpg",
+        "url": "https://sugar3.sugarbowl.com/graphics/webcams/nobhill/XMasTreeTop26-09-02_10-19-57-74_04323.jpg",
         "type": "image",
         "provider": "Resort",
         "score": 76,
@@ -6775,7 +7147,7 @@
         "contentType": "image/jpeg"
       },
       {
-        "url": "https://sugar3.sugarbowl.com/graphics/webcams/judah/judahdeck_09-02-26_08-34-57-48_00009.jpg",
+        "url": "https://sugar3.sugarbowl.com/graphics/webcams/judah/judahdeck_09-02-26_10-19-57-48_00015.jpg",
         "type": "image",
         "provider": "Resort",
         "score": 76,
@@ -6783,7 +7155,7 @@
         "contentType": "image/jpeg"
       }
     ],
-    "checkedAt": "2026-09-02T15:53:34.489Z"
+    "checkedAt": "2026-09-02T17:37:37.778Z"
   },
   {
     "slug": "sunburst",
@@ -6833,10 +7205,10 @@
     "longitude": -111.5879,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:18:08.144Z"
+    "checkedAt": "2026-09-02T18:34:17.001Z"
   },
   {
     "slug": "sundown",
@@ -6904,7 +7276,7 @@
       "homepage fetch failed: TypeError"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:52:20.998Z"
+    "checkedAt": "2026-09-02T17:35:36.651Z"
   },
   {
     "slug": "swain-ski-snowboard",
@@ -6915,10 +7287,10 @@
     "longitude": -77.85496,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:12:36.720Z"
+    "checkedAt": "2026-09-02T18:17:30.380Z"
   },
   {
     "slug": "swiss-valley-ski-lodge",
@@ -6929,10 +7301,10 @@
     "longitude": -85.82502,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:03:54.022Z"
+    "checkedAt": "2026-09-02T17:58:54.457Z"
   },
   {
     "slug": "tahoe-donner-downhill",
@@ -6982,7 +7354,7 @@
     "longitude": -116.1429,
     "status": "found",
     "notes": [
-      "checked 2 pages, verified 3"
+      "checked 14 pages, verified 3"
     ],
     "cams": [
       {
@@ -7010,7 +7382,7 @@
         "contentType": "image/jpeg"
       }
     ],
-    "checkedAt": "2026-09-02T15:58:02.835Z"
+    "checkedAt": "2026-09-02T17:44:06.738Z"
   },
   {
     "slug": "tenney",
@@ -7021,10 +7393,10 @@
     "longitude": -71.77195,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:08:27.152Z"
+    "checkedAt": "2026-09-02T18:10:49.600Z"
   },
   {
     "slug": "terry-peak",
@@ -7074,10 +7446,10 @@
     "longitude": -112.8121,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:06:28.549Z"
+    "checkedAt": "2026-09-02T18:06:07.177Z"
   },
   {
     "slug": "the-hermitage-club-at-haystack-mountain",
@@ -7111,10 +7483,10 @@
     "longitude": -75.35803,
     "status": "none",
     "notes": [
-      "checked 3 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:16:59.179Z"
+    "checkedAt": "2026-09-02T18:32:52.237Z"
   },
   {
     "slug": "the-homestead",
@@ -7125,10 +7497,10 @@
     "longitude": -85.96508,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:03:58.389Z"
+    "checkedAt": "2026-09-02T17:59:01.975Z"
   },
   {
     "slug": "the-homestead-virginia",
@@ -7142,7 +7514,7 @@
       "homepage HTTP 403 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:20:23.789Z"
+    "checkedAt": "2026-09-02T18:37:39.111Z"
   },
   {
     "slug": "the-mountain-top-at-grand-geneva-resort-spa",
@@ -7179,7 +7551,7 @@
       "homepage HTTP 403 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:20:06.238Z"
+    "checkedAt": "2026-09-02T18:37:09.465Z"
   },
   {
     "slug": "three-summits",
@@ -7232,7 +7604,7 @@
       "homepage fetch failed: TypeError"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:14:07.474Z"
+    "checkedAt": "2026-09-02T18:21:43.067Z"
   },
   {
     "slug": "thunder-ridge",
@@ -7246,7 +7618,7 @@
       "homepage HTTP 307 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:12:37.230Z"
+    "checkedAt": "2026-09-02T18:17:31.389Z"
   },
   {
     "slug": "timber-ridge",
@@ -7255,12 +7627,21 @@
     "website": "https://www.timberridgeski.com/",
     "latitude": 42.39139,
     "longitude": -85.78159,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 14 pages, verified 1"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:04:06.280Z"
+    "cams": [
+      {
+        "url": "https://www.youtube.com/embed/58bn_6WAnAI?si=8-EtyhTK94yskjaj",
+        "type": "iframe",
+        "provider": "YouTube",
+        "score": 58,
+        "verified": true,
+        "contentType": "text/html"
+      }
+    ],
+    "checkedAt": "2026-09-02T17:59:14.077Z"
   },
   {
     "slug": "timberline-lodge",
@@ -7310,10 +7691,10 @@
     "longitude": -79.39684,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:22:19.222Z"
+    "checkedAt": "2026-09-02T18:39:53.421Z"
   },
   {
     "slug": "titcomb-mountain",
@@ -7324,10 +7705,10 @@
     "longitude": -70.17155,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:00:11.869Z"
+    "checkedAt": "2026-09-02T17:49:47.483Z"
   },
   {
     "slug": "titus-mountain",
@@ -7338,10 +7719,10 @@
     "longitude": -74.24,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:12:40.365Z"
+    "checkedAt": "2026-09-02T18:17:37.663Z"
   },
   {
     "slug": "treetops-sylvan",
@@ -7355,7 +7736,7 @@
       "homepage HTTP 503 text/html"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:04:06.796Z"
+    "checkedAt": "2026-09-02T17:59:14.686Z"
   },
   {
     "slug": "triangle-sports-area",
@@ -7366,10 +7747,10 @@
     "longitude": -87.95001,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:25:38.473Z"
+    "checkedAt": "2026-09-02T18:46:12.834Z"
   },
   {
     "slug": "trollhaugen",
@@ -7380,10 +7761,10 @@
     "longitude": -92.62196,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:25:46.143Z"
+    "checkedAt": "2026-09-02T18:46:25.002Z"
   },
   {
     "slug": "turner-mountain",
@@ -7394,10 +7775,10 @@
     "longitude": -115.64145,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:06:32.187Z"
+    "checkedAt": "2026-09-02T18:06:12.940Z"
   },
   {
     "slug": "veterans-memorial",
@@ -7408,10 +7789,10 @@
     "longitude": -71.69139,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:08:30.369Z"
+    "checkedAt": "2026-09-02T18:10:55.359Z"
   },
   {
     "slug": "victor-constant",
@@ -7422,10 +7803,10 @@
     "longitude": -73.98195,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:12:45.131Z"
+    "checkedAt": "2026-09-02T18:17:43.290Z"
   },
   {
     "slug": "villa-olivia",
@@ -7436,10 +7817,10 @@
     "longitude": -88.22169,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T15:58:33.170Z"
+    "checkedAt": "2026-09-02T17:45:33.852Z"
   },
   {
     "slug": "villa-roma",
@@ -7450,10 +7831,10 @@
     "longitude": -74.97144,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:12:50.544Z"
+    "checkedAt": "2026-09-02T18:17:52.000Z"
   },
   {
     "slug": "wachusett-mountain",
@@ -7464,10 +7845,10 @@
     "longitude": -71.88679,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:01:14.727Z"
+    "checkedAt": "2026-09-02T17:52:21.768Z"
   },
   {
     "slug": "warner-canyon",
@@ -7478,10 +7859,10 @@
     "longitude": -120.29729,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:15:35.707Z"
+    "checkedAt": "2026-09-02T18:27:03.898Z"
   },
   {
     "slug": "wasatch-peaks-ranch",
@@ -7492,10 +7873,10 @@
     "longitude": -111.82947,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:18:12.247Z"
+    "checkedAt": "2026-09-02T18:34:24.944Z"
   },
   {
     "slug": "waterville-valley",
@@ -7506,10 +7887,10 @@
     "longitude": -71.5407,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:08:33.567Z"
+    "checkedAt": "2026-09-02T18:11:00.890Z"
   },
   {
     "slug": "waterville-valley-resort-nordic",
@@ -7520,10 +7901,10 @@
     "longitude": -71.49964,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:08:35.979Z"
+    "checkedAt": "2026-09-02T18:11:05.088Z"
   },
   {
     "slug": "welch-village",
@@ -7534,10 +7915,10 @@
     "longitude": -92.73028,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:05:38.874Z"
+    "checkedAt": "2026-09-02T18:02:42.922Z"
   },
   {
     "slug": "west-mountain",
@@ -7548,10 +7929,10 @@
     "longitude": -73.73447,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:12:57.646Z"
+    "checkedAt": "2026-09-02T18:18:03.381Z"
   },
   {
     "slug": "whaleback-mountain",
@@ -7562,10 +7943,10 @@
     "longitude": -72.18309,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:08:39.734Z"
+    "checkedAt": "2026-09-02T18:11:10.875Z"
   },
   {
     "slug": "white-pass",
@@ -7615,10 +7996,10 @@
     "longitude": -109.75102,
     "status": "none",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 12 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:26:42.587Z"
+    "checkedAt": "2026-09-02T18:48:40.823Z"
   },
   {
     "slug": "whitecap-mountain",
@@ -7629,10 +8010,10 @@
     "longitude": -90.4033,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:26:00.408Z"
+    "checkedAt": "2026-09-02T18:46:43.174Z"
   },
   {
     "slug": "whitefish",
@@ -7721,10 +8102,10 @@
     "longitude": -92.70446,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:05:42.331Z"
+    "checkedAt": "2026-09-02T18:03:00.819Z"
   },
   {
     "slug": "wild-mountain",
@@ -7735,10 +8116,10 @@
     "longitude": -92.709,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:05:45.595Z"
+    "checkedAt": "2026-09-02T18:03:58.656Z"
   },
   {
     "slug": "wildcat-mountain",
@@ -7747,12 +8128,37 @@
     "website": "https://www.skiwildcat.com/",
     "latitude": 44.25715,
     "longitude": -71.2323,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, verified 3"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:08:42.213Z"
+    "cams": [
+      {
+        "url": "https://player.brownrice.com/snapshot/wildcat2",
+        "type": "image",
+        "provider": "Brownrice",
+        "score": 95,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://player.brownrice.com/snapshot/wildcat3",
+        "type": "image",
+        "provider": "Brownrice",
+        "score": 95,
+        "verified": true,
+        "contentType": "image/jpeg"
+      },
+      {
+        "url": "https://player.brownrice.com/snapshot/wildcat1",
+        "type": "image",
+        "provider": "Brownrice",
+        "score": 95,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:12:05.266Z"
   },
   {
     "slug": "willamette-pass",
@@ -7794,10 +8200,10 @@
     "longitude": -73.51995,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:13:00.728Z"
+    "checkedAt": "2026-09-02T18:18:08.956Z"
   },
   {
     "slug": "wilmot-mountain",
@@ -7808,10 +8214,10 @@
     "longitude": -88.19086,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:26:02.548Z"
+    "checkedAt": "2026-09-02T18:47:38.744Z"
   },
   {
     "slug": "windham-mountain-club",
@@ -7820,12 +8226,21 @@
     "website": "https://www.windhammountain.com/",
     "latitude": 42.29301,
     "longitude": -74.2566,
-    "status": "none",
+    "status": "found",
     "notes": [
-      "checked 6 pages, no verified feed"
+      "checked 13 pages, verified 1"
     ],
-    "cams": [],
-    "checkedAt": "2026-09-02T16:13:05.290Z"
+    "cams": [
+      {
+        "url": "https://player.brownrice.com/snapshot/windhammountainclub",
+        "type": "image",
+        "provider": "Brownrice",
+        "score": 95,
+        "verified": true,
+        "contentType": "image/jpeg"
+      }
+    ],
+    "checkedAt": "2026-09-02T18:18:18.852Z"
   },
   {
     "slug": "wintergreen",
@@ -7836,10 +8251,10 @@
     "longitude": -78.94007,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:20:25.122Z"
+    "checkedAt": "2026-09-02T18:37:48.441Z"
   },
   {
     "slug": "winterplace",
@@ -7850,7 +8265,7 @@
     "longitude": -81.11927,
     "status": "found",
     "notes": [
-      "checked 7 pages, verified 1"
+      "checked 14 pages, verified 1"
     ],
     "cams": [
       {
@@ -7862,7 +8277,7 @@
         "contentType": "image/jpeg"
       }
     ],
-    "checkedAt": "2026-09-02T16:22:42.181Z"
+    "checkedAt": "2026-09-02T18:40:30.550Z"
   },
   {
     "slug": "wisp",
@@ -7873,10 +8288,10 @@
     "longitude": -79.37385,
     "status": "none",
     "notes": [
-      "checked 2 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:00:13.270Z"
+    "checkedAt": "2026-09-02T17:49:56.451Z"
   },
   {
     "slug": "wissahickon-ski-club",
@@ -7887,10 +8302,10 @@
     "longitude": -75.27557,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:17:07.699Z"
+    "checkedAt": "2026-09-02T18:32:58.366Z"
   },
   {
     "slug": "wolf-creek",
@@ -7940,10 +8355,10 @@
     "longitude": -75.37918,
     "status": "none",
     "notes": [
-      "checked 3 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:13:10.363Z"
+    "checkedAt": "2026-09-02T18:18:58.778Z"
   },
   {
     "slug": "woodward",
@@ -7954,10 +8369,10 @@
     "longitude": -111.58351,
     "status": "none",
     "notes": [
-      "checked 3 pages, no verified feed"
+      "checked 14 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:18:14.659Z"
+    "checkedAt": "2026-09-02T18:34:30.979Z"
   },
   {
     "slug": "yawgoo-valley",
@@ -7968,10 +8383,10 @@
     "longitude": -71.52976,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:17:26.054Z"
+    "checkedAt": "2026-09-02T18:33:34.133Z"
   },
   {
     "slug": "yellowstone-club",
@@ -7982,9 +8397,9 @@
     "longitude": -111.43264,
     "status": "none",
     "notes": [
-      "checked 7 pages, no verified feed"
+      "checked 13 pages, no verified feed"
     ],
     "cams": [],
-    "checkedAt": "2026-09-02T16:06:42.669Z"
+    "checkedAt": "2026-09-02T18:06:17.869Z"
   }
 ]
