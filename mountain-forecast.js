@@ -143,11 +143,9 @@
   });
 
   const abortTimeout = (ms) => {
-    if (typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function') {
-      return AbortSignal.timeout(ms);
-    }
     const controller = new AbortController();
-    setTimeout(() => controller.abort(), ms);
+    const timer = setTimeout(() => controller.abort(), ms);
+    controller.signal.addEventListener('abort', () => clearTimeout(timer), { once: true });
     return controller.signal;
   };
 
