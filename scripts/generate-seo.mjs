@@ -15,9 +15,13 @@ const ROOT = path.join(__dirname, '..');
 const SITE = 'https://whogotsnow.com';
 const TODAY = new Date().toISOString().slice(0, 10);
 const GA_LOADER = `    <script src="/analytics.js" defer></script>`;
-const ATMOSPHERE_SNOW = `    <div class="atmosphere-snow" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span><span></span>
+const FONT_LINK = `    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />`;
+const SITE_NAV = `    <div class="masthead">
+      <a class="wordmark" href="/"><em>Who</em>GotSnow</a>
+      <nav class="masthead-nav" aria-label="Site">
+        <a href="/directory.html">Directory</a>
+        <a href="/faq.html">FAQ</a>
+      </nav>
     </div>`;
 
 function slugify(name) {
@@ -171,8 +175,8 @@ async function writeManifest() {
       'Live North American ski resort webcams ranked by modeled snowfall. Powder radar for Vail, Whistler, Banff, Killington, and more.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#070b12',
-    theme_color: '#070b12',
+    background_color: '#101214',
+    theme_color: '#101214',
     lang: 'en-US',
     icons: [
       {
@@ -231,11 +235,11 @@ function mountainPageHtml(m) {
           ? `<img class="is-loaded" src="${escapeHtml(cam.url)}" alt="${escapeHtml(cam.name)} webcam" loading="lazy" width="640" height="360" />`
           : `<iframe src="${escapeHtml(cam.url)}" title="${escapeHtml(cam.name)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
       return `      <article class="card mountain-cam">
+        <div class="card-feed">${media}</div>
         <header class="card-header">
           <h2 class="card-title">${escapeHtml(cam.name)}</h2>
           <p class="card-meta"><span class="card-region">${escapeHtml(cam.region)}</span>${cam.provider ? ` <span>${escapeHtml(cam.provider)}</span>` : ''}</p>
         </header>
-        <div class="card-feed">${media}</div>
       </article>`;
     })
     .join('\n');
@@ -268,22 +272,22 @@ function mountainPageHtml(m) {
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#070b12" />
+    <meta name="theme-color" content="#101214" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css" />
+${FONT_LINK}
+    <link rel="stylesheet" href="/styles.css?v=20260902-compact2" />
 ${GA_LOADER}
     <script type="application/ld+json">
 ${JSON.stringify(mountainJsonLd(m), null, 2)}
     </script>
   </head>
   <body class="mountain-page">
-${ATMOSPHERE_SNOW}
+${SITE_NAV}
     <header class="header mountain-header">
-      <p class="brand-kicker"><a href="/">WhoGotSnow</a> · ${escapeHtml(m.region)}</p>
+      <p class="brand-kicker">${escapeHtml(m.region)}</p>
       <h1 class="title">${escapeHtml(m.mountain)}</h1>
-      <p class="subtitle">Live webcam${m.cams.length > 1 ? 's' : ''} at ${escapeHtml(m.mountain)} — compare snow on the <a href="/">powder radar</a></p>
+      <p class="subtitle">Live webcam${m.cams.length > 1 ? 's' : ''} — compare snow on the <a href="/">powder radar</a></p>
       <p class="mountain-cam-count">${m.cams.length} cam${m.cams.length === 1 ? '' : 's'} on this mountain</p>
     </header>
     <main class="grid mountain-grid">
@@ -312,7 +316,7 @@ ${camBlocks}
       <p><a href="/directory.html">Browse all mountains</a> · <a href="/">Back to WhoGotSnow</a></p>
     </section>
     <footer class="footer">
-      <p class="footer-brand"><a href="/">WhoGotSnow</a></p>
+      <p class="footer-brand"><a href="/"><em>Who</em>GotSnow</a></p>
       <nav class="footer-nav" aria-label="Footer">
         <a href="/">Home</a>
         <a href="/directory.html">Mountains</a>
@@ -366,19 +370,19 @@ function pageChrome({ title, description, canonicalPath, jsonLd, bodyClass, body
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#070b12" />
+    <meta name="theme-color" content="#101214" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css" />
+${FONT_LINK}
+    <link rel="stylesheet" href="/styles.css?v=20260902-compact2" />
 ${GA_LOADER}
 ${jsonLdBlock}
   </head>
   <body class="${bodyClass}">
-${ATMOSPHERE_SNOW}
+${SITE_NAV}
 ${bodyHtml}
     <footer class="footer">
-      <p class="footer-brand"><a href="/">WhoGotSnow</a></p>
+      <p class="footer-brand"><a href="/"><em>Who</em>GotSnow</a></p>
       <nav class="footer-nav" aria-label="Footer">
         <a href="/">Home</a>
         <a href="/directory.html">Mountains</a>
@@ -409,11 +413,11 @@ ${items}
     .join('\n');
 
   return `    <header class="header static-header">
-      <p class="brand-kicker"><a href="/">WhoGotSnow</a></p>
-      <h1 class="title">Mountain webcam directory</h1>
+      <p class="brand-kicker">Coverage</p>
+      <h1 class="title">Directory</h1>
       <p class="subtitle">
-        ${mountains.length} mountains · ${RESORTS.length} cams across ${regionNames.length} regions —
-        open a mountain for dedicated feeds, or return to the <a href="/">powder radar</a>.
+        ${mountains.length} mountains · ${RESORTS.length} cams across ${regionNames.length} regions.
+        Open a mountain for dedicated feeds, or return to the <a href="/">powder radar</a>.
       </p>
     </header>
     <main class="seo-directory static-main" id="directory">
@@ -447,9 +451,9 @@ function directoryJsonLd() {
 
 function faqInnerHtml() {
   return `    <header class="header static-header">
-      <p class="brand-kicker"><a href="/">WhoGotSnow</a></p>
+      <p class="brand-kicker">About</p>
       <h1 class="title">FAQ</h1>
-      <p class="subtitle">Quick answers about cams, snow totals, and coverage.</p>
+      <p class="subtitle">Cams, snow totals, and what this site is for.</p>
     </header>
     <main class="faq static-main" id="faq">
       <details>

@@ -506,7 +506,7 @@ function renderPowderBoard() {
     btn.className = 'powder-card';
     btn.dataset.mountain = item.mountain;
     btn.innerHTML = `
-      <span class="powder-rank">#${i + 1}</span>
+      <span class="powder-rank">${String(i + 1).padStart(2, '0')}</span>
       <span class="powder-name">${escapeHtml(item.mountain)}</span>
       <span class="powder-region">${escapeHtml(item.region || '')}</span>
       <span class="powder-stats">
@@ -604,7 +604,6 @@ function createCard(resort) {
       <a class="card-resort-link" href="${escapeHtml(pageHref)}">${camCount > 1 ? `All ${camCount} cams` : 'Resort page'} →</a>
     </div>
   `;
-  card.appendChild(header);
 
   header.querySelector('.btn-fav')?.addEventListener('click', (e) => {
     e.preventDefault();
@@ -691,6 +690,8 @@ function createCard(resort) {
     card.appendChild(feed);
     card.appendChild(updated);
   }
+
+  card.insertBefore(header, feed.nextSibling);
 
   if (resort.latitude != null && resort.longitude != null) {
     const forecastEl = document.createElement('div');
