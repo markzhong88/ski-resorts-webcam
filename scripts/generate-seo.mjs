@@ -8,7 +8,7 @@
 import { mkdir, writeFile, readFile, rm } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { RESORTS } from '../resorts.js';
+import { allMountains, catalogStats, slugifyMountain } from '../catalog.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -24,44 +24,12 @@ const SITE_NAV = `    <div class="masthead">
       </nav>
     </div>`;
 
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .normalize('NFKD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/['']/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-}
-
 function escapeHtml(str) {
   return String(str)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
-}
-
-function groupByMountain(resorts) {
-  const map = new Map();
-  for (const r of resorts) {
-    const key = r.mountain;
-    if (!map.has(key)) {
-      map.set(key, {
-        mountain: r.mountain,
-        region: r.region,
-        latitude: r.latitude,
-        longitude: r.longitude,
-        slug: slugify(r.mountain),
-        cams: [],
-      });
-    }
-    const entry = map.get(key);
-    entry.cams.push(r);
-    if (r.latitude != null) entry.latitude = r.latitude;
-    if (r.longitude != null) entry.longitude = r.longitude;
-  }
-  return [...map.values()].sort((a, b) => a.mountain.localeCompare(b.mountain));
 }
 
 function groupByRegion(mountains) {
@@ -73,10 +41,11 @@ function groupByRegion(mountains) {
   return [...map.entries()].sort((a, b) => a[0].localeCompare(b[0]));
 }
 
-const mountains = groupByMountain(RESORTS);
+const mountains = allMountains().map((m) => ({ ...m, mountain: m.name }));
 const regions = groupByRegion(mountains);
 const mountainNames = mountains.map((m) => m.mountain);
 const regionNames = regions.map(([name]) => name);
+const stats = catalogStats();
 
 async function writeRobots() {
   const body = `User-agent: *
@@ -92,6 +61,11 @@ async function writeSitemap() {
     { loc: `${SITE}/`, priority: '1.0', changefreq: 'hourly' },
     { loc: `${SITE}/directory.html`, priority: '0.9', changefreq: 'daily' },
     { loc: `${SITE}/faq.html`, priority: '0.6', changefreq: 'monthly' },
+    ...regions.map(([region]) => ({
+      loc: `${SITE}/regions/${slugifyMountain(region)}.html`,
+      priority: '0.7',
+      changefreq: 'weekly',
+    })),
     ...mountains.map((m) => ({
       loc: `${SITE}/mountains/${m.slug}.html`,
       priority: '0.8',
@@ -134,16 +108,15 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 
 - Homepage: ${SITE}/
 - Mountain directory: ${SITE}/directory.html
+- Region hubs: ${regions.map(([region]) => `[${region}](${SITE}/regions/${slugifyMountain(region)}.html)`).join(', ')}
 - FAQ: ${SITE}/faq.html
 - Sitemap: ${SITE}/sitemap.xml
 - Contact: use the Contact button on the homepage (email obfuscated in the UI)
 
 ## What it does
 
-- Shows ${RESORTS.length} live/still webcams across ${mountains.length} mountains in ${regionNames.length} regions
-- Powder radar ranks mountains by modeled snow in the next 48 hours and last 48 hours
-- Users can filter by region, sort by snow, and star favorites (stored in the browser)
-- Per-cam 7-day forecast with snow totals when coordinates are available
+- Catalogs ${stats.mountains} mountains (${stats.withCams} with live cams, ${stats.cams} feeds) across ${stats.regionCount} regions
+- Homepage shows starred mountains; powder radar ranks modeled snow among live cams plus saved hills
 
 ## Mountains covered
 
@@ -205,7 +178,7 @@ function mountainJsonLd(m) {
     address: {
       '@type': 'PostalAddress',
       addressRegion: m.region,
-      addressCountry: ['Alberta', 'British Columbia'].includes(m.region) ? 'CA' : 'US',
+      addressCountry: m.country === 'CA' ? 'CA' : 'US',
     },
     ...(m.latitude != null && m.longitude != null
       ? {
@@ -225,24 +198,32 @@ function mountainJsonLd(m) {
 }
 
 function mountainPageHtml(m) {
-  const title = `${m.mountain} Live Webcam & Snow Cams | WhoGotSnow`;
-  const description = `Live ${m.mountain} ski resort webcams (${m.region}). Watch mountain conditions on WhoGotSnow — cams ranked with modeled snowfall via Open-Meteo.`;
+  const hasCams = m.cams.length > 0;
+  const title = hasCams
+    ? `${m.mountain} Live Webcam & Snow Cams | WhoGotSnow`
+    : `${m.mountain} Snow Forecast | WhoGotSnow`;
+  const description = hasCams
+    ? `Live ${m.mountain} ski resort webcams (${m.region}). Watch mountain conditions on WhoGotSnow — cams ranked with modeled snowfall via Open-Meteo.`
+    : `Modeled snowfall and a ski-cam placeholder for ${m.mountain} (${m.region}) on WhoGotSnow. Save it to your homepage while we source a live feed.`;
   const pageUrl = `${SITE}/mountains/${m.slug}.html`;
-  const camBlocks = m.cams
-    .map((cam) => {
-      const media =
-        cam.type === 'image'
-          ? `<img class="is-loaded" src="${escapeHtml(cam.url)}" alt="${escapeHtml(cam.name)} webcam" loading="lazy" width="640" height="360" />`
-          : `<iframe src="${escapeHtml(cam.url)}" title="${escapeHtml(cam.name)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
-      return `      <article class="card mountain-cam">
+  const regionHref = `/regions/${slugifyMountain(m.region)}.html`;
+  const camBlocks = hasCams
+    ? m.cams
+        .map((cam) => {
+          const media =
+            cam.type === 'image'
+              ? `<img class="is-loaded" src="${escapeHtml(cam.url)}" alt="${escapeHtml(cam.name)} webcam" loading="lazy" width="640" height="360" />`
+              : `<iframe src="${escapeHtml(cam.url)}" title="${escapeHtml(cam.name)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
+          return `      <article class="card mountain-cam">
         <div class="card-feed">${media}</div>
         <header class="card-header">
           <h2 class="card-title">${escapeHtml(cam.name)}</h2>
           <p class="card-meta"><span class="card-region">${escapeHtml(cam.region)}</span>${cam.provider ? ` <span>${escapeHtml(cam.provider)}</span>` : ''}</p>
         </header>
       </article>`;
-    })
-    .join('\n');
+        })
+        .join('\n')
+    : `      <p class="grid-empty">No live cam yet. Save ${escapeHtml(m.mountain)} to your homepage for the snow model — we’ll add a feed when we have a stable one.</p>`;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -276,7 +257,7 @@ function mountainPageHtml(m) {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 ${FONT_LINK}
-    <link rel="stylesheet" href="/styles.css?v=20260902-compact2" />
+    <link rel="stylesheet" href="/styles.css?v=20260902-catalog" />
 ${GA_LOADER}
     <script type="application/ld+json">
 ${JSON.stringify(mountainJsonLd(m), null, 2)}
@@ -285,10 +266,22 @@ ${JSON.stringify(mountainJsonLd(m), null, 2)}
   <body class="mountain-page">
 ${SITE_NAV}
     <header class="header mountain-header">
-      <p class="brand-kicker">${escapeHtml(m.region)}</p>
+      <p class="brand-kicker"><a href="${regionHref}">${escapeHtml(m.region)}</a></p>
       <h1 class="title">${escapeHtml(m.mountain)}</h1>
-      <p class="subtitle">Live webcam${m.cams.length > 1 ? 's' : ''} — compare snow on the <a href="/">powder radar</a></p>
-      <p class="mountain-cam-count">${m.cams.length} cam${m.cams.length === 1 ? '' : 's'} on this mountain</p>
+      <p class="subtitle">${
+        hasCams
+          ? `Live webcam${m.cams.length > 1 ? 's' : ''} — compare snow on the <a href="/">powder radar</a>`
+          : `Snow model is live. Cam feed still to come — compare snow on the <a href="/">powder radar</a>`
+      }</p>
+      <p class="mountain-cam-count">${
+        hasCams
+          ? `${m.cams.length} cam${m.cams.length === 1 ? '' : 's'} on this mountain`
+          : 'Cam coming'
+      }</p>
+      <div class="mountain-toolbar">
+        <button type="button" class="btn-save-home" data-mountain-slug="${escapeHtml(m.slug)}">☆ Save to homepage</button>
+        ${m.website ? `<a href="${escapeHtml(m.website)}" rel="noopener noreferrer" target="_blank">Official site</a>` : ''}
+      </div>
     </header>
     <main class="grid mountain-grid">
 ${camBlocks}
@@ -313,7 +306,7 @@ ${camBlocks}
         Snow rankings on the homepage use Open-Meteo model estimates, not official
         ${escapeHtml(m.mountain)} snow reports. Cam feeds are public resort or provider streams.
       </p>
-      <p><a href="/directory.html">Browse all mountains</a> · <a href="/">Back to WhoGotSnow</a></p>
+      <p><a href="${regionHref}">More in ${escapeHtml(m.region)}</a> · <a href="/directory.html">Browse all mountains</a> · <a href="/">Back to WhoGotSnow</a></p>
     </section>
     <footer class="footer">
       <p class="footer-brand"><a href="/"><em>Who</em>GotSnow</a></p>
@@ -323,6 +316,7 @@ ${camBlocks}
         <a href="/faq.html">FAQ</a>
       </nav>
     </footer>
+    <script type="module" src="/favorite-button.js"></script>
   </body>
 </html>
 `;
@@ -374,7 +368,7 @@ function pageChrome({ title, description, canonicalPath, jsonLd, bodyClass, body
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 ${FONT_LINK}
-    <link rel="stylesheet" href="/styles.css?v=20260902-compact2" />
+    <link rel="stylesheet" href="/styles.css?v=20260902-catalog" />
 ${GA_LOADER}
 ${jsonLdBlock}
   </head>
@@ -395,16 +389,24 @@ ${bodyHtml}
 }
 
 function buildDirectoryInnerHtml() {
+  const hubLinks = regions
+    .map(
+      ([region, list]) =>
+        `        <a href="/regions/${slugifyMountain(region)}.html">${escapeHtml(region)} <span>${list.length}</span></a>`
+    )
+    .join('\n');
   const regionBlocks = regions
     .map(([region, list]) => {
       const items = list
-        .map(
-          (m) =>
-            `          <li><a href="/mountains/${m.slug}.html">${escapeHtml(m.mountain)}</a> <span class="dir-cam-count">${m.cams.length} cam${m.cams.length === 1 ? '' : 's'}</span></li>`
-        )
+        .map((m) => {
+          const camLabel = m.cams.length
+            ? `${m.cams.length} cam${m.cams.length === 1 ? '' : 's'}`
+            : 'cam coming';
+          return `          <li><a href="/mountains/${m.slug}.html">${escapeHtml(m.mountain)}</a> <span class="dir-cam-count">${camLabel}</span></li>`;
+        })
         .join('\n');
       return `      <div class="dir-region">
-        <h3>${escapeHtml(region)}</h3>
+        <h3><a href="/regions/${slugifyMountain(region)}.html">${escapeHtml(region)}</a></h3>
         <ul>
 ${items}
         </ul>
@@ -416,15 +418,22 @@ ${items}
       <p class="brand-kicker">Coverage</p>
       <h1 class="title">Directory</h1>
       <p class="subtitle">
-        ${mountains.length} mountains · ${RESORTS.length} cams across ${regionNames.length} regions.
-        Open a mountain for dedicated feeds, or return to the <a href="/">powder radar</a>.
+        ${stats.mountains} mountains · ${stats.withCams} with live cams · ${stats.cams} feeds.
+        Save hills to your homepage; open a mountain for snow and cams.
       </p>
     </header>
+    <div class="dir-search">
+      <input type="search" id="dirSearch" placeholder="Search mountains or states" aria-label="Search directory" />
+    </div>
+    <nav class="region-hubs" aria-label="Regions">
+${hubLinks}
+    </nav>
     <main class="seo-directory static-main" id="directory">
       <div class="dir-grid">
 ${regionBlocks}
       </div>
-    </main>`;
+    </main>
+    <script type="module" src="/directory.js"></script>`;
 }
 
 function directoryJsonLd() {
@@ -459,8 +468,8 @@ function faqInnerHtml() {
       <details>
         <summary>What is WhoGotSnow?</summary>
         <p>
-          WhoGotSnow is a free morning checklist for skiers: live North American mountain webcams in
-          one grid, ranked by modeled snowfall so you can see who’s getting snow before you leave.
+          WhoGotSnow is a free live-cam and snow brief for skiers: North American mountain webcams
+          in one grid, ranked by modeled snowfall so you can see who’s getting snow.
         </p>
       </details>
       <details>
@@ -475,10 +484,10 @@ function faqInnerHtml() {
       <details>
         <summary>Which resorts are covered?</summary>
         <p>
-          Cams span Colorado, California, Utah, Wyoming, Montana, Washington, Vermont, New York,
-          Maine, Alberta, British Columbia, and more — including Vail, Whistler Blackcomb, Banff,
-          Killington, Jackson Hole, and others. See the
-          <a href="/directory.html">mountain directory</a> for the full list.
+          The directory lists ${stats.mountains} mountains across the US and Canada.
+          ${stats.withCams} currently have live cams; the rest have a snow-model page you can save
+          to your homepage while we source a feed. See the
+          <a href="/directory.html">mountain directory</a>.
         </p>
       </details>
       <details>
@@ -517,7 +526,7 @@ function faqJsonLd() {
         name: 'Which ski resorts have webcams on WhoGotSnow?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `WhoGotSnow covers ${mountains.length} mountains including ${mountainNames.slice(0, 12).join(', ')}, and more across ${regionNames.join(', ')}.`,
+          text: `WhoGotSnow lists ${stats.mountains} mountains, including ${mountainNames.slice(0, 12).join(', ')}, with live cams on ${stats.withCams} of them so far.`,
         },
       },
       {
@@ -532,10 +541,65 @@ function faqJsonLd() {
   };
 }
 
+function regionPageHtml(region, list) {
+  const slug = slugifyMountain(region);
+  const withCams = list.filter((m) => m.cams.length).length;
+  const items = list
+    .map((m) => {
+      const camLabel = m.cams.length
+        ? `${m.cams.length} cam${m.cams.length === 1 ? '' : 's'}`
+        : 'cam coming';
+      return `        <li><a href="/mountains/${m.slug}.html">${escapeHtml(m.mountain)}</a> <span class="dir-cam-count">${camLabel}</span></li>`;
+    })
+    .join('\n');
+  return pageChrome({
+    title: `${region} Ski Resorts & Snow Cams | WhoGotSnow`,
+    description: `${list.length} ski mountains in ${region} on WhoGotSnow — ${withCams} with live cams, plus modeled snowfall pages you can save to your homepage.`,
+    canonicalPath: `/regions/${slug}.html`,
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: `${region} ski mountains on WhoGotSnow`,
+      numberOfItems: list.length,
+      itemListElement: list.map((m, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE}/mountains/${m.slug}.html`,
+        name: m.mountain,
+      })),
+    },
+    bodyClass: 'static-page',
+    bodyHtml: `    <header class="header static-header">
+      <p class="brand-kicker"><a href="/directory.html">Directory</a> · ${escapeHtml(region)}</p>
+      <h1 class="title">${escapeHtml(region)}</h1>
+      <p class="subtitle">
+        ${list.length} mountains · ${withCams} with live cams.
+        Save the ones you check, or return to the <a href="/">powder radar</a>.
+      </p>
+    </header>
+    <main class="seo-directory static-main">
+      <div class="dir-region">
+        <ul>
+${items}
+        </ul>
+      </div>
+    </main>`,
+  });
+}
+
+async function writeRegionPages() {
+  const dir = path.join(ROOT, 'regions');
+  await rm(dir, { recursive: true, force: true });
+  await mkdir(dir, { recursive: true });
+  for (const [region, list] of regions) {
+    await writeFile(path.join(dir, `${slugifyMountain(region)}.html`), regionPageHtml(region, list));
+  }
+}
+
 async function writeDirectoryPage() {
   const html = pageChrome({
-    title: 'Mountain Webcam Directory | WhoGotSnow',
-    description: `Browse ${mountains.length} North American ski resort webcam pages on WhoGotSnow — live cams ranked with modeled snowfall.`,
+    title: 'Ski Resort Directory | WhoGotSnow',
+    description: `Browse ${stats.mountains} North American ski mountains on WhoGotSnow — ${stats.withCams} with live cams, plus snow-model pages you can save to your homepage.`,
     canonicalPath: '/directory.html',
     jsonLd: directoryJsonLd(),
     bodyClass: 'static-page',
@@ -623,11 +687,12 @@ async function main() {
   await writeLlmsTxt();
   await writeManifest();
   await writeMountainPages();
+  await writeRegionPages();
   await writeDirectoryPage();
   await writeFaqPage();
   await injectIndexHtml();
   console.log(
-    `SEO generated: ${mountains.length} mountain pages, directory, FAQ, sitemap, robots.txt, llms.txt, manifest, index JSON-LD.`
+    `SEO generated: ${mountains.length} mountain pages, ${regions.length} region hubs, directory, FAQ, sitemap, robots.txt, llms.txt, manifest, index JSON-LD.`
   );
 }
 

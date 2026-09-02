@@ -30,7 +30,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css?v=20260902-compact2" />
+    <link rel="stylesheet" href="/styles.css?v=20260902-catalog" />
     <script src="/analytics.js" defer></script>
     <script type="application/ld+json">
 {
@@ -66,10 +66,14 @@
       </nav>
     </div>
     <header class="header mountain-header">
-      <p class="brand-kicker">Colorado</p>
+      <p class="brand-kicker"><a href="/regions/colorado.html">Colorado</a></p>
       <h1 class="title">Winter Park</h1>
       <p class="subtitle">Live webcams — compare snow on the <a href="/">powder radar</a></p>
       <p class="mountain-cam-count">2 cams on this mountain</p>
+      <div class="mountain-toolbar">
+        <button type="button" class="btn-save-home" data-mountain-slug="winter-park">☆ Save to homepage</button>
+        
+      </div>
     </header>
     <main class="grid mountain-grid">
       <article class="card mountain-cam">
@@ -103,7 +107,7 @@
         Snow rankings on the homepage use Open-Meteo model estimates, not official
         Winter Park snow reports. Cam feeds are public resort or provider streams.
       </p>
-      <p><a href="/directory.html">Browse all mountains</a> · <a href="/">Back to WhoGotSnow</a></p>
+      <p><a href="/regions/colorado.html">More in Colorado</a> · <a href="/directory.html">Browse all mountains</a> · <a href="/">Back to WhoGotSnow</a></p>
     </section>
     <footer class="footer">
       <p class="footer-brand"><a href="/"><em>Who</em>GotSnow</a></p>
@@ -113,5 +117,6 @@
         <a href="/faq.html">FAQ</a>
       </nav>
     </footer>
+    <script type="module" src="/favorite-button.js"></script>
   </body>
 </html>

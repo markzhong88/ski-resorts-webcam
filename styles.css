@@ -124,6 +124,26 @@ a:hover {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  align-items: baseline;
+}
+
+.masthead-action {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.masthead-action:hover,
+.masthead-action:focus-visible {
+  color: var(--snow);
 }
 
 .masthead-nav a {
@@ -961,6 +981,11 @@ a:hover {
   color: var(--ice);
 }
 
+.dir-region h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .dir-region ul {
   margin: 0;
   padding: 0;
@@ -1177,6 +1202,258 @@ a:hover {
 .footer-links a:hover,
 .footer-links a:focus-visible {
   color: var(--ice);
+}
+
+.home-banner {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 1.5rem 0.75rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.home-banner[hidden] {
+  display: none;
+}
+
+.banner-link {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: var(--snow);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.card-feed.is-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elevated);
+}
+
+.card-feed.is-empty .placeholder {
+  position: static;
+}
+
+.dir-search {
+  max-width: var(--wrap);
+  margin: 0 auto 1.25rem;
+  padding: 0 1.5rem;
+}
+
+.dir-search input {
+  width: min(100%, 24rem);
+  padding: 0.55rem 0.7rem;
+  border: none;
+  border-bottom: 1px solid var(--line-strong);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+}
+
+.dir-search input:focus {
+  outline: none;
+  border-color: var(--snow);
+}
+
+.region-hubs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.85rem;
+  max-width: var(--wrap);
+  margin: 0 auto 1.5rem;
+  padding: 0 1.5rem;
+}
+
+.region-hubs a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.region-hubs a:hover,
+.region-hubs a:focus-visible {
+  color: var(--snow);
+}
+
+.mountain-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.btn-save-home {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
+  cursor: pointer;
+}
+
+.btn-save-home.is-fav,
+.btn-save-home:hover {
+  color: var(--snow);
+}
+
+.picker {
+  width: min(42rem, calc(100vw - 1.5rem));
+  max-height: min(42rem, calc(100vh - 2rem));
+  margin: auto;
+  padding: 1.25rem 1.35rem 0;
+  border: 1px solid var(--line-strong);
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.picker::backdrop {
+  background: rgba(8, 10, 12, 0.72);
+}
+
+.picker-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.picker-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--snow);
+}
+
+.picker-lead {
+  margin: 0.35rem 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.picker-done {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0.2rem 0;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ice);
+  cursor: pointer;
+}
+
+.picker-done:hover {
+  color: var(--snow);
+}
+
+.picker-tools {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.picker-tools input,
+.picker-tools select {
+  flex: 1;
+  min-width: 0;
+  padding: 0.45rem 0;
+  border: none;
+  border-bottom: 1px solid var(--line-strong);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+}
+
+.picker-tools input:focus,
+.picker-tools select:focus {
+  outline: none;
+  border-color: var(--snow);
+}
+
+.picker-count {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--faint);
+  letter-spacing: 0.04em;
+}
+
+.picker-list {
+  margin: 0 -1.35rem 0;
+  padding: 0 0 1rem;
+  list-style: none;
+  overflow: auto;
+  max-height: min(28rem, calc(100vh - 16rem));
+}
+
+.picker-row {
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  gap: 0.7rem;
+  padding: 0.55rem 1.35rem;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.picker-row:hover,
+.picker-row:focus-visible {
+  background: rgba(255, 255, 255, 0.03);
+  outline: none;
+}
+
+.picker-star {
+  color: var(--faint);
+  width: 1rem;
+}
+
+.picker-row.is-fav .picker-star,
+.picker-row.is-fav .picker-name {
+  color: var(--snow);
+}
+
+.picker-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.picker-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.picker-meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
 }
 
 @keyframes feed-shimmer {

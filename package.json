@@ -7,6 +7,9 @@
   "scripts": {
     "start": "npx --yes serve . -l 3000",
     "dev": "npx --yes serve . -l 3000",
-    "generate-seo": "node scripts/generate-seo.mjs"
+    "generate-seo": "node scripts/generate-seo.mjs",
+    "build-catalog": "node scripts/build-catalog.mjs",
+    "discover-webcams": "node scripts/discover-webcams.mjs",
+    "apply-discovered-cams": "node scripts/apply-discovered-cams.mjs"
   }
 }

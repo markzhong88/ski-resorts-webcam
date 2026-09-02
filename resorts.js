@@ -6,6 +6,9 @@
  * - home: true — optional; force this cam as the homepage hero for that mountain
  *   (otherwise homepage picks the first non–snow-stake cam per mountain)
  *
+ * Full US catalog (including mountains without cams) is mountains-catalog.js.
+ * To attach a feed later, add a cam here whose `mountain` name matches the catalog.
+ *
  * Brownrice snapshots: https://player.brownrice.com/snapshot/{streamName}
  * WEATHER: lat/long → Open-Meteo powder radar + 7-day forecast.
  */
