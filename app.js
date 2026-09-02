@@ -15,6 +15,13 @@ const PREFS_KEY = 'ski-webcam-prefs';
 const OPEN_METEO_BASE = 'https://api.open-meteo.com/v1/forecast';
 const PAST_DAYS = 2;
 const FORECAST_DAYS = 7;
+const SNOW_CACHE_KEY = 'ski-webcam-snow-v1';
+const SNOW_CACHE_MS = 45 * 60 * 1000;
+const FORECAST_BULK_TIMEOUT_MS = 12000;
+const FORECAST_ONE_TIMEOUT_MS = 8000;
+const FORECAST_RETRIES = 3;
+const FORECAST_CONCURRENCY = 2;
+const FORECAST_CHUNK_SIZE = 8;
 
 let refreshIntervalId = null;
 let refreshMs = parseInt(refreshSelect?.value, 10) || IMAGE_REFRESH_MS;
@@ -295,10 +302,17 @@ function uniqueMountainLocations() {
   return [...map.values()];
 }
 
-async function fetchForecastBatch(locations) {
-  if (!locations.length) return [];
-  // Open-Meteo accepts comma-separated coords
-  const params = new URLSearchParams({
+function abortTimeout(ms) {
+  if (typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function') {
+    return AbortSignal.timeout(ms);
+  }
+  const controller = new AbortController();
+  setTimeout(() => controller.abort(), ms);
+  return controller.signal;
+}
+
+function forecastParams(locations) {
+  return new URLSearchParams({
     latitude: locations.map((l) => l.latitude).join(','),
     longitude: locations.map((l) => l.longitude).join(','),
     daily: 'temperature_2m_max,temperature_2m_min,snowfall_sum,precipitation_sum,weather_code',
@@ -307,73 +321,151 @@ async function fetchForecastBatch(locations) {
     past_days: String(PAST_DAYS),
     forecast_days: String(FORECAST_DAYS),
   });
-  const res = await fetch(`${OPEN_METEO_BASE}?${params}`);
-  if (!res.ok) throw new Error(res.statusText);
-  const data = await res.json();
-  // Single location returns object; multi returns array-like fields or array of results
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fetchOpenMeteo(locations, timeoutMs) {
+  const res = await fetch(`${OPEN_METEO_BASE}?${forecastParams(locations)}`, {
+    signal: abortTimeout(timeoutMs),
+  });
+  const text = await res.text();
+  let data;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    throw new Error(text.trim().slice(0, 160) || `HTTP ${res.status}`);
+  }
+  if (!res.ok || data?.error) {
+    throw new Error(data?.reason || data?.message || res.statusText || `HTTP ${res.status}`);
+  }
+  return data;
+}
+
+function asForecastList(data) {
   if (Array.isArray(data)) return data;
-  if (data.daily) return [data];
-  // Multi-location: open-meteo returns parallel arrays at top level when >1? 
-  // Actually for multiple locations it returns an array of result objects.
-  // Some versions nest under no key — handle both.
-  return Array.isArray(data) ? data : [data];
+  if (data?.daily) return [data];
+  return [];
+}
+
+function metricsForLocation(loc, result) {
+  const metrics = parseSnowMetrics(result?.daily);
+  if (!metrics) return null;
+  return { ...metrics, region: loc.region, sampleId: loc.sampleId };
+}
+
+async function fetchForecastBatch(locations, timeoutMs = FORECAST_BULK_TIMEOUT_MS) {
+  if (!locations.length) return [];
+  const list = asForecastList(await fetchOpenMeteo(locations, timeoutMs));
+  if (list.length !== locations.length) {
+    throw new Error(`Expected ${locations.length} forecasts, got ${list.length}`);
+  }
+  return list;
+}
+
+async function fetchForecastOne(loc) {
+  let lastErr;
+  for (let attempt = 0; attempt <= FORECAST_RETRIES; attempt++) {
+    try {
+      const list = asForecastList(
+        await fetchOpenMeteo([loc], FORECAST_ONE_TIMEOUT_MS)
+      );
+      const metrics = metricsForLocation(loc, list[0]);
+      if (!metrics) throw new Error('No daily data');
+      return metrics;
+    } catch (err) {
+      lastErr = err;
+      if (attempt < FORECAST_RETRIES) {
+        const busy = /too many concurrent|429|rate limit/i.test(String(err?.message || ''));
+        await sleep((busy ? 1500 : 350) * (attempt + 1));
+      }
+    }
+  }
+  console.warn('Powder radar miss', loc.mountain, lastErr);
+  return null;
+}
+
+async function mapPool(items, limit, worker) {
+  const pending = new Set();
+  for (const item of items) {
+    const run = Promise.resolve()
+      .then(() => worker(item))
+      .finally(() => pending.delete(run));
+    pending.add(run);
+    if (pending.size >= limit) await Promise.race(pending);
+  }
+  await Promise.all(pending);
+}
+
+function restoreSnowCache() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(SNOW_CACHE_KEY) || 'null');
+    if (!parsed?.savedAt || Date.now() - parsed.savedAt > SNOW_CACHE_MS) return false;
+    if (!Array.isArray(parsed.entries)) return false;
+    snowByMountain.clear();
+    for (const [mountain, metrics] of parsed.entries) {
+      if (mountain && metrics?.daily?.time?.length) snowByMountain.set(mountain, metrics);
+    }
+    return snowByMountain.size > 0;
+  } catch {
+    return false;
+  }
+}
+
+function persistSnowCache() {
+  if (!snowByMountain.size) return;
+  try {
+    localStorage.setItem(
+      SNOW_CACHE_KEY,
+      JSON.stringify({ savedAt: Date.now(), entries: [...snowByMountain.entries()] })
+    );
+  } catch {
+    /* ignore quota */
+  }
 }
 
 async function loadAllSnow() {
   const locations = uniqueMountainLocations();
-  snowByMountain.clear();
+  const fresh = new Map();
 
-  // Batch in chunks of 8 to stay within URL limits
-  const chunkSize = 8;
-  for (let i = 0; i < locations.length; i += chunkSize) {
-    const chunk = locations.slice(i, i + chunkSize);
-    try {
-      const results = await fetchForecastBatch(chunk);
-      chunk.forEach((loc, idx) => {
-        const result = results[idx] ?? results[0];
-        const metrics = parseSnowMetrics(result?.daily);
-        if (metrics) {
-          snowByMountain.set(loc.mountain, {
-            ...metrics,
-            region: loc.region,
-            sampleId: loc.sampleId,
-          });
-        }
-      });
-    } catch (err) {
-      console.warn('Powder radar batch failed', err);
-      // Fallback: fetch one-by-one for this chunk
-      await Promise.all(
-        chunk.map(async (loc) => {
-          try {
-            const params = new URLSearchParams({
-              latitude: String(loc.latitude),
-              longitude: String(loc.longitude),
-              daily:
-                'temperature_2m_max,temperature_2m_min,snowfall_sum,precipitation_sum,weather_code',
-              temperature_unit: 'fahrenheit',
-              timezone: 'auto',
-              past_days: String(PAST_DAYS),
-              forecast_days: String(FORECAST_DAYS),
-            });
-            const res = await fetch(`${OPEN_METEO_BASE}?${params}`);
-            if (!res.ok) return;
-            const data = await res.json();
-            const metrics = parseSnowMetrics(data.daily);
-            if (metrics) {
-              snowByMountain.set(loc.mountain, {
-                ...metrics,
-                region: loc.region,
-                sampleId: loc.sampleId,
-              });
-            }
-          } catch {
-            /* ignore single failure */
-          }
-        })
-      );
+  const ingest = (locs, results) => {
+    locs.forEach((loc, idx) => {
+      const metrics = metricsForLocation(loc, results[idx]);
+      if (metrics) fresh.set(loc.mountain, metrics);
+    });
+  };
+
+  // Sequential chunks keep Open-Meteo under its concurrent-request cap.
+  // Timeout + retry so one hung stream cannot stall the whole radar.
+  for (let i = 0; i < locations.length; i += FORECAST_CHUNK_SIZE) {
+    const chunk = locations.slice(i, i + FORECAST_CHUNK_SIZE);
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        ingest(chunk, await fetchForecastBatch(chunk));
+        break;
+      } catch (err) {
+        console.warn('Powder radar batch failed', err);
+        if (attempt === 0) await sleep(500);
+      }
     }
   }
+
+  const missing = locations.filter((loc) => !fresh.has(loc.mountain));
+  if (missing.length) {
+    await sleep(700);
+    await mapPool(missing, FORECAST_CONCURRENCY, async (loc) => {
+      const metrics = await fetchForecastOne(loc);
+      if (metrics) fresh.set(loc.mountain, metrics);
+    });
+  }
+
+  if (!fresh.size) return;
+
+  snowByMountain.clear();
+  for (const [mountain, metrics] of fresh) snowByMountain.set(mountain, metrics);
+  persistSnowCache();
 }
 
 function getMetrics(resort) {
@@ -806,7 +898,10 @@ async function init() {
   applyFiltersAndSort();
   startRefreshInterval();
 
-  if (powderList) {
+  if (restoreSnowCache()) {
+    renderPowderBoard();
+    updateCardsSnowInPlace();
+  } else if (powderList) {
     powderList.innerHTML = '<p class="powder-loading">Scanning mountains for snow…</p>';
   }
 
@@ -831,16 +926,3 @@ contactBtn?.addEventListener('click', () => {
   const subject = encodeURIComponent('WhoGotSnow');
   window.location.href = `mailto:${addr}?subject=${subject}`;
 });
-
-// Public visit counter (CountAPI.xyz is dead — using CounterAPI.dev)
-const visitEl = document.getElementById('visitCount');
-if (visitEl) {
-  fetch('https://api.counterapi.dev/v1/ski-resorts-webcam/visits/up')
-    .then((r) => r.json())
-    .then((data) => {
-      if (data.count != null) visitEl.textContent = Number(data.count).toLocaleString();
-    })
-    .catch(() => {
-      visitEl.textContent = '—';
-    });
-}

@@ -1169,16 +1169,6 @@ a {
   color: var(--accent);
 }
 
-.footer-stats {
-  margin: 1rem 0 0;
-  font-size: 0.85rem;
-}
-
-#visitCount {
-  font-weight: 600;
-  color: var(--text);
-}
-
 @keyframes rise-in {
   from {
     opacity: 0;

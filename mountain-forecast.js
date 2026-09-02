@@ -142,16 +142,45 @@
     forecast_days: String(FORECAST_DAYS),
   });
 
-  fetch(`${OPEN_METEO}?${params}`)
-    .then((r) => {
-      if (!r.ok) throw new Error(r.statusText);
-      return r.json();
-    })
-    .then((data) => {
-      const metrics = parseMetrics(data.daily);
-      if (!metrics) throw new Error('No daily data');
-      render(metrics);
-    })
+  const abortTimeout = (ms) => {
+    if (typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function') {
+      return AbortSignal.timeout(ms);
+    }
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(), ms);
+    return controller.signal;
+  };
+
+  const loadForecast = async () => {
+    let lastErr;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        const res = await fetch(`${OPEN_METEO}?${params}`, {
+          signal: abortTimeout(8000),
+        });
+        const text = await res.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch {
+          throw new Error(text.trim().slice(0, 160) || `HTTP ${res.status}`);
+        }
+        if (!res.ok || data?.error) {
+          throw new Error(data?.reason || res.statusText || `HTTP ${res.status}`);
+        }
+        const metrics = parseMetrics(data.daily);
+        if (!metrics) throw new Error('No daily data');
+        return metrics;
+      } catch (err) {
+        lastErr = err;
+        if (attempt < 2) await new Promise((r) => setTimeout(r, 300 * (attempt + 1)));
+      }
+    }
+    throw lastErr;
+  };
+
+  loadForecast()
+    .then(render)
     .catch(() => {
       el.innerHTML =
         '<p class="forecast-error">Forecast unavailable right now. Cams below still work.</p>';
