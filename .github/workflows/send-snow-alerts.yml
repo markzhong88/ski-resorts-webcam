@@ -1,0 +1,35 @@
+name: Send sick-day snow alerts
+
+on:
+  schedule:
+    - cron: '35 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Log would-sends without emailing or writing Stripe metadata'
+        type: boolean
+        default: false
+      force_season:
+        description: 'Send even outside Oct–Apr'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Send alerts
+        env:
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM: ${{ secrets.RESEND_FROM }}
+          DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '0' }}
+          FORCE_SEASON: ${{ github.event.inputs.force_season == 'true' && '1' || '0' }}
+        run: node scripts/send-snow-alerts.mjs

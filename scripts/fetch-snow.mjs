@@ -47,9 +47,13 @@ function parseSnowMetrics(daily) {
   for (let i = todayIdx; i < Math.min(todayIdx + 2, daily.time.length); i++) {
     snowNext48h += snow(i);
   }
+  let snowNext72h = 0;
+  for (let i = todayIdx; i < Math.min(todayIdx + 3, daily.time.length); i++) {
+    snowNext72h += snow(i);
+  }
   let snowNext7d = 0;
   for (let i = todayIdx; i < daily.time.length; i++) snowNext7d += snow(i);
-  return { daily, todayIdx, snowLast48h, snowNext48h, snowNext7d };
+  return { daily, todayIdx, snowLast48h, snowNext48h, snowNext72h, snowNext7d };
 }
 
 function sleep(ms) {

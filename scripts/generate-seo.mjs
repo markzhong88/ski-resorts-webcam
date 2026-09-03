@@ -20,6 +20,7 @@ const SITE_NAV = `    <div class="masthead">
       <a class="wordmark" href="/"><em>Who</em>GotSnow</a>
       <nav class="masthead-nav" aria-label="Site">
         <a href="/directory.html">Directory</a>
+        <a href="/sick-day.html">Sick day</a>
         <a href="/faq.html">FAQ</a>
       </nav>
     </div>`;
@@ -91,6 +92,7 @@ async function writeSitemap() {
   const urls = [
     { loc: `${SITE}/`, priority: '1.0', changefreq: 'hourly' },
     { loc: `${SITE}/directory.html`, priority: '0.9', changefreq: 'daily' },
+    { loc: `${SITE}/sick-day.html`, priority: '0.8', changefreq: 'weekly' },
     { loc: `${SITE}/faq.html`, priority: '0.6', changefreq: 'monthly' },
     ...mountains.map((m) => ({
       loc: `${SITE}/mountains/${m.slug}.html`,
@@ -134,6 +136,7 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 
 - Homepage: ${SITE}/
 - Mountain directory: ${SITE}/directory.html
+- Sick Day waitlist: ${SITE}/sick-day.html
 - FAQ: ${SITE}/faq.html
 - Sitemap: ${SITE}/sitemap.xml
 - Contact: use the Contact button on the homepage (email obfuscated in the UI)
@@ -276,7 +279,7 @@ function mountainPageHtml(m) {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 ${FONT_LINK}
-    <link rel="stylesheet" href="/styles.css?v=20260902-compact2" />
+    <link rel="stylesheet" href="/styles.css?v=20260903-sickday" />
 ${GA_LOADER}
     <script type="application/ld+json">
 ${JSON.stringify(mountainJsonLd(m), null, 2)}
@@ -320,6 +323,7 @@ ${camBlocks}
       <nav class="footer-nav" aria-label="Footer">
         <a href="/">Home</a>
         <a href="/directory.html">Mountains</a>
+        <a href="/sick-day.html">Sick day</a>
         <a href="/faq.html">FAQ</a>
       </nav>
     </footer>
@@ -374,7 +378,7 @@ function pageChrome({ title, description, canonicalPath, jsonLd, bodyClass, body
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 ${FONT_LINK}
-    <link rel="stylesheet" href="/styles.css?v=20260902-compact2" />
+    <link rel="stylesheet" href="/styles.css?v=20260903-sickday" />
 ${GA_LOADER}
 ${jsonLdBlock}
   </head>
@@ -386,6 +390,7 @@ ${bodyHtml}
       <nav class="footer-nav" aria-label="Footer">
         <a href="/">Home</a>
         <a href="/directory.html">Mountains</a>
+        <a href="/sick-day.html">Sick day</a>
         <a href="/faq.html">FAQ</a>
       </nav>
     </footer>
@@ -488,6 +493,14 @@ function faqInnerHtml() {
           refresh). Embedded live cams update according to the resort provider.
         </p>
       </details>
+      <details>
+        <summary>What is Pick your sick day?</summary>
+        <p>
+          A waitlist for an email when the Open-Meteo model says your mountains are getting a dump
+          in the next 72 hours — launching for the 2026–27 season. See
+          <a href="/sick-day.html">Pick your sick day</a>.
+        </p>
+      </details>
     </main>`;
 }
 
@@ -526,6 +539,14 @@ function faqJsonLd() {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Still-image cams refresh on a timer (default every 5 minutes; adjustable in Filters & refresh). Embedded live cams update according to the resort provider.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is Pick your sick day?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A waitlist for WhoGotSnow snow-alert emails when modeled snow hits in the next 72 hours, launching for the 2026-27 season.',
         },
       },
     ],
