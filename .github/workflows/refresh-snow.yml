@@ -1,0 +1,35 @@
+name: Refresh snow snapshot
+
+on:
+  schedule:
+    - cron: '20 * * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - resorts.js
+      - scripts/fetch-snow.mjs
+      - .github/workflows/refresh-snow.yml
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/fetch-snow.mjs
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/snow.json
+          if git diff --staged --quiet; then
+            echo "No snow snapshot changes"
+            exit 0
+          fi
+          git commit -m "Refresh powder radar snow snapshot."
+          git push

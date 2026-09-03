@@ -7,6 +7,7 @@
   "scripts": {
     "start": "npx --yes serve . -l 3000",
     "dev": "npx --yes serve . -l 3000",
-    "generate-seo": "node scripts/generate-seo.mjs"
+    "generate-seo": "node scripts/generate-seo.mjs",
+    "refresh-snow": "node scripts/fetch-snow.mjs"
   }
 }

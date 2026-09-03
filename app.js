@@ -1,4 +1,4 @@
-import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js?v=20260902-dv2';
+import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js?v=20260902-snow-snap';
 
 const grid = document.getElementById('webcamGrid');
 const powderBoard = document.getElementById('powderBoard');
@@ -17,10 +17,7 @@ const PAST_DAYS = 2;
 const FORECAST_DAYS = 7;
 const SNOW_CACHE_KEY = 'ski-webcam-snow-v1';
 const SNOW_CACHE_MS = 45 * 60 * 1000;
-const FORECAST_BULK_TIMEOUT_MS = 8000;
 const FORECAST_ONE_TIMEOUT_MS = 5000;
-const FORECAST_CONCURRENCY = 2;
-const FORECAST_CHUNK_SIZE = 8;
 const FORECAST_BUDGET_MS = 8000;
 
 let refreshIntervalId = null;
@@ -344,23 +341,25 @@ async function fetchOpenMeteo(locations, timeoutMs) {
   const url = `${OPEN_METEO_BASE}?${forecastParams(locations)}`;
   const timeout = abortTimeout(timeoutMs);
   try {
-    const res = await Promise.race([
-      fetch(url, { signal: timeout.signal }),
-      sleep(timeoutMs + 400).then(() => {
+    return await Promise.race([
+      (async () => {
+        const res = await fetch(url, { signal: timeout.signal });
+        const text = await res.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch {
+          throw new Error(text.trim().slice(0, 160) || `HTTP ${res.status}`);
+        }
+        if (!res.ok || data?.error) {
+          throw new Error(data?.reason || data?.message || res.statusText || `HTTP ${res.status}`);
+        }
+        return data;
+      })(),
+      sleep(timeoutMs).then(() => {
         throw new DOMException('Forecast request timed out', 'TimeoutError');
       }),
     ]);
-    const text = await res.text();
-    let data;
-    try {
-      data = JSON.parse(text);
-    } catch {
-      throw new Error(text.trim().slice(0, 160) || `HTTP ${res.status}`);
-    }
-    if (!res.ok || data?.error) {
-      throw new Error(data?.reason || data?.message || res.statusText || `HTTP ${res.status}`);
-    }
-    return data;
   } finally {
     timeout.clear();
   }
@@ -376,15 +375,6 @@ function metricsForLocation(loc, result) {
   const metrics = parseSnowMetrics(result?.daily);
   if (!metrics) return null;
   return { ...metrics, region: loc.region, sampleId: loc.sampleId };
-}
-
-async function fetchForecastBatch(locations, timeoutMs = FORECAST_BULK_TIMEOUT_MS) {
-  if (!locations.length) return [];
-  const list = asForecastList(await fetchOpenMeteo(locations, timeoutMs));
-  if (list.length !== locations.length) {
-    throw new Error(`Expected ${locations.length} forecasts, got ${list.length}`);
-  }
-  return list;
 }
 
 async function fetchForecastOne(loc, timeoutMs = FORECAST_ONE_TIMEOUT_MS) {
@@ -411,16 +401,40 @@ async function mapPool(items, limit, worker) {
   await Promise.all(pending);
 }
 
-function restoreSnowCache() {
+function restoreSnowCache(opts = {}) {
   try {
     const parsed = JSON.parse(localStorage.getItem(SNOW_CACHE_KEY) || 'null');
-    if (!parsed?.savedAt || Date.now() - parsed.savedAt > SNOW_CACHE_MS) return false;
-    if (!Array.isArray(parsed.entries)) return false;
+    if (!parsed?.savedAt || !Array.isArray(parsed.entries)) return false;
+    const stale = Date.now() - parsed.savedAt > SNOW_CACHE_MS;
+    if (stale && !opts.allowStale) return false;
     snowByMountain.clear();
     for (const [mountain, metrics] of parsed.entries) {
       if (mountain && metrics?.daily?.time?.length) snowByMountain.set(mountain, metrics);
     }
     return snowByMountain.size > 0;
+  } catch {
+    return false;
+  }
+}
+
+function applySnowEntries(entries) {
+  if (!Array.isArray(entries) || !entries.length) return false;
+  snowByMountain.clear();
+  for (const [mountain, metrics] of entries) {
+    if (mountain && metrics?.daily?.time?.length) snowByMountain.set(mountain, metrics);
+  }
+  if (!snowByMountain.size) return false;
+  persistSnowCache();
+  return true;
+}
+
+async function loadSnowSnapshot() {
+  try {
+    const bucket = Math.floor(Date.now() / 600000);
+    const res = await fetch(`/data/snow.json?v=${bucket}`);
+    if (!res.ok) return false;
+    const parsed = await res.json();
+    return applySnowEntries(parsed?.entries);
   } catch {
     return false;
   }
@@ -460,37 +474,17 @@ async function loadAllSnow() {
     updateCardsSnowInPlace();
   };
 
-  const tryBatch = async (chunk) => {
-    const ms = Math.min(FORECAST_BULK_TIMEOUT_MS, Math.max(1200, timeLeft()));
-    ingest(chunk, await fetchForecastBatch(chunk, ms));
-    publish();
-  };
-
-  // One request covers every mountain (~1.2KB URL). iPhone Safari only has a
-  // handful of HTTP slots; sequential chunks used to stall behind webcam images.
-  try {
-    await tryBatch(locations);
-  } catch (err) {
-    console.warn('Powder radar bulk failed', err);
-    for (let i = 0; i < locations.length && timeLeft() > 400; i += FORECAST_CHUNK_SIZE) {
-      const chunk = locations.slice(i, i + FORECAST_CHUNK_SIZE);
-      try {
-        await tryBatch(chunk);
-      } catch (chunkErr) {
-        console.warn('Powder radar batch failed', chunkErr);
-      }
-    }
-  }
-
+  // Multi-location Open-Meteo streams often hang or return
+  // allEndpointsUnavailable / timeoutReached. Fetch one mountain at a time.
   const missing = locations.filter((loc) => !fresh.has(loc.mountain));
-  if (missing.length && timeLeft() > 800) {
-    await mapPool(missing, FORECAST_CONCURRENCY, async (loc) => {
+  if (missing.length && timeLeft() > 600) {
+    await mapPool(missing, 1, async (loc) => {
       const leftover = timeLeft();
       if (leftover < 600) return;
       const metrics = await fetchForecastOne(loc, Math.min(FORECAST_ONE_TIMEOUT_MS, leftover));
       if (metrics) {
         fresh.set(loc.mountain, metrics);
-        publish();
+        if (fresh.size === 1 || fresh.size % 8 === 0) publish();
       }
     });
   }
@@ -926,22 +920,25 @@ async function init() {
     });
   });
 
-  const cached = restoreSnowCache();
+  const cached = restoreSnowCache({ allowStale: true });
   if (cached) {
     renderPowderBoard();
   } else if (powderList) {
     powderList.innerHTML = '<p class="powder-loading">Scanning mountains for snow…</p>';
   }
 
-  // Start Open-Meteo before cam images occupy Safari's connection pool.
-  const snowPromise = loadAllSnow();
-
   applyFiltersAndSort();
   if (cached) updateCardsSnowInPlace();
   startRefreshInterval();
 
   try {
-    await Promise.race([snowPromise, sleep(FORECAST_BUDGET_MS + 1500)]);
+    const fromSnapshot = await loadSnowSnapshot();
+    if (fromSnapshot) {
+      renderPowderBoard();
+      updateCardsSnowInPlace();
+    } else {
+      await Promise.race([loadAllSnow(), sleep(FORECAST_BUDGET_MS + 1500)]);
+    }
   } catch (err) {
     console.warn(err);
   }
