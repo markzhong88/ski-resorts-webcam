@@ -54,7 +54,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260903-waitlist" />
+    <link rel="stylesheet" href="styles.css?v=20260903-homehero" />
 
     <!-- SEO_JSONLD_START -->
     <script type="application/ld+json">
@@ -93,24 +93,58 @@
 
     <script src="/analytics.js" defer></script>
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#webcamGrid">Skip to cams</a>
-    <div class="masthead">
-      <a class="wordmark" href="/"><em>Who</em>GotSnow</a>
+    <div class="masthead home-masthead">
+      <a class="wordmark" href="/" aria-current="page"><em>Who</em>GotSnow</a>
       <nav class="masthead-nav" aria-label="Site">
         <a href="/directory.html">Directory</a>
         <a href="/sick-day.html">Sick day</a>
         <a href="/faq.html">FAQ</a>
       </nav>
     </div>
-    <header class="header">
-      <div class="brand-block">
-        <p class="brand-kicker">North America · Live cams</p>
-        <h1 class="title"><em>Who</em>GotSnow</h1>
-        <p class="subtitle">Live mountain cams, ranked by modeled snow. One view per resort — open it for every angle.</p>
-      </div>
 
-      <section class="powder-board" id="powderBoard" aria-label="Powder radar">
+    <header class="sick-hero-bleed home-hero-bleed">
+      <img
+        class="sick-hero-photo home-hero-photo"
+        src="/images/sick-day-powder.jpg"
+        alt="Wind-carved powder on an alpine ridge at dusk, peaks in the distance"
+        width="1024"
+        height="768"
+      />
+      <div class="sick-hero-shade" aria-hidden="true"></div>
+      <div class="sick-hero-copy">
+        <p class="brand-kicker">North America · Live cams</p>
+        <h1 class="title">See who got <em>snow</em>.</h1>
+        <p class="subtitle">
+          Live mountain cams, ranked by modeled snow. One view per resort — open it for every angle.
+        </p>
+        <p class="home-hero-actions">
+          <a class="btn-sick btn-sick-solid" href="#webcamGrid">Watch the cams</a>
+          <a class="btn-sick-ghost" href="#powderBoard">Powder radar</a>
+        </p>
+      </div>
+    </header>
+
+    <section class="home-steps sick-steps" aria-label="How WhoGotSnow works">
+      <article>
+        <p class="step-num">01</p>
+        <h2>Watch it live</h2>
+        <p>Public resort cams, one frame per mountain. Open a hill when you want every angle.</p>
+      </article>
+      <article>
+        <p class="step-num">02</p>
+        <h2>Ranked by snow</h2>
+        <p>Powder radar sorts the map by modeled snowfall. Who’s getting it in the next 48 hours is at the top.</p>
+      </article>
+      <article>
+        <p class="step-num">03</p>
+        <h2>Open every angle</h2>
+        <p>Star your home hills. Tap a mountain for the rest of the cams, the forecast, and the long view.</p>
+      </article>
+    </section>
+
+    <section class="powder-board" id="powderBoard" aria-label="Powder radar">
         <div class="powder-board-head">
           <h2 class="powder-title">Powder radar</h2>
           <p class="powder-note">Modeled snowfall (Open-Meteo) — not official resort reports</p>
@@ -155,8 +189,12 @@
           </button>
           <span class="result-count" id="resultCount" aria-live="polite"></span>
         </div>
-      </details>
-    </header>
+    </details>
+
+    <div class="home-cams-intro">
+      <p class="brand-kicker">Live feeds</p>
+      <h2>The mountain, right now</h2>
+    </div>
 
     <main class="grid" id="webcamGrid"></main>
 
@@ -166,6 +204,28 @@
         <a href="/directory.html">mountain directory</a> still works without it.
       </p>
     </noscript>
+
+    <section class="sick-split home-sick-split" aria-label="Sick Day">
+      <div class="sick-split-photo">
+        <img
+          src="/images/sick-day-hero.jpg"
+          alt="A skier cutting through deep fresh powder at dawn"
+          width="1376"
+          height="768"
+        />
+      </div>
+      <div class="sick-split-copy">
+        <p class="brand-kicker">Sick day</p>
+        <h2 class="sick-demo-title">Don’t refresh the radar at 5am.</h2>
+        <p class="home-sick-lead">
+          When your mountains are getting a dump in the next 72 hours, we’ll email you. One note.
+          Time to call in.
+        </p>
+        <p class="home-hero-actions">
+          <a class="btn-sick btn-sick-solid" href="/sick-day.html">Join the waitlist</a>
+        </p>
+      </div>
+    </section>
 
     <footer class="footer" id="about">
       <p class="footer-brand"><em>Who</em>GotSnow</p>
