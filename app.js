@@ -1,4 +1,4 @@
-import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js?v=20260902-snow-snap';
+import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js?v=20260903-bigbear-whitepass';
 
 const grid = document.getElementById('webcamGrid');
 const powderBoard = document.getElementById('powderBoard');

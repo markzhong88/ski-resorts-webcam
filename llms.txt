@@ -8,13 +8,14 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 
 - Homepage: https://whogotsnow.com/
 - Mountain directory: https://whogotsnow.com/directory.html
+- Sick Day waitlist: https://whogotsnow.com/sick-day.html
 - FAQ: https://whogotsnow.com/faq.html
 - Sitemap: https://whogotsnow.com/sitemap.xml
 - Contact: use the Contact button on the homepage (email obfuscated in the UI)
 
 ## What it does
 
-- Shows 143 live/still webcams across 47 mountains in 15 regions
+- Shows 153 live/still webcams across 49 mountains in 15 regions
 - Powder radar ranks mountains by modeled snow in the next 48 hours and last 48 hours
 - Users can filter by region, sort by snow, and star favorites (stored in the browser)
 - Per-cam 7-day forecast with snow totals when coordinates are available
@@ -32,6 +33,7 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
   - [Whistler Blackcomb](https://whogotsnow.com/mountains/whistler-blackcomb.html)
 
 ### California
+  - [Big Bear](https://whogotsnow.com/mountains/big-bear.html)
   - [Heavenly](https://whogotsnow.com/mountains/heavenly.html)
   - [Mammoth Mountain](https://whogotsnow.com/mountains/mammoth-mountain.html)
   - [Northstar](https://whogotsnow.com/mountains/northstar.html)
@@ -94,6 +96,7 @@ WhoGotSnow (https://whogotsnow.com/) is a free web app that aggregates public mo
 ### Washington
   - [Crystal Mountain](https://whogotsnow.com/mountains/crystal-mountain.html)
   - [Stevens Pass](https://whogotsnow.com/mountains/stevens-pass.html)
+  - [White Pass](https://whogotsnow.com/mountains/white-pass.html)
 
 ### Wyoming
   - [Jackson Hole](https://whogotsnow.com/mountains/jackson-hole.html)
