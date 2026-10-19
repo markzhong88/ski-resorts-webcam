@@ -227,9 +227,54 @@ function mountainJsonLd(m) {
   };
 }
 
+/**
+ * Title and meta description overrides. Cam wording matches resorts.js names only.
+ * Other mountains keep the shared template.
+ */
+const MOUNTAIN_SEO = {
+  'taos-ski-valley': {
+    title: 'Taos Ski Valley Live Webcam | WhoGotSnow',
+    description:
+      'Watch Taos Ski Valley webcams: Base, Highline Ridge, and Kachina Peak. Live mountain views from New Mexico on WhoGotSnow.',
+  },
+  'mount-snow': {
+    title: 'Mount Snow Live Webcam | WhoGotSnow',
+    description:
+      'Watch the Mount Snow base webcam. A live view of the Vermont mountain on WhoGotSnow.',
+  },
+  snowbird: {
+    title: 'Snowbird Live Webcam | WhoGotSnow',
+    description:
+      'Watch the Snowbird Hidden Peak 360 webcam. A live view from the top of the Utah mountain on WhoGotSnow.',
+  },
+  northstar: {
+    title: 'Northstar Live Webcam | WhoGotSnow',
+    description:
+      'Watch Northstar webcams at Pluto and the Village. Live mountain views from California on WhoGotSnow.',
+  },
+  'mt-norquay': {
+    title: 'Mt. Norquay Live Webcam | WhoGotSnow',
+    description:
+      'Watch Mt. Norquay webcams at Cascade and Sundance. Live views from Banff, Alberta on WhoGotSnow.',
+  },
+  'jay-peak': {
+    title: 'Jay Peak Live Webcam | WhoGotSnow',
+    description:
+      'Watch Jay Peak webcams: Tramside, Stateside, and the Summit. Live views from northern Vermont on WhoGotSnow.',
+  },
+  'crested-butte': {
+    title: 'Crested Butte Live Webcam | WhoGotSnow',
+    description:
+      'Watch the Crested Butte base webcam. A live view of the Colorado mountain on WhoGotSnow.',
+  },
+};
+
 function mountainPageHtml(m) {
-  const title = `${m.mountain} Live Webcam & Snow Cams | WhoGotSnow`;
-  const description = `Live ${m.mountain} ski resort webcams (${m.region}). Watch mountain conditions on WhoGotSnow — cams ranked with modeled snowfall via Open-Meteo.`;
+  const custom = MOUNTAIN_SEO[m.slug];
+  const title = custom?.title ?? `${m.mountain} Live Webcam & Snow Cams | WhoGotSnow`;
+  const description =
+    custom?.description ??
+    `Live ${m.mountain} ski resort webcams (${m.region}). Watch mountain conditions on WhoGotSnow — cams ranked with modeled snowfall via Open-Meteo.`;
   const pageUrl = `${SITE}/mountains/${m.slug}.html`;
   const camBlocks = m.cams
     .map((cam) => {
@@ -339,6 +384,20 @@ async function writeMountainPages() {
   for (const m of mountains) {
     await writeFile(path.join(dir, `${m.slug}.html`), mountainPageHtml(m));
   }
+}
+
+/** Rewrite selected mountain HTML files in place. Does not touch other pages or SEO artifacts. */
+async function writeMountainPagesOnly(slugs) {
+  const wanted = new Set(slugs);
+  const found = mountains.filter((m) => wanted.has(m.slug));
+  const missing = [...wanted].filter((slug) => !found.some((m) => m.slug === slug));
+  if (missing.length) {
+    throw new Error(`Unknown mountain slug(s): ${missing.join(', ')}`);
+  }
+  for (const m of found) {
+    await writeFile(path.join(ROOT, 'mountains', `${m.slug}.html`), mountainPageHtml(m));
+  }
+  return found.map((m) => m.slug);
 }
 
 function pageChrome({ title, description, canonicalPath, jsonLd, bodyClass, bodyHtml }) {
@@ -639,6 +698,18 @@ async function injectIndexHtml() {
 }
 
 async function main() {
+  const onlyArg = process.argv.find((arg) => arg.startsWith('--only='));
+  if (onlyArg) {
+    const slugs = onlyArg
+      .slice('--only='.length)
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const written = await writeMountainPagesOnly(slugs);
+    console.log(`Rewrote ${written.length} mountain page(s): ${written.join(', ')}`);
+    return;
+  }
+
   await writeRobots();
   await writeSitemap();
   await writeLlmsTxt();
