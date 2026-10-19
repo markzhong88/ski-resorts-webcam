@@ -1,4 +1,4 @@
-import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js?v=20260903-bigbear-whitepass';
+import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js?v=20261019-kickinghorse';
 
 const grid = document.getElementById('webcamGrid');
 const powderBoard = document.getElementById('powderBoard');
