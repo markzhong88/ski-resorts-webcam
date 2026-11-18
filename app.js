@@ -1,4 +1,4 @@
-import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js?v=20261019-kickinghorse';
+import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js?v=20261118-camfixes';
 
 const grid = document.getElementById('webcamGrid');
 const powderBoard = document.getElementById('powderBoard');
