@@ -1421,10 +1421,10 @@ export const RESORTS = [
     longitude: -117.0536,
   },
   {
-    id: 'kicking-horse-base',
-    name: 'Kicking Horse — Base',
+    id: 'kicking-horse-stairway',
+    name: 'Kicking Horse — Stairway to Heaven',
     mountain: 'Kicking Horse',
-    url: 'https://secure.skircr.com/cams/khcam2/basecam.jpg',
+    url: 'https://secure.skircr.com/cams/khcam5/stairway.jpg',
     type: 'image',
     region: 'British Columbia',
     provider: 'Kicking Horse',

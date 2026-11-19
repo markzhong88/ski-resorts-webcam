@@ -1,4 +1,4 @@
-import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js?v=20261118-camfixes';
+import { RESORTS, IMAGE_REFRESH_MS } from './resorts.js?v=20261118-camfixes2';
 
 const grid = document.getElementById('webcamGrid');
 const powderBoard = document.getElementById('powderBoard');
